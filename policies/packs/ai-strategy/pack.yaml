@@ -1,0 +1,19 @@
+slug: ai-strategy
+name_en: Government of Canada AI Strategy 2025-2027
+name_fr: Stratégie IA du gouvernement du Canada 2025-2027
+obligation_type: strategy_commitment
+source_url_en: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/gc-ai-strategy-priority-areas.html
+source_url_fr: https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/priorites-strategie-ia-gc.html
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: CA-GC-AI-P4-REGISTER
+  clause_ref: Priority 4
+  title_en: Maintain AI Register transparency aligned with strategy engagement goals.
+  title_fr: Maintenir la transparence du registre IA conformément à l'engagement de
+    la stratégie.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

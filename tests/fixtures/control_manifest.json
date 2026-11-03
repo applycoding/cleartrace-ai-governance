@@ -1,0 +1,47 @@
+{
+  "manifest_version": "g0-2026-11-03",
+  "controls": [
+    {
+      "control_key": "CA-DADM-APP-C-03",
+      "pack": "dadm",
+      "clause_ref": "Appendix C row 3",
+      "critical_gate": true,
+      "evidence_type": "peer_review_report"
+    },
+    {
+      "control_key": "CA-DADM-6-1-1",
+      "pack": "dadm",
+      "clause_ref": "6.1.1",
+      "critical_gate": true,
+      "evidence_type": "aia_record"
+    },
+    {
+      "control_key": "CA-AIA-SCORE-01",
+      "pack": "aia",
+      "clause_ref": "Tool",
+      "critical_gate": false,
+      "evidence_type": "aia_record"
+    }
+  ],
+  "systems": [
+    {
+      "system_key": "SYS-SEED-01",
+      "planned_production_use": true,
+      "impact_level": 3,
+      "conformant": false,
+      "missing_evidence": ["peer_review_report"],
+      "expected_control": "CA-DADM-APP-C-03",
+      "expected_state": "not_met"
+    },
+    {
+      "system_key": "SYS-SEED-02",
+      "planned_production_use": true,
+      "impact_level": 3,
+      "conformant": true,
+      "missing_evidence": [],
+      "expected_control": "CA-DADM-APP-C-03",
+      "expected_state": "met"
+    }
+  ],
+  "non_conformity_cases": []
+}

@@ -1,0 +1,21 @@
+[project]
+name = "cleartrace-engine"
+version = "0.1.0"
+description = "ClearTrace assessment engine (OPA, CEL, five-state reducer)"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "cleartrace-contracts",
+  "pyyaml>=6.0",
+  "jsonschema>=4.23",
+]
+
+[tool.uv.sources]
+cleartrace-contracts = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleartrace_engine"]

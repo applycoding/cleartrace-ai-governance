@@ -1,0 +1,19 @@
+slug: dsd
+name_en: Directive on Service and Digital (supporting)
+name_fr: Directive sur les services et le numérique (soutien)
+obligation_type: binding_policy
+source_url_en: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601
+source_url_fr: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32601
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: CA-DSD-4-3-24
+  clause_ref: 4.3.24
+  title_en: Identify and assess Canadian facilities as a principal delivery option.
+  title_fr: Recenser et évaluer les installations canadiennes comme option principale
+    de prestation.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

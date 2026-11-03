@@ -1,0 +1,18 @@
+slug: aia
+name_en: Algorithmic Impact Assessment
+name_fr: Évaluation de l'incidence algorithmique
+obligation_type: binding_policy
+source_url_en: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html
+source_url_fr: https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/evaluation-incidence-algorithmique.html
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: CA-AIA-SCORE-01
+  clause_ref: Tool
+  title_en: Publish a valid AIA with scores computed using the official method.
+  title_fr: Publier une EIA valide dont les scores suivent la méthode officielle.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

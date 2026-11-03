@@ -7,6 +7,8 @@ license = { text = "Apache-2.0" }
 dependencies = [
   "cleartrace-contracts",
   "cleartrace-db",
+  "cleartrace-engine",
+  "cleartrace-aia",
   "fastapi>=0.115",
   "uvicorn[standard]>=0.32",
   "httpx>=0.28",
@@ -19,6 +21,8 @@ dependencies = [
 [tool.uv.sources]
 cleartrace-contracts = { workspace = true }
 cleartrace-db = { workspace = true }
+cleartrace-engine = { workspace = true }
+cleartrace-aia = { workspace = true }
 
 [project.scripts]
 cleartrace-api = "cleartrace_core_api.main:run"
