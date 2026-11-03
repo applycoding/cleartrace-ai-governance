@@ -53,13 +53,32 @@ def test_missing_or_skipped_cases_are_not_pass(tmp_path: Path) -> None:
     assert _status(tmp_path, "T-01", mixed) == "partial"
 
 
-def test_known_partial_suites_never_report_pass(tmp_path: Path) -> None:
-    assert _status(tmp_path, "T-11", [("test_t11_certainty_index", "a", "pass")]) == "partial"
-    assert _status(tmp_path, "T-13", [("test_t13_five_states", "a", "pass")]) == "partial"
+def test_t13_requires_both_golden_and_shipped_modules(tmp_path: Path) -> None:
+    parsed = trl5_report._parse_junit(
+        _junit(
+            tmp_path,
+            [
+                ("test_t13_five_states", "a", "pass"),
+                ("test_t13_shipped_policies", "b", "pass"),
+            ],
+        )
+    )
+    outcome = trl5_report._outcome_for_test("T-13", parsed)
+    assert outcome is not None and outcome.failed == 0
+    assert trl5_report.status_for("T-13", outcome) == "pass"
+    assert _status(tmp_path, "T-11", [("test_t11_certainty_index", "a", "pass")]) == "pass"
+
+
+def test_t21_and_t29_modules_can_reach_pass(tmp_path: Path) -> None:
+    assert (
+        _status(tmp_path, "T-21", [("test_t21_multi_tenant", "a", "pass")]) == "pass"
+    )
+    assert (
+        _status(tmp_path, "T-29", [("test_t29_pooled_leak", "a", "pass")]) == "pass"
+    )
 
 
 def test_unimplemented_ids(tmp_path: Path) -> None:
-    assert _status(tmp_path, "T-21", []) == "not covered"
     assert _status(tmp_path, "T-27", []) == "deferred"
 
 

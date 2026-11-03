@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 from uuid import UUID
 
 from cleartrace_db.session import tenant_transaction
+from cleartrace_engine.framework_studio import load_pack
+from cleartrace_engine.pipeline import assess_pack_control_with_index
 from cleartrace_evidence.reviewer import LifecycleState
 from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
@@ -16,17 +19,53 @@ router = APIRouter(tags=["assessments"])
 
 _jobs: dict[str, dict[str, Any]] = {}
 
+_PACKS_ROOT = Path(__file__).resolve().parents[5] / "policies" / "packs"
+
 
 class StartAssessmentRequest(BaseModel):
     ai_system_id: UUID
     framework_version_id: UUID | None = None
     pack_slug: str = Field(default="dadm", min_length=1)
+    control_key: str | None = None
+    system_profile: dict[str, Any] = Field(default_factory=dict)
+    evidence: list[dict[str, Any]] = Field(default_factory=list)
 
 
 class AssessmentJob(BaseModel):
     id: UUID
     status: str
     finding_id: UUID | None = None
+    outcome_state: str | None = None
+    reason_code: str | None = None
+    certainty_index: float | None = None
+
+
+def _run_pack_assessment(body: StartAssessmentRequest) -> tuple[str, str, float, str]:
+    pack_path = _PACKS_ROOT / body.pack_slug / "pack.yaml"
+    if not pack_path.is_file():
+        msg = f"Unknown policy pack: {body.pack_slug}"
+        raise ValueError(msg)
+    pack = load_pack(pack_path)
+    controls = pack["controls"]
+    if not controls:
+        raise ValueError(f"Pack {body.pack_slug} has no controls")
+    if body.control_key:
+        control = next((c for c in controls if c["control_key"] == body.control_key), None)
+        if control is None:
+            raise ValueError(f"Control {body.control_key} not found in pack {body.pack_slug}")
+    else:
+        control = controls[0]
+    system = dict(body.system_profile)
+    output, _ctx, certainty = assess_pack_control_with_index(
+        pack=pack,
+        control=control,
+        system=system,
+        evidence=body.evidence,
+        pack_slug=body.pack_slug,
+        cel_context=system,
+    )
+    control_id = str(control["control_key"])
+    return output.outcome_state, output.reason_code, certainty, control_id
 
 
 @router.post("/assessments", status_code=202, response_model=AssessmentJob)
@@ -36,6 +75,7 @@ async def start_assessment(request: Request, body: StartAssessmentRequest) -> As
     job_id = uuid7()
     reviewer = get_reviewer(request)
     ledger = get_audit_ledger(request)
+
     def audit_append(
         conn: object,
         *,
@@ -57,15 +97,17 @@ async def start_assessment(request: Request, body: StartAssessmentRequest) -> As
         )
 
     try:
+        outcome_state, reason_code, certainty, control_id = _run_pack_assessment(body)
         with tenant_transaction(settings.database_url, auth.tenant_id) as conn:
             finding_id = reviewer.create_finding(
                 conn,
                 tenant_id=auth.tenant_id,
                 ai_system_id=body.ai_system_id,
-                control_id=f"ASSESS-{body.pack_slug}",
+                control_id=control_id,
                 lifecycle_state=LifecycleState.DRAFT_AUTO,
-                outcome_state="not_met",
-                certainty_index=0.82,
+                outcome_state=outcome_state,
+                certainty_index=certainty,
+                reason_code=reason_code,
             )
             audit_append(
                 conn,
@@ -74,7 +116,11 @@ async def start_assessment(request: Request, body: StartAssessmentRequest) -> As
                 action="assessment.started",
                 resource_type="assessment_job",
                 resource_id=job_id,
-                payload={"pack_slug": body.pack_slug, "finding_id": str(finding_id)},
+                payload={
+                    "pack_slug": body.pack_slug,
+                    "finding_id": str(finding_id),
+                    "outcome_state": outcome_state,
+                },
             )
     except Exception as exc:
         return problem_response(
@@ -83,7 +129,14 @@ async def start_assessment(request: Request, body: StartAssessmentRequest) -> As
             detail=str(exc),
         )
 
-    job = AssessmentJob(id=job_id, status="completed", finding_id=finding_id)
+    job = AssessmentJob(
+        id=job_id,
+        status="completed",
+        finding_id=finding_id,
+        outcome_state=outcome_state,
+        reason_code=reason_code,
+        certainty_index=certainty,
+    )
     _jobs[str(job_id)] = job.model_dump()
     return job
 

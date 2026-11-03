@@ -98,6 +98,14 @@ jobs:
           uv run pytest -q tests/integration tests/trl5 services
           --junitxml=artifacts/junit-integration.xml
 
+      - name: T-26 security suite (Semgrep, ZAP, Schemathesis)
+        env:
+          CLEARTRACE_DATABASE_URL: postgresql+psycopg://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace
+          CLEARTRACE_DEV_SKIP_AUTH: "true"
+          CLEARTRACE_DEV_AUTH_TOKEN: t26-security-suite-token
+          CLEARTRACE_CI: "1"
+        run: bash scripts/ci_security_suite.sh
+
       - name: TRL 5 report
         run: uv run python tools/trl5_report.py --junit-unit artifacts/junit-unit.xml --junit-integration artifacts/junit-integration.xml
 

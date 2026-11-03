@@ -1,0 +1,494 @@
+[
+  {
+    "id": "shipped-mixed-00",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-01",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "shipped-mixed-02",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-03",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-04",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-05",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-06",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-07",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-08",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-09",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-10",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-11",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "shipped-mixed-12",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-13",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-14",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-15",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-16",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-17",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-18",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-19",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-20",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-21",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "shipped-mixed-22",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "shipped-mixed-23",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-24",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-25",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "shipped-mixed-26",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-27",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-28",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "shipped-mixed-29",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "system": {
+      "planned_production_use": true
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-01-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  }
+]
