@@ -57,7 +57,7 @@ def _restore_super_dsn() -> str:
 
 
 def test_t05_pg_dump_restore_and_object_store() -> None:
-    """Real pg_dump/pg_restore to a second cluster data directory (same VM, not a separate physical node)."""
+    """pg_dump/pg_restore into a second local Postgres data directory (same VM)."""
     br = _backup_restore_module()
     app_dsn = _app_dsn()
     source_super = _source_super_dsn()
