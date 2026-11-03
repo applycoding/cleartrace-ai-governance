@@ -47,13 +47,26 @@ def _app_dsn() -> str:
 
 def _source_super_dsn() -> str:
     return os.environ.get(
-        "CLEARTRACE_SUPER_DSN",
-        "postgresql://cleartrace_super@127.0.0.1:5432/cleartrace",
+        "CLEARTRACE_MIGRATOR_DSN",
+        "postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace",
+    )
+
+
+def _restore_admin_dsn() -> str:
+    """Admin DSN of the second Postgres cluster that receives the restore.
+
+    CI starts it as the Compose service ``postgres-restore`` and sets
+    CLEARTRACE_T05_RESTORE_ADMIN_DSN. Without it, a local cluster is created
+    with initdb on CLEARTRACE_T05_RESTORE_PORT.
+    """
+    return os.environ.get(
+        "CLEARTRACE_T05_RESTORE_ADMIN_DSN",
+        f"postgresql://cleartrace_super@127.0.0.1:{RESTORE_PORT}/postgres",
     )
 
 
 def _restore_super_dsn() -> str:
-    return f"postgresql://cleartrace_super@127.0.0.1:{RESTORE_PORT}/{RESTORE_DB}"
+    return _restore_admin_dsn().rsplit("/", maxsplit=1)[0] + f"/{RESTORE_DB}"
 
 
 def test_t05_pg_dump_restore_and_object_store() -> None:
@@ -81,10 +94,14 @@ def test_t05_pg_dump_restore_and_object_store() -> None:
     assert len(object_manifest) >= 1
     source_table_checksums = br.table_row_checksums(source_super)
 
+    roles_path = ARTIFACT_DIR / "roles.sql"
+    br.pg_dump_roles(source_super, roles_path)
     br.pg_dump_database(source_super, dump_path)
 
-    br.ensure_postgres_cluster(RESTORE_DATA, RESTORE_PORT)
-    restore_admin = f"postgresql://cleartrace_super@127.0.0.1:{RESTORE_PORT}/postgres"
+    if "CLEARTRACE_T05_RESTORE_ADMIN_DSN" not in os.environ:
+        br.ensure_postgres_cluster(RESTORE_DATA, RESTORE_PORT)
+    restore_admin = _restore_admin_dsn()
+    br.restore_roles(restore_admin, roles_path)
     br.drop_and_create_database(restore_admin, RESTORE_DB)
 
     start = time.perf_counter()

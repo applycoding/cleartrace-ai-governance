@@ -51,4 +51,19 @@ export CLEARTRACE_NATS_URL="nats://127.0.0.1:4222"
 export CLEARTRACE_NOTIFIER_DSN="postgresql://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace"
 export CLEARTRACE_MIGRATOR_DSN="postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace"
 
-echo "Integration stack ready (Postgres :5432, PgBouncer :6432, NATS :4222)."
+echo "Starting second Postgres cluster for the T-05 restore test (Compose, :5435)..."
+compose up -d postgres-restore
+for _ in $(seq 1 60); do
+  if compose exec -T postgres-restore pg_isready -U cleartrace_super -d postgres >/dev/null 2>&1; then
+    break
+  fi
+  sleep 2
+done
+if ! compose exec -T postgres-restore pg_isready -U cleartrace_super -d postgres >/dev/null 2>&1; then
+  echo "Restore Postgres did not become ready in time" >&2
+  compose logs postgres-restore
+  exit 1
+fi
+bash "$ROOT/scripts/wait_for_port.sh" 127.0.0.1 5435 60 1
+
+echo "Integration stack ready (Postgres :5432, PgBouncer :6432, NATS :4222, restore Postgres :5435)."

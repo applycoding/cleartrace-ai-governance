@@ -139,11 +139,55 @@ def table_row_checksums(dsn: str, tables: tuple[str, ...] = DATA_POLICY_TABLES) 
     return checksums
 
 
+def _pg_tool(name: str) -> str:
+    """Return a Postgres client tool, preferring PG_BIN so the client matches the server."""
+    pg_bin = os.environ.get("PG_BIN")
+    if pg_bin and (Path(pg_bin) / name).exists():
+        return str(Path(pg_bin) / name)
+    return name
+
+
+def pg_dump_roles(super_dsn: str, roles_path: Path) -> None:
+    """Dump cluster roles (global objects that pg_dump leaves out)."""
+    roles_path.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        [_pg_tool("pg_dumpall"), "--roles-only", "--no-role-passwords", "-f", str(roles_path),
+         f"--dbname={super_dsn}"],
+        check=True,
+        capture_output=True,
+    )
+
+
+def restore_roles(super_dsn: str, roles_path: Path) -> list[str]:
+    """Create the dumped roles that are missing on the restore cluster.
+
+    Each dumped ``CREATE ROLE`` is applied only when the role does not exist,
+    and its ``ALTER ROLE`` attributes are applied with it. Returns the roles created.
+    """
+    created: list[str] = []
+    statements = [
+        line.strip()
+        for line in roles_path.read_text(encoding="utf-8").splitlines()
+        if line.startswith(("CREATE ROLE ", "ALTER ROLE "))
+    ]
+    with psycopg.connect(super_dsn, autocommit=True) as conn, conn.cursor() as cur:
+        cur.execute("SELECT rolname FROM pg_roles")
+        existing = {row[0] for row in cur.fetchall()}
+        for statement in statements:
+            role = statement.split()[2].rstrip(";").strip('"')
+            if role in existing and role not in created:
+                continue
+            cur.execute(statement)
+            if statement.startswith("CREATE ROLE "):
+                created.append(role)
+    return created
+
+
 def pg_dump_database(super_dsn: str, dump_path: Path) -> None:
     dump_path.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(
         [
-            "pg_dump",
+            _pg_tool("pg_dump"),
             "--format=custom",
             "--no-owner",
             "--no-acl",
@@ -170,7 +214,7 @@ def drop_and_create_database(super_dsn: str, db_name: str) -> None:
 def pg_restore_database(super_dsn: str, db_name: str, dump_path: Path) -> None:
     target = super_dsn.rsplit("/", maxsplit=1)[0] + f"/{db_name}"
     subprocess.run(
-        ["pg_restore", "--no-owner", "--no-acl", f"--dbname={target}", str(dump_path)],
+        [_pg_tool("pg_restore"), "--no-owner", "--no-acl", f"--dbname={target}", str(dump_path)],
         check=True,
         capture_output=True,
     )
