@@ -9,6 +9,14 @@ import psycopg
 from psycopg import Connection, sql
 
 
+def libpq_dsn(dsn: str) -> str:
+    """Accept SQLAlchemy-style URLs (postgresql+psycopg://) and return a libpq URL."""
+    for prefix in ("postgresql+psycopg://", "postgres+psycopg://"):
+        if dsn.startswith(prefix):
+            return "postgresql://" + dsn[len(prefix) :]
+    return dsn
+
+
 @contextmanager
 def tenant_transaction(
     dsn: str,
@@ -17,7 +25,7 @@ def tenant_transaction(
     role: str = "cleartrace_app",
 ) -> Iterator[Connection[Any]]:
     """Open a transaction with tenant context for RLS (PgBouncer-safe SET LOCAL)."""
-    with psycopg.connect(dsn, autocommit=False, prepare_threshold=None) as conn:
+    with psycopg.connect(libpq_dsn(dsn), autocommit=False, prepare_threshold=None) as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT current_user")
             row = cur.fetchone()

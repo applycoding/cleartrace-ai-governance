@@ -72,7 +72,7 @@ def test_trl5_e2e_smoke_http_journey(client: TestClient, dsn: str) -> None:
 
     reg = client.post(
         "/api/v1/systems",
-        headers=_headers("system_owner", str(owner_id)),
+        headers={**_headers("system_owner", str(owner_id)), "Idempotency-Key": "e2e-system"},
         json={
             "system_key": "SYS-E2E-API",
             "name_en": "E2E system",
@@ -112,10 +112,11 @@ def test_trl5_e2e_smoke_http_journey(client: TestClient, dsn: str) -> None:
     evidence = client.post(
         "/api/v1/evidence",
         headers=_headers("system_owner", str(owner_id)),
-        data={"artefact_class": "assessment_records"},
+        data={"artefact_class": "evidence_reference"},
         files={"file": ("proof.txt", io.BytesIO(b"evidence"), "text/plain")},
     )
     assert evidence.status_code == 201
+    assert evidence.json()["authorized_submitter"] is True
 
     metric = list(catalogue_by_code().keys())[0]
     breach_value = catalogue_by_code()[metric].default_breach * 2
