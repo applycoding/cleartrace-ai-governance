@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check-i18n": "node scripts/check-i18n.mjs",
+    "mock-api": "node scripts/mock-api-server.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "15.1.0",
@@ -17,9 +20,12 @@
     "react-i18next": "15.4.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.1",
+    "@playwright/test": "1.49.1",
     "@types/node": "22.10.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
-    "typescript": "5.7.2"
+    "typescript": "5.7.2",
+    "yaml": "2.6.1"
   }
 }

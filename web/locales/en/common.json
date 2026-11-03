@@ -1,4 +1,59 @@
 {
-  "app.title": "ClearTrace",
-  "app.tagline": "AI governance with evidence, five-state outcomes, and bilingual reporting."
+  "app": {
+    "title": "ClearTrace",
+    "tagline": "AI governance for the public sector"
+  },
+  "nav": {
+    "register": "Register",
+    "frameworks": "Frameworks",
+    "findings": "Findings",
+    "review": "Review queue",
+    "evidence": "Evidence",
+    "risk": "Risk",
+    "audit": "Audit",
+    "admin": "Admin"
+  },
+  "actions": {
+    "switchLanguage": "Français",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "skipToMain": "Skip to main content"
+  },
+  "register": {
+    "heading": "System register",
+    "description": "Browse and register AI systems across the 15 categories.",
+    "empty": "No systems yet. Import from the GC AI Register or register manually."
+  },
+  "frameworks": {
+    "heading": "Frameworks",
+    "description": "Assigned frameworks and coverage for each system."
+  },
+  "findings": {
+    "heading": "Findings",
+    "description": "Assessment outcomes with five-state semantics."
+  },
+  "review": {
+    "heading": "Review queue",
+    "description": "Pending reviewer actions and separation of duties."
+  },
+  "evidence": {
+    "heading": "Evidence",
+    "description": "Artefacts, lineage and authorized submitters."
+  },
+  "risk": {
+    "heading": "Risk metrics",
+    "description": "Observations, baselines and binding breaches."
+  },
+  "audit": {
+    "heading": "Audit ledger",
+    "description": "Tamper-evident hash chain events."
+  },
+  "admin": {
+    "heading": "Administration",
+    "description": "Tenant settings, connectors and webhooks."
+  },
+  "home": {
+    "welcome": "Welcome to ClearTrace",
+    "cta": "Open the system register"
+  }
 }

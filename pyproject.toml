@@ -10,6 +10,8 @@ license = { text = "Apache-2.0" }
 members = [
   "packages/cleartrace-contracts",
   "services/core-api",
+  "services/notifier",
+  "services/reports",
   "db",
 ]
 
@@ -47,10 +49,10 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
-mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "db/src"]
+mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "services/notifier/src", "services/reports/src", "db/src"]
 
 [[tool.mypy.overrides]]
-module = ["cedarpy.*", "asyncpg.*"]
+module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*"]
 ignore_missing_imports = true
 
 [tool.bandit]
