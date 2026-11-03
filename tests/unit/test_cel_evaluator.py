@@ -5,7 +5,7 @@ from cleartrace_engine.cel_evaluator import CELEvaluationError, evaluate_cel
 
 
 def test_simple_applicability() -> None:
-    assert evaluate_cel("planned_production_use == True", {"planned_production_use": True}) is True
+    assert evaluate_cel("planned_production_use == true", {"planned_production_use": True}) is True
 
 
 def test_unknown_identifier_is_eval_error() -> None:
