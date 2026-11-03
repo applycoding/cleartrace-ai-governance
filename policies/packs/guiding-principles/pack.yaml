@@ -1,0 +1,27 @@
+slug: guiding-principles
+name_en: Guiding principles for responsible AI use
+name_fr: Principes directeurs pour l'utilisation responsable de l'IA
+obligation_type: guidance
+source_url_en: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/ai-ethics-responsibilities/principles.html
+source_url_fr: https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ai-ethics-responsibilities/principles.html
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: CA-AI-PRIN-01
+  clause_ref: Principle 1
+  title_en: Ensure AI use is guided, safe, and respects rights.
+  title_fr: Veiller à ce que l'IA soit encadrée, sûre et respectueuse des droits.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True
+- control_key: CA-AI-PRIN-02
+  clause_ref: Principle 2
+  title_en: Be transparent about when and how AI supports decisions.
+  title_fr: Être transparent quant au moment et à la façon dont l'IA appuie les décisions.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

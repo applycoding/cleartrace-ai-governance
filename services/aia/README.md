@@ -1,5 +1,3 @@
-# ClearTrace aia service
+# ClearTrace AIA service
 
-Part of the ClearTrace AI governance platform. See [docs/blueprint/BLUEPRINT.md](../../docs/blueprint/BLUEPRINT.md).
-
-This package is a stub for parallel build step; the core API exposes shared contracts in `packages/cleartrace-contracts`.
+Native scorer with parity against `canada-ca/aia-eia-js` commit **b625733** (MIT). See `ATTRIBUTION.md` and `tests/fixtures/aia/survey-enfr.b625733.json`.

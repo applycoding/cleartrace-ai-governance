@@ -1,0 +1,37 @@
+slug: dadm
+name_en: Directive on Automated Decision-Making
+name_fr: Directive sur la prise de décisions automatisées
+obligation_type: binding_policy
+source_url_en: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592
+source_url_fr: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: CA-DADM-6-1-1
+  clause_ref: 6.1.1
+  title_en: Complete an Algorithmic Impact Assessment before production.
+  title_fr: Réaliser une EIA avant la mise en production.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True
+- control_key: CA-DADM-6-3-7
+  clause_ref: 6.3.7
+  title_en: Obtain peer review appropriate to the impact level.
+  title_fr: Obtenir un examen par les pairs adapté au niveau d'incidence.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True
+- control_key: CA-DADM-APP-C-03
+  clause_ref: Appendix C row 3
+  title_en: Level III requires qualified expert peer review of the system and AIA.
+  title_fr: Le niveau III exige un examen par des experts qualifiés du système et
+    de l'EIA.
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

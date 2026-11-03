@@ -1,0 +1,18 @@
+slug: iso42001-ids
+name_en: ISO/IEC 42001:2023 (identifiers only)
+name_fr: ISO/IEC 42001:2023 (identifiants seulement)
+obligation_type: voluntary
+source_url_en: https://www.iso.org/standard/42001.html
+source_url_fr: https://www.iso.org/standard/42001.html
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: ISO-42001-AI-POLICY
+  clause_ref: Clause 5
+  title_en: Document an AI policy commitment (customer licensed text).
+  title_fr: Documenter une politique IA (texte sous licence client).
+  remediation_en: Collect evidence mapped to this clause and obtain human review where
+    required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
+    révision humaine si requis.
+  applicability_expr: planned_production_use == True

@@ -9,6 +9,8 @@ dependencies = [
   "cleartrace-db",
   "cleartrace-evidence",
   "cleartrace-audit",
+  "cleartrace-engine",
+  "cleartrace-aia",
   "fastapi>=0.115",
   "uvicorn[standard]>=0.32",
   "httpx>=0.28",
@@ -24,6 +26,8 @@ cleartrace-contracts = { workspace = true }
 cleartrace-db = { workspace = true }
 cleartrace-evidence = { workspace = true }
 cleartrace-audit = { workspace = true }
+cleartrace-engine = { workspace = true }
+cleartrace-aia = { workspace = true }
 
 [project.scripts]
 cleartrace-api = "cleartrace_core_api.main:run"

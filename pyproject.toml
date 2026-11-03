@@ -14,6 +14,8 @@ members = [
   "services/audit",
   "services/notifier",
   "services/reports",
+  "services/engine",
+  "services/aia",
   "db",
 ]
 
@@ -46,7 +48,10 @@ src = ["packages", "services", "db", "tests", "tools"]
 "db/migrations/**" = ["E501"]
 "services/audit/**" = ["E501"]
 "services/evidence/**" = ["E501"]
-"tests/trl5/**" = ["E501"]
+"tests/trl5/**" = ["E501", "B007"]
+"tests/unit/test_engine_reducer.py" = ["E501"]
+"tests/unit/test_aia_scorer.py" = ["E501"]
+"tools/generate_t13_golden.py" = ["E501", "E402"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
@@ -56,7 +61,17 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
-mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "services/evidence/src", "services/audit/src", "services/notifier/src", "services/reports/src", "db/src"]
+mypy_path = [
+  "packages/cleartrace-contracts/src",
+  "services/core-api/src",
+  "services/engine/src",
+  "services/aia/src",
+  "services/evidence/src",
+  "services/audit/src",
+  "services/notifier/src",
+  "services/reports/src",
+  "db/src",
+]
 
 [[tool.mypy.overrides]]
 module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*", "nats.*"]
