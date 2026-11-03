@@ -153,7 +153,7 @@ def _measurement(test_id: str, outcome: Outcome | None) -> str:
         text = "No test case for this ID in the CI JUnit results."
     else:
         text = (
-            f"JUnit: {outcome.passed} passed, {outcome.failed} failed, "
+            f"JUnit case runs: {outcome.passed} passed, {outcome.failed} failed, "
             f"{outcome.skipped} skipped/xfailed ({outcome.seconds:.2f}s)."
         )
     return f"{text} {note}".strip()
@@ -213,10 +213,12 @@ def build_report(*, junit_paths: list[Path], run_id: str, run_url: str, commit: 
         "",
         f"Source: JUnit XML from CI {source}, commit `{commit}`.",
         "",
-        "A test ID is **pass** only when every JUnit case from its test module ran and passed and the "
-        "suite covers the full section 18 criterion. **partial** means the cases ran and passed (or "
-        "were xfailed by design) but the suite does not yet cover the whole criterion. "
-        "**not covered** and **deferred** have no test.",
+        "A test ID is **pass** only when every JUnit case from its test module ran and passed and "
+        "the review of that suite against section 18 found no coverage gap. **partial** means the "
+        "cases ran and passed (or were xfailed by design) but the suite does not yet cover the "
+        "whole criterion. **not covered** and **deferred** have no test. Counts are case runs "
+        "summed over the unit and integration CI stages; modules without the integration marker "
+        "run in both stages, so their cases are counted twice.",
         "",
         f"Summary: {summary}.",
         "",
