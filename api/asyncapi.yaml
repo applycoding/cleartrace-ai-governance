@@ -1,0 +1,31 @@
+asyncapi: 3.0.0
+info:
+  title: ClearTrace NATS events
+  version: 0.1.0
+  description: CloudEvents 1.0 on NATS JetStream (blueprint section 10.1).
+channels:
+  tenant.{tenantId}.register.system_updated:
+    address: tenant.{tenantId}.register.system_updated
+    messages:
+      systemUpdated:
+        payload:
+          type: object
+          description: CloudEvents envelope for register changes
+  tenant.{tenantId}.assessment.completed:
+    address: tenant.{tenantId}.assessment.completed
+    messages:
+      assessmentCompleted:
+        payload:
+          type: object
+  tenant.{tenantId}.policy.amendment.impact:
+    address: tenant.{tenantId}.policy.amendment.impact
+    messages:
+      policyImpact:
+        payload:
+          type: object
+  tenant.{tenantId}.audit.event_appended:
+    address: tenant.{tenantId}.audit.event_appended
+    messages:
+      auditAppended:
+        payload:
+          type: object

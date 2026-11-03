@@ -1,0 +1,21 @@
+[project]
+name = "cleartrace-db"
+version = "0.1.0"
+description = "ClearTrace database migrations and helpers"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "alembic>=1.14",
+  "psycopg[binary,pool]>=3.2",
+  "uuid6>=2024.7",
+]
+
+[project.scripts]
+cleartrace-migrate = "cleartrace_db.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleartrace_db"]

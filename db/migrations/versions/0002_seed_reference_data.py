@@ -1,0 +1,72 @@
+"""Seed cells, tenants, roles for local and test environments."""
+
+from __future__ import annotations
+
+from alembic import op
+
+revision = "0002_seed"
+down_revision = "0001_initial"
+branch_labels = None
+depends_on = None
+
+TENANTS = [
+    ("11111111-1111-7111-8111-111111111101", "tenant-alpha", "Alpha Department", "Ministère Alpha"),
+    ("11111111-1111-7111-8111-111111111102", "tenant-beta", "Beta Department", "Ministère Beta"),
+    ("11111111-1111-7111-8111-111111111103", "tenant-gamma", "Gamma Department", "Ministère Gamma"),
+]
+
+CELL = (
+    "22222222-2222-7222-8222-222222222222",
+    "ca-onprem-ssc",
+    "SSC on-premises cell",
+    "Cellule SSC sur site",
+    "CA",
+)
+
+ROLES = [
+    ("platform_operator", "Platform operator", "Opérateur de plateforme"),
+    ("tenant_admin", "Tenant admin", "Administrateur locataire"),
+    ("policy_steward", "Policy steward", "Gestionnaire des politiques"),
+    ("system_owner", "System owner", "Propriétaire du système"),
+    ("assessor", "Assessor", "Évaluateur"),
+    ("oversight_reviewer", "Oversight reviewer", "Réviseur de surveillance"),
+    ("approver", "Approver", "Approbateur"),
+    ("auditor", "Auditor", "Auditeur"),
+    ("read_only_viewer", "Read-only viewer", "Lecteur seul"),
+]
+
+
+def upgrade() -> None:
+    op.execute(
+        f"""
+        INSERT INTO cell (id, slug, name_en, name_fr, jurisdiction)
+        VALUES ('{CELL[0]}', '{CELL[1]}', '{CELL[2]}', '{CELL[3]}', '{CELL[4]}')
+        ON CONFLICT DO NOTHING;
+        """
+    )
+    for tid, slug, en, fr in TENANTS:
+        op.execute(
+            f"""
+            INSERT INTO tenant (id, slug, name_en, name_fr)
+            VALUES ('{tid}', '{slug}', '{en}', '{fr}')
+            ON CONFLICT DO NOTHING;
+            INSERT INTO tenant_cell_binding (tenant_id, cell_id)
+            VALUES ('{tid}', '{CELL[0]}')
+            ON CONFLICT DO NOTHING;
+            """
+        )
+    for code, en, fr in ROLES:
+        op.execute(
+            f"""
+            INSERT INTO app_role (id, code, name_en, name_fr)
+            VALUES (gen_random_uuid(), '{code}', '{en}', '{fr}')
+            ON CONFLICT (code) DO NOTHING;
+            """
+        )
+
+
+def downgrade() -> None:
+    op.execute("DELETE FROM tenant_cell_binding")
+    op.execute("DELETE FROM tenant")
+    op.execute("DELETE FROM cell")
+    op.execute("DELETE FROM app_role")

@@ -1,0 +1,180 @@
+from __future__ import annotations
+
+import time
+from typing import Any
+from uuid import UUID
+
+import httpx
+import jwt
+from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
+from cleartrace_core_api.auth.context import AuthContext
+from cleartrace_core_api.config import Settings
+from cleartrace_core_api.errors import problem_response
+from fastapi import Request
+from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
+from starlette.responses import Response
+
+
+class _JwksCache:
+    def __init__(self) -> None:
+        self._keys: dict[str, Any] | None = None
+        self._fetched_at: float = 0.0
+
+    async def get_keys(self, url: str) -> dict[str, Any]:
+        if self._keys and time.time() - self._fetched_at < 300:
+            return self._keys
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            resp = await client.get(url)
+            resp.raise_for_status()
+            self._keys = resp.json()
+            self._fetched_at = time.time()
+            return self._keys
+
+
+_jwks_cache = _JwksCache()
+
+
+def _tenant_from_claims(claims: dict[str, Any]) -> UUID:
+    raw = claims.get("tenant_id") or claims.get("cleartrace_tenant_id")
+    if not raw:
+        raise ValueError("tenant_id missing from token")
+    return UUID(str(raw))
+
+
+def _roles_from_claims(claims: dict[str, Any]) -> frozenset[str]:
+    realm = claims.get("realm_access") or {}
+    roles = set(realm.get("roles") or [])
+    resource = claims.get("resource_access") or {}
+    for entry in resource.values():
+        roles.update(entry.get("roles") or [])
+    extra = claims.get("cleartrace_roles") or []
+    roles.update(extra)
+    return frozenset(str(r) for r in roles)
+
+
+async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
+    if settings.dev_skip_auth and token == "dev":
+        return AuthContext(
+            subject="dev-user",
+            tenant_id=UUID("11111111-1111-7111-8111-111111111101"),
+            roles=frozenset({"tenant_admin"}),
+            org_unit=None,
+            raw_claims={},
+        )
+    jwks = await _jwks_cache.get_keys(settings.keycloak_jwks_url)
+    header = jwt.get_unverified_header(token)
+    kid = header.get("kid")
+    key_data = next((k for k in jwks.get("keys", []) if k.get("kid") == kid), None)
+    if key_data is None:
+        raise jwt.InvalidTokenError("unknown signing key")
+    public_key = jwt.algorithms.RSAAlgorithm.from_jwk(key_data)
+    claims = jwt.decode(
+        token,
+        public_key,  # type: ignore[arg-type]
+        algorithms=["RS256"],
+        audience=settings.keycloak_audience,
+        issuer=settings.keycloak_issuer,
+    )
+    tenant_id = _tenant_from_claims(claims)
+    roles = _roles_from_claims(claims)
+    return AuthContext(
+        subject=str(claims.get("sub")),
+        tenant_id=tenant_id,
+        roles=roles,
+        org_unit=claims.get("org_unit"),
+        raw_claims=claims,
+    )
+
+
+class AuthContextMiddleware(BaseHTTPMiddleware):
+    """Validate OIDC bearer tokens and attach tenant context."""
+
+    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
+        settings: Settings = request.app.state.settings
+        if request.url.path in {"/api/v1/health", "/api/v1/openapi.json", "/api/v1/docs"}:
+            return await call_next(request)
+        auth = request.headers.get("Authorization", "")
+        if not auth.startswith("Bearer "):
+            return problem_response(
+                status=401,
+                title="Unauthorized",
+                detail="Bearer token required",
+                type_uri="https://cleartrace.local/problems/unauthorized",
+            )
+        token = auth.removeprefix("Bearer ").strip()
+        try:
+            ctx = await decode_bearer_token(settings, token)
+        except Exception as exc:
+            return problem_response(
+                status=401,
+                title="Unauthorized",
+                detail=str(exc),
+                type_uri="https://cleartrace.local/problems/unauthorized",
+            )
+        request.state.auth = ctx
+        return await call_next(request)
+
+
+class CedarAuthMiddleware(BaseHTTPMiddleware):
+    """Deny requests that fail Cedar authorization for the route action."""
+
+    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
+        if request.url.path in {"/api/v1/health", "/api/v1/openapi.json", "/api/v1/docs"}:
+            return await call_next(request)
+        auth: AuthContext | None = getattr(request.state, "auth", None)
+        if auth is None:
+            return problem_response(
+                status=401,
+                title="Unauthorized",
+                detail="Missing auth context",
+                type_uri="https://cleartrace.local/problems/unauthorized",
+            )
+        authorizer: CedarAuthorizer = request.app.state.cedar_authorizer
+        action = _action_for_request(request)
+        principal = {
+            "type": "ClearTrace::User",
+            "id": auth.subject,
+            "attrs": {
+                "tenant_id": str(auth.tenant_id),
+                "roles": sorted(auth.roles),
+                "org_unit": auth.org_unit or "",
+            },
+        }
+        resource = {
+            "type": "ClearTrace::Api",
+            "id": request.url.path,
+            "attrs": {"tenant_id": str(auth.tenant_id)},
+        }
+        if not authorizer.is_authorized(
+            principal=principal,
+            action=action,
+            resource=resource,
+            context={
+                "tenant_id": str(auth.tenant_id),
+                "roles": sorted(auth.roles),
+            },
+        ):
+            return problem_response(
+                status=403,
+                title="Forbidden",
+                detail="Cedar policy denied this action",
+                type_uri="https://cleartrace.local/problems/forbidden",
+            )
+        return await call_next(request)
+
+
+def _action_for_request(request: Request) -> str:
+    path = request.url.path
+    method = request.method.upper()
+    if path.startswith("/api/v1/systems"):
+        if method == "GET":
+            return "view_system"
+        if method == "POST":
+            return "create_system"
+        if method == "PATCH":
+            return "update_system"
+    if path.startswith("/api/v1/admin"):
+        return "admin"
+    if path == "/api/v1/health":
+        return "health"
+    return "view_dashboard"

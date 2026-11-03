@@ -1,0 +1,34 @@
+{
+  "ClearTrace": {
+    "entityTypes": {
+      "User": {
+        "memberOfTypes": [],
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "tenant_id": { "type": "String", "required": true },
+            "roles": { "type": "Set", "element": { "type": "String" }, "required": true },
+            "org_unit": { "type": "String", "required": true }
+          }
+        }
+      },
+      "Api": {
+        "memberOfTypes": [],
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "tenant_id": { "type": "String", "required": true }
+          }
+        }
+      }
+    },
+    "actions": {
+      "view_dashboard": {},
+      "view_system": {},
+      "create_system": {},
+      "update_system": {},
+      "admin": {},
+      "health": {}
+    }
+  }
+}

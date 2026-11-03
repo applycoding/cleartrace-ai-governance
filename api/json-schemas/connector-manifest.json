@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cleartrace.local/schemas/connector-manifest.json",
+  "title": "ClearTrace connector manifest",
+  "type": "object",
+  "required": ["name", "version", "direction", "scopes", "field_mapping"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "direction": { "type": "string", "enum": ["pull", "push", "both"] },
+    "scopes": { "type": "array", "items": { "type": "string" } },
+    "schedule": { "type": "string" },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "host": { "type": "string" },
+          "port": { "type": "integer" }
+        }
+      }
+    },
+    "field_mapping": {
+      "type": "object",
+      "description": "Maps source fields to the 15 governance categories"
+    },
+    "source_tiers": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 3 }
+    }
+  }
+}
