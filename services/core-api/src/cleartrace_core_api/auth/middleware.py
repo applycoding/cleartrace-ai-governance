@@ -64,12 +64,17 @@ def _dev_roles_from_request(request: Request) -> frozenset[str] | None:
     return frozenset(parts) if parts else None
 
 
-async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
-    if (
+def is_dev_token(settings: Settings, token: str) -> bool:
+    """Dev auth needs dev_skip_auth AND a non-empty CLEARTRACE_DEV_AUTH_TOKEN that matches."""
+    return bool(
         settings.dev_skip_auth
         and settings.dev_auth_token
         and secrets.compare_digest(token, settings.dev_auth_token)
-    ):
+    )
+
+
+async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
+    if is_dev_token(settings, token):
         return AuthContext(
             subject="dev-user",
             tenant_id=settings.dev_tenant_id,
@@ -133,7 +138,7 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
                 detail=str(exc),
                 type_uri="https://cleartrace.local/problems/unauthorized",
             )
-        if settings.dev_skip_auth:
+        if is_dev_token(settings, token):
             dev_roles = _dev_roles_from_request(request)
             raw_claims = dict(ctx.raw_claims)
             principal = request.headers.get("X-ClearTrace-Dev-Principal", "").strip()

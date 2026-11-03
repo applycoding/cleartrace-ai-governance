@@ -4,10 +4,9 @@
 from __future__ import annotations
 
 import argparse
-import subprocess
+import os
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
-from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,18 +47,30 @@ CRITERIA: dict[str, tuple[str, str, str]] = {
 }
 # fmt: on
 
+# Tests whose suite exists and can pass in CI but does not yet exercise the full
+# section 18 pass criterion. A green run for these is reported as "partial".
+PARTIAL_NOTES: dict[str, str] = {
+    "T-03": "Exports and validates 2 dossiers but checks 10 findings, not 50/50 outcome states.",
+    "T-05": "Restore target is a second Postgres container on the same CI runner, not a clean node.",
+    "T-06": "Audits 60 denials and 60 privileged reads; the 600 allowed + 600 forbidden matrix across 3 tenants and 6 roles is not run.",
+    "T-08": "Automated 40/40 non-conformities pass; the 140 explanation pairs await two human reviewers (xfail by design).",
+    "T-11": "Only bounds and EN/FR bands of certainty index v0 are asserted; coverage, selective accuracy and ECE on adjudicated EN/FR findings are not measured, so the index is reported as uncalibrated with no accuracy figures.",
+    "T-13": "250 cases with 50 per state and 30 critical-fail + missing-evidence cases pass, but they are 6 scenario templates repeated through a test-only Rego pack; 30 distinct mixed cases and rule-only replay are not covered.",
+    "T-18": "Each dimension repeats one fixed synthetic input 50 times; no public set and no varied seeded degradations.",
+    "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
+    "T-20": "Automated i18n checks only; human language review sheet intentionally blank.",
+    "T-23": "Edit, delete, reorder and truncate detected; the exposure window is not asserted.",
+    "T-28": "Repository SBOM and licence gate only; shipped container images are not inventoried.",
+}
+
 NOT_COVERED_NOTES: dict[str, str] = {
-    "T-05": "Same-VM restore target not fully exercised in CI; integration test records checksums only.",
-    "T-08": "Automated suite seeds manifest; dual human reviewer sheet stays blank pending G0 sign-off.",
-    "T-19": "Second environment install and cosign image signing not run in CI.",
-    "T-20": "Automated i18n checks only; human language review columns intentionally blank.",
-    "T-21": "Multi-tenant concurrent policy test not implemented.",
-    "T-24": "Deferred unless LLM evidence pilot is enabled.",
-    "T-25": "Deferred to contract period; unit coverage on outbox idempotency only.",
-    "T-26": "Security suite mapping incomplete in this repository snapshot.",
-    "T-27": "Deferred performance scale test.",
-    "T-29": "Reduced-scope leak test not implemented at 1,000 tx.",
-    "T-30": "Deterministic replay deferred for LLM branches.",
+    "T-21": "Three-tenant concurrent policy and per-tenant rate-limit test not implemented.",
+    "T-24": "Runs only if the LLM evidence pilot runs; not implemented.",
+    "T-25": "Deferred to the contract period (section 18); mechanism unit-tested.",
+    "T-26": "Security suite (DAST, API fuzzing, ASVS L2 mapping) not implemented; CI has Bandit and Trivy only.",
+    "T-27": "Deferred to the contract period (section 18).",
+    "T-29": "Cross-tenant leak test over pooled connections at 1,000 transactions not implemented.",
+    "T-30": "Deferred for LLM parts (section 18); rule-only replay not tested separately.",
 }
 
 
@@ -72,73 +83,83 @@ class JunitCase:
     skipped: bool
 
 
+@dataclass(frozen=True)
+class Outcome:
+    passed: int
+    failed: int
+    skipped: int
+    seconds: float
+
+    @property
+    def ran(self) -> int:
+        return self.passed + self.failed
+
+
 def _parse_junit(path: Path) -> list[JunitCase]:
     if not path.is_file():
-        return []
+        raise FileNotFoundError(f"JUnit file not found: {path}")
     root = ET.fromstring(path.read_text(encoding="utf-8"))
     cases: list[JunitCase] = []
-    for suite in root.iter("testsuite"):
-        for case in suite.iter("testcase"):
-            failed = case.find("failure") is not None or case.find("error") is not None
-            skipped = case.find("skipped") is not None
-            cases.append(
-                JunitCase(
-                    classname=str(case.get("classname", "")),
-                    name=str(case.get("name", "")),
-                    time=float(case.get("time", "0") or 0),
-                    failed=failed,
-                    skipped=skipped,
-                )
+    for case in root.iter("testcase"):
+        failed = case.find("failure") is not None or case.find("error") is not None
+        skipped = case.find("skipped") is not None
+        cases.append(
+            JunitCase(
+                classname=str(case.get("classname", "")),
+                name=str(case.get("name", "")),
+                time=float(case.get("time", "0") or 0),
+                failed=failed,
+                skipped=skipped and not failed,
             )
+        )
     return cases
 
 
-def _git_sha() -> str:
-    try:
-        out = subprocess.check_output(
-            ["git", "rev-parse", "HEAD"],
-            cwd=ROOT,
-            text=True,
-        )
-        return out.strip()
-    except (OSError, subprocess.CalledProcessError):
-        return "unknown"
+def _module_of(case: JunitCase) -> str:
+    return case.classname.split(".")[-1] if case.classname else ""
 
 
-def _match_test(path_hint: str, cases: list[JunitCase]) -> JunitCase | None:
+def _outcome_for(path_hint: str, cases: list[JunitCase]) -> Outcome | None:
     if path_hint == "not_implemented":
         return None
     stem = Path(path_hint).stem
-    for case in cases:
-        if stem in case.classname or stem in case.name:
-            return case
-    return None
+    matched = [c for c in cases if _module_of(c) == stem or c.classname.endswith(f".{stem}")]
+    if not matched:
+        return None
+    return Outcome(
+        passed=sum(1 for c in matched if not c.failed and not c.skipped),
+        failed=sum(1 for c in matched if c.failed),
+        skipped=sum(1 for c in matched if c.skipped),
+        seconds=sum(c.time for c in matched),
+    )
 
 
-def _status_for(test_id: str, case: JunitCase | None) -> str:
-    hint = CRITERIA[test_id][2]
+def status_for(test_id: str, outcome: Outcome | None) -> str:
+    tier, _criterion, hint = CRITERIA[test_id]
     if hint == "not_implemented":
-        return "not covered"
-    if case is None:
-        return "pending"
-    if case.skipped:
-        return "pending"
-    if case.failed:
+        return "deferred" if tier == "D" else "not covered"
+    if outcome is None or outcome.ran == 0:
+        return "not run"
+    if outcome.failed:
         return "fail"
+    if outcome.skipped or test_id in PARTIAL_NOTES:
+        return "partial"
     return "pass"
 
 
-def _measurement(case: JunitCase | None) -> str:
-    if case is None:
-        return "No JUnit result captured for this run."
-    if case.skipped:
-        return "Skipped in pytest output."
-    if case.failed:
-        return f"Failed: {case.classname}::{case.name}"
-    return f"Passed in {case.time:.2f}s ({case.classname}::{case.name})"
+def _measurement(test_id: str, outcome: Outcome | None) -> str:
+    note = PARTIAL_NOTES.get(test_id) or NOT_COVERED_NOTES.get(test_id, "")
+    if outcome is None:
+        text = "No test case for this ID in the CI JUnit results."
+    else:
+        text = (
+            f"JUnit: {outcome.passed} passed, {outcome.failed} failed, "
+            f"{outcome.skipped} skipped/xfailed ({outcome.seconds:.2f}s)."
+        )
+    return f"{text} {note}".strip()
 
 
-def _render_table(cases: list[JunitCase], *, lang: str) -> str:
+def _render_table(cases: list[JunitCase], *, lang: str, commit: str, run_label: str) -> str:
     headers_en = (
         "| Test | Tier | Pass criterion (summary) | Measured result | Status | "
         "Environment | Commit | Tester | Job title | Witness | Date |"
@@ -150,57 +171,71 @@ def _render_table(cases: list[JunitCase], *, lang: str) -> str:
     header = headers_fr if lang == "fr" else headers_en
     sep = "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"
     lines = [header, sep]
-    commit = _git_sha()
-    env = "GitHub Actions CI (simulated GoC stack)" if lang == "en" else "CI GitHub Actions (pile GoC simulée)"
+    env = f"GitHub Actions CI, {run_label}" if lang == "en" else f"CI GitHub Actions, {run_label}"
     for test_id in sorted(CRITERIA.keys()):
         tier, criterion, hint = CRITERIA[test_id]
-        case = _match_test(hint, cases)
-        status = _status_for(test_id, case)
-        note = NOT_COVERED_NOTES.get(test_id, "")
-        measurement = _measurement(case)
-        if note and status in {"not covered", "pending", "pass"}:
-            measurement = f"{measurement} Note: {note}"
+        outcome = _outcome_for(hint, cases)
+        status = status_for(test_id, outcome)
+        if lang == "fr":
+            status = STATUS_FR[status]
         lines.append(
-            f"| {test_id} | {tier} | {criterion} | {measurement} | {status} | "
-            f"{env} | `{commit}` | | | | |"
+            f"| {test_id} | {tier} | {criterion} | {_measurement(test_id, outcome)} | {status} | "
+            f"{env} | `{commit[:12]}` | | | | |"
         )
     return "\n".join(lines)
 
 
-def build_report(*, junit_paths: list[Path]) -> str:
+STATUS_FR = {
+    "pass": "réussi",
+    "partial": "partiel",
+    "fail": "échec",
+    "not run": "non exécuté",
+    "not covered": "non couvert",
+    "deferred": "reporté",
+}
+
+
+def build_report(*, junit_paths: list[Path], run_id: str, run_url: str, commit: str) -> str:
     cases: list[JunitCase] = []
     for path in junit_paths:
         cases.extend(_parse_junit(path))
-    generated = datetime.now(tz=UTC).strftime("%Y-%m-%d %H:%M UTC")
+    if not cases:
+        raise ValueError("no JUnit test cases found; refusing to write an empty report")
+    run_label = f"run {run_id}" if run_id else "local run (no CI run id)"
+    counts: dict[str, int] = {}
+    for test_id in CRITERIA:
+        status = status_for(test_id, _outcome_for(CRITERIA[test_id][2], cases))
+        counts[status] = counts.get(status, 0) + 1
+    summary = ", ".join(f"{k}: {v}" for k, v in sorted(counts.items()))
+    source = f"[{run_label}]({run_url})" if run_url else run_label
     en = [
         "# TRL 5 test report (English)",
         "",
-        f"Generated: {generated}. Commit `{_git_sha()}`.",
+        f"Source: JUnit XML from CI {source}, commit `{commit}`.",
+        "",
+        "A test ID is **pass** only when every JUnit case from its test module ran and passed and the "
+        "suite covers the full section 18 criterion. **partial** means the cases ran and passed (or "
+        "were xfailed by design) but the suite does not yet cover the whole criterion. "
+        "**not covered** and **deferred** have no test.",
+        "",
+        f"Summary: {summary}.",
         "",
         "Tester name, job title, witness and date columns are left blank for manual completion.",
         "",
-        _render_table(cases, lang="en"),
+        _render_table(cases, lang="en", commit=commit, run_label=run_label),
         "",
-        "## Not yet fully met (honest status)",
+        "---",
+        "",
+        "# Rapport de tests TRL 5 (français)",
+        "",
+        f"Source : JUnit XML de la CI {source}, commit `{commit}`.",
+        "",
+        "Les notes de mesure restent en anglais (sortie brute de la CI). Les colonnes testeur, titre "
+        "de poste, témoin et date restent vides pour saisie manuelle.",
+        "",
+        _render_table(cases, lang="fr", commit=commit, run_label=run_label),
         "",
     ]
-    for test_id, note in sorted(NOT_COVERED_NOTES.items()):
-        en.append(f"- **{test_id}**: {note}")
-    en.extend(
-        [
-            "",
-            "---",
-            "",
-            "# Rapport de tests TRL 5 (français)",
-            "",
-            f"Généré : {generated}. Commit `{_git_sha()}`.",
-            "",
-            "Les colonnes testeur, titre de poste, témoin et date restent vides pour saisie manuelle.",
-            "",
-            _render_table(cases, lang="fr"),
-            "",
-        ]
-    )
     return "\n".join(en) + "\n"
 
 
@@ -209,10 +244,18 @@ def main() -> int:
     parser.add_argument("--junit-unit", type=Path, default=None)
     parser.add_argument("--junit-integration", type=Path, default=None)
     parser.add_argument("--output", type=Path, default=REPORT_PATH)
+    parser.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID", ""))
+    parser.add_argument("--commit", default=os.environ.get("GITHUB_SHA", "unknown"))
+    parser.add_argument("--run-url", default="")
     args = parser.parse_args()
+    run_url = args.run_url
+    if not run_url and args.run_id and os.environ.get("GITHUB_REPOSITORY"):
+        server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+        run_url = f"{server}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{args.run_id}"
     paths = [p for p in (args.junit_unit, args.junit_integration) if p]
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(build_report(junit_paths=paths), encoding="utf-8")
+    report = build_report(junit_paths=paths, run_id=args.run_id, run_url=run_url, commit=args.commit)
+    args.output.write_text(report, encoding="utf-8")
     print(f"wrote {args.output}")
     return 0
 

@@ -29,6 +29,11 @@ spec:
             - name: http
               containerPort: 8080
           env:
+            # Dev auth is never available in a Helm deployment: these are fixed, not values.
+            - name: CLEARTRACE_DEV_SKIP_AUTH
+              value: "false"
+            - name: CLEARTRACE_DEV_AUTH_TOKEN
+              value: ""
             - name: CLEARTRACE_RESIDENCY_CELL
               value: {{ .Values.residency.cellSlug | quote }}
             - name: CLEARTRACE_CLASSIFICATION_CEILING

@@ -105,7 +105,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: trl5-test-report
-          path: docs/trl5/TRL5_TEST_REPORT.md
+          path: |
+            docs/trl5/TRL5_TEST_REPORT.md
+            artifacts/junit-unit.xml
+            artifacts/junit-integration.xml
 
   web-shell:
     runs-on: ubuntu-latest
