@@ -1,3 +1,5 @@
+"""TRL 5 — T-22: alert delivery with webhook outages, duplicates and DLQ."""
+
 from __future__ import annotations
 
 import asyncio
@@ -24,6 +26,8 @@ from cleartrace_notifier.service import AlertDispatcher
 from cleartrace_notifier.webhook import SimulatedWebhookTransport
 from uuid6 import uuid7
 
+from tests.trl5._helpers import migrator_dsn, pg_dsn
+
 TENANT = UUID("11111111-1111-7111-8111-111111111101")
 OUTAGE_WEBHOOK_COUNT = 10
 ALERT_COUNT = 50
@@ -33,10 +37,8 @@ EXPECTED_DLQ = 50
 EXPECTED_TICKETS = 30
 
 
-def _reset_notifier_data(app_dsn: str) -> None:
-    port = os.environ.get("CLEARTRACE_PGPORT", "55434")
-    super_dsn = f"postgresql://cleartrace_super@127.0.0.1:{port}/cleartrace"
-    _ = app_dsn
+def _reset_notifier_data() -> None:
+    super_dsn = migrator_dsn()
     with psycopg.connect(super_dsn, autocommit=True) as conn, conn.cursor() as cur:
         cur.execute(
             """
@@ -49,11 +51,23 @@ def _reset_notifier_data(app_dsn: str) -> None:
 @pytest.fixture(scope="module")
 def nats_server() -> str:
     url = os.environ.get("CLEARTRACE_NATS_URL", "nats://127.0.0.1:4222")
+
+    if os.environ.get("CLEARTRACE_CI") == "1":
+        for _ in range(60):
+            try:
+                asyncio.run(_ping(url))
+                break
+            except Exception:
+                time.sleep(1)
+        else:
+            raise RuntimeError("NATS not reachable; ensure ci_compose_stack started nats service")
+        yield url
+        return
+
     if shutil.which("nats-server") is None:
         bin_dir = Path(__file__).resolve().parents[2] / ".data" / "nats"
         bin_dir.mkdir(parents=True, exist_ok=True)
-        binary = bin_dir / "nats-server"
-        if not binary.exists():
+        if not (bin_dir / "nats-server").exists():
             subprocess.run(
                 [
                     "curl",
@@ -106,16 +120,13 @@ async def _ping(url: str) -> None:
 
 @pytest.fixture(scope="module")
 def notifier_dsn() -> str:
-    return os.environ.get(
-        "CLEARTRACE_NOTIFIER_DSN",
-        "postgresql://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace",
-    )
+    return os.environ.get("CLEARTRACE_NOTIFIER_DSN") or pg_dsn()
 
 
 @pytest.mark.integration
 @pytest.mark.asyncio
 async def test_t22_alert_delivery(nats_server: str, notifier_dsn: str) -> None:
-    _reset_notifier_data(notifier_dsn)
+    _reset_notifier_data()
     store = PostgresNotificationStore(notifier_dsn)
     transport = SimulatedWebhookTransport()
     dispatcher = AlertDispatcher(store, transport)

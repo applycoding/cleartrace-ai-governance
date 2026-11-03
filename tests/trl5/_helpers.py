@@ -25,7 +25,7 @@ def pg_dsn() -> str:
 def migrator_dsn() -> str:
     return os.environ.get(
         "CLEARTRACE_MIGRATOR_DSN",
-        "postgresql://cleartrace_super@127.0.0.1:5433/cleartrace",
+        "postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace",
     )
 
 

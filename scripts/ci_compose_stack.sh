@@ -41,16 +41,14 @@ echo "Starting PgBouncer (Compose)..."
 compose up -d pgbouncer
 
 echo "Waiting for PgBouncer on 6432..."
-for _ in $(seq 1 60); do
-  if (echo >/dev/tcp/127.0.0.1/6432) 2>/dev/null; then
-    break
-  fi
-  sleep 1
-done
-if ! (echo >/dev/tcp/127.0.0.1/6432) 2>/dev/null; then
-  echo "PgBouncer did not listen on 6432 in time" >&2
-  compose logs pgbouncer
-  exit 1
-fi
+bash "$ROOT/scripts/wait_for_port.sh" 127.0.0.1 6432 60 1
 
-echo "Integration stack ready (Postgres :5432, PgBouncer :6432)."
+echo "Starting NATS JetStream (Compose)..."
+compose up -d nats
+bash "$ROOT/scripts/wait_for_port.sh" 127.0.0.1 4222 60 1
+
+export CLEARTRACE_NATS_URL="nats://127.0.0.1:4222"
+export CLEARTRACE_NOTIFIER_DSN="postgresql://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace"
+export CLEARTRACE_MIGRATOR_DSN="postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace"
+
+echo "Integration stack ready (Postgres :5432, PgBouncer :6432, NATS :4222)."

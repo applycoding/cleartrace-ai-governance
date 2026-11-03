@@ -29,6 +29,10 @@ def _reload_pgbouncer(root: Path) -> None:
             ["docker", "compose", "-f", str(root / COMPOSE_FILE), "restart", "pgbouncer"],
             cwd=root,
         )
+        subprocess.check_call(
+            ["bash", str(root / "scripts" / "wait_for_port.sh"), "127.0.0.1", "6432", "60", "1"],
+            cwd=root,
+        )
         return
     pidfile = root / ".data" / "pgbouncer.pid"
     if pidfile.exists():

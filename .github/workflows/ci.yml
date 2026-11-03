@@ -65,6 +65,8 @@ jobs:
           CLEARTRACE_DATABASE_URL: postgresql+psycopg://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace
           CLEARTRACE_MIGRATOR_DSN: postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace
           CLEARTRACE_TEST_DSN: postgresql://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace
+          CLEARTRACE_NOTIFIER_DSN: postgresql://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace
+          CLEARTRACE_NATS_URL: nats://127.0.0.1:4222
           CLEARTRACE_CI: "1"
         run: uv run pytest -q tests/integration tests/trl5 services
 
