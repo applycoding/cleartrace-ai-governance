@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import random
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
-from cleartrace_register.precedence import FieldUpdate, PrecedenceEngine, QuarantineReason
+from cleartrace_register.postgres_store import PostgresRegisterStore
+from cleartrace_register.precedence import FieldUpdate, QuarantineReason
 from uuid6 import uuid7
 
 
@@ -31,9 +33,12 @@ def _update(
     )
 
 
-def test_t04_thousand_interleaved_updates_with_quarantine() -> None:
-    engine = PrecedenceEngine()
+def test_t04_thousand_interleaved_updates_with_quarantine(
+    trl_dsn: str, trl_tenant_id: UUID
+) -> None:
+    store = PostgresRegisterStore(trl_dsn, trl_tenant_id)
     system_id = uuid7()
+    store.register_system(system_id, f"t04-{system_id}")
     base = datetime(2025, 1, 1, tzinfo=UTC)
     updates: list[FieldUpdate] = []
     skew_targets: list[FieldUpdate] = []
@@ -92,36 +97,28 @@ def test_t04_thousand_interleaved_updates_with_quarantine() -> None:
         conflict_targets.extend([first, second])
         updates.extend([first, second])
 
-    import random
-
     rng = random.Random(42)
     rng.shuffle(updates)
 
-    result = engine.apply_batch(updates)
+    result = store.apply_batch(updates)
     applied_ids = {a.update_id for a in result.applied}
     assert len(applied_ids) == len(result.applied), "double-apply detected"
 
-    quarantined_ids = {q.update.update_id for q in engine.quarantine_items}
+    quarantined_ids = {q.update.update_id for q in store.quarantine_items}
     for skew in skew_targets:
         assert skew.update_id in quarantined_ids
-        reason = next(q for q in engine.quarantine_items if q.update.update_id == skew.update_id)
+        reason = next(q for q in store.quarantine_items if q.update.update_id == skew.update_id)
         assert reason.reason == QuarantineReason.CLOCK_SKEW
 
     for conflict in conflict_targets[1::2]:
         assert conflict.update_id in quarantined_ids
-        reason = next(
-            q for q in engine.quarantine_items if q.update.update_id == conflict.update_id
-        )
+        reason = next(q for q in store.quarantine_items if q.update.update_id == conflict.update_id)
         assert reason.reason == QuarantineReason.EQUAL_TIER_CONFLICT
 
     assert len(skew_targets) == 50
+    assert len([q for q in store.quarantine_items if q.reason == QuarantineReason.CLOCK_SKEW]) == 50
     assert (
-        len([q for q in engine.quarantine_items if q.reason == QuarantineReason.CLOCK_SKEW]) == 50
-    )
-    assert (
-        len(
-            [q for q in engine.quarantine_items if q.reason == QuarantineReason.EQUAL_TIER_CONFLICT]
-        )
+        len([q for q in store.quarantine_items if q.reason == QuarantineReason.EQUAL_TIER_CONFLICT])
         >= 50
     )
 

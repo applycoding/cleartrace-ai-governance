@@ -25,9 +25,10 @@ def _reset_tenant_data(url: str) -> None:
 def test_migrations_upgrade_and_downgrade() -> None:
     root = Path(__file__).resolve().parents[2]
     env = os.environ.copy()
+    pg_port = os.environ.get("CLEARTRACE_PGPORT", "55432")
     env["CLEARTRACE_DATABASE_URL"] = env.get(
         "CLEARTRACE_DATABASE_URL",
-        "postgresql+psycopg://cleartrace_super@127.0.0.1:5432/cleartrace",
+        f"postgresql+psycopg://cleartrace_super@127.0.0.1:{pg_port}/cleartrace",
     )
     _reset_tenant_data(env["CLEARTRACE_DATABASE_URL"])
     alembic = ["uv", "run", "alembic", "-c", "alembic.ini"]

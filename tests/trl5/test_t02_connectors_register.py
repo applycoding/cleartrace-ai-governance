@@ -10,6 +10,17 @@ from cleartrace_connectors.runtime import ConnectorRuntime
 from cleartrace_register.categories import category_by_number
 from uuid6 import uuid7
 
+
+def count_processed_events(dsn: str) -> int:
+    import psycopg
+
+    with psycopg.connect(dsn, autocommit=True) as conn, conn.cursor() as cur:
+        cur.execute("SET ROLE cleartrace_app")
+        cur.execute("SELECT count(*) FROM processed_event_ids")
+        row = cur.fetchone()
+        return int(row[0]) if row else 0
+
+
 MANIFESTS = Path(__file__).resolve().parents[2] / "services" / "connectors" / "manifests"
 
 T02_SYSTEMS: list[tuple[str, dict[int, tuple[str, str]]]] = [
@@ -137,14 +148,15 @@ T02_SYSTEMS: list[tuple[str, dict[int, tuple[str, str]]]] = [
 
 
 @pytest.mark.asyncio
-async def test_t02_connectors_fill_fifteen_categories_for_six_systems() -> None:
-    runtime = ConnectorRuntime()
-    tenant_id = uuid7()
+async def test_t02_connectors_fill_fifteen_categories_for_six_systems(
+    trl_dsn: str, trl_tenant_id: UUID, nats_url: str
+) -> None:
+    runtime = ConnectorRuntime(trl_dsn, trl_tenant_id)
     systems: list[tuple[UUID, str, dict[int, tuple[str, str]]]] = []
     for key, categories in T02_SYSTEMS:
         system_id = uuid7()
-        runtime.store.register_system(system_id, key)
-        systems.append((system_id, key, categories))
+        unique_key = f"{key}-{system_id}"
+        systems.append((system_id, unique_key, categories))
 
     setup_start = time.perf_counter()
     for connector_file in MANIFESTS.glob("*.yaml"):
@@ -152,21 +164,28 @@ async def test_t02_connectors_fill_fifteen_categories_for_six_systems() -> None:
     setup_seconds = time.perf_counter() - setup_start
     assert setup_seconds <= 15 * 60, f"Manifest setup took {setup_seconds:.2f}s"
 
-    filled_total = runtime.run_t02_pipeline(MANIFESTS, systems, tenant_id)
+    filled_total = runtime.run_t02_pipeline(MANIFESTS, systems)
     assert filled_total == 90
 
     correct = 0
     for system_id, _key, expected in systems:
         for cat_num, (en, fr) in expected.items():
             cat = category_by_number(cat_num)
-            val = runtime.store.engine.get_value(system_id, cat_num, cat.primary_slot)
+            val = runtime.store.get_value(system_id, cat_num, cat.primary_slot)
             assert val is not None
             if val.value_en == en and val.value_fr == fr:
                 correct += 1
     assert correct == 90
 
-    delivered = await runtime.flush_outbox_to_nats()
-    assert delivered == len(systems) * 6
+    processed_before = count_processed_events(trl_dsn)
+    published, consumed = await runtime.flush_outbox_to_nats(nats_url)
+    assert published == len(systems) * 6
+    assert consumed == published
+    assert count_processed_events(trl_dsn) - processed_before == published
+
+    published_again, consumed_again = await runtime.flush_outbox_to_nats(nats_url)
+    assert published_again == 0
+    assert consumed_again == 0
 
 
 def test_t02_new_simulator_manifest_without_code() -> None:
