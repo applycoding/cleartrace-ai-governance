@@ -1,0 +1,8 @@
+{
+  "registered_model": {
+    "name": "ClearTrace demo model",
+    "description": { "en": "Synthetic MLflow model for tests", "fr": "Modèle MLflow synthétique pour les tests" }
+  },
+  "latest_version": { "version": "Pilot" },
+  "tags": { "owner": "demo.owner@example.gc.ca" }
+}

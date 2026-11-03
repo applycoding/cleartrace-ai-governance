@@ -1,0 +1,11 @@
+name: aia-json
+version: "1.0.0"
+direction: pull
+scopes:
+  - aia.read
+field_mapping:
+  impact_level.en: "9.impact_level"
+  impact_level.fr: "9.impact_level"
+  final_score: "9.impact_level"
+source_tiers:
+  default: 1

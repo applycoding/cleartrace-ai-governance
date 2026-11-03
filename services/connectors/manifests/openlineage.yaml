@@ -1,0 +1,13 @@
+name: openlineage
+version: "1.0.0"
+direction: push
+scopes:
+  - lineage.write
+destinations:
+  - host: lineage-simulator.local
+    port: 443
+field_mapping:
+  job.name: "7.objective"
+  dataset.name: "11.evidence_count"
+source_tiers:
+  default: 1

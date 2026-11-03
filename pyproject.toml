@@ -10,6 +10,10 @@ license = { text = "Apache-2.0" }
 members = [
   "packages/cleartrace-contracts",
   "services/core-api",
+  "services/register",
+  "services/connectors",
+  "services/egress-proxy",
+  "services/policy-watch",
   "db",
 ]
 
@@ -38,6 +42,9 @@ src = ["packages", "services", "db", "tests", "tools"]
 
 [tool.ruff.lint.per-file-ignores]
 "db/migrations/**" = ["E501"]
+"services/register/src/cleartrace_register/categories.py" = ["E501"]
+"tests/trl5/**" = ["E501", "SIM117"]
+"services/**" = ["E501"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
@@ -47,7 +54,15 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
-mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "db/src"]
+mypy_path = [
+  "packages/cleartrace-contracts/src",
+  "services/core-api/src",
+  "services/register/src",
+  "services/connectors/src",
+  "services/egress-proxy/src",
+  "services/policy-watch/src",
+  "db/src",
+]
 
 [[tool.mypy.overrides]]
 module = ["cedarpy.*", "asyncpg.*"]

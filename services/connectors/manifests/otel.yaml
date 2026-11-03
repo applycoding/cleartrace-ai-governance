@@ -1,0 +1,13 @@
+name: otel-collector
+version: "1.0.0"
+direction: push
+scopes:
+  - metrics.write
+destinations:
+  - host: otel-simulator.local
+    port: 4318
+field_mapping:
+  resource.service.name: "1.summary"
+  gen_ai.usage.completion_tokens: "12.metric_snapshot"
+source_tiers:
+  default: 1
