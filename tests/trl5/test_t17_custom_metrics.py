@@ -1,16 +1,16 @@
 from __future__ import annotations
 
 import pytest
-from cleartrace_risk.cel_metrics import CelEvaluationError, evaluate_cel
+from cleartrace_risk.cel_evaluator import CELEvaluationError, evaluate_cel
 from cleartrace_risk.plugin_sandbox import run_sandboxed_plugin
 
-CEL_FIXTURES: list[tuple[str, dict[str, object], object]] = [
+CEL_FIXTURES: list[tuple[str, dict[str, object], bool]] = [
     ("value > warn", {"value": 0.9, "warn": 0.5}, True),
     ("value <= breach", {"value": 0.01, "breach": 0.05}, True),
-    ("observations['rate'] * 100 > 5", {"observations": {"rate": 0.08}}, True),
-    ("observations['rate'] * 100 > 5", {"observations": {"rate": 0.01}}, False),
-    ("a >= b and b >= c", {"a": 3, "b": 2, "c": 1}, True),
-    ("a >= b and b >= c", {"a": 1, "b": 2, "c": 3}, False),
+    ("observations.rate * 100.0 > 5.0", {"observations": {"rate": 0.08}}, True),
+    ("observations.rate * 100.0 > 5.0", {"observations": {"rate": 0.01}}, False),
+    ("a >= b && b >= c", {"a": 3, "b": 2, "c": 1}, True),
+    ("a >= b && b >= c", {"a": 1, "b": 2, "c": 3}, False),
 ]
 
 PLUGIN_FIXTURES: list[tuple[str, dict[str, object], float]] = [
@@ -46,13 +46,13 @@ HOSTILE_PLUGINS = [
 
 @pytest.mark.trl5
 @pytest.mark.parametrize(("expr", "ctx", "expected"), CEL_FIXTURES)
-def test_t17_cel_custom_metrics(expr: str, ctx: dict[str, object], expected: object) -> None:
+def test_t17_cel_custom_metrics(expr: str, ctx: dict[str, object], expected: bool) -> None:
     assert evaluate_cel(expr, ctx) is expected
 
 
 @pytest.mark.trl5
 def test_t17_cel_rejects_unknown_identifier() -> None:
-    with pytest.raises(CelEvaluationError):
+    with pytest.raises(CELEvaluationError):
         evaluate_cel("missing > 1", {})
 
 

@@ -1,11 +1,59 @@
-"""Public dataset loaders and synthetic defect generators."""
+"""UCI Adult and Statlog German Credit windows for data-quality tests."""
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+_FIXTURES_ROOT = Path(__file__).resolve().parents[2] / "fixtures"
+_MANIFEST_PATH = _FIXTURES_ROOT / "manifest.json"
+
+ADULT_COLUMNS = [
+    "age",
+    "workclass",
+    "fnlwgt",
+    "education",
+    "education-num",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+    "native-country",
+    "income",
+]
+
+GERMAN_COLUMNS = [
+    "checking_status",
+    "duration",
+    "credit_history",
+    "purpose",
+    "credit_amount",
+    "savings_status",
+    "employment",
+    "installment_rate",
+    "personal_status",
+    "other_debtors",
+    "residence_since",
+    "property",
+    "age",
+    "other_installment_plans",
+    "housing",
+    "existing_credits",
+    "job",
+    "num_dependents",
+    "telephone",
+    "foreign_worker",
+    "class",
+]
 
 
 @dataclass(frozen=True)
@@ -16,57 +64,53 @@ class DatasetWindow:
     schema: dict[str, object]
 
 
-def _synthetic_adult_like(rows: int, seed: int) -> pd.DataFrame:
-    rng = np.random.default_rng(seed)
-    return pd.DataFrame(
-        {
-            "age": rng.integers(18, 80, size=rows),
-            "workclass": rng.choice(
-                ["Private", "Self-emp", "Gov"], size=rows, p=[0.7, 0.2, 0.1]
-            ),
-            "education-num": rng.integers(1, 16, size=rows),
-            "hours-per-week": rng.integers(20, 60, size=rows),
-            "income": rng.choice(["<=50K", ">50K"], size=rows, p=[0.75, 0.25]),
-        }
+def _verify_manifest() -> None:
+    manifest = json.loads(_MANIFEST_PATH.read_text(encoding="utf-8"))
+    import hashlib
+
+    for entry in manifest["fixtures"]:
+        path = _FIXTURES_ROOT / entry["path"]
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest != entry["sha256"]:
+            msg = f"fixture checksum mismatch for {entry['path']}"
+            raise RuntimeError(msg)
+
+
+@lru_cache(maxsize=1)
+def _load_adult_frame() -> pd.DataFrame:
+    _verify_manifest()
+    path = _FIXTURES_ROOT / "uci" / "adult.data"
+    frame = pd.read_csv(
+        path,
+        header=None,
+        names=ADULT_COLUMNS,
+        skipinitialspace=True,
+        na_values="?",
+        comment=None,
     )
+    return frame.dropna(how="all").reset_index(drop=True)
 
 
-def _synthetic_german_credit_like(rows: int, seed: int) -> pd.DataFrame:
-    rng = np.random.default_rng(seed)
-    return pd.DataFrame(
-        {
-            "checking_status": rng.choice(["A11", "A12", "A13", "A14"], size=rows),
-            "duration": rng.integers(4, 48, size=rows),
-            "credit_amount": rng.integers(250, 15000, size=rows),
-            "personal_status": rng.choice(["A91", "A92", "A93", "A94"], size=rows),
-            "age": rng.integers(19, 75, size=rows),
-            "class": rng.choice([0, 1], size=rows, p=[0.7, 0.3]),
-        }
-    )
-
-
-def load_reference_frames() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Return UCI-shaped synthetic frames (licence notes in DATASETS.md)."""
-    return _synthetic_adult_like(800, 11), _synthetic_german_credit_like(800, 22)
+@lru_cache(maxsize=1)
+def _load_german_frame() -> pd.DataFrame:
+    _verify_manifest()
+    path = _FIXTURES_ROOT / "uci" / "german.data"
+    return pd.read_csv(path, sep=r"\s+", header=None, names=GERMAN_COLUMNS)
 
 
 ADULT_SCHEMA: dict[str, object] = {
     "age": "numeric",
     "workclass": "category",
-    "workclass_allowed": ["Private", "Self-emp", "Gov"],
     "education-num": "numeric",
     "hours-per-week": "numeric",
     "income": "category",
-    "income_allowed": ["<=50K", ">50K"],
 }
 
 GERMAN_SCHEMA: dict[str, object] = {
     "checking_status": "category",
-    "checking_status_allowed": ["A11", "A12", "A13", "A14"],
     "duration": "numeric",
     "credit_amount": "numeric",
     "personal_status": "category",
-    "personal_status_allowed": ["A91", "A92", "A93", "A94"],
     "age": "numeric",
     "class": "numeric",
 }
@@ -81,17 +125,21 @@ def _schema_for_frame(frame: pd.DataFrame, base: dict[str, object]) -> dict[str,
     return schema
 
 
+def load_reference_frames() -> tuple[pd.DataFrame, pd.DataFrame]:
+    return _load_adult_frame(), _load_german_frame()
+
+
 def sample_clean_window(source: str, seed: int, rows: int = 200) -> DatasetWindow:
     adult_ref, german_ref = load_reference_frames()
     if source == "adult":
         ref = adult_ref.sample(min(rows, len(adult_ref)), random_state=seed).reset_index(drop=True)
         cur = ref.copy()
         schema = _schema_for_frame(ref, ADULT_SCHEMA)
-        return DatasetWindow(ref, cur, "uci-adult@v2-synthetic", schema)
+        return DatasetWindow(ref, cur, "uci-adult@archive-ics-uci", schema)
     ref = german_ref.sample(min(rows, len(german_ref)), random_state=seed).reset_index(drop=True)
     cur = ref.copy()
     schema = _schema_for_frame(ref, GERMAN_SCHEMA)
-    return DatasetWindow(ref, cur, "german-credit@v1-synthetic", schema)
+    return DatasetWindow(ref, cur, "statlog-german-credit@archive-ics-uci", schema)
 
 
 def sample_defective_window(

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "description": "Frozen public datasets for ClearTrace risk engine tests (Package D).",
+  "fixtures": [
+    {
+      "id": "uci-adult",
+      "path": "uci/adult.data",
+      "sha256": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+      "source_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+      "licence": "CC BY 4.0",
+      "attribution": "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository."
+    },
+    {
+      "id": "statlog-german-credit",
+      "path": "uci/german.data",
+      "sha256": "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871",
+      "source_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data",
+      "licence": "CC BY 4.0",
+      "attribution": "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository."
+    }
+  ]
+}

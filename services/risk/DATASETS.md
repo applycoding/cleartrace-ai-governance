@@ -1,10 +1,16 @@
-# Public dataset licence notes for Package D tests (blueprint section 20).
+# Risk engine test datasets (blueprint section 20)
 
-| Dataset | Source | Licence | Use in ClearTrace |
+Frozen copies of the **real** UCI repository files used in T-16. Do not substitute synthetic data labelled as UCI.
+
+| ID | File | Source | Licence |
 |---|---|---|---|
-| UCI Adult (Census Income) | UCI ML Repository / OpenML `adult` | CC BY 4.0 | Data quality and drift windows in T-16 |
-| Statlog German Credit | UCI ML Repository / OpenML `credit-g` | CC BY 4.0 | Data quality and drift windows in T-16 |
+| `uci-adult` | `fixtures/uci/adult.data` | [UCI Adult (Census Income)](https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data) | CC BY 4.0 |
+| `statlog-german-credit` | `fixtures/uci/german.data` | [Statlog German Credit](https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data) | CC BY 4.0 |
 
-Tests download these sets at runtime via scikit-learn `fetch_openml` when network is available; seeded defect generators use the same column layout offline when fetch is skipped.
+SHA-256 digests are recorded in `fixtures/manifest.json`. Verify before tests:
+
+```bash
+uv run python services/risk/tools/verify_fixtures.py
+```
 
 Attribution: Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: University of California, School of Information and Computer Science.
