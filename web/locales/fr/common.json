@@ -17,40 +17,78 @@
     "switchLanguage": "English",
     "loading": "Chargement…",
     "refresh": "Actualiser",
-    "skipToMain": "Aller au contenu principal"
+    "skipToMain": "Aller au contenu principal",
+    "upload": "Téléverser une preuve",
+    "verify": "Vérifier le registre",
+    "validate": "Valider",
+    "reject": "Rejeter",
+    "modify": "Modifier",
+    "annotate": "Annoter"
+  },
+  "outcomes": {
+    "pass": "Réussite",
+    "fail": "Échec",
+    "partial": "Partiel",
+    "na": "S.O.",
+    "not_assessed": "Non évalué"
   },
   "register": {
     "heading": "Registre des systèmes",
     "description": "Parcourir et enregistrer les systèmes d'IA selon les 15 catégories.",
-    "empty": "Aucun système. Importez le registre GC IA ou enregistrez manuellement."
+    "empty": "Aucun système.",
+    "columnKey": "Clé",
+    "columnName": "Nom",
+    "columnCategory": "Catégorie",
+    "columnStatus": "Statut",
+    "detailHeading": "Détail du système",
+    "detailDescription": "Métadonnées et statut de déploiement."
   },
   "frameworks": {
     "heading": "Cadres",
-    "description": "Cadres assignés et couverture pour chaque système."
+    "description": "Cadres assignés et couverture pour chaque système.",
+    "columnCode": "Code",
+    "columnVersion": "Version",
+    "columnCoverage": "Couverture"
   },
   "findings": {
     "heading": "Constats",
-    "description": "Résultats d'évaluation avec la sémantique à cinq états."
+    "description": "Résultats d'évaluation avec la sémantique à cinq états.",
+    "columnControl": "Contrôle",
+    "columnOutcome": "Résultat",
+    "columnExplanation": "Explication",
+    "columnCertainty": "Indice de certitude"
   },
   "review": {
     "heading": "File de révision",
-    "description": "Actions de révision en attente et séparation des fonctions."
+    "description": "Actions de révision en attente et séparation des fonctions.",
+    "empty": "Aucun élément en attente de révision."
   },
   "evidence": {
     "heading": "Preuves",
-    "description": "Artefacts, lignage et soumissionnaires autorisés."
+    "description": "Téléverser des artefacts avec analyse et lignage.",
+    "fileLabel": "Fichier de preuve",
+    "success": "Téléversement accepté pour analyse."
   },
   "risk": {
     "heading": "Mesures de risque",
-    "description": "Observations, lignes de base et bris contraignants."
+    "description": "Observations, lignes de base et bris contraignants.",
+    "binding": "Bris contraignants",
+    "advisory": "Signaux consultatifs",
+    "lastObservation": "Dernière observation"
   },
   "audit": {
     "heading": "Registre d'audit",
-    "description": "Chaîne de hachage inviolable."
+    "description": "Chaîne de hachage inviolable.",
+    "verifyOk": "Vérification du registre réussie.",
+    "columnAction": "Action",
+    "columnHash": "Hachage"
   },
   "admin": {
     "heading": "Administration",
-    "description": "Paramètres locataire, connecteurs et webhooks."
+    "description": "Paramètres locataire, connecteurs et webhooks.",
+    "webhooks": "Webhooks configurés",
+    "connectors": "Connecteurs actifs",
+    "localeDefault": "Langue par défaut"
   },
   "home": {
     "welcome": "Bienvenue sur ClearTrace",

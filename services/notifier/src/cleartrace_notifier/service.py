@@ -85,16 +85,25 @@ class AlertDispatcher:
         total_attempts = 0
         any_webhook_ok = not subs
         for sub in subs:
-            ok, attempts, err = await deliver_webhook_with_retry(
+            ok, attempts, err, permanent = await deliver_webhook_with_retry(
                 self._transport,
                 sub.url,
                 sub.secret,
                 event,
             )
+            self._store.record_webhook_delivery(
+                alert.tenant_id,
+                record.id,
+                sub.id,
+                attempts,
+                "delivered" if ok else "failed",
+                202 if ok else 503,
+                err,
+            )
             total_attempts += attempts
             if ok:
                 any_webhook_ok = True
-            else:
+            elif permanent:
                 self._store.add_dead_letter(
                     DeadLetterEntry(
                         id=uuid7(),
@@ -106,9 +115,8 @@ class AlertDispatcher:
                     )
                 )
 
-        # In-app delivery always succeeds; webhooks may land in the DLQ.
         delivered = True
-        self._store.mark_delivered(record.id)
+        self._store.mark_delivered(alert.tenant_id, record.id)
         _ = any_webhook_ok or not subs
         if alert.event_id:
             self._store.mark_event_processed(alert.tenant_id, alert.event_id)

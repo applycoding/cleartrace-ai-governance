@@ -35,7 +35,7 @@ async def test_webhook_retry_after_outage() -> None:
     transport = SimulatedWebhookTransport()
     url = "https://example.test/hook"
     transport.configure_outage(url, 2)
-    ok, attempts, err = await deliver_webhook_with_retry(
+    ok, attempts, err, _permanent = await deliver_webhook_with_retry(
         transport,
         url,
         "secret",

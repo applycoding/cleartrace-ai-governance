@@ -30,11 +30,30 @@ class NotificationStore(Protocol):
 
     def save_notification(self, record: NotificationRecord) -> None: ...
 
-    def mark_delivered(self, notification_id: UUID) -> None: ...
+    def mark_delivered(self, tenant_id: UUID, notification_id: UUID) -> None: ...
 
     def add_dead_letter(self, entry: DeadLetterEntry) -> None: ...
 
     def dead_letters(self, tenant_id: UUID) -> list[DeadLetterEntry]: ...
+
+    def record_webhook_delivery(
+        self,
+        tenant_id: UUID,
+        notification_id: UUID,
+        subscription_id: UUID,
+        attempt: int,
+        status: str,
+        response_code: int | None,
+        error_message: str | None,
+    ) -> None: ...
+
+    def count_notifications(self, tenant_id: UUID) -> int: ...
+
+    def count_delivered(self, tenant_id: UUID) -> int: ...
+
+    def count_open_tickets(self, tenant_id: UUID) -> int: ...
+
+    def count_dead_letters(self, tenant_id: UUID) -> int: ...
 
     def is_event_processed(self, tenant_id: UUID, event_id: str) -> bool: ...
 
@@ -77,10 +96,48 @@ class InMemoryNotificationStore:
     def save_notification(self, record: NotificationRecord) -> None:
         self.notifications[record.id] = record
 
-    def mark_delivered(self, notification_id: UUID) -> None:
+    def mark_delivered(self, tenant_id: UUID, notification_id: UUID) -> None:
         record = self.notifications[notification_id]
         record.status = DeliveryStatus.DELIVERED
         record.delivered_at = datetime.now(UTC)
+
+    def record_webhook_delivery(
+        self,
+        tenant_id: UUID,
+        notification_id: UUID,
+        subscription_id: UUID,
+        attempt: int,
+        status: str,
+        response_code: int | None,
+        error_message: str | None,
+    ) -> None:
+        _ = (
+            tenant_id,
+            notification_id,
+            subscription_id,
+            attempt,
+            status,
+            response_code,
+            error_message,
+        )
+
+    def count_notifications(self, tenant_id: UUID) -> int:
+        return sum(1 for n in self.notifications.values() if n.tenant_id == tenant_id)
+
+    def count_delivered(self, tenant_id: UUID) -> int:
+        return sum(
+            1
+            for n in self.notifications.values()
+            if n.tenant_id == tenant_id and n.status == DeliveryStatus.DELIVERED
+        )
+
+    def count_open_tickets(self, tenant_id: UUID) -> int:
+        return sum(
+            1 for t in self.tickets.values() if t.tenant_id == tenant_id and t.status == "open"
+        )
+
+    def count_dead_letters(self, tenant_id: UUID) -> int:
+        return sum(1 for d in self.dlq_entries if d.tenant_id == tenant_id)
 
     def add_dead_letter(self, entry: DeadLetterEntry) -> None:
         self.dlq_entries.append(entry)

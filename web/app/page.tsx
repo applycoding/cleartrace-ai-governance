@@ -3,33 +3,25 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { fetchSystems } from "../lib/api/client";
-import { t, type Locale } from "../lib/i18n";
-
-function useLocale(): Locale {
-  const [locale, setLocale] = useState<Locale>("en");
-  useEffect(() => {
-    const stored = window.localStorage.getItem("cleartrace.locale");
-    if (stored) {
-      setLocale(stored.startsWith("fr") ? "fr" : "en");
-    }
-  }, []);
-  return locale;
-}
+import { useLocale } from "../lib/hooks/useLocale";
+import { t } from "../lib/i18n";
 
 export default function HomePage() {
   const locale = useLocale();
-  const [systems, setSystems] = useState<{ id: string; name: string }[]>([]);
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    fetchSystems().then(setSystems).catch(() => setSystems([]));
-  }, []);
+    fetchSystems(locale)
+      .then((systems) => setCount(systems.length))
+      .catch(() => setCount(0));
+  }, [locale]);
 
   return (
     <section>
       <h1>{t(locale, "home.welcome")}</h1>
       <p>{t(locale, "app.tagline")}</p>
       <p data-testid="systems-count">
-        {systems.length > 0 ? systems.length : t(locale, "actions.loading")}
+        {count === null ? t(locale, "actions.loading") : count}
       </p>
       <Link href="/register" data-testid="home-cta">
         {t(locale, "home.cta")}
