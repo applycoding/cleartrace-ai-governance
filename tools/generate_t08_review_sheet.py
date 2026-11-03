@@ -4,14 +4,12 @@
 from __future__ import annotations
 
 import csv
-import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "services" / "engine" / "src"))
-
-from cleartrace_engine.framework_studio import control_context_from_pack, load_pack
+from cleartrace_engine.framework_studio import load_pack
 from cleartrace_engine.pipeline import assess_pack_control
+
+ROOT = Path(__file__).resolve().parents[1]
 
 OUT = ROOT / "docs" / "trl5" / "t08_explanation_review.csv"
 PACK = ROOT / "policies" / "packs" / "dadm" / "pack.yaml"

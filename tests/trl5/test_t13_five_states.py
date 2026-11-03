@@ -4,9 +4,10 @@ import json
 from pathlib import Path
 
 import pytest
-
 from cleartrace_engine.framework_studio import load_pack
 from cleartrace_engine.pipeline import assess_pack_control
+
+pytestmark = pytest.mark.usefixtures("opa_server")
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLDEN = ROOT / "tests" / "trl5" / "fixtures" / "t13_golden_cases.json"

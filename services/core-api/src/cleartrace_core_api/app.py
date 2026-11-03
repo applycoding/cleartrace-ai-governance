@@ -13,7 +13,15 @@ from cleartrace_core_api.errors import register_exception_handlers
 from cleartrace_core_api.middleware.idempotency import IdempotencyMiddleware
 from cleartrace_core_api.middleware.language import LanguageMiddleware
 from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddleware
-from cleartrace_core_api.routers import admin, audit, evidence, findings, frameworks, health, systems
+from cleartrace_core_api.routers import (
+    admin,
+    audit,
+    evidence,
+    findings,
+    frameworks,
+    health,
+    systems,
+)
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:

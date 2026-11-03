@@ -6,7 +6,6 @@ import subprocess
 from pathlib import Path
 
 import pytest
-
 from cleartrace_aia.scorer import load_default_survey, score_answers
 
 ROOT = Path(__file__).resolve().parents[2]

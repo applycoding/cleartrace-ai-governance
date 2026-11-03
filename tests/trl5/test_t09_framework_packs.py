@@ -3,8 +3,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from cleartrace_engine.framework_studio import list_packs, load_pack
+import pytest
+from cleartrace_engine.framework_studio import load_pack
 from cleartrace_engine.pipeline import assess_pack_control, finding_metadata
+
+pytestmark = pytest.mark.usefixtures("opa_server")
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKS = ROOT / "policies" / "packs"

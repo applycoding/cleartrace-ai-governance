@@ -4,9 +4,10 @@ import time
 from functools import lru_cache
 from typing import Any
 
-from celpy import CELEvalError, CELParseError, Environment
+from celpy import Environment, Runner
 from celpy.adapter import json_to_cel
-from celpy.celparser import CELParser
+from celpy.celparser import CELParseError, CELParser
+from celpy.evaluation import CELEvalError
 
 MAX_AST_DEPTH = 10
 MAX_COLLECTION_SIZE = 1000
@@ -58,7 +59,7 @@ def _expression_paren_depth(expression: str) -> int:
 
 
 @lru_cache(maxsize=256)
-def _compile(expression: str):
+def _compile(expression: str) -> Runner:
     if _expression_paren_depth(expression) > MAX_AST_DEPTH:
         raise CELEvaluationError(
             "EVAL_ERROR",
@@ -93,7 +94,7 @@ def evaluate_cel(expression: str, context: dict[str, Any]) -> bool:
     activation = _cel_activation(context)
     try:
         eval_started = time.perf_counter()
-        result = program.evaluate(json_to_cel(activation))
+        result = program.evaluate({key: json_to_cel(value) for key, value in activation.items()})
         eval_ms = (time.perf_counter() - eval_started) * 1000
         if eval_ms > TIMEOUT_MS:
             raise CELEvaluationError(

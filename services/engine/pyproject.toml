@@ -9,6 +9,7 @@ dependencies = [
   "pyyaml>=6.0",
   "jsonschema>=4.23",
   "cel-python==0.5.0",
+  "httpx>=0.28",
 ]
 
 [tool.uv.sources]

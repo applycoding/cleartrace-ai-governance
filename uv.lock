@@ -543,6 +543,7 @@ source = { editable = "services/engine" }
 dependencies = [
     { name = "cel-python" },
     { name = "cleartrace-contracts" },
+    { name = "httpx" },
     { name = "jsonschema" },
     { name = "pyyaml" },
 ]
@@ -551,6 +552,7 @@ dependencies = [
 requires-dist = [
     { name = "cel-python", specifier = "==0.5.0" },
     { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "httpx", specifier = ">=0.28" },
     { name = "jsonschema", specifier = ">=4.23" },
     { name = "pyyaml", specifier = ">=6.0" },
 ]

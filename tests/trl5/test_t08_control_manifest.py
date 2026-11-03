@@ -5,9 +5,10 @@ import json
 from pathlib import Path
 
 import pytest
-
 from cleartrace_engine.framework_studio import load_pack
 from cleartrace_engine.pipeline import assess_pack_control, finding_metadata
+
+pytestmark = pytest.mark.usefixtures("opa_server")
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "tests" / "fixtures" / "control_manifest.json"

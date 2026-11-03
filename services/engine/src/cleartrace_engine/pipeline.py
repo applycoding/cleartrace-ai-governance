@@ -3,19 +3,23 @@ from __future__ import annotations
 from typing import Any
 
 from cleartrace_engine.evaluate import (
-    EvaluationInput,
-    EvaluationOutput,
     evaluate_applicability,
     evaluate_control,
     objective_from_rule,
 )
 from cleartrace_engine.framework_studio import control_context_from_pack
 from cleartrace_engine.opa_client import engine_bundle_digest, evaluate_pack_control
-from cleartrace_engine.types import ControlContext, EvaluationError
+from cleartrace_engine.types import (
+    ControlContext,
+    EvaluationError,
+    EvaluationInput,
+    EvaluationOutput,
+    ObjectiveResult,
+)
 
 
-def _objectives_from_opa(raw: list[dict[str, Any]]) -> list:
-    objectives = []
+def _objectives_from_opa(raw: list[dict[str, Any]]) -> list[ObjectiveResult]:
+    objectives: list[ObjectiveResult] = []
     for item in raw:
         objectives.append(
             objective_from_rule(

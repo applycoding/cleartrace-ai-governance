@@ -5,13 +5,11 @@ from __future__ import annotations
 
 import json
 import random
-import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "services" / "aia" / "src"))
-
 from cleartrace_aia.scorer import build_question_index, load_default_survey, score_answers
+
+ROOT = Path(__file__).resolve().parents[1]
 
 OUT = ROOT / "tests" / "fixtures" / "aia" / "parity_answer_sets.json"
 
