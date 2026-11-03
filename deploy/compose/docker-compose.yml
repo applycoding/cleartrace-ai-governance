@@ -2,8 +2,8 @@ services:
   postgres:
     image: pgvector/pgvector:pg16
     environment:
-      POSTGRES_USER: cleartrace_migrator
-      POSTGRES_PASSWORD: cleartrace_migrator
+      POSTGRES_USER: cleartrace_super
+      POSTGRES_PASSWORD: cleartrace_super
       POSTGRES_DB: cleartrace
     ports:
       - "5432:5432"
@@ -11,7 +11,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./postgres/init:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U cleartrace_migrator -d cleartrace"]
+      test: ["CMD-SHELL", "pg_isready -U cleartrace_super -d cleartrace"]
       interval: 5s
       timeout: 5s
       retries: 10

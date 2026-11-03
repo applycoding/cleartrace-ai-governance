@@ -17,7 +17,8 @@ migrate:
 	cd db && uv run alembic -c alembic.ini upgrade head
 
 test: up
-	uv run pytest -q --cov=services/core-api/src --cov=packages/cleartrace-contracts/src --cov=db/src --cov-report=term-missing
+	uv run pytest -q tests services --ignore=tests/integration --cov=services/core-api/src --cov=packages/cleartrace-contracts/src --cov=db/src --cov-report=term-missing
+	uv run pytest -q tests/integration services
 
 lint:
 	uv run ruff check .
