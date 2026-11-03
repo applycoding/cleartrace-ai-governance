@@ -4,15 +4,26 @@ from typing import Protocol
 from uuid import UUID
 
 from cleartrace_register.categories import GOVERNANCE_CATEGORIES
-from cleartrace_register.csv_import import bind_system_ids, parse_gc_ai_register_csv
+from cleartrace_register.csv_import import (
+    RegisterCsvError,
+    bind_system_ids,
+    parse_gc_ai_register_csv,
+)
 from cleartrace_register.memory_store import MemoryRegisterStore
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
 from uuid6 import uuid7
 
 router = APIRouter(prefix="/register", tags=["register"])
 
 _store = MemoryRegisterStore()
+# Systems created by a CSV import belong to the importing tenant.
+_system_tenant: dict[UUID, str] = {}
+
+
+def _tenant_of(request: Request) -> str | None:
+    auth = getattr(request.state, "auth", None)
+    return str(auth.tenant_id) if auth is not None else None
 
 
 class CategoryStatus(BaseModel):
@@ -39,7 +50,12 @@ class ImportCsvResponse(BaseModel):
 
 
 @router.get("/systems/{system_id}", response_model=SystemRegisterView)
-async def get_system_register(system_id: UUID, system_key: str = "unknown") -> SystemRegisterView:
+async def get_system_register(
+    system_id: UUID, request: Request, system_key: str = "unknown"
+) -> SystemRegisterView:
+    owner = _system_tenant.get(system_id)
+    if owner is not None and owner != _tenant_of(request):
+        raise HTTPException(status_code=404, detail="System not found")
     categories = [
         CategoryStatus(
             number=cat.number,
@@ -54,8 +70,12 @@ async def get_system_register(system_id: UUID, system_key: str = "unknown") -> S
 
 
 @router.post("/import/gc-ai-register", response_model=ImportCsvResponse)
-async def import_gc_register(body: ImportCsvRequest) -> ImportCsvResponse:
-    updates = parse_gc_ai_register_csv(body.csv_content)
+async def import_gc_register(body: ImportCsvRequest, request: Request) -> ImportCsvResponse:
+    try:
+        updates = parse_gc_ai_register_csv(body.csv_content)
+    except RegisterCsvError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    tenant = _tenant_of(request)
     key_to_id: dict[str, UUID] = {}
     for update in updates:
         if update.category_number == 1 and update.value_en:
@@ -64,6 +84,8 @@ async def import_gc_register(body: ImportCsvRequest) -> ImportCsvResponse:
                 system_id = uuid7()
                 key_to_id[key] = system_id
                 _store.register_system(system_id, key)
+                if tenant is not None:
+                    _system_tenant[system_id] = tenant
     bound = bind_system_ids(updates, key_to_id)
     applied = 0
     for update in bound:

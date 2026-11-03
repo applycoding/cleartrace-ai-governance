@@ -218,3 +218,37 @@ def test_delivery_to_an_unresolvable_host_is_a_failed_attempt_not_a_crash() -> N
     code, text = asyncio.run(attempt())
     assert code == 0
     assert text.startswith("blocked:")
+
+
+def test_malformed_register_csv_is_422_not_500(client: TestClient) -> None:
+    # The CI run 41728473464 payload: a bare CR in an unquoted field used to raise csv.Error.
+    resp = client.post(
+        "/api/v1/register/import/gc-ai-register",
+        headers=_h(),
+        json={"csv_content": "*\u0005\u00eb\u0015\r\u0087\u00b8X"},
+    )
+    assert resp.status_code == 200
+    too_big = client.post(
+        "/api/v1/register/import/gc-ai-register",
+        headers=_h(),
+        json={"csv_content": "a\n\"" + "x" * 140_000 + "\"\n"},
+    )
+    assert too_big.status_code == 422
+
+
+def test_imported_register_systems_are_tenant_scoped(client: TestClient) -> None:
+    from cleartrace_register.api import router as register_router
+
+    csv_text = (
+        "Nom du système d'IA / Name of the AI system,État / Status\nScoped System,Active\n"
+    )
+    resp = client.post(
+        "/api/v1/register/import/gc-ai-register",
+        headers=_h(TENANT_A),
+        json={"csv_content": csv_text},
+    )
+    assert resp.status_code == 200
+    (system_id,) = [s for s, t in register_router._system_tenant.items() if t == TENANT_A][-1:]
+    path = f"/api/v1/register/systems/{system_id}"
+    assert client.get(path, headers=_h(TENANT_A)).status_code == 200
+    assert client.get(path, headers=_h(TENANT_B)).status_code == 404

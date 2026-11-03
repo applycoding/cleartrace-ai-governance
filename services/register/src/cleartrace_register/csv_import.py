@@ -9,6 +9,10 @@ from uuid import UUID
 from cleartrace_register.precedence import FieldUpdate
 
 
+class RegisterCsvError(ValueError):
+    """The uploaded register CSV is malformed."""
+
+
 @dataclass(frozen=True, slots=True)
 class RegisterImportRow:
     system_key: str
@@ -31,12 +35,18 @@ def parse_gc_ai_register_csv(
     content: str, *, source_id: str = "gc-ai-register-csv"
 ) -> list[FieldUpdate]:
     """Parse GC AI Register MVP CSV rows into register field updates (categories 1, 4, 6)."""
-    reader = csv.DictReader(io.StringIO(content))
+    # newline="" lets the csv module handle CR/LF inside quoted fields itself.
+    reader = csv.DictReader(io.StringIO(content, newline=""))
     updates: list[FieldUpdate] = []
     now = datetime.now(tz=UTC)
     system_ids: dict[str, UUID] = {}
 
-    for row in reader:
+    try:
+        rows = list(reader)
+    except csv.Error as exc:
+        raise RegisterCsvError(f"CSV could not be parsed: {exc}") from exc
+
+    for row in rows:
         name_en = row.get("Nom du système d'IA / Name of the AI system", "").strip()
         name_fr = row.get("Nom du système d'IA (FR)", name_en).strip() or name_en
         if not name_en:
