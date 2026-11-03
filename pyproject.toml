@@ -12,6 +12,7 @@ members = [
   "services/core-api",
   "services/evidence",
   "services/audit",
+  "services/risk",
   "db",
 ]
 
@@ -33,6 +34,7 @@ asyncio_default_fixture_loop_scope = "function"
 pythonpath = ["."]
 markers = [
   "integration: tests that need Postgres/PgBouncer or Compose stack",
+  "trl5: TRL 5 acceptance tests (blueprint section 18)",
 ]
 
 [tool.ruff]
@@ -54,10 +56,17 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
-mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "services/evidence/src", "services/audit/src", "db/src"]
+mypy_path = [
+  "packages/cleartrace-contracts/src",
+  "services/core-api/src",
+  "services/evidence/src",
+  "services/audit/src",
+  "services/risk/src",
+  "db/src",
+]
 
 [[tool.mypy.overrides]]
-module = ["cedarpy.*", "asyncpg.*"]
+module = ["cedarpy.*", "asyncpg.*", "cleartrace_risk.*", "pandas.*", "scipy.*", "sklearn.*", "fairlearn.*", "evidently.*"]
 ignore_missing_imports = true
 
 [tool.bandit]
