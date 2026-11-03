@@ -1,5 +1,3 @@
-# ClearTrace reports service
+# ClearTrace reports
 
-Part of the ClearTrace AI governance platform. See [docs/blueprint/BLUEPRINT.md](../../docs/blueprint/BLUEPRINT.md).
-
-This package is a stub for parallel build step; the core API exposes shared contracts in `packages/cleartrace-contracts`.
+HTML, PDF and CSV report builders with paired EN/FR content, as-of timestamps, framework version listing, and explicit N/A exclusion notes.

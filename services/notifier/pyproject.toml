@@ -1,0 +1,23 @@
+[project]
+name = "cleartrace-notifier"
+version = "0.1.0"
+description = "ClearTrace alerts, webhooks, tickets and digests"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "cleartrace-contracts",
+  "fastapi>=0.115",
+  "httpx>=0.28",
+  "pydantic>=2.10",
+  "uuid6>=2024.7",
+]
+
+[tool.uv.sources]
+cleartrace-contracts = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleartrace_notifier"]

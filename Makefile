@@ -23,7 +23,7 @@ test: up
 lint:
 	uv run ruff check .
 	uv run ruff format --check .
-	uv run mypy packages/cleartrace-contracts/src services/core-api/src db/src
+	uv run mypy packages/cleartrace-contracts/src services/core-api/src services/notifier/src services/reports/src db/src
 
 sbom:
 	@if command -v syft >/dev/null 2>&1; then \

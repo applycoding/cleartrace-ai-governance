@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <style>
+      body { font-family: sans-serif; margin: 2rem; }
+      .meta { color: #444; font-size: 0.9rem; }
+      .note { margin-top: 1.5rem; font-style: italic; }
+    </style>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p class="meta">{{ as_of }}</p>
+    <p class="meta">{{ framework_versions | join(', ') }}</p>
+    <table border="1" cellpadding="8">
+      <thead>
+        <tr><th>Section</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        {% for label, value in sections %}
+        <tr><td>{{ label }}</td><td>{{ value }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="note">{{ na_note }}</p>
+  </body>
+</html>

@@ -1,4 +1,59 @@
 {
-  "app.title": "ClearTrace",
-  "app.tagline": "Gouvernance de l'IA avec preuves, résultats à cinq états et rapports bilingues."
+  "app": {
+    "title": "ClearTrace",
+    "tagline": "Gouvernance de l'IA pour le secteur public"
+  },
+  "nav": {
+    "register": "Registre",
+    "frameworks": "Cadres",
+    "findings": "Constats",
+    "review": "File de révision",
+    "evidence": "Preuves",
+    "risk": "Risque",
+    "audit": "Audit",
+    "admin": "Administration"
+  },
+  "actions": {
+    "switchLanguage": "English",
+    "loading": "Chargement…",
+    "refresh": "Actualiser",
+    "skipToMain": "Aller au contenu principal"
+  },
+  "register": {
+    "heading": "Registre des systèmes",
+    "description": "Parcourir et enregistrer les systèmes d'IA selon les 15 catégories.",
+    "empty": "Aucun système. Importez le registre GC IA ou enregistrez manuellement."
+  },
+  "frameworks": {
+    "heading": "Cadres",
+    "description": "Cadres assignés et couverture pour chaque système."
+  },
+  "findings": {
+    "heading": "Constats",
+    "description": "Résultats d'évaluation avec la sémantique à cinq états."
+  },
+  "review": {
+    "heading": "File de révision",
+    "description": "Actions de révision en attente et séparation des fonctions."
+  },
+  "evidence": {
+    "heading": "Preuves",
+    "description": "Artefacts, lignage et soumissionnaires autorisés."
+  },
+  "risk": {
+    "heading": "Mesures de risque",
+    "description": "Observations, lignes de base et bris contraignants."
+  },
+  "audit": {
+    "heading": "Registre d'audit",
+    "description": "Chaîne de hachage inviolable."
+  },
+  "admin": {
+    "heading": "Administration",
+    "description": "Paramètres locataire, connecteurs et webhooks."
+  },
+  "home": {
+    "welcome": "Bienvenue sur ClearTrace",
+    "cta": "Ouvrir le registre des systèmes"
+  }
 }
