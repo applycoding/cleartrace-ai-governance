@@ -12,7 +12,7 @@ This is **not** a separate container. Hostile plug-in tests assert that network,
 
 ## Tier-1 CEL (T-17)
 
-Uses **cel-python 0.5.0** with the same limits as blueprint section 6.1 (mirrors `services/engine/cel_evaluator.py` on Package A). When Package A merges to main, deduplicate by importing the engine evaluator.
+Uses the shared evaluator `cleartrace_engine.cel_evaluator` (cel-python 0.5.0) with the blueprint section 6.1 limits; the risk engine has no CEL evaluator of its own.
 
 ## T-16 measured results
 

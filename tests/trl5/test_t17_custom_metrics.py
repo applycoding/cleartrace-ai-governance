@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import pytest
-from cleartrace_risk.cel_evaluator import CELEvaluationError, evaluate_cel
+from cleartrace_engine.cel_evaluator import CELEvaluationError, evaluate_cel
 from cleartrace_risk.plugin_sandbox import run_sandboxed_plugin
 
 CEL_FIXTURES: list[tuple[str, dict[str, object], bool]] = [

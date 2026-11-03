@@ -17,6 +17,8 @@ Public datasets used in tests with source URL, licence, and attribution.
 | `gc-ai-register/gc-ai-register-mvp-registre-de-lia-du-gc-pmv-04-26.csv` | https://open.canada.ca/data/dataset/gc-ai-register-mvp-registre-de-lia-du-gc-pmv | Open Government Licence – Canada | Government of Canada GC AI Register | run `tools/freeze_fixtures.py` |
 | `aia/survey-enfr.json` | https://github.com/canada-ca/aia-eia-js | MIT | canada-ca/aia-eia-js (pin commit in manifest.json) | run `tools/freeze_fixtures.py` |
 | `aia/departments.json` | https://github.com/canada-ca/aia-eia-js | MIT | canada-ca/aia-eia-js | run `tools/freeze_fixtures.py` |
+| `../../services/risk/fixtures/uci/adult.data` | https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data (UCI Adult, doi:10.24432/C5XW20) | CC BY 4.0 | Becker, B. and Kohavi, R. (1996). Adult. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20. Unmodified copy used by risk tests T-15/T-16 | `5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d` |
+| `../../services/risk/fixtures/uci/german.data` | https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data (Statlog German Credit, doi:10.24432/C5NC77) | CC BY 4.0 | Hofmann, H. (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://doi.org/10.24432/C5NC77. Unmodified copy used by risk tests T-15/T-16 | `b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871` |
 
 Run `uv run python tools/freeze_fixtures.py` before G0 to download remaining public fixtures, refresh `checksums.sha256`, and complete this table. Rows marked "run `tools/freeze_fixtures.py`" are not downloaded yet. Paths are relative to `tests/fixtures/`.
 

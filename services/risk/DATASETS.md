@@ -13,4 +13,4 @@ SHA-256 digests are recorded in `fixtures/manifest.json`. Verify before tests:
 uv run python services/risk/tools/verify_fixtures.py
 ```
 
-Attribution: Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: University of California, School of Information and Computer Science.
+Attribution: Becker, B. and Kohavi, R. (1996). Adult. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20. Hofmann, H. (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://doi.org/10.24432/C5NC77. Both are distributed under CC BY 4.0 and are committed unmodified; they are also listed in `tests/fixtures/LICENSES.md` and `tests/fixtures/manifest.json`.

@@ -6,6 +6,20 @@
       "sha256": "62c9e1904b0d1102507b25c929279cb20f650aece12cf9ed60e60748c0d6488a",
       "licence": "Apache-2.0 (generated synthetic data)",
       "url": ""
+    },
+    {
+      "path": "../../services/risk/fixtures/uci/adult.data",
+      "sha256": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+      "licence": "CC BY 4.0",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+      "attribution": "Becker, B. and Kohavi, R. (1996). Adult. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20"
+    },
+    {
+      "path": "../../services/risk/fixtures/uci/german.data",
+      "sha256": "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871",
+      "licence": "CC BY 4.0",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data",
+      "attribution": "Hofmann, H. (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://doi.org/10.24432/C5NC77"
     }
   ]
 }

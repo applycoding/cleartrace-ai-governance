@@ -874,8 +874,8 @@ name = "cleartrace-risk"
 version = "0.1.0"
 source = { editable = "services/risk" }
 dependencies = [
-    { name = "cel-python" },
     { name = "cleartrace-contracts" },
+    { name = "cleartrace-engine" },
     { name = "evidently" },
     { name = "fairlearn" },
     { name = "numpy" },
@@ -888,8 +888,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "cel-python", specifier = "==0.5.0" },
     { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "cleartrace-engine", editable = "services/engine" },
     { name = "evidently", specifier = ">=0.4.40" },
     { name = "fairlearn", specifier = ">=0.12" },
     { name = "numpy", specifier = ">=2.1" },

@@ -38,7 +38,7 @@ jobs:
           uv run mypy packages/cleartrace-contracts/src services/core-api/src
           services/engine/src services/aia/src services/evidence/src services/audit/src
           services/notifier/src services/reports/src services/register/src
-          services/connectors/src services/egress-proxy/src services/policy-watch/src db/src
+          services/connectors/src services/egress-proxy/src services/policy-watch/src services/risk/src db/src
 
       - name: Bandit
         run: uv run bandit -r packages services db -q
