@@ -1,0 +1,17 @@
+cleartrace:
+  replicaCount: 3
+
+objectStore:
+  type: s3
+  endpoint: https://s3.ca-central-1.amazonaws.com
+  region: ca-central-1
+  bucket: cleartrace-ca-central
+
+residency:
+  jurisdiction: CA
+  cellSlug: ca-central-public
+  enforceCanadianRegion: true
+
+security:
+  kmsProvider: aws-kms-ca-central-1
+  classificationCeiling: protected-b

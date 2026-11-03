@@ -1,0 +1,16 @@
+cleartrace:
+  replicaCount: 3
+
+objectStore:
+  type: s3
+  endpoint: https://s3.private.example.invalid
+  region: ca-central-1
+  bucket: dept-cleartrace
+
+residency:
+  jurisdiction: CA
+  cellSlug: private-cloud-1
+
+security:
+  kmsProvider: customer-kms
+  classificationCeiling: protected-b

@@ -1,40 +1,15 @@
 #!/usr/bin/env python3
-"""Emit a minimal CycloneDX SBOM when Syft is not installed."""
+"""Emit CycloneDX SBOM (delegates to sbom_builder)."""
 
 from __future__ import annotations
 
-import json
-from datetime import UTC, datetime
+import importlib.util
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def main() -> None:
-    doc = {
-        "bomFormat": "CycloneDX",
-        "specVersion": "1.6",
-        "version": 1,
-        "metadata": {
-            "timestamp": datetime.now(tz=UTC).isoformat(),
-            "component": {
-                "type": "application",
-                "name": "cleartrace",
-                "version": "0.1.0",
-            },
-        },
-        "components": [
-            {
-                "type": "library",
-                "name": "cleartrace-workspace",
-                "version": "0.1.0",
-                "purl": "pkg:generic/cleartrace@0.1.0",
-            }
-        ],
-    }
-    (ROOT / "sbom.json").write_text(json.dumps(doc, indent=2), encoding="utf-8")
-    print("wrote sbom.json (placeholder)")
-
-
-if __name__ == "__main__":
-    main()
+_builder = Path(__file__).with_name("sbom_builder.py")
+spec = importlib.util.spec_from_file_location("sbom_builder", _builder)
+if spec is None or spec.loader is None:
+    raise RuntimeError("sbom_builder.py missing")
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+module.main()

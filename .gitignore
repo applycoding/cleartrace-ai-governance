@@ -4,6 +4,7 @@ __pycache__/
 .data/
 sbom.json
 sbom.cyclonedx.json
+.cache/
 .web/
 web/node_modules/
 web/.next/

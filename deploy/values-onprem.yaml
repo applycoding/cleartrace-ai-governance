@@ -1,0 +1,18 @@
+cleartrace:
+  replicaCount: 1
+  ingress:
+    enabled: false
+
+objectStore:
+  type: seaweedfs
+  endpoint: http://seaweedfs:8333
+  region: onprem
+  bucket: cleartrace-evidence
+
+residency:
+  jurisdiction: CA
+  cellSlug: ca-onprem-ssc
+
+security:
+  kmsProvider: onprem-hsm
+  classificationCeiling: protected-a

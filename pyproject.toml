@@ -22,6 +22,8 @@ dev = [
   "mypy>=1.13",
   "bandit>=1.8",
   "types-PyYAML>=6.0",
+  "jsonschema>=4.23",
+  "compliance-trestle>=3.0",
 ]
 
 [tool.pytest.ini_options]
@@ -30,6 +32,7 @@ asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 markers = [
   "integration: tests that need Postgres/PgBouncer or Compose stack",
+  "trl5: TRL 5 evidence suites (section 18)",
 ]
 
 [tool.ruff]

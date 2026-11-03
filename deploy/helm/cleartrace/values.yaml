@@ -1,0 +1,56 @@
+global:
+  imageRegistry: ""
+  imagePullSecrets: []
+
+cleartrace:
+  replicaCount: 2
+  image:
+    repository: ghcr.io/applycoding/cleartrace-core-api
+    tag: "0.1.0"
+    digest: ""
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8080
+  ingress:
+    enabled: false
+    className: ""
+    hosts:
+      - host: cleartrace.local
+        paths:
+          - path: /
+            pathType: Prefix
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi
+
+postgresql:
+  enabled: true
+  auth:
+    username: cleartrace
+    password: ""
+    database: cleartrace
+
+nats:
+  enabled: true
+
+keycloak:
+  enabled: true
+
+objectStore:
+  type: s3
+  endpoint: ""
+  region: ca-central-1
+  bucket: cleartrace-evidence
+
+residency:
+  jurisdiction: CA
+  cellSlug: ca-onprem-ssc
+
+security:
+  kmsProvider: local
+  classificationCeiling: unclassified
