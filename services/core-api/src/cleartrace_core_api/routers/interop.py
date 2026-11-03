@@ -57,6 +57,7 @@ async def export_cyclonedx(system_id: UUID, request: Request) -> Response:
     if dossier is None:
         return Response(status_code=404, content=b"system dossier not found")
     system = dossier["system"]
-    assert isinstance(system, dict)
+    if not isinstance(system, dict):
+        return Response(status_code=500, content=b"system dossier is malformed")
     payload = _exporter.export_cyclonedx(system)
     return Response(content=payload, media_type="application/json")
