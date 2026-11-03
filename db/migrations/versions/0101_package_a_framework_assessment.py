@@ -1,4 +1,7 @@
-"""Package A: framework studio tables, assignments, assessment findings."""
+"""Package A: framework studio tables, assignments, assessment runs.
+
+Findings use the Package B finding tables; 0902_merge_a links them to assessment runs.
+"""
 
 from __future__ import annotations
 
@@ -158,30 +161,6 @@ def upgrade() -> None:
           started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
           completed_at TIMESTAMPTZ
         );
-
-        CREATE TABLE finding (
-          id UUID PRIMARY KEY,
-          tenant_id UUID NOT NULL REFERENCES tenant(id),
-          assessment_run_id UUID NOT NULL REFERENCES assessment_run(id),
-          control_version_id UUID NOT NULL REFERENCES control_version(id),
-          outcome_state TEXT NOT NULL,
-          reason_code TEXT NOT NULL,
-          certainty_index NUMERIC(4, 3) NOT NULL,
-          lifecycle_state TEXT NOT NULL DEFAULT 'DRAFT_AUTO',
-          engine_bundle_digest TEXT NOT NULL
-        );
-
-        CREATE TABLE finding_version (
-          id UUID PRIMARY KEY,
-          tenant_id UUID NOT NULL REFERENCES tenant(id),
-          finding_id UUID NOT NULL REFERENCES finding(id),
-          explanation_en TEXT NOT NULL,
-          explanation_fr TEXT NOT NULL,
-          valid_from TIMESTAMPTZ NOT NULL DEFAULT now(),
-          valid_to TIMESTAMPTZ,
-          recorded_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-          superseded_at TIMESTAMPTZ
-        );
         """
     )
 
@@ -198,8 +177,6 @@ def upgrade() -> None:
         "assignment",
         "reassessment_flag",
         "assessment_run",
-        "finding",
-        "finding_version",
     ):
         op.execute(
             f"""
@@ -220,8 +197,6 @@ def upgrade() -> None:
 def downgrade() -> None:
     op.execute(
         """
-        DROP TABLE IF EXISTS finding_version CASCADE;
-        DROP TABLE IF EXISTS finding CASCADE;
         DROP TABLE IF EXISTS assessment_run CASCADE;
         DROP TABLE IF EXISTS reassessment_flag CASCADE;
         DROP TABLE IF EXISTS assignment CASCADE;

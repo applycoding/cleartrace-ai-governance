@@ -17,6 +17,16 @@ jobs:
         with:
           enable-cache: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install OPA (pinned v1.4.2, SHA-256 checked)
+        run: |
+          bash scripts/install_opa.sh
+          echo "/tmp/opa-install" >> "$GITHUB_PATH"
+          echo "OPA_BIN=/tmp/opa-install/opa" >> "$GITHUB_ENV"
+
       - name: Install Python dependencies
         run: uv sync --all-packages --group dev
 
@@ -24,10 +34,13 @@ jobs:
         run: uv run ruff check .
 
       - name: Mypy
-        run: uv run mypy packages/cleartrace-contracts/src services/core-api/src db/src
+        run: >-
+          uv run mypy packages/cleartrace-contracts/src services/core-api/src
+          services/engine/src services/aia/src services/evidence/src services/audit/src
+          services/notifier/src services/reports/src db/src
 
       - name: Bandit
-        run: uv run bandit -r packages services/core-api db -q
+        run: uv run bandit -r packages services db -q
 
       - name: Licence gate
         run: uv run python tools/licence_gate.py

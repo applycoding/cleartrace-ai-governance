@@ -5,6 +5,7 @@ from typing import Any
 from uuid import UUID
 
 import nats
+from nats.aio.client import Client as NATSClient
 from nats.js.api import RetentionPolicy, StreamConfig
 
 STREAM_NAME = "CLEARTRACE_ALERTS"
@@ -15,7 +16,7 @@ def alert_subject(tenant_id: UUID) -> str:
     return f"{SUBJECT_PREFIX}.{tenant_id}.notifications.alert"
 
 
-async def ensure_alert_stream(nc: nats.NATS) -> Any:
+async def ensure_alert_stream(nc: NATSClient) -> Any:
     js = nc.jetstream()
     config = StreamConfig(
         name=STREAM_NAME,
@@ -35,7 +36,7 @@ async def publish_alert_event(js: Any, tenant_id: UUID, payload: dict[str, Any])
 
 
 async def run_alert_consumer(
-    nc: nats.NATS,
+    nc: NATSClient,
     handler: Any,
     *,
     durable: str = "cleartrace-notifier",
@@ -61,5 +62,5 @@ async def run_alert_consumer(
     return processed
 
 
-async def with_nats(url: str) -> nats.NATS:
+async def with_nats(url: str) -> NATSClient:
     return await nats.connect(url)
