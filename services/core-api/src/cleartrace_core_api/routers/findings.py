@@ -29,6 +29,41 @@ class ReviewActionResponse(BaseModel):
     outcome_state: str
 
 
+class FindingSummary(BaseModel):
+    id: UUID
+    etag: str
+    control_id: str
+    lifecycle_state: str
+    outcome_state: str
+
+
+@router.get("/{finding_id}", response_model=FindingSummary)
+async def get_finding(finding_id: UUID, request: Request) -> FindingSummary | object:
+    auth = request.state.auth
+    settings = request.app.state.settings
+    with tenant_transaction(settings.database_url, auth.tenant_id) as conn, conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT f.id, f.etag, f.control_id, fv.lifecycle_state, fv.outcome_state
+            FROM finding f
+            JOIN finding_version fv ON fv.finding_id = f.id
+              AND fv.version_number = f.current_version_number
+            WHERE f.tenant_id = %s AND f.id = %s
+            """,
+            (auth.tenant_id, finding_id),
+        )
+        row = cur.fetchone()
+    if row is None:
+        return problem_response(status=404, title="Not found", detail="Finding not found")
+    return FindingSummary(
+        id=row[0],
+        etag=str(row[1]),
+        control_id=str(row[2]),
+        lifecycle_state=str(row[3]),
+        outcome_state=str(row[4]),
+    )
+
+
 @router.post("/{finding_id}/actions", response_model=ReviewActionResponse)
 async def review_action(
     finding_id: UUID,

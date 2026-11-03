@@ -76,8 +76,8 @@ async def import_gc_register(body: ImportCsvRequest) -> ImportCsvResponse:
 
 
 class _RouterHost(Protocol):
-    def include_router(self, router: APIRouter, /) -> None: ...
+    def include_router(self, router: APIRouter, /, *, prefix: str = "") -> None: ...
 
 
-def mount_register_routes(app: _RouterHost) -> None:
-    app.include_router(router)
+def mount_register_routes(app: _RouterHost, *, prefix: str = "") -> None:
+    app.include_router(router, prefix=prefix)

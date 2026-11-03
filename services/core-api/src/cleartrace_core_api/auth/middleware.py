@@ -9,7 +9,7 @@ import httpx
 import jwt
 from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
 from cleartrace_core_api.auth.context import AuthContext
-from cleartrace_core_api.auth.package_b_authz import authorize_package_b_route
+from cleartrace_core_api.auth.route_actions import action_for_request
 from cleartrace_core_api.config import Settings
 from cleartrace_core_api.deps import get_audit_ledger
 from cleartrace_core_api.errors import problem_response
@@ -54,6 +54,14 @@ def _roles_from_claims(claims: dict[str, Any]) -> frozenset[str]:
     extra = claims.get("cleartrace_roles") or []
     roles.update(extra)
     return frozenset(str(r) for r in roles)
+
+
+def _dev_roles_from_request(request: Request) -> frozenset[str] | None:
+    raw = request.headers.get("X-ClearTrace-Dev-Roles", "").strip()
+    if not raw:
+        return None
+    parts = [p.strip() for p in raw.split(",") if p.strip()]
+    return frozenset(parts) if parts else None
 
 
 async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
@@ -125,6 +133,20 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
                 detail=str(exc),
                 type_uri="https://cleartrace.local/problems/unauthorized",
             )
+        if settings.dev_skip_auth:
+            dev_roles = _dev_roles_from_request(request)
+            raw_claims = dict(ctx.raw_claims)
+            principal = request.headers.get("X-ClearTrace-Dev-Principal", "").strip()
+            if principal:
+                raw_claims["principal_id"] = principal
+            if dev_roles is not None or principal:
+                ctx = AuthContext(
+                    subject=ctx.subject,
+                    tenant_id=ctx.tenant_id,
+                    roles=dev_roles if dev_roles is not None else ctx.roles,
+                    org_unit=ctx.org_unit,
+                    raw_claims=raw_claims,
+                )
         request.state.auth = ctx
         return await call_next(request)
 
@@ -150,20 +172,7 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
                 type_uri="https://cleartrace.local/problems/unauthorized",
             )
         authorizer: CedarAuthorizer = request.app.state.cedar_authorizer
-        path = request.url.path
-        method = request.method.upper()
-        if _is_package_b_path(path):
-            allowed, action = authorize_package_b_route(auth=auth, path=path, method=method)
-            if not allowed:
-                _audit_authz_denial(request, auth, action)
-                return problem_response(
-                    status=403,
-                    title="Forbidden",
-                    detail="Role not permitted for this action",
-                    type_uri="https://cleartrace.local/problems/forbidden",
-                )
-            return await call_next(request)
-        action = _action_for_request(request)
+        action = action_for_request(request)
         principal = {
             "type": "ClearTrace::User",
             "id": auth.subject,
@@ -195,39 +204,6 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
                 type_uri="https://cleartrace.local/problems/forbidden",
             )
         return await call_next(request)
-
-
-def _action_for_request(request: Request) -> str:
-    path = request.url.path
-    method = request.method.upper()
-    if path.startswith("/api/v1/systems"):
-        if method == "GET":
-            return "view_system"
-        if method == "POST":
-            return "create_system"
-        if method == "PATCH":
-            return "update_system"
-    if path.startswith("/api/v1/admin"):
-        return "admin"
-    if path.startswith("/api/v1/data-policy"):
-        if method in {"PUT", "POST"}:
-            return "admin"
-        return "view_system"
-    if path.startswith("/api/v1/export/"):
-        return "view_system"
-    if path == "/api/v1/capabilities":
-        return "view_dashboard"
-    if path == "/api/v1/health":
-        return "health"
-    return "view_dashboard"
-
-
-def _is_package_b_path(path: str) -> bool:
-    return (
-        path.startswith("/api/v1/evidence")
-        or path.startswith("/api/v1/audit")
-        or ("/findings/" in path and path.endswith("/actions"))
-    )
 
 
 def _audit_authz_denial(request: Request, auth: AuthContext, action: str) -> None:

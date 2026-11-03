@@ -72,6 +72,13 @@ class PolicyWatcherService:
         self._diffs[record.diff_id] = record
         return record
 
+    def list_diff_records(self) -> list[PolicyDiffRecord]:
+        return list(self._diffs.values())
+
+
+    def get_diff(self, diff_id: UUID) -> PolicyDiffRecord | None:
+        return self._diffs.get(diff_id)
+
     def approve_by_steward(self, diff_id: UUID) -> PolicyDiffRecord:
         record = self._require_diff(diff_id)
         record.steward_approved = True

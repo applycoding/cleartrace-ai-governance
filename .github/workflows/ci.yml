@@ -69,7 +69,10 @@ jobs:
           ignore-unfixed: true
 
       - name: Unit tests
-        run: uv run pytest -q tests services --ignore=tests/integration -m "not integration"
+        run: >-
+          mkdir -p artifacts &&
+          uv run pytest -q tests services --ignore=tests/integration -m "not integration"
+          --junitxml=artifacts/junit-unit.xml
 
       - name: Install Postgres 16 client tools (match the Compose server for T-05)
         run: |
@@ -90,7 +93,19 @@ jobs:
           CLEARTRACE_T05_RESTORE_ADMIN_DSN: postgresql://cleartrace_super:cleartrace_super@127.0.0.1:5435/postgres
           PG_BIN: /usr/lib/postgresql/16/bin
           CLEARTRACE_CI: "1"
-        run: uv run pytest -q tests/integration tests/trl5 services
+        run: >-
+          mkdir -p artifacts &&
+          uv run pytest -q tests/integration tests/trl5 services
+          --junitxml=artifacts/junit-integration.xml
+
+      - name: TRL 5 report
+        run: uv run python tools/trl5_report.py --junit-unit artifacts/junit-unit.xml --junit-integration artifacts/junit-integration.xml
+
+      - name: Upload TRL 5 report
+        uses: actions/upload-artifact@v4
+        with:
+          name: trl5-test-report
+          path: docs/trl5/TRL5_TEST_REPORT.md
 
   web-shell:
     runs-on: ubuntu-latest
