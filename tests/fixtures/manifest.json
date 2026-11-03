@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-11-03T00:00:00+00:00",
+  "files": [
+    {
+      "path": "synthetic/marked-synthetic-patients.json",
+      "sha256": "62c9e1904b0d1102507b25c929279cb20f650aece12cf9ed60e60748c0d6488a",
+      "licence": "Apache-2.0 (generated synthetic data)",
+      "url": ""
+    }
+  ]
+}

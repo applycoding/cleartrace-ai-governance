@@ -99,7 +99,13 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
 
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
         settings: Settings = request.app.state.settings
-        if request.url.path in {"/api/v1/health", "/api/v1/openapi.json", "/api/v1/docs"}:
+        public_paths = {
+            "/api/v1/health",
+            "/api/v1/openapi.json",
+            "/api/v1/docs",
+            "/api/v1/capabilities",
+        }
+        if request.url.path in public_paths:
             return await call_next(request)
         auth = request.headers.get("Authorization", "")
         if not auth.startswith("Bearer "):
@@ -127,7 +133,13 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
     """Deny requests that fail Cedar authorization for the route action."""
 
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        if request.url.path in {"/api/v1/health", "/api/v1/openapi.json", "/api/v1/docs"}:
+        public_paths = {
+            "/api/v1/health",
+            "/api/v1/openapi.json",
+            "/api/v1/docs",
+            "/api/v1/capabilities",
+        }
+        if request.url.path in public_paths:
             return await call_next(request)
         auth: AuthContext | None = getattr(request.state, "auth", None)
         if auth is None:
@@ -197,6 +209,14 @@ def _action_for_request(request: Request) -> str:
             return "update_system"
     if path.startswith("/api/v1/admin"):
         return "admin"
+    if path.startswith("/api/v1/data-policy"):
+        if method in {"PUT", "POST"}:
+            return "admin"
+        return "view_system"
+    if path.startswith("/api/v1/export/"):
+        return "view_system"
+    if path == "/api/v1/capabilities":
+        return "view_dashboard"
     if path == "/api/v1/health":
         return "health"
     return "view_dashboard"

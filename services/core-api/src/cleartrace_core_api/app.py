@@ -16,10 +16,12 @@ from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddlew
 from cleartrace_core_api.routers import (
     admin,
     audit,
+    data_policy,
     evidence,
     findings,
     frameworks,
     health,
+    interop,
     systems,
 )
 
@@ -64,5 +66,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(evidence.router, prefix="/api/v1")
     app.include_router(findings.router, prefix="/api/v1")
     app.include_router(audit.router, prefix="/api/v1")
+    app.include_router(data_policy.router, prefix="/api/v1")
+    app.include_router(interop.router, prefix="/api/v1")
 
     return app

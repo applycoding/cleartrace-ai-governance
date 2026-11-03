@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cleartrace.fullname" . }}
+  labels:
+    {{- include "cleartrace.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.cleartrace.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "cleartrace.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "cleartrace.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.global.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: core-api
+          {{- if .Values.cleartrace.image.digest }}
+          image: "{{ .Values.cleartrace.image.repository }}@{{ .Values.cleartrace.image.digest }}"
+          {{- else }}
+          image: "{{ .Values.cleartrace.image.repository }}:{{ .Values.cleartrace.image.tag }}"
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: CLEARTRACE_RESIDENCY_CELL
+              value: {{ .Values.residency.cellSlug | quote }}
+            - name: CLEARTRACE_CLASSIFICATION_CEILING
+              value: {{ .Values.security.classificationCeiling | quote }}
+          readinessProbe:
+            httpGet:
+              path: /api/v1/health
+              port: http
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /api/v1/health
+              port: http
+            initialDelaySeconds: 15

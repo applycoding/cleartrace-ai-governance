@@ -36,4 +36,4 @@ secrets-scan:
 	@if command -v gitleaks >/dev/null 2>&1; then gitleaks detect --no-git -v; else uv run python tools/secrets_scan.py; fi
 
 trivy:
-	@if command -v trivy >/dev/null 2>&1; then trivy fs --severity HIGH,CRITICAL $(ROOT); else uv run python tools/trivy_placeholder.py; fi
+	@if command -v trivy >/dev/null 2>&1; then trivy fs --severity HIGH,CRITICAL $(ROOT); else echo "install trivy to run filesystem scan"; exit 1; fi

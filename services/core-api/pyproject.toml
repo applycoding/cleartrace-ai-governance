@@ -19,6 +19,11 @@ dependencies = [
   "python-multipart>=0.0.18",
   "pydantic-settings>=2.6",
   "uuid6>=2024.7",
+  "pydantic-settings>=2.6",
+  "cryptography>=44.0",
+  "jsonschema>=4.23",
+  "psycopg[binary]>=3.2",
+  "compliance-trestle>=3.0",
 ]
 
 [tool.uv.sources]

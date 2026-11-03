@@ -1,0 +1,25 @@
+{{- if .Values.cleartrace.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "cleartrace.fullname" . }}
+  labels:
+    {{- include "cleartrace.labels" . | nindent 4 }}
+spec:
+  ingressClassName: {{ .Values.cleartrace.ingress.className }}
+  rules:
+    {{- range .Values.cleartrace.ingress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
+            backend:
+              service:
+                name: {{ include "cleartrace.fullname" $ }}
+                port:
+                  number: {{ $.Values.cleartrace.service.port }}
+          {{- end }}
+    {{- end }}
+{{- end }}
