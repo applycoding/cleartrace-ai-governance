@@ -1,39 +1,40 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import pytest
 from cleartrace_risk.output_monitor import OutputMonitor
 
+pytestmark = pytest.mark.trl5
+
+ROOT = Path(__file__).resolve().parents[2]
+SEEDS = json.loads((ROOT / "tests" / "trl5" / "fixtures" / "t18_output_seeds.json").read_text())
 DIMENSIONS = OutputMonitor.DIMENSIONS
 
 
-def _seeded_failure(dimension: str, seed: int) -> bool:
+def _failure_case(dimension: str, seed: dict) -> bool:
     monitor = OutputMonitor()
     if dimension == "accuracy":
-        baseline = 0.95
-        labels = [1, 0, 1, 0, 1, 0, 1, 0]
-        bad = [0] * len(labels)
+        baseline = float(seed["baseline"])
+        labels = list(seed["labels"])
+        bad = list(seed["predictions"])
         return monitor.check_accuracy(baseline, bad, labels).detected
     if dimension == "fairness_gap":
-        preds = [1] * 12 + [0] * 12
-        sensitive = ["A"] * 12 + ["B"] * 12
-        return monitor.check_fairness_gap(preds, sensitive).detected
+        return monitor.check_fairness_gap(list(seed["preds"]), list(seed["sensitive"])).detected
     if dimension == "pii_leak":
-        texts = ["clean answer"] * 5 + ["contact me at user@example.com"]
-        return monitor.check_pii_leak(texts).detected
+        return monitor.check_pii_leak(list(seed["texts"])).detected
     if dimension == "en_fr":
-        en = ["yes", "no", "approved"]
-        fr = ["yes", "non", "approved"]
-        return monitor.check_en_fr(en, fr).detected
+        return monitor.check_en_fr(list(seed["en"]), list(seed["fr"])).detected
     if dimension == "safety":
-        flags = [False, False, True, False, True]
-        return monitor.check_safety(flags).detected
+        return monitor.check_safety(list(seed["flags"])).detected
     raise AssertionError(f"unknown dimension {dimension}")
 
 
-def _seeded_clean(dimension: str) -> bool:
+def _clean_case(dimension: str, seed: dict) -> bool:
     monitor = OutputMonitor()
     if dimension == "accuracy":
-        labels = [1, 0, 1, 0]
+        labels = list(seed["labels"][:4])
         preds = labels.copy()
         return monitor.check_accuracy(0.9, preds, labels).detected
     if dimension == "fairness_gap":
@@ -50,10 +51,13 @@ def _seeded_clean(dimension: str) -> bool:
     raise AssertionError(f"unknown dimension {dimension}")
 
 
-@pytest.mark.trl5
 @pytest.mark.parametrize("dimension", DIMENSIONS)
 def test_t18_output_monitoring(dimension: str) -> None:
-    detected = sum(1 for seed in range(50) if _seeded_failure(dimension, seed))
-    false_alarms = sum(1 for _ in range(50) if _seeded_clean(dimension))
+    failure_seeds = SEEDS[dimension]["failure"]
+    clean_seeds = SEEDS[dimension]["clean"]
+    assert len(failure_seeds) >= 50
+    assert failure_seeds[0].get("dataset"), f"{dimension} failure seeds must cite a public dataset"
+    detected = sum(1 for seed in failure_seeds[:50] if _failure_case(dimension, seed))
+    false_alarms = sum(1 for seed in clean_seeds[:50] if _clean_case(dimension, seed))
     assert detected >= 48, f"{dimension}: {detected}/50 failures detected"
     assert false_alarms <= 2, f"{dimension}: {false_alarms}/50 false alarms"

@@ -37,3 +37,11 @@ class Settings(BaseSettings):
         default=60,
         description="Sliding window length for per-tenant rate limits",
     )
+    json_logs: bool = Field(
+        default=False,
+        description="Emit structured JSON logs to stdout (see docs/config/logging.json.example)",
+    )
+    log_config_path: str = Field(
+        default="",
+        description="Optional path to a logging.config dict JSON file (overrides json_logs when set)",
+    )

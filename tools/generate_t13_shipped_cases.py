@@ -56,6 +56,18 @@ def main() -> None:
     profiles = [
         (
             "dadm",
+            "CA-DADM-MIX-T13",
+            {"planned_production_use": True},
+            [
+                {
+                    "type": "aia_record",
+                    "authorized_submitter": True,
+                    "valid_until": "2099-01-01",
+                }
+            ],
+        ),
+        (
+            "dadm",
             "CA-DADM-APP-C-03",
             {"planned_production_use": True, "impact_level": 3},
             [],

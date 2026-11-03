@@ -25,8 +25,18 @@ def _load_cyclonedx_schema() -> dict:
 def test_t03_oscal_and_cyclonedx_exports() -> None:
     exporter = InteropExportService()
     dossiers = [
-        exporter.dossier_from_seed(system_key="t03-a", name_en="System A", name_fr="Système A"),
-        exporter.dossier_from_seed(system_key="t03-b", name_en="System B", name_fr="Système B"),
+        exporter.dossier_from_seed(
+            system_key="t03-a",
+            name_en="System A",
+            name_fr="Système A",
+            findings_per_state=5,
+        ),
+        exporter.dossier_from_seed(
+            system_key="t03-b",
+            name_en="System B",
+            name_fr="Système B",
+            findings_per_state=5,
+        ),
     ]
     validated = 0
     preserved_total = 0
@@ -50,8 +60,8 @@ def test_t03_oscal_and_cyclonedx_exports() -> None:
     assert "lossy" in caps["five_state_profile"]["lossy_export_note"]
 
     assert validated == 2
-    assert finding_total == 10
-    assert preserved_total == finding_total
+    assert finding_total == 50
+    assert preserved_total == 50
 
 
 def test_t03_independent_importer_reads_profile() -> None:
@@ -62,10 +72,11 @@ def test_t03_independent_importer_reads_profile() -> None:
         system_key="t03-import",
         name_en="Import",
         name_fr="Importation",
+        findings_per_state=5,
     )
     raw = exporter.export_oscal("assessment-results", dossier)
     parsed = AssessmentResultsModel.model_validate_json(raw)
     findings = parsed.assessment_results.results[0].findings or []
-    assert len(findings) == 5
+    assert len(findings) == 25
     outcome_props = [p for f in findings for p in (f.props or []) if p.name == "outcome-state"]
-    assert len(outcome_props) == 3
+    assert len(outcome_props) == 15

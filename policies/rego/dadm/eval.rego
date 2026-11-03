@@ -25,6 +25,11 @@ evaluation := result if {
 	result := appendix_c_peer_review
 }
 
+evaluation := result if {
+	input.control_key == "CA-DADM-MIX-T13"
+	result := mixed_objectives_t13
+}
+
 aia_before_production := {
 	"applicability_known": true,
 	"applicability": applicable_production,
@@ -88,3 +93,27 @@ objectives_appendix_c := [{
 	"passed": evidence.evidence_passed("peer_review_report"),
 	"critical_gate": true,
 }]
+
+mixed_objectives_t13 := {
+	"applicability_known": true,
+	"applicability": applicable_production,
+	"objectives": objectives_mixed_t13,
+	"evidence_issues": evidence.evidence_issue_list,
+} if applicable_production
+
+mixed_objectives_t13 := not_applicable if not applicable_production
+
+objectives_mixed_t13 := [
+	{
+		"key": "aia_record",
+		"applicable": true,
+		"passed": evidence.evidence_passed("aia_record"),
+		"critical_gate": false,
+	},
+	{
+		"key": "peer_review",
+		"applicable": true,
+		"passed": false,
+		"critical_gate": false,
+	},
+]

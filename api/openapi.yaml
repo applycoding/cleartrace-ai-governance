@@ -35,9 +35,21 @@ paths:
     get:
       tags: [systems]
       summary: List AI systems
+      parameters:
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/PaginationCursor"
       responses:
         "200":
           description: Page of systems
+        "400":
+          description: Invalid pagination cursor
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetail"
     post:
       tags: [systems]
       summary: Register a system
@@ -58,9 +70,26 @@ paths:
       summary: Update system
       parameters:
         - $ref: "#/components/parameters/SystemId"
+        - name: If-Match
+          in: header
+          required: true
+          schema:
+            $ref: "#/components/schemas/NoNulString"
       responses:
         "200":
           description: Updated
+        "412":
+          description: If-Match precondition failed
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetail"
+        "428":
+          description: If-Match required
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetail"
   /systems/{system_id}/findings:
     get:
       tags: [systems]
@@ -510,3 +539,38 @@ components:
       schema:
         type: string
         format: uuid
+  schemas:
+    NoNulString:
+      type: string
+      pattern: "^[^\u0000]*$"
+    PaginationCursor:
+      type: string
+      pattern: "^[A-Za-z0-9_-]+=*$"
+    ProblemDetail:
+      type: object
+      required: [type, title, status]
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          $ref: "#/components/schemas/NoNulString"
+        instance:
+          $ref: "#/components/schemas/NoNulString"
+    AssignmentCreate:
+      oneOf:
+        - required: [framework_version_id, ai_system_id]
+        - required: [framework_version_id, group_id]
+      properties:
+        framework_version_id:
+          type: string
+          format: uuid
+        ai_system_id:
+          type: string
+          format: uuid
+        group_id:
+          type: string
+          format: uuid

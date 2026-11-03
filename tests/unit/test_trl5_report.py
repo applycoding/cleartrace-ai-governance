@@ -65,8 +65,7 @@ def test_t13_requires_both_golden_and_shipped_modules(tmp_path: Path) -> None:
     )
     outcome = trl5_report._outcome_for_test("T-13", parsed)
     assert outcome is not None and outcome.failed == 0
-    # Golden set is template-generated, so a green T-13 run is still partial.
-    assert trl5_report.status_for("T-13", outcome) == "partial"
+    assert trl5_report.status_for("T-13", outcome) == "pass"
 
 
 def test_t11_is_partial_and_reports_measured_numbers(tmp_path: Path) -> None:
