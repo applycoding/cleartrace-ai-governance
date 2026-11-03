@@ -43,6 +43,9 @@ def _h(tenant: str = TENANT_A, **extra: str) -> dict[str, str]:
         "https://169.254.169.254/latest/meta-data",
         "https://[::1]/hook",
         "https:///nohost",
+        "https://" + "a" * 64 + ".example.com/hook",
+        "https://" + ".".join(["abcdefghij"] * 25) + ".com/hook",
+        "https://bad..example.com/hook",
     ],
 )
 def test_webhook_urls_must_be_public_https(url: str) -> None:
@@ -200,3 +203,18 @@ def test_idempotency_key_schema_matches_the_middleware(client: TestClient) -> No
     (param,) = [p for p in op["parameters"] if p["name"] == "Idempotency-Key"]
     assert param["required"] is True
     assert param["schema"]["pattern"] == "^[!-~]{1,128}$"
+
+
+def test_delivery_to_an_unresolvable_host_is_a_failed_attempt_not_a_crash() -> None:
+    import asyncio
+
+    from cleartrace_notifier.webhook import HttpxWebhookTransport
+
+    async def attempt() -> tuple[int, str]:
+        return await HttpxWebhookTransport().post(
+            "https://" + "a" * 64 + ".example.com/hook", {}, b"{}"
+        )
+
+    code, text = asyncio.run(attempt())
+    assert code == 0
+    assert text.startswith("blocked:")

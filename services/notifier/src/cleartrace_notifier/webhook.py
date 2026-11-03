@@ -26,6 +26,17 @@ def _check_ip(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> None:
         raise WebhookURLError(f"webhook destination {ip} is not a public address")
 
 
+def _check_hostname(host: str) -> None:
+    """DNS name rules: 253 characters at most, labels of 1 to 63 characters, IDNA-valid."""
+    try:
+        ascii_host = host.rstrip(".").encode("idna").decode("ascii")
+    except UnicodeError as exc:
+        raise WebhookURLError("webhook URL host is not a valid DNS name") from exc
+    labels = ascii_host.split(".")
+    if len(ascii_host) > 253 or any(not 1 <= len(label) <= 63 for label in labels):
+        raise WebhookURLError("webhook URL host is not a valid DNS name")
+
+
 def validate_webhook_url(url: str) -> str:
     """Reject webhook URLs that could reach internal services (SSRF, ASVS V5.2.6).
 
@@ -46,6 +57,8 @@ def validate_webhook_url(url: str) -> str:
         literal = None
     if literal is not None:
         _check_ip(literal)
+    else:
+        _check_hostname(host)
     try:
         _ = parts.port
     except ValueError as exc:
@@ -59,7 +72,7 @@ async def _assert_resolves_public(url: str) -> None:
     loop = asyncio.get_running_loop()
     try:
         infos = await loop.getaddrinfo(host, parts.port or 443, type=socket.SOCK_STREAM)
-    except OSError as exc:
+    except (OSError, UnicodeError) as exc:
         raise WebhookURLError(f"webhook host does not resolve: {host}") from exc
     for info in infos:
         _check_ip(ipaddress.ip_address(info[4][0]))
