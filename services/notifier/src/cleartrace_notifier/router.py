@@ -33,9 +33,14 @@ class AlertCreate(BaseModel):
     event_id: str | None = None
 
 
-def register_notifier_routes(app: Any, service: NotifierService | None = None) -> None:
+def register_notifier_routes(
+    app: Any,
+    service: NotifierService | None = None,
+    *,
+    prefix: str = "/api/v1",
+) -> None:
     app.state.notifier_service = service or NotifierService()
-    app.include_router(router, prefix="/api/v1")
+    app.include_router(router, prefix=prefix)
 
 
 def _service(request: Request) -> NotifierService:
@@ -45,9 +50,15 @@ def _service(request: Request) -> NotifierService:
     return cast(NotifierService, svc)
 
 
+def _tenant_id(request: Request) -> UUID:
+    auth = request.state.auth
+    return UUID(str(auth.tenant_id))
+
+
 @router.get("/notifications")
 async def list_notifications(request: Request) -> dict[str, list[dict[str, str]]]:
     svc = _service(request)
+    tenant_id = _tenant_id(request)
     items = [
         {
             "id": str(n.id),
@@ -55,6 +66,7 @@ async def list_notifications(request: Request) -> dict[str, list[dict[str, str]]
             "reason": n.alert.reason,
         }
         for n in svc.store.open_notifications()
+        if n.tenant_id == tenant_id
     ]
     return {"items": items}
 
@@ -62,7 +74,7 @@ async def list_notifications(request: Request) -> dict[str, list[dict[str, str]]
 @router.post("/webhooks")
 async def create_webhook(body: WebhookCreate, request: Request) -> dict[str, str]:
     svc = _service(request)
-    tenant_id = UUID("11111111-1111-7111-8111-111111111101")
+    tenant_id = _tenant_id(request)
     sub = WebhookSubscription(
         id=uuid7(),
         tenant_id=tenant_id,
@@ -77,11 +89,6 @@ async def create_webhook(body: WebhookCreate, request: Request) -> dict[str, str
 @router.post("/notifications:dispatch")
 async def dispatch_alert(body: AlertCreate, request: Request) -> dict[str, object]:
     svc = _service(request)
-    tenant_id = UUID("11111111-1111-7111-8111-111111111101")
+    tenant_id = _tenant_id(request)
     await svc.dispatch_alert(tenant_id, body.model_dump())
     return {"status": "accepted"}
-
-
-@router.post("/reports")
-async def create_report_stub() -> dict[str, str]:
-    return {"id": str(uuid7()), "status": "accepted"}

@@ -3,6 +3,9 @@ from __future__ import annotations
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
+from cleartrace_notifier.router import register_notifier_routes
+from cleartrace_notifier.service import NotifierService
+from cleartrace_register.api.router import mount_register_routes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,13 +18,19 @@ from cleartrace_core_api.middleware.language import LanguageMiddleware
 from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddleware
 from cleartrace_core_api.routers import (
     admin,
+    aia,
+    assessments,
     audit,
+    connectors,
     data_policy,
     evidence,
     findings,
     frameworks,
     health,
     interop,
+    policy_watch,
+    reports,
+    risk,
     systems,
 )
 
@@ -59,14 +68,23 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     register_exception_handlers(app)
 
-    app.include_router(health.router, prefix="/api/v1")
-    app.include_router(systems.router, prefix="/api/v1")
-    app.include_router(frameworks.router, prefix="/api/v1")
-    app.include_router(admin.router, prefix="/api/v1")
-    app.include_router(evidence.router, prefix="/api/v1")
-    app.include_router(findings.router, prefix="/api/v1")
-    app.include_router(audit.router, prefix="/api/v1")
-    app.include_router(data_policy.router, prefix="/api/v1")
-    app.include_router(interop.router, prefix="/api/v1")
+    prefix = "/api/v1"
+    app.include_router(health.router, prefix=prefix)
+    app.include_router(systems.router, prefix=prefix)
+    app.include_router(frameworks.router, prefix=prefix)
+    app.include_router(admin.router, prefix=prefix)
+    app.include_router(evidence.router, prefix=prefix)
+    app.include_router(findings.router, prefix=prefix)
+    app.include_router(assessments.router, prefix=prefix)
+    app.include_router(audit.router, prefix=prefix)
+    app.include_router(data_policy.router, prefix=prefix)
+    app.include_router(interop.router, prefix=prefix)
+    app.include_router(aia.router, prefix=prefix)
+    app.include_router(connectors.router, prefix=prefix)
+    app.include_router(policy_watch.router, prefix=prefix)
+    app.include_router(risk.router, prefix=prefix)
+    app.include_router(reports.router, prefix=prefix)
+    mount_register_routes(app, prefix=prefix)
+    register_notifier_routes(app, NotifierService())
 
     return app

@@ -11,7 +11,18 @@ tags:
   - name: systems
   - name: frameworks
   - name: assessments
+  - name: evidence
   - name: audit
+  - name: data-policy
+  - name: interop
+  - name: aia
+  - name: connectors
+  - name: register
+  - name: policy-watch
+  - name: risk
+  - name: notifications
+  - name: reports
+  - name: admin
 paths:
   /health:
     get:
@@ -23,22 +34,17 @@ paths:
   /systems:
     get:
       tags: [systems]
-      summary: List AI systems (cursor pagination)
-      parameters:
-        - $ref: "#/components/parameters/Cursor"
-        - $ref: "#/components/parameters/AcceptLanguage"
+      summary: List AI systems
       responses:
         "200":
           description: Page of systems
     post:
       tags: [systems]
       summary: Register a system
-      parameters:
-        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "201":
           description: Created
-  /systems/{id}:
+  /systems/{system_id}:
     get:
       tags: [systems]
       summary: Get system
@@ -49,36 +55,68 @@ paths:
           description: System
     patch:
       tags: [systems]
-      summary: Update system (If-Match required)
+      summary: Update system
       parameters:
         - $ref: "#/components/parameters/SystemId"
-        - $ref: "#/components/parameters/IfMatch"
       responses:
         "200":
           description: Updated
-        "428":
-          description: Precondition required
-  /systems/{id}/history:
+  /systems/{system_id}/findings:
     get:
       tags: [systems]
-      summary: Bitemporal history
+      summary: List findings for a system
       parameters:
         - $ref: "#/components/parameters/SystemId"
-        - name: as_of
+        - name: state
           in: query
           schema:
             type: string
-            format: date-time
       responses:
         "200":
-          description: History view
+          description: Findings
+  /systems/{system_id}/aia:
+    post:
+      tags: [aia]
+      summary: Score AIA for a system
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+      responses:
+        "200":
+          description: Score
   /frameworks:
     get:
       tags: [frameworks]
-      summary: List frameworks
+      summary: List framework packs
       responses:
         "200":
           description: Frameworks
+  /frameworks/packs/{slug}/oscal:
+    get:
+      tags: [frameworks]
+      summary: Export pack as OSCAL catalog
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OSCAL catalog
+  /frameworks/assignments:
+    post:
+      tags: [frameworks]
+      summary: Create control assignment
+      responses:
+        "200":
+          description: Assignment created
+  /frameworks/reassessment-flags:
+    get:
+      tags: [frameworks]
+      summary: List reassessment flags
+      responses:
+        "200":
+          description: Flags
   /assessments:
     post:
       tags: [assessments]
@@ -86,13 +124,55 @@ paths:
       responses:
         "202":
           description: Accepted
-  /findings/{id}/actions:
+  /assessments/{job_id}:
+    get:
+      tags: [assessments]
+      summary: Get assessment job status
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Job
+  /findings/{finding_id}:
+    get:
+      tags: [assessments]
+      summary: Get finding
+      parameters:
+        - name: finding_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Finding
+  /findings/{finding_id}/actions:
     post:
       tags: [assessments]
       summary: Reviewer action
+      parameters:
+        - name: finding_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
       responses:
         "200":
           description: Action recorded
+  /evidence:
+    post:
+      tags: [evidence]
+      summary: Upload evidence
+      responses:
+        "201":
+          description: Stored
   /audit/events:
     get:
       tags: [audit]
@@ -100,6 +180,322 @@ paths:
       responses:
         "200":
           description: Events
+  /audit/checkpoints:
+    get:
+      tags: [audit]
+      summary: List Merkle checkpoints
+      responses:
+        "200":
+          description: Checkpoints
+  /audit:verify:
+    post:
+      tags: [audit]
+      summary: Verify audit hash chain
+      responses:
+        "200":
+          description: Verification report
+  /data-policy:
+    get:
+      tags: [data-policy]
+      summary: Get tenant data policy
+      responses:
+        "200":
+          description: Policy
+  /data-policy/retention:
+    put:
+      tags: [data-policy]
+      summary: Update retention rules
+      responses:
+        "200":
+          description: Updated
+  /data-policy/legal-holds:
+    post:
+      tags: [data-policy]
+      summary: Create legal hold
+      responses:
+        "201":
+          description: Created
+  /data-policy/deletion-requests:
+    post:
+      tags: [data-policy]
+      summary: Request deletion
+      responses:
+        "201":
+          description: Created
+  /data-policy/deletion-certificates/{certificate_id}:
+    get:
+      tags: [data-policy]
+      summary: Get deletion certificate
+      parameters:
+        - name: certificate_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Certificate
+  /capabilities:
+    get:
+      tags: [interop]
+      summary: Interop capabilities
+      security: []
+      responses:
+        "200":
+          description: Capabilities
+  /export/oscal/{export_type}:
+    get:
+      tags: [interop]
+      summary: Export OSCAL artefact
+      parameters:
+        - name: export_type
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Export
+  /export/cyclonedx/{system_id}:
+    get:
+      tags: [interop]
+      summary: Export CycloneDX ML-BOM
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+      responses:
+        "200":
+          description: CycloneDX JSON
+  /aia/schema:
+    get:
+      tags: [aia]
+      summary: AIA survey schema metadata
+      responses:
+        "200":
+          description: Schema info
+  /aia:score:
+    post:
+      tags: [aia]
+      summary: Score AIA answers
+      responses:
+        "200":
+          description: Score
+  /aia/{record_id}/export:
+    get:
+      tags: [aia]
+      summary: Export AIA record
+      parameters:
+        - name: record_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Export
+  /connectors:
+    get:
+      tags: [connectors]
+      summary: List connectors
+      responses:
+        "200":
+          description: Connectors
+    post:
+      tags: [connectors]
+      summary: Install connector from manifest
+      responses:
+        "201":
+          description: Installed
+  /connectors/{connector_id}:run:
+    post:
+      tags: [connectors]
+      summary: Run connector ingest
+      parameters:
+        - name: connector_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Run result
+  /register/systems/{system_id}:
+    get:
+      tags: [register]
+      summary: Register category fill status
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+      responses:
+        "200":
+          description: Register view
+  /register/import/gc-ai-register:
+    post:
+      tags: [register]
+      summary: Import GC AI Register CSV
+      responses:
+        "200":
+          description: Import summary
+  /policy-sources:
+    get:
+      tags: [policy-watch]
+      summary: List policy sources
+      responses:
+        "200":
+          description: Sources
+  /policy-diffs:
+    get:
+      tags: [policy-watch]
+      summary: List policy diffs
+      responses:
+        "200":
+          description: Diffs
+  /policy-diffs/capture:
+    post:
+      tags: [policy-watch]
+      summary: Capture HTML and compute diff
+      responses:
+        "200":
+          description: Diff id
+  /policy-diffs/{diff_id}:promote:
+    post:
+      tags: [policy-watch]
+      summary: Promote policy diff after steward approval
+      parameters:
+        - name: diff_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Promoted
+  /impact-sets/{impact_id}:
+    get:
+      tags: [policy-watch]
+      summary: Impact set for a policy diff
+      parameters:
+        - name: impact_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Impact set
+  /metrics:
+    get:
+      tags: [risk]
+      summary: List metric definitions
+      responses:
+        "200":
+          description: Metrics
+    post:
+      tags: [risk]
+      summary: Create metric definition
+      responses:
+        "201":
+          description: Created
+  /metrics/{metric_id}/versions:
+    post:
+      tags: [risk]
+      summary: Create metric version
+      parameters:
+        - name: metric_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "201":
+          description: Created
+  /baselines:
+    get:
+      tags: [risk]
+      summary: List baselines
+      responses:
+        "200":
+          description: Baselines
+    post:
+      tags: [risk]
+      summary: Create baseline
+      responses:
+        "201":
+          description: Created
+  /observations:
+    post:
+      tags: [risk]
+      summary: Post observation batch
+      responses:
+        "201":
+          description: Processed
+  /risks:
+    get:
+      tags: [risk]
+      summary: List risk register entries
+      responses:
+        "200":
+          description: Risks
+  /data-quality-issues:
+    get:
+      tags: [risk]
+      summary: List data quality issues
+      responses:
+        "200":
+          description: Issues
+  /notifications:
+    get:
+      tags: [notifications]
+      summary: List open notifications
+      responses:
+        "200":
+          description: Notifications
+  /webhooks:
+    post:
+      tags: [notifications]
+      summary: Register webhook subscription
+      responses:
+        "200":
+          description: Created
+  /notifications:dispatch:
+    post:
+      tags: [notifications]
+      summary: Dispatch alert to channels
+      responses:
+        "200":
+          description: Accepted
+  /reports:
+    post:
+      tags: [reports]
+      summary: Generate report
+      responses:
+        "202":
+          description: Accepted
+  /reports/{report_id}:
+    get:
+      tags: [reports]
+      summary: Download report artefact
+      parameters:
+        - name: report_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Report body
+  /admin/ping:
+    get:
+      tags: [admin]
+      summary: Admin connectivity check
+      responses:
+        "200":
+          description: Pong
 components:
   securitySchemes:
     bearerAuth:
@@ -107,47 +503,10 @@ components:
       scheme: bearer
       bearerFormat: JWT
   parameters:
-    Cursor:
-      name: cursor
-      in: query
-      schema:
-        type: string
-    AcceptLanguage:
-      name: Accept-Language
-      in: header
-      schema:
-        type: string
-        enum: [en-CA, fr-CA]
-    IdempotencyKey:
-      name: Idempotency-Key
-      in: header
-      required: true
-      schema:
-        type: string
-    IfMatch:
-      name: If-Match
-      in: header
-      schema:
-        type: string
     SystemId:
-      name: id
+      name: system_id
       in: path
       required: true
       schema:
         type: string
         format: uuid
-  schemas:
-    ProblemDetail:
-      type: object
-      required: [type, title, status]
-      properties:
-        type:
-          type: string
-        title:
-          type: string
-        status:
-          type: integer
-        detail:
-          type: string
-        instance:
-          type: string

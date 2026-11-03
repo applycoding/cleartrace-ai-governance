@@ -11,6 +11,12 @@ dependencies = [
   "cleartrace-audit",
   "cleartrace-engine",
   "cleartrace-aia",
+  "cleartrace-register",
+  "cleartrace-notifier",
+  "cleartrace-reports",
+  "cleartrace-connectors",
+  "cleartrace-policy-watch",
+  "cleartrace-risk",
   "fastapi>=0.115",
   "uvicorn[standard]>=0.32",
   "httpx>=0.28",
@@ -19,7 +25,6 @@ dependencies = [
   "python-multipart>=0.0.18",
   "pydantic-settings>=2.6",
   "uuid6>=2024.7",
-  "pydantic-settings>=2.6",
   "cryptography>=44.0",
   "jsonschema>=4.23",
   "psycopg[binary]>=3.2",
@@ -33,6 +38,12 @@ cleartrace-evidence = { workspace = true }
 cleartrace-audit = { workspace = true }
 cleartrace-engine = { workspace = true }
 cleartrace-aia = { workspace = true }
+cleartrace-register = { workspace = true }
+cleartrace-notifier = { workspace = true }
+cleartrace-reports = { workspace = true }
+cleartrace-connectors = { workspace = true }
+cleartrace-policy-watch = { workspace = true }
+cleartrace-risk = { workspace = true }
 
 [project.scripts]
 cleartrace-api = "cleartrace_core_api.main:run"

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.request import urlopen
@@ -14,6 +15,11 @@ FIXTURES = ROOT / "tests" / "fixtures"
 MANIFEST_PATH = FIXTURES / "manifest.json"
 CHECKSUMS_PATH = FIXTURES / "checksums.sha256"
 LICENSES_PATH = FIXTURES / "LICENSES.md"
+
+TABLE_HEADER = (
+    "| File | Source | Licence | Attribution | SHA-256 |",
+    "| --- | --- | --- | --- | --- |",
+)
 
 
 @dataclass(frozen=True)
@@ -95,25 +101,106 @@ def _download(url: str, dest: Path) -> None:
         dest.write_bytes(resp.read())
 
 
-def _licence_rows(entries: list[tuple[str, str, str, str]]) -> str:
-    lines = [
-        "# Fixtures licence register (step 4)",
-        "",
-        "Public datasets used in tests with source URL, licence, and attribution.",
-        "",
-        "| File | Source | Licence | Attribution | SHA-256 |",
-        "| --- | --- | --- | --- | --- |",
-    ]
-    for rel, url, licence, attribution, digest in entries:
-        lines.append(f"| `{rel}` | {url or 'generated'} | {licence} | {attribution} | `{digest}` |")
+def _parse_existing_licence_rows(text: str) -> dict[str, str]:
+    """Return rel_path -> full table row for paths managed by this tool."""
+    rows: dict[str, str] = {}
+    in_table = False
+    for line in text.splitlines():
+        if line.strip() == TABLE_HEADER[0]:
+            in_table = True
+            continue
+        if in_table and line.startswith("| `"):
+            match = re.match(r"\| `([^`]+)` \|", line)
+            if match:
+                rel = match.group(1)
+                managed = any(spec.rel_path == rel for spec in SPECS)
+                if managed:
+                    rows[rel] = line
+        if in_table and line.startswith("Run `uv run python tools/freeze_fixtures.py`"):
+            break
+    return rows
+
+
+def _merge_licence_markdown(
+    existing: str,
+    managed_rows: dict[str, str],
+    new_rows: dict[str, str],
+) -> str:
+    merged = dict(managed_rows)
+    merged.update(new_rows)
+    if not existing.strip():
+        lines = [
+            "# Fixtures licence register (step 4)",
+            "",
+            "Public datasets used in tests with source URL, licence, and attribution.",
+            "",
+            *TABLE_HEADER,
+        ]
+        for spec in SPECS:
+            row = merged.get(spec.rel_path)
+            if row:
+                lines.append(row)
+        lines.extend(
+            [
+                "",
+                "Run `uv run python tools/freeze_fixtures.py` before G0 to refresh managed rows.",
+                "",
+            ]
+        )
+        return "\n".join(lines)
+
+    before, _, after = existing.partition(TABLE_HEADER[0])
+    if not _:
+        return existing
+
+    table_and_rest = after
+    footer_idx = table_and_rest.find("Run `uv run python tools/freeze_fixtures.py`")
+    if footer_idx == -1:
+        footer = (
+            "\nRun `uv run python tools/freeze_fixtures.py` before G0 to refresh managed rows.\n"
+        )
+        tail = ""
+    else:
+        footer = table_and_rest[footer_idx:]
+        tail = table_and_rest[footer_idx + len(footer) :]
+
+    lines = [before.rstrip(), "", TABLE_HEADER[0], TABLE_HEADER[1]]
+    seen: set[str] = set()
+    for line in table_and_rest.splitlines():
+        if line.startswith("| `"):
+            match = re.match(r"\| `([^`]+)` \|", line)
+            if match:
+                rel = match.group(1)
+                if rel in merged:
+                    lines.append(merged[rel])
+                    seen.add(rel)
+                else:
+                    lines.append(line)
+        elif line == TABLE_HEADER[1]:
+            continue
+        elif line.startswith("Run `uv run python tools/freeze_fixtures.py`"):
+            break
+
+    for spec in SPECS:
+        if spec.rel_path not in seen and spec.rel_path in merged:
+            lines.append(merged[spec.rel_path])
+
     lines.append("")
-    return "\n".join(lines)
+    lines.append(footer.strip())
+    if tail.strip():
+        lines.append(tail.strip())
+    return "\n".join(lines) + "\n"
 
 
 def main() -> int:
     FIXTURES.mkdir(parents=True, exist_ok=True)
+    existing_licences = (
+        LICENSES_PATH.read_text(encoding="utf-8") if LICENSES_PATH.exists() else ""
+    )
+    existing_managed = _parse_existing_licence_rows(existing_licences)
+
     manifest: dict[str, object] = {"frozen_at": None, "files": []}
-    licence_entries: list[tuple[str, str, str, str, str]] = []
+    new_rows: dict[str, str] = {}
     checksum_lines: list[str] = []
 
     for spec in SPECS:
@@ -131,7 +218,10 @@ def main() -> int:
                 raise
         digest = _sha256(target)
         checksum_lines.append(f"{digest}  {spec.rel_path}")
-        licence_entries.append((spec.rel_path, spec.url, spec.licence, spec.attribution, digest))
+        url = spec.url or "generated"
+        new_rows[spec.rel_path] = (
+            f"| `{spec.rel_path}` | {url} | {spec.licence} | {spec.attribution} | `{digest}` |"
+        )
         manifest["files"].append(
             {"path": spec.rel_path, "sha256": digest, "licence": spec.licence, "url": spec.url}
         )
@@ -141,7 +231,10 @@ def main() -> int:
     manifest["frozen_at"] = datetime.now(tz=UTC).isoformat()
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     CHECKSUMS_PATH.write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
-    LICENSES_PATH.write_text(_licence_rows(licence_entries), encoding="utf-8")
+    LICENSES_PATH.write_text(
+        _merge_licence_markdown(existing_licences, existing_managed, new_rows),
+        encoding="utf-8",
+    )
     print(f"frozen {len(checksum_lines)} fixture files")
     return 0
 
