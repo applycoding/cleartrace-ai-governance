@@ -1,0 +1,10 @@
+name: generic-csv
+version: "1.0.0"
+direction: pull
+scopes:
+  - register.read
+field_mapping:
+  funding_status.en: "5.funding_status"
+  funding_status.fr: "5.funding_status"
+source_tiers:
+  default: 2

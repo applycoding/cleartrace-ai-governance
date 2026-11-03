@@ -1,0 +1,12 @@
+{
+  "changed_clauses": [
+    "6.1.6"
+  ],
+  "impact_links": [
+    {
+      "clause": "6.1.6",
+      "control": "CA-DADM-06",
+      "system_id": "1c102c9d-0cc2-4523-9671-5e738720bed7"
+    }
+  ]
+}

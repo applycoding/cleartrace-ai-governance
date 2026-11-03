@@ -1,0 +1,4 @@
+{
+  "resource": { "service": { "name": "cleartrace-otel-demo" } },
+  "gen_ai": { "usage": { "completion_tokens": "128" } }
+}

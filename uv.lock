@@ -11,12 +11,16 @@ resolution-markers = [
 members = [
     "cleartrace-aia",
     "cleartrace-audit",
+    "cleartrace-connectors",
     "cleartrace-contracts",
     "cleartrace-core-api",
     "cleartrace-db",
+    "cleartrace-egress-proxy",
     "cleartrace-engine",
     "cleartrace-evidence",
     "cleartrace-notifier",
+    "cleartrace-policy-watch",
+    "cleartrace-register",
     "cleartrace-reports",
     "cleartrace-workspace",
 ]
@@ -532,6 +536,31 @@ requires-dist = [
 ]
 
 [[package]]
+name = "cleartrace-connectors"
+version = "0.1.0"
+source = { editable = "services/connectors" }
+dependencies = [
+    { name = "cleartrace-contracts" },
+    { name = "cleartrace-egress-proxy" },
+    { name = "cleartrace-register" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+    { name = "uuid6" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "cleartrace-egress-proxy", editable = "services/egress-proxy" },
+    { name = "cleartrace-register", editable = "services/register" },
+    { name = "httpx", specifier = ">=0.28" },
+    { name = "pydantic", specifier = ">=2.10" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "uuid6", specifier = ">=2024.7" },
+]
+
+[[package]]
 name = "cleartrace-contracts"
 version = "0.1.0"
 source = { editable = "packages/cleartrace-contracts" }
@@ -611,6 +640,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "cleartrace-egress-proxy"
+version = "0.1.0"
+source = { editable = "services/egress-proxy" }
+dependencies = [
+    { name = "httpx" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.28" },
+    { name = "pydantic", specifier = ">=2.10" },
+]
+
+[[package]]
 name = "cleartrace-engine"
 version = "0.1.0"
 source = { editable = "services/engine" }
@@ -670,6 +714,44 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.28" },
     { name = "nats-py", specifier = ">=2.9" },
     { name = "pydantic", specifier = ">=2.10" },
+    { name = "uuid6", specifier = ">=2024.7" },
+]
+
+[[package]]
+name = "cleartrace-policy-watch"
+version = "0.1.0"
+source = { editable = "services/policy-watch" }
+dependencies = [
+    { name = "cleartrace-contracts" },
+    { name = "pydantic" },
+    { name = "uuid6" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "pydantic", specifier = ">=2.10" },
+    { name = "uuid6", specifier = ">=2024.7" },
+]
+
+[[package]]
+name = "cleartrace-register"
+version = "0.1.0"
+source = { editable = "services/register" }
+dependencies = [
+    { name = "cleartrace-contracts" },
+    { name = "fastapi" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+    { name = "uuid6" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "fastapi", specifier = ">=0.115" },
+    { name = "pydantic", specifier = ">=2.10" },
+    { name = "pyyaml", specifier = ">=6.0" },
     { name = "uuid6", specifier = ">=2024.7" },
 ]
 

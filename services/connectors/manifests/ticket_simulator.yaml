@@ -1,0 +1,13 @@
+name: ticket-simulator
+version: "1.0.0"
+direction: both
+scopes:
+  - itsm.read
+destinations:
+  - host: tickets-simulator.local
+    port: 443
+field_mapping:
+  ticket.approval_status.en: "13.approval_status"
+  ticket.approval_status.fr: "13.approval_status"
+source_tiers:
+  default: 1

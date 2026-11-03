@@ -19,3 +19,11 @@ Public datasets used in tests with source URL, licence, and attribution.
 | `aia/departments.json` | https://github.com/canada-ca/aia-eia-js | MIT | canada-ca/aia-eia-js | run `tools/freeze_fixtures.py` |
 
 Run `uv run python tools/freeze_fixtures.py` before G0 to download remaining public fixtures, refresh `checksums.sha256`, and complete this table. Rows marked "run `tools/freeze_fixtures.py`" are not downloaded yet. Paths are relative to `tests/fixtures/`.
+
+Synthetic and structural test data outside `tests/fixtures/`:
+
+| Dataset / fixture | Use | Licence / terms |
+|---|---|---|
+| Synthetic connector payloads under `services/connectors/fixtures/` | TRL 5 T-02 connector mapping | ClearTrace test data (Apache-2.0) |
+| Synthetic policy HTML under `tests/trl5/fixtures/t01/` | TRL 5 T-01 policy diff | ClearTrace test data (Apache-2.0) |
+| GC AI Register CSV structure (not vendored) | Register import unit tests | Open Government Licence – Canada when using the official file |

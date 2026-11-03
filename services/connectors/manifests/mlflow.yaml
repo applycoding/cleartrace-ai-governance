@@ -1,0 +1,17 @@
+name: mlflow
+version: "1.0.0"
+direction: pull
+scopes:
+  - register.read
+  - register.write
+schedule: "0 * * * *"
+destinations:
+  - host: mlflow-simulator.local
+    port: 443
+field_mapping:
+  registered_model.name: "1.summary"
+  registered_model.description.en: "1.summary"
+  latest_version.version: "4.register_status"
+  tags.owner: "2.business_owner"
+source_tiers:
+  default: 1

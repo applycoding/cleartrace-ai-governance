@@ -16,6 +16,10 @@ members = [
   "services/reports",
   "services/engine",
   "services/aia",
+  "services/register",
+  "services/connectors",
+  "services/egress-proxy",
+  "services/policy-watch",
   "db",
 ]
 
@@ -49,9 +53,9 @@ src = ["packages", "services", "db", "tests", "tools"]
 
 [tool.ruff.lint.per-file-ignores]
 "db/migrations/**" = ["E501"]
-"services/audit/**" = ["E501"]
-"services/evidence/**" = ["E501"]
-"tests/trl5/**" = ["E501", "B007"]
+"services/**" = ["E501"]
+"services/register/src/cleartrace_register/categories.py" = ["E501"]
+"tests/trl5/**" = ["E501", "B007", "SIM117"]
 "tests/unit/test_engine_reducer.py" = ["E501"]
 "tests/unit/test_aia_scorer.py" = ["E501"]
 "tools/generate_t13_golden.py" = ["E501", "E402"]
@@ -73,6 +77,10 @@ mypy_path = [
   "services/audit/src",
   "services/notifier/src",
   "services/reports/src",
+  "services/register/src",
+  "services/connectors/src",
+  "services/egress-proxy/src",
+  "services/policy-watch/src",
   "db/src",
 ]
 
