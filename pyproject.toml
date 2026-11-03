@@ -20,6 +20,7 @@ members = [
   "services/connectors",
   "services/egress-proxy",
   "services/policy-watch",
+  "services/risk",
   "db",
 ]
 
@@ -81,11 +82,12 @@ mypy_path = [
   "services/connectors/src",
   "services/egress-proxy/src",
   "services/policy-watch/src",
+  "services/risk/src",
   "db/src",
 ]
 
 [[tool.mypy.overrides]]
-module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*", "nats.*"]
+module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*", "nats.*", "pandas.*", "scipy.*", "sklearn.*", "fairlearn.*", "evidently.*"]
 ignore_missing_imports = true
 
 [tool.bandit]
