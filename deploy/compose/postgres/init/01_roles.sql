@@ -1,5 +1,4 @@
--- Bootstrap roles for Docker Compose Postgres (pgvector image).
-CREATE USER cleartrace_app WITH PASSWORD 'cleartrace_app' NOBYPASSRLS;
+-- Extensions for Docker Compose Postgres (pgvector image). Roles come from Alembic migrations.
 CREATE EXTENSION IF NOT EXISTS vector;
 DO $$
 BEGIN

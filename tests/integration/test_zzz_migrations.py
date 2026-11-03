@@ -8,6 +8,8 @@ from pathlib import Path
 import psycopg
 import pytest
 
+COMPOSE_FILE = Path("deploy/compose/docker-compose.yml")
+
 
 def _reset_tenant_data(url: str) -> None:
     dsn = url.replace("postgresql+psycopg", "postgresql", 1)
@@ -21,18 +23,28 @@ def _reset_tenant_data(url: str) -> None:
         )
 
 
+def _reload_pgbouncer(root: Path) -> None:
+    if os.environ.get("CLEARTRACE_CI") == "1":
+        subprocess.check_call(
+            ["docker", "compose", "-f", str(root / COMPOSE_FILE), "restart", "pgbouncer"],
+            cwd=root,
+        )
+        return
+    pidfile = root / ".data" / "pgbouncer.pid"
+    if pidfile.exists():
+        os.kill(int(pidfile.read_text().strip()), signal.SIGHUP)
+
+
 @pytest.mark.integration
 def test_migrations_upgrade_and_downgrade() -> None:
     root = Path(__file__).resolve().parents[2]
     env = os.environ.copy()
     env["CLEARTRACE_DATABASE_URL"] = env.get(
         "CLEARTRACE_DATABASE_URL",
-        "postgresql+psycopg://cleartrace_super@127.0.0.1:5432/cleartrace",
+        "postgresql+psycopg://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace",
     )
     _reset_tenant_data(env["CLEARTRACE_DATABASE_URL"])
     alembic = ["uv", "run", "alembic", "-c", "alembic.ini"]
     subprocess.check_call(alembic + ["downgrade", "base"], cwd=root / "db", env=env)
     subprocess.check_call(alembic + ["upgrade", "head"], cwd=root / "db", env=env)
-    pidfile = root / ".data" / "pgbouncer.pid"
-    if pidfile.exists():
-        os.kill(int(pidfile.read_text().strip()), signal.SIGHUP)
+    _reload_pgbouncer(root)
