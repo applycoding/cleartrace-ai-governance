@@ -5,7 +5,7 @@ from __future__ import annotations
 from alembic import op
 
 revision = "0301_package_c"
-down_revision = "0002_seed_reference"
+down_revision = "0002_seed"
 branch_labels = None
 depends_on = None
 
@@ -219,8 +219,7 @@ def upgrade() -> None:
         ALTER TABLE reassessment_flag OWNER TO cleartrace_owner;
         ALTER TABLE egress_destination_profile OWNER TO cleartrace_owner;
 
-        GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO cleartrace_app, cleartrace_migrator;
-        REVOKE UPDATE, DELETE ON register_category_value FROM cleartrace_app;
+        GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO cleartrace_app, cleartrace_migrator;
         """
     )
 

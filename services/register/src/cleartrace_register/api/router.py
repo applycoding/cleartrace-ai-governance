@@ -4,14 +4,15 @@ from typing import Protocol
 from uuid import UUID
 
 from cleartrace_register.categories import GOVERNANCE_CATEGORIES
-from cleartrace_register.csv_import import RegisterStore, bind_system_ids, parse_gc_ai_register_csv
+from cleartrace_register.csv_import import bind_system_ids, parse_gc_ai_register_csv
+from cleartrace_register.memory_store import MemoryRegisterStore
 from fastapi import APIRouter
 from pydantic import BaseModel
 from uuid6 import uuid7
 
 router = APIRouter(prefix="/register", tags=["register"])
 
-_store = RegisterStore()
+_store = MemoryRegisterStore()
 
 
 class CategoryStatus(BaseModel):
