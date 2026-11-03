@@ -30,7 +30,11 @@ def persist_manifest_destinations(dsn: str, tenant_id: UUID, manifest: Connector
             """,
             (uuid7(), tenant_id, manifest.name, Jsonb(manifest_payload)),
         )
-        connector_id = cur.fetchone()[0]
+        row = cur.fetchone()
+        if row is None:
+            msg = f"connector_instance upsert returned no id for {manifest.name}"
+            raise RuntimeError(msg)
+        connector_id = row[0]
         cur.execute(
             "DELETE FROM egress_destination_profile WHERE tenant_id = %s AND connector_instance_id = %s",
             (tenant_id, connector_id),

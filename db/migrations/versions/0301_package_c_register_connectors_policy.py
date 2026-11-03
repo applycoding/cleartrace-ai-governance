@@ -13,21 +13,7 @@ depends_on = None
 def upgrade() -> None:
     op.execute(
         """
-        CREATE TABLE system_group (
-          id UUID PRIMARY KEY,
-          tenant_id UUID NOT NULL REFERENCES tenant(id),
-          code TEXT NOT NULL,
-          name_en TEXT NOT NULL,
-          name_fr TEXT NOT NULL,
-          UNIQUE (tenant_id, code)
-        );
 
-        CREATE TABLE system_group_member (
-          tenant_id UUID NOT NULL REFERENCES tenant(id),
-          group_id UUID NOT NULL REFERENCES system_group(id),
-          ai_system_id UUID NOT NULL REFERENCES ai_system(id),
-          PRIMARY KEY (group_id, ai_system_id)
-        );
 
         CREATE TABLE register_category_value (
           id UUID PRIMARY KEY,
@@ -137,16 +123,6 @@ def upgrade() -> None:
           computed_at TIMESTAMPTZ NOT NULL DEFAULT now()
         );
 
-        CREATE TABLE reassessment_flag (
-          id UUID PRIMARY KEY,
-          tenant_id UUID NOT NULL REFERENCES tenant(id),
-          ai_system_id UUID NOT NULL REFERENCES ai_system(id),
-          control_id TEXT NOT NULL,
-          reason TEXT NOT NULL,
-          policy_diff_id UUID REFERENCES policy_diff(id),
-          created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-          cleared_at TIMESTAMPTZ
-        );
 
         CREATE TABLE egress_destination_profile (
           id UUID PRIMARY KEY,
@@ -162,10 +138,6 @@ def upgrade() -> None:
 
     op.execute(
         """
-        ALTER TABLE system_group ENABLE ROW LEVEL SECURITY;
-        ALTER TABLE system_group FORCE ROW LEVEL SECURITY;
-        ALTER TABLE system_group_member ENABLE ROW LEVEL SECURITY;
-        ALTER TABLE system_group_member FORCE ROW LEVEL SECURITY;
         ALTER TABLE register_category_value ENABLE ROW LEVEL SECURITY;
         ALTER TABLE register_category_value FORCE ROW LEVEL SECURITY;
         ALTER TABLE source_record ENABLE ROW LEVEL SECURITY;
@@ -180,13 +152,7 @@ def upgrade() -> None:
         ALTER TABLE connector_run FORCE ROW LEVEL SECURITY;
         ALTER TABLE egress_destination_profile ENABLE ROW LEVEL SECURITY;
         ALTER TABLE egress_destination_profile FORCE ROW LEVEL SECURITY;
-        ALTER TABLE reassessment_flag ENABLE ROW LEVEL SECURITY;
-        ALTER TABLE reassessment_flag FORCE ROW LEVEL SECURITY;
 
-        CREATE POLICY tenant_isolation ON system_group
-          USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
-        CREATE POLICY tenant_isolation ON system_group_member
-          USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
         CREATE POLICY tenant_isolation ON register_category_value
           USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
         CREATE POLICY tenant_isolation ON source_record
@@ -201,11 +167,7 @@ def upgrade() -> None:
           USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
         CREATE POLICY tenant_isolation ON egress_destination_profile
           USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
-        CREATE POLICY tenant_isolation ON reassessment_flag
-          USING (tenant_id = NULLIF(current_setting('app.tenant_id', true), '')::uuid);
 
-        ALTER TABLE system_group OWNER TO cleartrace_owner;
-        ALTER TABLE system_group_member OWNER TO cleartrace_owner;
         ALTER TABLE register_category_value OWNER TO cleartrace_owner;
         ALTER TABLE source_record OWNER TO cleartrace_owner;
         ALTER TABLE field_provenance OWNER TO cleartrace_owner;
@@ -216,10 +178,14 @@ def upgrade() -> None:
         ALTER TABLE policy_snapshot OWNER TO cleartrace_owner;
         ALTER TABLE policy_diff OWNER TO cleartrace_owner;
         ALTER TABLE impact_set OWNER TO cleartrace_owner;
-        ALTER TABLE reassessment_flag OWNER TO cleartrace_owner;
         ALTER TABLE egress_destination_profile OWNER TO cleartrace_owner;
 
-        GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO cleartrace_app, cleartrace_migrator;
+        GRANT SELECT, INSERT, UPDATE ON
+          register_category_value, source_record, field_provenance, quarantine_item,
+          connector_instance, connector_run, policy_source, policy_snapshot, policy_diff,
+          impact_set, egress_destination_profile
+        TO cleartrace_app, cleartrace_migrator;
+        GRANT DELETE ON egress_destination_profile TO cleartrace_app, cleartrace_migrator;
         """
     )
 
@@ -228,7 +194,6 @@ def downgrade() -> None:
     op.execute(
         """
         DROP TABLE IF EXISTS egress_destination_profile CASCADE;
-        DROP TABLE IF EXISTS reassessment_flag CASCADE;
         DROP TABLE IF EXISTS impact_set CASCADE;
         DROP TABLE IF EXISTS policy_diff CASCADE;
         DROP TABLE IF EXISTS policy_snapshot CASCADE;
@@ -239,7 +204,5 @@ def downgrade() -> None:
         DROP TABLE IF EXISTS field_provenance CASCADE;
         DROP TABLE IF EXISTS source_record CASCADE;
         DROP TABLE IF EXISTS register_category_value CASCADE;
-        DROP TABLE IF EXISTS system_group_member CASCADE;
-        DROP TABLE IF EXISTS system_group CASCADE;
         """
     )

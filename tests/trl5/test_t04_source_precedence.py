@@ -4,6 +4,7 @@ import random
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
+import pytest
 from cleartrace_register.postgres_store import PostgresRegisterStore
 from cleartrace_register.precedence import FieldUpdate, QuarantineReason
 from uuid6 import uuid7
@@ -33,6 +34,7 @@ def _update(
     )
 
 
+@pytest.mark.integration
 def test_t04_thousand_interleaved_updates_with_quarantine(
     trl_dsn: str, trl_tenant_id: UUID
 ) -> None:

@@ -148,6 +148,7 @@ T02_SYSTEMS: list[tuple[str, dict[int, tuple[str, str]]]] = [
 
 
 @pytest.mark.asyncio
+@pytest.mark.integration
 async def test_t02_connectors_fill_fifteen_categories_for_six_systems(
     trl_dsn: str, trl_tenant_id: UUID, nats_url: str
 ) -> None:

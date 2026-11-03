@@ -29,7 +29,9 @@ class PostgresPolicyRepository:
                 (source_id, slug, name_en, name_fr, url_en, url_fr),
             )
             row = cur.fetchone()
-            assert row is not None
+            if row is None:
+                msg = f"policy_source upsert returned no id for {slug}"
+                raise RuntimeError(msg)
             return UUID(str(row[0]))
 
     def save_snapshot(

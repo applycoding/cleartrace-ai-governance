@@ -27,14 +27,12 @@ def trl_tenant_id() -> UUID:
 
 @pytest.fixture(scope="module")
 def nats_url() -> str:
-    return default_nats_url()
-
-
-@pytest.fixture(scope="module", autouse=True)
-def _ensure_nats_stream(nats_url: str) -> None:
+    """NATS JetStream URL (CLEARTRACE_NATS_URL; CI starts NATS through Compose)."""
     import asyncio
 
-    asyncio.run(ensure_stream(nats_url))
+    url = default_nats_url()
+    asyncio.run(ensure_stream(url))
+    return url
 
 
 def count_processed_events(dsn: str) -> int:

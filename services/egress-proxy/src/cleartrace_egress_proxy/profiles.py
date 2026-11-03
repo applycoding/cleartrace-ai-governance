@@ -58,8 +58,17 @@ class DestinationProfileSet:
             "metadata.google.internal",
         )
         lowered = host.lower()
-        if lowered in ("localhost", "127.0.0.1", "::1", "0.0.0.0"):
+        if lowered.rstrip(".") == "localhost":
             return True
+        try:
+            addr = ipaddress.ip_address(lowered.strip("[]"))
+        except ValueError:
+            addr = None
+        if addr is not None:
+            if isinstance(addr, ipaddress.IPv6Address) and addr.ipv4_mapped is not None:
+                addr = addr.ipv4_mapped
+            if addr.is_loopback or addr.is_unspecified or addr.is_link_local:
+                return True
         return any(
             lowered.endswith(suffix) or lowered == suffix.rstrip(".") for suffix in blocked_suffixes
         )

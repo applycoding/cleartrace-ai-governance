@@ -189,7 +189,11 @@ def upgrade() -> None:
 
     op.execute(
         """
-        GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO cleartrace_app;
+        GRANT SELECT, INSERT, UPDATE ON
+          framework, framework_version, clause, control, control_version, objective,
+          crosswalk, system_group, system_group_member, assignment, reassessment_flag,
+          assessment_run
+        TO cleartrace_app;
         """
     )
 
