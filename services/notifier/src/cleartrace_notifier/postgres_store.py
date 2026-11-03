@@ -258,7 +258,8 @@ class PostgresNotificationStore(NotificationStore):
         with tenant_transaction(self._dsn, tenant_id) as conn, conn.cursor() as cur:
             cur.execute(query, (tenant_id,))
             row = cur.fetchone()
-            assert row is not None
+            if row is None:
+                raise RuntimeError("count query returned no row")
             return int(row[0])
 
 
