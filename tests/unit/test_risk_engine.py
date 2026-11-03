@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from cleartrace_risk.catalogue import STARTER_CATALOGUE
-from cleartrace_risk.cel_metrics import evaluate_cel
+from cleartrace_risk.cel_evaluator import evaluate_cel
 from cleartrace_risk.thresholds import classify_value
 from cleartrace_risk.types import ObservationStatus
 

@@ -5,6 +5,7 @@ description = "ClearTrace metric registry, baselines, and monitoring engine"
 requires-python = ">=3.12"
 license = { text = "Apache-2.0" }
 dependencies = [
+  "cel-python==0.5.0",
   "cleartrace-contracts",
   "evidently>=0.4.40",
   "fairlearn>=0.12",
