@@ -52,7 +52,7 @@ warn_unused_configs = true
 mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "services/notifier/src", "services/reports/src", "db/src"]
 
 [[tool.mypy.overrides]]
-module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*"]
+module = ["cedarpy.*", "asyncpg.*", "xhtml2pdf.*", "nats.*"]
 ignore_missing_imports = true
 
 [tool.bandit]

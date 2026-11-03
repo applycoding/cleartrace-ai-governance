@@ -85,7 +85,8 @@ async def deliver_webhook_with_retry(
     event: dict[str, Any],
     *,
     max_attempts: int = MAX_WEBHOOK_ATTEMPTS,
-) -> tuple[bool, int, str | None]:
+) -> tuple[bool, int, str | None, bool]:
+    """Returns delivered, attempt count, last error, permanent_failure."""
     body = json.dumps(event, separators=(",", ":"), sort_keys=True).encode()
     last_error: str | None = None
     attempts = 0
@@ -99,9 +100,12 @@ async def deliver_webhook_with_retry(
             "X-ClearTrace-Signature": signature,
         }
         code, text = await transport.post(subscription_url, headers, body)
+        permanent = subscription_url in getattr(transport, "permanent_fail_urls", set())
         if 200 <= code < 300:
-            return True, attempts, None
+            return True, attempts, None, False
         last_error = f"HTTP {code}: {text}"
+        if permanent:
+            return False, attempts, last_error, True
         if attempt < max_attempts - 1:
             delay = retry_delay_seconds(attempt)
             # Deterministic fast retry in tests (no real sleep when delay is tiny)
@@ -109,4 +113,4 @@ async def deliver_webhook_with_retry(
                 import asyncio
 
                 await asyncio.sleep(min(delay, 0.001))
-    return False, attempts, last_error
+    return False, attempts, last_error, False

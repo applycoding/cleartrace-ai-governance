@@ -6,14 +6,17 @@ requires-python = ">=3.12"
 license = { text = "Apache-2.0" }
 dependencies = [
   "cleartrace-contracts",
+  "cleartrace-db",
   "fastapi>=0.115",
   "httpx>=0.28",
+  "nats-py>=2.9",
   "pydantic>=2.10",
   "uuid6>=2024.7",
 ]
 
 [tool.uv.sources]
 cleartrace-contracts = { workspace = true }
+cleartrace-db = { workspace = true }
 
 [build-system]
 requires = ["hatchling"]

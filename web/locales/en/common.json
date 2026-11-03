@@ -17,40 +17,78 @@
     "switchLanguage": "Français",
     "loading": "Loading…",
     "refresh": "Refresh",
-    "skipToMain": "Skip to main content"
+    "skipToMain": "Skip to main content",
+    "upload": "Upload evidence",
+    "verify": "Verify ledger",
+    "validate": "Validate",
+    "reject": "Reject",
+    "modify": "Modify",
+    "annotate": "Annotate"
+  },
+  "outcomes": {
+    "pass": "Pass",
+    "fail": "Fail",
+    "partial": "Partial",
+    "na": "N/A",
+    "not_assessed": "Not assessed"
   },
   "register": {
     "heading": "System register",
     "description": "Browse and register AI systems across the 15 categories.",
-    "empty": "No systems yet. Import from the GC AI Register or register manually."
+    "empty": "No systems yet.",
+    "columnKey": "Key",
+    "columnName": "Name",
+    "columnCategory": "Category",
+    "columnStatus": "Status",
+    "detailHeading": "System detail",
+    "detailDescription": "Metadata and deployment status."
   },
   "frameworks": {
     "heading": "Frameworks",
-    "description": "Assigned frameworks and coverage for each system."
+    "description": "Assigned frameworks and coverage for each system.",
+    "columnCode": "Code",
+    "columnVersion": "Version",
+    "columnCoverage": "Coverage"
   },
   "findings": {
     "heading": "Findings",
-    "description": "Assessment outcomes with five-state semantics."
+    "description": "Assessment outcomes with five-state semantics.",
+    "columnControl": "Control",
+    "columnOutcome": "Outcome",
+    "columnExplanation": "Explanation",
+    "columnCertainty": "Certainty index"
   },
   "review": {
     "heading": "Review queue",
-    "description": "Pending reviewer actions and separation of duties."
+    "description": "Pending reviewer actions and separation of duties.",
+    "empty": "No items awaiting review."
   },
   "evidence": {
     "heading": "Evidence",
-    "description": "Artefacts, lineage and authorized submitters."
+    "description": "Upload artefacts with scanning and lineage.",
+    "fileLabel": "Evidence file",
+    "success": "Upload accepted for scanning."
   },
   "risk": {
     "heading": "Risk metrics",
-    "description": "Observations, baselines and binding breaches."
+    "description": "Observations, baselines and binding breaches.",
+    "binding": "Binding breaches",
+    "advisory": "Advisory flags",
+    "lastObservation": "Last observation"
   },
   "audit": {
     "heading": "Audit ledger",
-    "description": "Tamper-evident hash chain events."
+    "description": "Tamper-evident hash chain events.",
+    "verifyOk": "Ledger verification succeeded.",
+    "columnAction": "Action",
+    "columnHash": "Hash"
   },
   "admin": {
     "heading": "Administration",
-    "description": "Tenant settings, connectors and webhooks."
+    "description": "Tenant settings, connectors and webhooks.",
+    "webhooks": "Webhooks configured",
+    "connectors": "Connectors active",
+    "localeDefault": "Default locale"
   },
   "home": {
     "welcome": "Welcome to ClearTrace",

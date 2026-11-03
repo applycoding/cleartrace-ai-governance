@@ -40,10 +40,6 @@ def upgrade() -> None:
             delivered_at TIMESTAMPTZ
         );
 
-        CREATE UNIQUE INDEX IF NOT EXISTS uq_notification_dedup_open
-            ON notification (tenant_id, dedup_key)
-            WHERE status IN ('pending', 'delivered');
-
         CREATE TABLE IF NOT EXISTS ticket_link (
             id UUID PRIMARY KEY,
             tenant_id UUID NOT NULL REFERENCES tenant (id),
@@ -96,12 +92,6 @@ def upgrade() -> None:
             created_at TIMESTAMPTZ NOT NULL DEFAULT now()
         );
 
-        CREATE TABLE IF NOT EXISTS processed_event_ids (
-            tenant_id UUID NOT NULL REFERENCES tenant (id),
-            event_id TEXT NOT NULL,
-            processed_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-            PRIMARY KEY (tenant_id, event_id)
-        );
         """
     )
 
@@ -109,7 +99,6 @@ def upgrade() -> None:
 def downgrade() -> None:
     op.execute(
         """
-        DROP TABLE IF EXISTS processed_event_ids;
         DROP TABLE IF EXISTS report_job;
         DROP TABLE IF EXISTS dead_letter_queue;
         DROP TABLE IF EXISTS webhook_delivery;

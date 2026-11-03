@@ -22,14 +22,15 @@ if [[ ! -f "$DATA_DIR/PG_VERSION" ]]; then
   cat >> "$DATA_DIR/postgresql.conf" <<CONF
 listen_addresses = '127.0.0.1'
 port = ${PORT}
+unix_socket_directories = '${DATA_DIR}'
 CONF
   echo "host all all 127.0.0.1/32 trust" >> "$DATA_DIR/pg_hba.conf"
   sed -i 's/^host    all             all             127.0.0.1\/32            scram-sha-256/host    all             all             127.0.0.1\/32            trust/' "$DATA_DIR/pg_hba.conf"
   pg_ctl -D "$DATA_DIR" -l "$DATA_DIR/postgres.log" start
-  psql -U cleartrace_super -d postgres -v ON_ERROR_STOP=1 <<'SQL'
+  psql -h 127.0.0.1 -p "$PORT" -U cleartrace_super -d postgres -v ON_ERROR_STOP=1 <<'SQL'
 CREATE DATABASE cleartrace OWNER cleartrace_super;
 SQL
-  psql -U cleartrace_super -d cleartrace -v ON_ERROR_STOP=1 <<'SQL'
+  psql -h 127.0.0.1 -p "$PORT" -U cleartrace_super -d cleartrace -v ON_ERROR_STOP=1 <<'SQL'
 CREATE EXTENSION IF NOT EXISTS vector;
 SQL
   pg_ctl -D "$DATA_DIR" stop
@@ -41,7 +42,7 @@ fi
 
 export CLEARTRACE_DATABASE_URL="postgresql+psycopg://cleartrace_super@127.0.0.1:${PORT}/cleartrace"
 (cd "$ROOT/db" && uv run alembic -c alembic.ini upgrade head)
-psql -U cleartrace_super -d cleartrace -v ON_ERROR_STOP=1 <<'SQL'
+psql -h 127.0.0.1 -p "$PORT" -U cleartrace_super -d cleartrace -v ON_ERROR_STOP=1 <<'SQL'
 ALTER ROLE cleartrace_app WITH LOGIN PASSWORD 'cleartrace_app';
 SQL
 
