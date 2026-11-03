@@ -1,0 +1,17 @@
+slug: golden
+name_en: Golden five-state scenarios
+name_fr: Scénarios dorés à cinq états
+obligation_type: local_rule
+source_url_en: https://cleartrace.local/test/golden
+source_url_fr: https://cleartrace.local/test/golden
+needs_second_reader_recheck: true
+version: 1.0.0
+controls:
+- control_key: GOLDEN-01
+  clause_ref: TEST
+  title_en: Golden scenario control
+  title_fr: Contrôle de scénario doré
+  remediation_en: N/A
+  remediation_fr: N/A
+  applicability_expr: true
+  evidence_specs: []

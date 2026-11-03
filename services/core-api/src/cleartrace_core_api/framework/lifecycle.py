@@ -71,6 +71,9 @@ class FrameworkLifecycle:
     def replace_version(self, old_id: uuid.UUID, new_id: uuid.UUID) -> None:
         self.retire(old_id)
         self.activate(new_id)
+        for assignment in self._assignments:
+            if assignment.framework_version_id == old_id:
+                assignment.framework_version_id = new_id
 
     def add_assignment(self, assignment: AssignmentRecord) -> AssignmentRecord:
         self._assignments.append(assignment)

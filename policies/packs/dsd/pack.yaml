@@ -16,4 +16,7 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: canadian_facility_assessment
+    required: true

@@ -1,0 +1,73 @@
+{
+  "systems": [
+    {
+      "system_key": "SYS-T09-01",
+      "planned_production_use": true,
+      "impact_level": 3,
+      "evidence": [
+        {"type": "aia_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "peer_review_report", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "adm_accountability_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "design_by_default_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "ai_register_entry", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "principle_alignment_record", "authorized_submitter": true, "valid_until": "2099-01-01"}
+      ]
+    },
+    {
+      "system_key": "SYS-T09-02",
+      "planned_production_use": true,
+      "impact_level": 2,
+      "evidence": [
+        {"type": "aia_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "adm_accountability_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "design_by_default_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "ai_register_entry", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "principle_alignment_record", "authorized_submitter": true, "valid_until": "2099-01-01"}
+      ]
+    },
+    {
+      "system_key": "SYS-T09-03",
+      "planned_production_use": false,
+      "impact_level": 1,
+      "evidence": []
+    },
+    {
+      "system_key": "SYS-T09-04",
+      "planned_production_use": true,
+      "impact_level": 4,
+      "evidence": [
+        {"type": "aia_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "peer_review_report", "authorized_submitter": false, "valid_until": "2099-01-01"},
+        {"type": "adm_accountability_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "design_by_default_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "ai_register_entry", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "principle_alignment_record", "authorized_submitter": true, "valid_until": "2099-01-01"}
+      ]
+    },
+    {
+      "system_key": "SYS-T09-05",
+      "planned_production_use": true,
+      "impact_level": 3,
+      "evidence": [
+        {"type": "aia_record", "authorized_submitter": true, "valid_until": "expired"},
+        {"type": "peer_review_report", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "adm_accountability_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "design_by_default_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "ai_register_entry", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "principle_alignment_record", "authorized_submitter": true, "valid_until": "2099-01-01"}
+      ]
+    },
+    {
+      "system_key": "SYS-T09-06",
+      "planned_production_use": true,
+      "impact_level": 2,
+      "evidence": [
+        {"type": "aia_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "adm_accountability_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "design_by_default_record", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "ai_register_entry", "authorized_submitter": true, "valid_until": "2099-01-01"},
+        {"type": "principle_alignment_record", "authorized_submitter": true, "valid_until": "2099-01-01"}
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ dependencies = [
   "cleartrace-contracts",
   "pyyaml>=6.0",
   "jsonschema>=4.23",
+  "cel-python==0.5.0",
 ]
 
 [tool.uv.sources]

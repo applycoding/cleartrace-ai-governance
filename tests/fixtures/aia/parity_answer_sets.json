@@ -1,0 +1,2983 @@
+[
+  {
+    "id": "empty",
+    "answers": {}
+  },
+  {
+    "id": "set-000",
+    "answers": {
+      "riskProfile10": "item2-0",
+      "aboutSystem6": "item1-0",
+      "aboutSystem8": "item1-0",
+      "aboutDataSourceType1": "item2-0",
+      "aboutAlgorithm1": "item1-1",
+      "aboutSystem5B": "item2-0",
+      "riskProfile3": "item1-1",
+      "decisionSector1": "item7-1"
+    }
+  },
+  {
+    "id": "set-001",
+    "answers": {
+      "impact9": "item1-1",
+      "aboutDataSource16": "item2-0",
+      "impact11": "item2-2",
+      "aboutDataSourceType2": "item2-4",
+      "aboutAlgorithm3": "item1-0",
+      "aboutAlgorithm9": "item1-2",
+      "aboutSystem4": "item4-1",
+      "businessDrivers5": "item2-1"
+    }
+  },
+  {
+    "id": "set-002",
+    "answers": {
+      "riskProfile2": "item1-3",
+      "riskProfile9": "item2-0",
+      "aboutDataSource4": "item1-2",
+      "aboutSystem5": "item2-1",
+      "aboutAlgorithm2": "item1-3",
+      "impact4A": "item2-0",
+      "decisionSector1": "item1-1",
+      "businessDrivers9": "item2-1"
+    }
+  },
+  {
+    "id": "set-003",
+    "answers": {
+      "aboutSystem9": "item1-0",
+      "riskProfile2": "item2-0",
+      "aboutSystem5B": "item1-0",
+      "aboutDataSource6": "item1-4",
+      "aboutSystem1": "item6",
+      "impact28": "item3-3",
+      "aboutDataSource7": "item1-1",
+      "impact13": "item1-1"
+    }
+  },
+  {
+    "id": "set-004",
+    "answers": {
+      "aboutAlgorithm4": "item1-0",
+      "aboutSystem10A": "item2-2",
+      "aboutDataSource7": "item4-4",
+      "aboutDataSource10": "item2-0",
+      "riskProfile3": "item2-0",
+      "impact15": "item4-4",
+      "aboutAlgorithm11": "item1-0",
+      "impact27": "item2-0"
+    }
+  },
+  {
+    "id": "set-005",
+    "answers": {
+      "riskProfile7": "item2-0",
+      "aboutDataSourceType2": "item2-4",
+      "projectAuthority1": "item2-0",
+      "aboutSystem4": "item3-1",
+      "impact5": "item2-0",
+      "impact27": "item2-0",
+      "riskProfile4": "item1-0",
+      "aboutDataSource17": "item2-2"
+    }
+  },
+  {
+    "id": "set-006",
+    "answers": {
+      "aboutDataSource8": "item2-2",
+      "impact3": "item1-4",
+      "aboutSystem5B": "item2-0",
+      "businessDrivers1": "item6",
+      "impact13": "item2-2",
+      "aboutDataSource7": "item3-3",
+      "aboutDataSource6": "item2-0",
+      "aboutDataSource10": "item2-0"
+    }
+  },
+  {
+    "id": "set-007",
+    "answers": {
+      "riskProfile1": "item1-3",
+      "aboutAlgorithm1": "item2-0",
+      "businessDrivers1": "item5",
+      "aboutDataSource1": "item1-2",
+      "aboutAlgorithm2": "item2-0",
+      "aboutDataSource6": "item1-4",
+      "aboutDataSource14": "item4-3",
+      "aboutDataSource17": "item1-0"
+    }
+  },
+  {
+    "id": "set-008",
+    "answers": {
+      "impact28": "item1-1",
+      "aboutAlgorithm2": "item1-3",
+      "impact26": "item5-0",
+      "aboutDataSourceType1": "item2-0",
+      "riskProfile10": "item1-0",
+      "aboutDataSource8": "item3-3",
+      "aboutDataSource11": "item1-0",
+      "riskProfile9": "item2-0"
+    }
+  },
+  {
+    "id": "set-009",
+    "answers": {
+      "aboutDataSource4": "item2-0",
+      "aboutDataSource3": "item2-2",
+      "aboutDataSource7": "item3-3",
+      "riskProfile4": "item4-4",
+      "impact22": "item1-2",
+      "aboutDataSource6": "item1-4",
+      "riskProfile7": "item1-3",
+      "aboutSystem4": "item1-0"
+    }
+  },
+  {
+    "id": "set-010",
+    "answers": {
+      "aboutDataSourceType2": "item2-4",
+      "aboutDataSource2": "item2-1",
+      "aboutSystem11": "item1-1",
+      "aboutSystem3": "item1-0",
+      "impact6": "item2-2",
+      "aboutSystem6": "item2-2",
+      "impact15": "item4-4",
+      "aboutSystem10A": "item1-0"
+    }
+  },
+  {
+    "id": "set-011",
+    "answers": {
+      "aboutDataSource8": "item2-2",
+      "businessDrivers9": "item2-1",
+      "aboutDataSource15": "item3-1",
+      "impact13": "item3-3",
+      "impact7": "item1-1",
+      "aboutDataSource11": "item2-1",
+      "aboutSystem11": "item3-3",
+      "aboutDataSource5": "item1-4"
+    }
+  },
+  {
+    "id": "set-012",
+    "answers": {
+      "decisionSector1": "item7-1",
+      "aboutDataSource14": "item3-1",
+      "aboutDataSource4": "item2-0",
+      "aboutAlgorithm5": "item1-0",
+      "aboutDataSource10": "item1-2",
+      "aboutDataSource7": "item1-1",
+      "businessDrivers5": "item3-0",
+      "impact23": "item1-1"
+    }
+  },
+  {
+    "id": "set-013",
+    "answers": {
+      "impact24": "item4-4",
+      "businessDrivers1": "item1",
+      "businessDrivers11": "item6-0",
+      "aboutDataSource1": "item1-2",
+      "aboutAlgorithm11": "item2-2",
+      "impact5": "item1-2",
+      "aboutSystem1": "item4",
+      "aboutSystem11": "item4-4"
+    }
+  },
+  {
+    "id": "set-014",
+    "answers": {
+      "aboutDataSourceType1": "item1-0",
+      "aboutDataSource14": "item3-1",
+      "impact24": "item4-4",
+      "aboutSystem10A": "item1-0",
+      "aboutAlgorithm9": "item2-0",
+      "aboutDataSource16": "item3-1",
+      "impact26": "item1-0",
+      "impact11": "item1-1"
+    }
+  },
+  {
+    "id": "set-015",
+    "answers": {
+      "impact26": "item6-0",
+      "impact9": "item3-3",
+      "aboutSystem5B": "item2-0",
+      "aboutDataSource3": "item1-1",
+      "businessDrivers1": "item6",
+      "riskProfile8": "item1-1",
+      "businessDrivers11": "item4-0",
+      "aboutSystem11": "item4-4"
+    }
+  },
+  {
+    "id": "set-016",
+    "answers": {
+      "aboutAlgorithm1": "item2-0",
+      "aboutDataSource7": "item1-1",
+      "aboutSystem5B": "item2-0",
+      "aboutDataSource1": "item2-0",
+      "aboutDataSource9": "item1-0",
+      "riskProfile8": "item1-1",
+      "impact9": "item1-1",
+      "aboutAlgorithm11": "item2-2"
+    }
+  },
+  {
+    "id": "set-017",
+    "answers": {
+      "impact4A": "item2-0",
+      "aboutDataSource7": "item3-3",
+      "impact7": "item4-4",
+      "aboutSystem4": "item1-0",
+      "impact9": "item2-2",
+      "aboutSystem11": "item2-2",
+      "aboutDataSource8": "item4-4",
+      "aboutDataSource5": "item1-4"
+    }
+  },
+  {
+    "id": "set-018",
+    "answers": {
+      "aboutDataSource6": "item2-0",
+      "impact11": "item3-3",
+      "riskProfile3": "item1-1",
+      "businessDrivers11": "item5-0",
+      "aboutDataSourceType3": "item2-0",
+      "aboutSystem8": "item2-1",
+      "aboutAlgorithm9": "item2-0",
+      "impact7": "item1-1"
+    }
+  },
+  {
+    "id": "set-019",
+    "answers": {
+      "aboutDataSourceType1": "item2-0",
+      "aboutDataSource15": "item2-2",
+      "impact18": "item3-2",
+      "aboutSystem9": "item2-2",
+      "aboutAlgorithm5": "item2-1",
+      "aboutSystem10A": "item1-0",
+      "impact28": "item4-4",
+      "aboutSystem4": "item2-0"
+    }
+  },
+  {
+    "id": "set-020",
+    "answers": {
+      "impact15": "item4-4",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutDataSourceType3": "item1-0",
+      "aboutAlgorithm4": "item1-0",
+      "riskProfile10": "item2-0",
+      "aboutDataSource9": "item1-0",
+      "aboutSystem5B": "item1-0",
+      "aboutAlgorithm1": "item1-1"
+    }
+  },
+  {
+    "id": "set-021",
+    "answers": {
+      "aboutSystem5B": "item2-0",
+      "aboutAlgorithm4": "item2-1",
+      "businessDrivers1": "item5",
+      "aboutAlgorithm9": "item2-0",
+      "riskProfile3": "item1-1",
+      "aboutAlgorithm2": "item1-3",
+      "impact27": "item2-0",
+      "impact6": "item1-1"
+    }
+  },
+  {
+    "id": "set-022",
+    "answers": {
+      "aboutSystem7": "item2-2",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource9": "item2-2",
+      "impact7": "item1-1",
+      "aboutSystem9": "item2-2",
+      "projectAuthority1": "item2-0",
+      "aboutDataSource15": "item1-0",
+      "riskProfile8": "item1-1"
+    }
+  },
+  {
+    "id": "set-023",
+    "answers": {
+      "aboutDataSource1": "item2-0",
+      "riskProfile4": "item3-4",
+      "aboutAlgorithm1": "item2-0",
+      "impact24": "item4-4",
+      "impact5": "item1-2",
+      "aboutSystem5B": "item1-0",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem9": "item1-0"
+    }
+  },
+  {
+    "id": "set-024",
+    "answers": {
+      "aboutDataSource8": "item2-2",
+      "impact15": "item3-3",
+      "riskProfile4": "item1-0",
+      "impact13": "item1-1",
+      "riskProfile10": "item1-0",
+      "aboutDataSource4": "item1-2",
+      "impact4A": "item1-2",
+      "impact22": "item2-0"
+    }
+  },
+  {
+    "id": "set-025",
+    "answers": {
+      "impact26": "item1-0",
+      "aboutDataSource7": "item2-2",
+      "aboutAlgorithm1": "item2-0",
+      "aboutDataSource15": "item3-1",
+      "aboutSystem3": "item2-0",
+      "impact5": "item2-0",
+      "aboutDataSourceType3": "item2-0",
+      "aboutDataSource4": "item1-2"
+    }
+  },
+  {
+    "id": "set-026",
+    "answers": {
+      "aboutSystem10A": "item1-0",
+      "aboutDataSource14": "item3-1",
+      "riskProfile8": "item1-1",
+      "riskProfile1": "item2-0",
+      "aboutAlgorithm5": "item1-0",
+      "impact22": "item2-0",
+      "impact23": "item2-0",
+      "aboutAlgorithm11": "item1-0"
+    }
+  },
+  {
+    "id": "set-027",
+    "answers": {
+      "businessDrivers11": "item6-0",
+      "impact19I": "item2-1",
+      "aboutSystem1": "item3",
+      "impact6": "item2-2",
+      "impact30": "item1-4",
+      "decisionSector1": "item5-1",
+      "impact13": "item2-2",
+      "aboutDataSourceType3": "item1-0"
+    }
+  },
+  {
+    "id": "set-028",
+    "answers": {
+      "aboutDataSource9": "item2-2",
+      "aboutSystem11": "item2-2",
+      "impact4A": "item1-2",
+      "aboutAlgorithm3": "item1-0",
+      "aboutSystem1": "item5",
+      "aboutSystem5": "item1-0",
+      "aboutAlgorithm5": "item1-0",
+      "riskProfile3": "item1-1"
+    }
+  },
+  {
+    "id": "set-029",
+    "answers": {
+      "aboutDataSource14": "item1-0",
+      "aboutDataSource5": "item2-0",
+      "impact11": "item1-1",
+      "impact9": "item3-3",
+      "aboutDataSource2": "item1-0",
+      "aboutDataSourceType2": "item1-2",
+      "riskProfile4": "item3-4",
+      "impact22": "item2-0"
+    }
+  },
+  {
+    "id": "set-030",
+    "answers": {
+      "riskProfile1": "item2-0",
+      "aboutDataSource7": "item4-4",
+      "aboutDataSource2": "item4-3",
+      "impact24": "item2-2",
+      "aboutSystem9": "item2-2",
+      "impact23": "item2-0",
+      "aboutAlgorithm5": "item2-1",
+      "impact6": "item2-2"
+    }
+  },
+  {
+    "id": "set-031",
+    "answers": {
+      "impact4A": "item1-2",
+      "aboutSystem1": "item2",
+      "aboutDataSource10": "item2-0",
+      "aboutDataSource16": "item1-2",
+      "riskProfile3": "item2-0",
+      "aboutSystem7": "item2-2",
+      "impact5": "item2-0",
+      "businessDrivers11": "item4-0"
+    }
+  },
+  {
+    "id": "set-032",
+    "answers": {
+      "aboutSystem5B": "item1-0",
+      "aboutAlgorithm8A": "item2-1",
+      "aboutSystem4": "item2-0",
+      "aboutAlgorithm4": "item2-1",
+      "impact4A": "item2-0",
+      "aboutDataSource6": "item1-4",
+      "aboutDataSourceType2": "item1-2",
+      "aboutDataSourceType1": "item1-0"
+    }
+  },
+  {
+    "id": "set-033",
+    "answers": {
+      "aboutDataSource6": "item2-0",
+      "impact26": "item6-0",
+      "impact11": "item1-1",
+      "aboutDataSource3": "item2-2",
+      "riskProfile4": "item3-4",
+      "aboutSystem6": "item2-2",
+      "aboutAlgorithm11": "item1-0",
+      "aboutDataSource4": "item2-0"
+    }
+  },
+  {
+    "id": "set-034",
+    "answers": {
+      "aboutSystem10A": "item2-2",
+      "aboutSystem8": "item1-0",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSourceType3": "item2-0",
+      "aboutDataSource9": "item1-0",
+      "impact26": "item2-0",
+      "riskProfile9": "item2-0",
+      "riskProfile4": "item3-4"
+    }
+  },
+  {
+    "id": "set-035",
+    "answers": {
+      "aboutDataSource11": "item1-0",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem1": "item5",
+      "aboutDataSource8": "item1-1",
+      "impact24": "item1-1",
+      "aboutAlgorithm4": "item1-0",
+      "impact18": "item1-3",
+      "riskProfile10": "item2-0"
+    }
+  },
+  {
+    "id": "set-036",
+    "answers": {
+      "aboutDataSource1": "item1-2",
+      "projectAuthority1": "item1-2",
+      "impact5": "item1-2",
+      "impact27": "item2-0",
+      "aboutAlgorithm11": "item1-0",
+      "aboutSystem1": "item6",
+      "aboutDataSourceType2": "item1-2",
+      "impact15": "item4-4"
+    }
+  },
+  {
+    "id": "set-037",
+    "answers": {
+      "impact23": "item1-1",
+      "aboutAlgorithm11": "item2-2",
+      "aboutSystem6": "item1-0",
+      "impact27": "item2-0",
+      "businessDrivers1": "item2",
+      "riskProfile9": "item2-0",
+      "aboutDataSource1": "item1-2",
+      "impact15": "item2-2"
+    }
+  },
+  {
+    "id": "set-038",
+    "answers": {
+      "aboutDataSource3": "item3-3",
+      "aboutAlgorithm4": "item2-1",
+      "aboutAlgorithm8A": "item2-1",
+      "aboutAlgorithm3": "item2-1",
+      "impact3": "item2-0",
+      "aboutDataSourceType2": "item1-2",
+      "impact5": "item2-0",
+      "impact26": "item1-0"
+    }
+  },
+  {
+    "id": "set-039",
+    "answers": {
+      "aboutDataSource16": "item2-0",
+      "impact30": "item1-4",
+      "aboutDataSourceType1": "item2-0",
+      "aboutDataSource7": "item1-1",
+      "aboutAlgorithm8": "item2-0",
+      "impact5": "item1-2",
+      "businessDrivers5": "item2-1",
+      "aboutDataSource10": "item2-0"
+    }
+  },
+  {
+    "id": "set-040",
+    "answers": {
+      "aboutAlgorithm5": "item2-1",
+      "riskProfile10": "item2-0",
+      "impact4A": "item1-2",
+      "impact13": "item4-4",
+      "impact30": "item2-2",
+      "decisionSector1": "item8-1",
+      "riskProfile2": "item1-3",
+      "aboutDataSource9": "item1-0"
+    }
+  },
+  {
+    "id": "set-041",
+    "answers": {
+      "aboutAlgorithm8A": "item2-1",
+      "impact5": "item1-2",
+      "aboutSystem4": "item3-1",
+      "aboutDataSource16": "item1-2",
+      "aboutDataSource5": "item1-4",
+      "aboutAlgorithm3": "item2-1",
+      "aboutDataSourceType2": "item2-4",
+      "businessDrivers11": "item4-0"
+    }
+  },
+  {
+    "id": "set-042",
+    "answers": {
+      "aboutDataSource4": "item2-0",
+      "aboutDataSource7": "item3-3",
+      "impact18": "item1-3",
+      "aboutSystem6": "item2-2",
+      "aboutSystem10A": "item2-2",
+      "riskProfile9": "item1-0",
+      "impact5": "item2-0",
+      "impact27": "item2-0"
+    }
+  },
+  {
+    "id": "set-043",
+    "answers": {
+      "aboutDataSource10": "item1-2",
+      "aboutDataSource7": "item1-1",
+      "impact13": "item2-2",
+      "impact15": "item2-2",
+      "impact18": "item5-1",
+      "aboutSystem4": "item4-1",
+      "riskProfile1": "item2-0",
+      "aboutSystem8": "item1-0"
+    }
+  },
+  {
+    "id": "set-044",
+    "answers": {
+      "impact24": "item1-1",
+      "aboutDataSource4": "item1-2",
+      "aboutAlgorithm4": "item2-1",
+      "riskProfile1": "item2-0",
+      "aboutDataSource8": "item2-2",
+      "riskProfile2": "item2-0",
+      "aboutDataSource6": "item1-4",
+      "aboutSystem5": "item3-2"
+    }
+  },
+  {
+    "id": "set-045",
+    "answers": {
+      "aboutSystem5B": "item1-0",
+      "aboutDataSourceType3": "item1-0",
+      "impact9": "item4-4",
+      "projectAuthority1": "item1-2",
+      "aboutSystem8": "item2-1",
+      "riskProfile7": "item1-3",
+      "aboutSystem1": "item2",
+      "aboutDataSourceType1": "item1-0"
+    }
+  },
+  {
+    "id": "set-046",
+    "answers": {
+      "impact19I": "item1-0",
+      "aboutSystem5B": "item1-0",
+      "aboutSystem3": "item1-0",
+      "aboutDataSourceType1": "item2-0",
+      "aboutSystem6": "item1-0",
+      "aboutSystem5": "item3-2",
+      "impact23": "item2-0",
+      "aboutDataSource7": "item1-1"
+    }
+  },
+  {
+    "id": "set-047",
+    "answers": {
+      "riskProfile4": "item4-4",
+      "aboutSystem7": "item2-2",
+      "aboutSystem8": "item1-0",
+      "aboutAlgorithm9": "item1-2",
+      "riskProfile8": "item2-0",
+      "aboutDataSourceType3": "item2-0",
+      "aboutDataSource17": "item2-2",
+      "aboutDataSourceType2": "item1-2"
+    }
+  },
+  {
+    "id": "set-048",
+    "answers": {
+      "aboutDataSource16": "item3-1",
+      "impact19I": "item1-0",
+      "aboutAlgorithm11": "item1-0",
+      "aboutSystem10A": "item1-0",
+      "aboutDataSource2": "item4-3",
+      "aboutAlgorithm8": "item2-0",
+      "impact6": "item2-2",
+      "aboutDataSource7": "item1-1"
+    }
+  },
+  {
+    "id": "set-049",
+    "answers": {
+      "riskProfile7": "item2-0",
+      "aboutDataSource1": "item2-0",
+      "riskProfile10": "item2-0",
+      "aboutSystem4": "item4-1",
+      "aboutDataSource11": "item2-1",
+      "aboutSystem7": "item1-0",
+      "aboutSystem6": "item1-0",
+      "aboutDataSource7": "item1-1"
+    }
+  },
+  {
+    "id": "set-050",
+    "answers": {
+      "aboutDataSource9": "item1-0",
+      "impact15": "item3-3",
+      "aboutSystem10A": "item1-0",
+      "impact22": "item1-2",
+      "impact9": "item3-3",
+      "impact30": "item1-4",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutAlgorithm11": "item1-0"
+    }
+  },
+  {
+    "id": "set-051",
+    "answers": {
+      "impact7": "item1-1",
+      "aboutAlgorithm9": "item1-2",
+      "riskProfile8": "item1-1",
+      "aboutSystem11": "item1-1",
+      "aboutAlgorithm5": "item2-1",
+      "aboutSystem8": "item2-1",
+      "impact30": "item2-2",
+      "riskProfile10": "item1-0"
+    }
+  },
+  {
+    "id": "set-052",
+    "answers": {
+      "aboutDataSourceType3": "item1-0",
+      "impact9": "item3-3",
+      "aboutDataSource10": "item1-2",
+      "impact3": "item2-0",
+      "aboutSystem5": "item1-0",
+      "impact15": "item3-3",
+      "aboutDataSource3": "item3-3",
+      "aboutDataSourceType1": "item1-0"
+    }
+  },
+  {
+    "id": "set-053",
+    "answers": {
+      "impact5": "item2-0",
+      "impact4A": "item1-2",
+      "businessDrivers11": "item1-2",
+      "impact13": "item2-2",
+      "aboutDataSource1": "item1-2",
+      "aboutDataSource14": "item6-1",
+      "aboutSystem8": "item2-1",
+      "impact30": "item1-4"
+    }
+  },
+  {
+    "id": "set-054",
+    "answers": {
+      "aboutSystem9": "item1-0",
+      "aboutDataSourceType3": "item1-0",
+      "businessDrivers1": "item5",
+      "aboutSystem7": "item1-0",
+      "impact7": "item3-3",
+      "impact28": "item1-1",
+      "aboutDataSource5": "item1-4",
+      "impact30": "item1-4"
+    }
+  },
+  {
+    "id": "set-055",
+    "answers": {
+      "aboutDataSource3": "item3-3",
+      "aboutAlgorithm4": "item1-0",
+      "impact30": "item2-2",
+      "aboutSystem6": "item2-2",
+      "impact28": "item1-1",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutDataSource7": "item3-3",
+      "riskProfile10": "item1-0"
+    }
+  },
+  {
+    "id": "set-056",
+    "answers": {
+      "impact27": "item2-0",
+      "impact23": "item2-0",
+      "aboutAlgorithm5": "item2-1",
+      "aboutSystem9": "item2-2",
+      "impact4A": "item1-2",
+      "aboutDataSourceType1": "item2-0",
+      "riskProfile9": "item2-0",
+      "impact7": "item3-3"
+    }
+  },
+  {
+    "id": "set-057",
+    "answers": {
+      "aboutDataSource17": "item3-0",
+      "impact19I": "item2-1",
+      "impact13": "item4-4",
+      "aboutSystem3": "item4-1",
+      "impact6": "item3-3",
+      "aboutDataSource4": "item1-2",
+      "impact11": "item1-1",
+      "riskProfile10": "item1-0"
+    }
+  },
+  {
+    "id": "set-058",
+    "answers": {
+      "aboutSystem6": "item1-0",
+      "impact15": "item1-1",
+      "aboutAlgorithm2": "item2-0",
+      "aboutSystem5": "item2-1",
+      "riskProfile3": "item2-0",
+      "aboutAlgorithm11": "item1-0",
+      "riskProfile7": "item2-0",
+      "aboutSystem4": "item1-0"
+    }
+  },
+  {
+    "id": "set-059",
+    "answers": {
+      "aboutDataSource1": "item1-2",
+      "impact19I": "item2-1",
+      "aboutSystem6": "item1-0",
+      "projectAuthority1": "item1-2",
+      "impact28": "item3-3",
+      "aboutDataSource10": "item1-2",
+      "impact22": "item1-2",
+      "riskProfile3": "item1-1"
+    }
+  },
+  {
+    "id": "set-060",
+    "answers": {
+      "aboutDataSourceType3": "item1-0",
+      "aboutAlgorithm5": "item1-0",
+      "impact13": "item1-1",
+      "aboutDataSource1": "item1-2",
+      "riskProfile3": "item1-1",
+      "aboutDataSource3": "item2-2",
+      "aboutSystem4": "item4-1",
+      "aboutSystem3": "item3-1"
+    }
+  },
+  {
+    "id": "set-061",
+    "answers": {
+      "aboutDataSourceType2": "item2-4",
+      "impact18": "item6-3",
+      "aboutAlgorithm4": "item1-0",
+      "riskProfile3": "item1-1",
+      "aboutSystem11": "item3-3",
+      "aboutSystem6": "item1-0",
+      "aboutDataSource8": "item2-2",
+      "businessDrivers5": "item3-0"
+    }
+  },
+  {
+    "id": "set-062",
+    "answers": {
+      "impact11": "item3-3",
+      "aboutAlgorithm3": "item2-1",
+      "impact23": "item2-0",
+      "aboutSystem4": "item4-1",
+      "aboutSystem10A": "item2-2",
+      "impact26": "item6-0",
+      "aboutDataSource15": "item3-1",
+      "aboutSystem6": "item2-2"
+    }
+  },
+  {
+    "id": "set-063",
+    "answers": {
+      "aboutSystem3": "item2-0",
+      "impact3": "item2-0",
+      "aboutDataSourceType1": "item1-0",
+      "aboutSystem5": "item3-2",
+      "aboutAlgorithm8": "item2-0",
+      "businessDrivers11": "item4-0",
+      "aboutAlgorithm8A": "item2-1",
+      "aboutDataSource15": "item2-2"
+    }
+  },
+  {
+    "id": "set-064",
+    "answers": {
+      "riskProfile4": "item2-0",
+      "aboutSystem5": "item1-0",
+      "impact19I": "item2-1",
+      "aboutDataSource9": "item1-0",
+      "aboutSystem7": "item1-0",
+      "impact7": "item1-1",
+      "aboutDataSource4": "item1-2",
+      "decisionSector1": "item7-1"
+    }
+  },
+  {
+    "id": "set-065",
+    "answers": {
+      "aboutDataSource9": "item2-2",
+      "aboutSystem11": "item4-4",
+      "projectAuthority1": "item1-2",
+      "riskProfile7": "item2-0",
+      "aboutSystem5": "item1-0",
+      "aboutSystem10A": "item2-2",
+      "riskProfile1": "item2-0",
+      "aboutAlgorithm11": "item2-2"
+    }
+  },
+  {
+    "id": "set-066",
+    "answers": {
+      "aboutAlgorithm1": "item1-1",
+      "aboutAlgorithm4": "item1-0",
+      "aboutDataSource4": "item1-2",
+      "businessDrivers5": "item1-2",
+      "aboutDataSource3": "item3-3",
+      "impact27": "item2-0",
+      "aboutDataSource10": "item2-0",
+      "aboutSystem6": "item2-2"
+    }
+  },
+  {
+    "id": "set-067",
+    "answers": {
+      "aboutSystem11": "item3-3",
+      "businessDrivers11": "item6-0",
+      "aboutDataSource14": "item5-3",
+      "businessDrivers1": "item3",
+      "impact15": "item4-4",
+      "aboutAlgorithm2": "item2-0",
+      "projectAuthority1": "item1-2",
+      "aboutSystem7": "item2-2"
+    }
+  },
+  {
+    "id": "set-068",
+    "answers": {
+      "riskProfile9": "item1-0",
+      "impact22": "item2-0",
+      "businessDrivers5": "item2-1",
+      "riskProfile7": "item2-0",
+      "aboutAlgorithm8": "item2-0",
+      "impact6": "item2-2",
+      "aboutAlgorithm2": "item1-3",
+      "riskProfile8": "item2-0"
+    }
+  },
+  {
+    "id": "set-069",
+    "answers": {
+      "impact9": "item3-3",
+      "aboutDataSourceType3": "item1-0",
+      "aboutSystem5": "item2-1",
+      "impact6": "item3-3",
+      "riskProfile9": "item2-0",
+      "aboutSystem4": "item2-0",
+      "aboutAlgorithm8A": "item2-1",
+      "impact3": "item1-4"
+    }
+  },
+  {
+    "id": "set-070",
+    "answers": {
+      "impact13": "item4-4",
+      "aboutAlgorithm9": "item1-2",
+      "impact30": "item1-4",
+      "impact4A": "item2-0",
+      "aboutSystem9": "item2-2",
+      "aboutSystem6": "item2-2",
+      "aboutSystem5B": "item2-0",
+      "aboutDataSource4": "item1-2"
+    }
+  },
+  {
+    "id": "set-071",
+    "answers": {
+      "aboutSystem7": "item1-0",
+      "riskProfile3": "item2-0",
+      "impact26": "item4-0",
+      "riskProfile10": "item1-0",
+      "aboutSystem1": "item4",
+      "impact4A": "item2-0",
+      "aboutSystem11": "item3-3",
+      "aboutDataSource3": "item2-2"
+    }
+  },
+  {
+    "id": "set-072",
+    "answers": {
+      "riskProfile10": "item2-0",
+      "aboutDataSourceType2": "item2-4",
+      "aboutSystem8": "item1-0",
+      "aboutAlgorithm3": "item2-1",
+      "aboutSystem9": "item1-0",
+      "aboutSystem7": "item2-2",
+      "impact26": "item1-0",
+      "aboutAlgorithm5": "item2-1"
+    }
+  },
+  {
+    "id": "set-073",
+    "answers": {
+      "aboutDataSource10": "item2-0",
+      "aboutDataSource11": "item2-1",
+      "aboutAlgorithm2": "item1-3",
+      "aboutSystem6": "item2-2",
+      "aboutSystem1": "item3",
+      "impact18": "item6-3",
+      "impact3": "item2-0",
+      "impact19I": "item1-0"
+    }
+  },
+  {
+    "id": "set-074",
+    "answers": {
+      "decisionSector1": "item4-1",
+      "businessDrivers1": "item1",
+      "aboutDataSource15": "item3-1",
+      "aboutAlgorithm9": "item2-0",
+      "aboutSystem1": "item6",
+      "aboutDataSourceType2": "item1-2",
+      "impact15": "item1-1",
+      "riskProfile9": "item2-0"
+    }
+  },
+  {
+    "id": "set-075",
+    "answers": {
+      "aboutDataSource6": "item2-0",
+      "impact24": "item4-4",
+      "aboutSystem5": "item2-1",
+      "aboutDataSource2": "item2-1",
+      "aboutDataSource5": "item1-4",
+      "riskProfile4": "item4-4",
+      "aboutDataSource10": "item2-0",
+      "businessDrivers1": "item6"
+    }
+  },
+  {
+    "id": "set-076",
+    "answers": {
+      "aboutSystem10A": "item2-2",
+      "aboutDataSource14": "item3-1",
+      "aboutSystem1": "item3",
+      "projectAuthority1": "item2-0",
+      "aboutDataSourceType2": "item1-2",
+      "impact28": "item3-3",
+      "aboutAlgorithm1": "item2-0",
+      "aboutDataSource6": "item1-4"
+    }
+  },
+  {
+    "id": "set-077",
+    "answers": {
+      "aboutDataSourceType3": "item2-0",
+      "aboutDataSource2": "item8-0",
+      "riskProfile4": "item1-0",
+      "aboutAlgorithm3": "item1-0",
+      "aboutSystem7": "item2-2",
+      "aboutDataSource9": "item2-2",
+      "aboutSystem9": "item1-0",
+      "impact18": "item2-0"
+    }
+  },
+  {
+    "id": "set-078",
+    "answers": {
+      "aboutDataSourceType1": "item1-0",
+      "aboutDataSource17": "item1-0",
+      "impact28": "item2-2",
+      "riskProfile8": "item1-1",
+      "impact7": "item3-3",
+      "aboutDataSource4": "item2-0",
+      "impact27": "item1-1",
+      "aboutAlgorithm2": "item1-3"
+    }
+  },
+  {
+    "id": "set-079",
+    "answers": {
+      "aboutSystem8": "item2-1",
+      "projectAuthority1": "item1-2",
+      "riskProfile10": "item1-0",
+      "aboutAlgorithm8A": "item2-1",
+      "impact23": "item2-0",
+      "impact26": "item6-0",
+      "aboutSystem1": "item5",
+      "aboutAlgorithm3": "item1-0"
+    }
+  },
+  {
+    "id": "set-080",
+    "answers": {
+      "aboutDataSource4": "item1-2",
+      "riskProfile8": "item2-0",
+      "impact22": "item2-0",
+      "aboutDataSource9": "item1-0",
+      "impact30": "item1-4",
+      "impact3": "item2-0",
+      "aboutSystem6": "item2-2",
+      "aboutAlgorithm3": "item1-0"
+    }
+  },
+  {
+    "id": "set-081",
+    "answers": {
+      "aboutAlgorithm11": "item1-0",
+      "riskProfile2": "item1-3",
+      "impact22": "item1-2",
+      "aboutSystem1": "item3",
+      "aboutDataSource1": "item2-0",
+      "impact27": "item2-0",
+      "aboutDataSource15": "item3-1",
+      "aboutAlgorithm8": "item2-0"
+    }
+  },
+  {
+    "id": "set-082",
+    "answers": {
+      "riskProfile2": "item1-3",
+      "impact26": "item5-0",
+      "decisionSector1": "item4-1",
+      "aboutSystem1": "item2",
+      "riskProfile1": "item2-0",
+      "aboutDataSource10": "item2-0",
+      "impact9": "item2-2",
+      "aboutDataSource11": "item2-1"
+    }
+  },
+  {
+    "id": "set-083",
+    "answers": {
+      "aboutDataSource1": "item2-0",
+      "impact13": "item3-3",
+      "aboutSystem8": "item2-1",
+      "aboutSystem1": "item3",
+      "aboutDataSource14": "item2-1",
+      "riskProfile10": "item2-0",
+      "aboutSystem9": "item1-0",
+      "aboutDataSource5": "item2-0"
+    }
+  },
+  {
+    "id": "set-084",
+    "answers": {
+      "riskProfile3": "item2-0",
+      "aboutAlgorithm8": "item1-3",
+      "businessDrivers11": "item4-0",
+      "impact13": "item4-4",
+      "riskProfile4": "item4-4",
+      "aboutSystem1": "item4",
+      "aboutDataSourceType3": "item1-0",
+      "aboutDataSource11": "item2-1"
+    }
+  },
+  {
+    "id": "set-085",
+    "answers": {
+      "aboutDataSource17": "item3-0",
+      "impact18": "item3-2",
+      "riskProfile3": "item1-1",
+      "aboutDataSource8": "item2-2",
+      "aboutSystem8": "item2-1",
+      "aboutSystem3": "item2-0",
+      "aboutSystem5": "item3-2",
+      "impact19I": "item1-0"
+    }
+  },
+  {
+    "id": "set-086",
+    "answers": {
+      "impact30": "item1-4",
+      "aboutAlgorithm3": "item2-1",
+      "aboutDataSourceType1": "item1-0",
+      "aboutSystem11": "item3-3",
+      "impact15": "item4-4",
+      "aboutAlgorithm9": "item2-0",
+      "aboutDataSource10": "item2-0",
+      "businessDrivers11": "item5-0"
+    }
+  },
+  {
+    "id": "set-087",
+    "answers": {
+      "decisionSector1": "item8-1",
+      "aboutSystem9": "item2-2",
+      "aboutDataSource1": "item2-0",
+      "impact5": "item1-2",
+      "businessDrivers5": "item3-0",
+      "aboutAlgorithm9": "item1-2",
+      "aboutDataSource4": "item1-2",
+      "impact22": "item1-2"
+    }
+  },
+  {
+    "id": "set-088",
+    "answers": {
+      "aboutAlgorithm5": "item1-0",
+      "aboutDataSource14": "item4-3",
+      "businessDrivers11": "item1-2",
+      "impact26": "item4-0",
+      "aboutAlgorithm11": "item2-2",
+      "impact22": "item2-0",
+      "aboutDataSource17": "item1-0",
+      "aboutSystem11": "item4-4"
+    }
+  },
+  {
+    "id": "set-089",
+    "answers": {
+      "aboutAlgorithm9": "item2-0",
+      "aboutSystem10A": "item1-0",
+      "aboutDataSource6": "item1-4",
+      "aboutAlgorithm8": "item2-0",
+      "riskProfile7": "item2-0",
+      "impact3": "item2-0",
+      "projectAuthority1": "item1-2",
+      "aboutSystem9": "item1-0"
+    }
+  },
+  {
+    "id": "set-090",
+    "answers": {
+      "aboutSystem10A": "item2-2",
+      "aboutSystem7": "item1-0",
+      "aboutDataSource8": "item2-2",
+      "aboutDataSource1": "item1-2",
+      "aboutAlgorithm1": "item2-0",
+      "impact22": "item1-2",
+      "aboutDataSource16": "item2-0",
+      "aboutDataSourceType3": "item1-0"
+    }
+  },
+  {
+    "id": "set-091",
+    "answers": {
+      "impact22": "item1-2",
+      "aboutAlgorithm5": "item2-1",
+      "aboutSystem9": "item1-0",
+      "aboutSystem7": "item2-2",
+      "aboutDataSource6": "item2-0",
+      "aboutSystem1": "item4",
+      "impact3": "item1-4",
+      "aboutSystem5B": "item2-0"
+    }
+  },
+  {
+    "id": "set-092",
+    "answers": {
+      "businessDrivers9": "item2-1",
+      "impact9": "item1-1",
+      "impact30": "item1-4",
+      "aboutSystem10A": "item2-2",
+      "aboutDataSource1": "item1-2",
+      "businessDrivers1": "item6",
+      "aboutAlgorithm3": "item1-0",
+      "riskProfile3": "item1-1"
+    }
+  },
+  {
+    "id": "set-093",
+    "answers": {
+      "impact18": "item2-0",
+      "impact27": "item2-0",
+      "aboutDataSource5": "item2-0",
+      "aboutDataSource15": "item2-2",
+      "aboutDataSourceType3": "item1-0",
+      "decisionSector1": "item2-1",
+      "aboutDataSource10": "item2-0",
+      "aboutAlgorithm5": "item2-1"
+    }
+  },
+  {
+    "id": "set-094",
+    "answers": {
+      "impact7": "item3-3",
+      "impact11": "item4-4",
+      "businessDrivers11": "item3-0",
+      "impact13": "item4-4",
+      "aboutAlgorithm4": "item1-0",
+      "impact3": "item2-0",
+      "riskProfile1": "item1-3",
+      "aboutAlgorithm9": "item2-0"
+    }
+  },
+  {
+    "id": "set-095",
+    "answers": {
+      "aboutDataSourceType2": "item1-2",
+      "riskProfile4": "item2-0",
+      "aboutSystem10A": "item1-0",
+      "decisionSector1": "item4-1",
+      "aboutAlgorithm11": "item2-2",
+      "projectAuthority1": "item1-2",
+      "riskProfile8": "item2-0",
+      "impact30": "item1-4"
+    }
+  },
+  {
+    "id": "set-096",
+    "answers": {
+      "aboutDataSource4": "item1-2",
+      "aboutDataSourceType3": "item1-0",
+      "aboutDataSource10": "item1-2",
+      "aboutSystem11": "item4-4",
+      "riskProfile3": "item2-0",
+      "impact7": "item4-4",
+      "aboutDataSource1": "item1-2",
+      "impact11": "item3-3"
+    }
+  },
+  {
+    "id": "set-097",
+    "answers": {
+      "aboutDataSource17": "item3-0",
+      "aboutAlgorithm5": "item1-0",
+      "impact6": "item3-3",
+      "businessDrivers9": "item1-0",
+      "riskProfile3": "item2-0",
+      "impact22": "item1-2",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSource1": "item1-2"
+    }
+  },
+  {
+    "id": "set-098",
+    "answers": {
+      "aboutDataSource3": "item3-3",
+      "aboutDataSource17": "item2-2",
+      "impact15": "item1-1",
+      "aboutSystem6": "item1-0",
+      "aboutAlgorithm4": "item1-0",
+      "decisionSector1": "item8-1",
+      "impact19I": "item1-0",
+      "impact13": "item3-3"
+    }
+  },
+  {
+    "id": "set-099",
+    "answers": {
+      "aboutSystem9": "item1-0",
+      "riskProfile2": "item1-3",
+      "aboutDataSource2": "item6-3",
+      "impact6": "item3-3",
+      "aboutDataSource1": "item1-2",
+      "aboutDataSource14": "item4-3",
+      "aboutSystem7": "item1-0",
+      "aboutAlgorithm2": "item1-3"
+    }
+  },
+  {
+    "id": "set-100",
+    "answers": {
+      "aboutAlgorithm1": "item2-0",
+      "impact18": "item3-2",
+      "aboutDataSource11": "item1-0",
+      "impact27": "item1-1",
+      "businessDrivers1": "item2",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem11": "item2-2",
+      "aboutDataSource10": "item1-2"
+    }
+  },
+  {
+    "id": "set-101",
+    "answers": {
+      "aboutDataSource16": "item2-0",
+      "aboutSystem4": "item2-0",
+      "aboutDataSource7": "item3-3",
+      "aboutSystem1": "item5",
+      "decisionSector1": "item2-1",
+      "aboutSystem5": "item2-1",
+      "riskProfile7": "item1-3",
+      "aboutAlgorithm11": "item1-0"
+    }
+  },
+  {
+    "id": "set-102",
+    "answers": {
+      "aboutDataSource3": "item2-2",
+      "aboutDataSource7": "item1-1",
+      "aboutSystem5": "item1-0",
+      "aboutDataSource16": "item2-0",
+      "aboutSystem8": "item2-1",
+      "aboutSystem10A": "item2-2",
+      "impact4A": "item2-0",
+      "impact30": "item2-2"
+    }
+  },
+  {
+    "id": "set-103",
+    "answers": {
+      "impact28": "item1-1",
+      "impact6": "item1-1",
+      "aboutAlgorithm11": "item1-0",
+      "riskProfile9": "item1-0",
+      "aboutSystem11": "item3-3",
+      "impact9": "item1-1",
+      "impact23": "item1-1",
+      "impact19I": "item1-0"
+    }
+  },
+  {
+    "id": "set-104",
+    "answers": {
+      "aboutAlgorithm8A": "item1-0",
+      "aboutDataSource1": "item1-2",
+      "impact4A": "item2-0",
+      "aboutSystem3": "item1-0",
+      "aboutAlgorithm8": "item2-0",
+      "aboutSystem9": "item2-2",
+      "aboutDataSourceType1": "item2-0",
+      "businessDrivers1": "item6"
+    }
+  },
+  {
+    "id": "set-105",
+    "answers": {
+      "riskProfile3": "item1-1",
+      "businessDrivers5": "item2-1",
+      "businessDrivers9": "item2-1",
+      "impact24": "item2-2",
+      "businessDrivers1": "item6",
+      "aboutDataSource10": "item1-2",
+      "riskProfile10": "item2-0",
+      "impact6": "item4-4"
+    }
+  },
+  {
+    "id": "set-106",
+    "answers": {
+      "aboutSystem3": "item2-0",
+      "impact22": "item2-0",
+      "aboutAlgorithm1": "item1-1",
+      "aboutDataSource4": "item1-2",
+      "riskProfile3": "item2-0",
+      "aboutDataSourceType1": "item2-0",
+      "aboutDataSourceType2": "item1-2",
+      "aboutDataSource10": "item2-0"
+    }
+  },
+  {
+    "id": "set-107",
+    "answers": {
+      "aboutSystem10A": "item2-2",
+      "riskProfile3": "item2-0",
+      "impact4A": "item2-0",
+      "aboutDataSourceType1": "item1-0",
+      "projectAuthority1": "item2-0",
+      "aboutDataSource1": "item2-0",
+      "aboutSystem7": "item1-0",
+      "businessDrivers1": "item3"
+    }
+  },
+  {
+    "id": "set-108",
+    "answers": {
+      "aboutDataSource6": "item2-0",
+      "businessDrivers5": "item1-2",
+      "decisionSector1": "item4-1",
+      "impact24": "item1-1",
+      "aboutAlgorithm3": "item1-0",
+      "impact3": "item1-4",
+      "aboutSystem5": "item2-1",
+      "impact23": "item2-0"
+    }
+  },
+  {
+    "id": "set-109",
+    "answers": {
+      "aboutDataSourceType3": "item2-0",
+      "riskProfile9": "item2-0",
+      "impact27": "item2-0",
+      "riskProfile7": "item1-3",
+      "aboutSystem7": "item2-2",
+      "aboutDataSource4": "item1-2",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSource3": "item1-1"
+    }
+  },
+  {
+    "id": "set-110",
+    "answers": {
+      "aboutAlgorithm5": "item1-0",
+      "impact19I": "item1-0",
+      "aboutSystem5B": "item2-0",
+      "impact30": "item1-4",
+      "projectAuthority1": "item1-2",
+      "riskProfile10": "item1-0",
+      "aboutAlgorithm1": "item1-1",
+      "aboutDataSourceType3": "item2-0"
+    }
+  },
+  {
+    "id": "set-111",
+    "answers": {
+      "impact22": "item1-2",
+      "impact11": "item1-1",
+      "aboutAlgorithm5": "item1-0",
+      "impact26": "item5-0",
+      "projectAuthority1": "item1-2",
+      "aboutDataSource3": "item1-1",
+      "riskProfile8": "item1-1",
+      "impact7": "item3-3"
+    }
+  },
+  {
+    "id": "set-112",
+    "answers": {
+      "aboutDataSource8": "item3-3",
+      "aboutSystem4": "item2-0",
+      "riskProfile1": "item1-3",
+      "aboutDataSource2": "item8-0",
+      "aboutSystem6": "item1-0",
+      "impact28": "item3-3",
+      "aboutAlgorithm2": "item2-0",
+      "aboutDataSource9": "item1-0"
+    }
+  },
+  {
+    "id": "set-113",
+    "answers": {
+      "aboutSystem7": "item1-0",
+      "aboutSystem8": "item2-1",
+      "businessDrivers9": "item1-0",
+      "aboutSystem5": "item1-0",
+      "aboutDataSource9": "item1-0",
+      "aboutDataSource2": "item3-2",
+      "aboutSystem6": "item2-2",
+      "aboutSystem10A": "item1-0"
+    }
+  },
+  {
+    "id": "set-114",
+    "answers": {
+      "aboutDataSource14": "item5-3",
+      "aboutDataSource1": "item2-0",
+      "aboutDataSource11": "item1-0",
+      "impact3": "item1-4",
+      "riskProfile2": "item1-3",
+      "aboutAlgorithm4": "item1-0",
+      "aboutSystem5B": "item2-0",
+      "aboutSystem6": "item2-2"
+    }
+  },
+  {
+    "id": "set-115",
+    "answers": {
+      "aboutSystem8": "item1-0",
+      "aboutAlgorithm3": "item1-0",
+      "impact22": "item1-2",
+      "impact27": "item1-1",
+      "impact28": "item2-2",
+      "impact30": "item1-4",
+      "aboutSystem1": "item4",
+      "riskProfile9": "item2-0"
+    }
+  },
+  {
+    "id": "set-116",
+    "answers": {
+      "aboutAlgorithm4": "item1-0",
+      "aboutSystem3": "item3-1",
+      "impact6": "item3-3",
+      "riskProfile9": "item2-0",
+      "businessDrivers11": "item5-0",
+      "riskProfile8": "item1-1",
+      "aboutDataSource1": "item2-0",
+      "aboutDataSource2": "item1-0"
+    }
+  },
+  {
+    "id": "set-117",
+    "answers": {
+      "aboutSystem3": "item2-0",
+      "impact3": "item2-0",
+      "aboutDataSource8": "item3-3",
+      "businessDrivers11": "item2-0",
+      "impact13": "item1-1",
+      "aboutSystem8": "item2-1",
+      "impact18": "item4-2",
+      "aboutDataSourceType2": "item2-4"
+    }
+  },
+  {
+    "id": "set-118",
+    "answers": {
+      "impact7": "item4-4",
+      "impact9": "item2-2",
+      "businessDrivers5": "item2-1",
+      "riskProfile4": "item4-4",
+      "aboutSystem6": "item2-2",
+      "impact23": "item2-0",
+      "aboutSystem8": "item2-1",
+      "aboutDataSourceType2": "item2-4"
+    }
+  },
+  {
+    "id": "set-119",
+    "answers": {
+      "impact23": "item1-1",
+      "riskProfile3": "item1-1",
+      "projectAuthority1": "item2-0",
+      "aboutSystem6": "item1-0",
+      "impact13": "item3-3",
+      "businessDrivers1": "item6",
+      "impact24": "item3-3",
+      "aboutDataSource2": "item1-0"
+    }
+  },
+  {
+    "id": "set-120",
+    "answers": {
+      "aboutDataSourceType1": "item2-0",
+      "aboutAlgorithm2": "item2-0",
+      "riskProfile2": "item1-3",
+      "businessDrivers11": "item2-0",
+      "impact24": "item4-4",
+      "businessDrivers9": "item1-0",
+      "impact26": "item2-0",
+      "aboutSystem10A": "item1-0"
+    }
+  },
+  {
+    "id": "set-121",
+    "answers": {
+      "riskProfile1": "item1-3",
+      "decisionSector1": "item4-1",
+      "impact19I": "item2-1",
+      "impact22": "item2-0",
+      "impact7": "item4-4",
+      "impact4A": "item2-0",
+      "aboutDataSource17": "item2-2",
+      "businessDrivers1": "item6"
+    }
+  },
+  {
+    "id": "set-122",
+    "answers": {
+      "aboutSystem8": "item2-1",
+      "businessDrivers11": "item3-0",
+      "businessDrivers5": "item3-0",
+      "impact24": "item4-4",
+      "aboutAlgorithm8A": "item1-0",
+      "impact6": "item2-2",
+      "impact23": "item2-0",
+      "aboutDataSource1": "item2-0"
+    }
+  },
+  {
+    "id": "set-123",
+    "answers": {
+      "impact3": "item1-4",
+      "aboutSystem4": "item2-0",
+      "aboutSystem5B": "item1-0",
+      "impact30": "item1-4",
+      "aboutSystem5": "item2-1",
+      "impact26": "item1-0",
+      "aboutSystem7": "item2-2",
+      "impact23": "item2-0"
+    }
+  },
+  {
+    "id": "set-124",
+    "answers": {
+      "impact27": "item1-1",
+      "impact18": "item5-1",
+      "impact9": "item4-4",
+      "aboutAlgorithm1": "item2-0",
+      "aboutSystem7": "item2-2",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource16": "item2-0",
+      "riskProfile9": "item2-0"
+    }
+  },
+  {
+    "id": "set-125",
+    "answers": {
+      "riskProfile10": "item1-0",
+      "aboutSystem10A": "item2-2",
+      "aboutSystem11": "item2-2",
+      "impact6": "item4-4",
+      "impact18": "item4-2",
+      "businessDrivers11": "item3-0",
+      "aboutDataSource10": "item2-0",
+      "businessDrivers9": "item1-0"
+    }
+  },
+  {
+    "id": "set-126",
+    "answers": {
+      "aboutAlgorithm11": "item2-2",
+      "impact23": "item1-1",
+      "aboutDataSource9": "item2-2",
+      "riskProfile7": "item2-0",
+      "aboutDataSource6": "item2-0",
+      "impact24": "item4-4",
+      "aboutDataSource11": "item2-1",
+      "aboutSystem4": "item4-1"
+    }
+  },
+  {
+    "id": "set-127",
+    "answers": {
+      "businessDrivers1": "item5",
+      "aboutAlgorithm9": "item1-2",
+      "businessDrivers9": "item1-0",
+      "impact28": "item2-2",
+      "impact18": "item2-0",
+      "aboutAlgorithm2": "item2-0",
+      "impact24": "item3-3",
+      "aboutDataSource16": "item3-1"
+    }
+  },
+  {
+    "id": "set-128",
+    "answers": {
+      "impact22": "item1-2",
+      "businessDrivers9": "item2-1",
+      "impact11": "item3-3",
+      "aboutSystem5": "item2-1",
+      "aboutSystem3": "item2-0",
+      "impact19I": "item2-1",
+      "aboutDataSource8": "item2-2",
+      "businessDrivers5": "item1-2"
+    }
+  },
+  {
+    "id": "set-129",
+    "answers": {
+      "impact27": "item2-0",
+      "projectAuthority1": "item1-2",
+      "aboutDataSource4": "item2-0",
+      "riskProfile8": "item2-0",
+      "aboutDataSource6": "item1-4",
+      "aboutSystem11": "item1-1",
+      "aboutAlgorithm2": "item2-0",
+      "aboutAlgorithm11": "item2-2"
+    }
+  },
+  {
+    "id": "set-130",
+    "answers": {
+      "impact26": "item4-0",
+      "aboutDataSource11": "item2-1",
+      "impact19I": "item2-1",
+      "impact18": "item3-2",
+      "aboutAlgorithm4": "item1-0",
+      "impact22": "item2-0",
+      "riskProfile2": "item1-3",
+      "decisionSector1": "item4-1"
+    }
+  },
+  {
+    "id": "set-131",
+    "answers": {
+      "aboutDataSourceType3": "item2-0",
+      "riskProfile1": "item2-0",
+      "aboutSystem5": "item1-0",
+      "impact11": "item3-3",
+      "riskProfile4": "item1-0",
+      "riskProfile8": "item1-1",
+      "aboutDataSource2": "item6-3",
+      "riskProfile3": "item1-1"
+    }
+  },
+  {
+    "id": "set-132",
+    "answers": {
+      "impact7": "item1-1",
+      "aboutAlgorithm4": "item2-1",
+      "aboutAlgorithm11": "item2-2",
+      "businessDrivers11": "item2-0",
+      "impact27": "item2-0",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource10": "item2-0"
+    }
+  },
+  {
+    "id": "set-133",
+    "answers": {
+      "aboutDataSource3": "item3-3",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource15": "item3-1",
+      "aboutDataSource7": "item4-4",
+      "aboutAlgorithm4": "item1-0",
+      "aboutDataSource11": "item1-0",
+      "aboutDataSource10": "item2-0",
+      "aboutDataSource2": "item7-4"
+    }
+  },
+  {
+    "id": "set-134",
+    "answers": {
+      "aboutSystem4": "item1-0",
+      "impact30": "item1-4",
+      "businessDrivers1": "item6",
+      "impact28": "item1-1",
+      "riskProfile8": "item2-0",
+      "aboutDataSource17": "item3-0",
+      "impact6": "item2-2",
+      "impact24": "item3-3"
+    }
+  },
+  {
+    "id": "set-135",
+    "answers": {
+      "businessDrivers11": "item3-0",
+      "aboutDataSource7": "item4-4",
+      "impact28": "item3-3",
+      "aboutDataSource11": "item2-1",
+      "impact27": "item1-1",
+      "aboutDataSource15": "item1-0",
+      "impact7": "item2-2",
+      "impact4A": "item1-2"
+    }
+  },
+  {
+    "id": "set-136",
+    "answers": {
+      "riskProfile9": "item1-0",
+      "aboutDataSource11": "item2-1",
+      "impact23": "item2-0",
+      "businessDrivers1": "item1",
+      "aboutAlgorithm2": "item1-3",
+      "impact27": "item2-0",
+      "impact3": "item1-4",
+      "aboutDataSource1": "item1-2"
+    }
+  },
+  {
+    "id": "set-137",
+    "answers": {
+      "aboutDataSource4": "item1-2",
+      "aboutSystem11": "item2-2",
+      "aboutSystem4": "item4-1",
+      "projectAuthority1": "item1-2",
+      "impact9": "item3-3",
+      "impact11": "item4-4",
+      "aboutDataSource3": "item3-3",
+      "aboutDataSourceType2": "item2-4"
+    }
+  },
+  {
+    "id": "set-138",
+    "answers": {
+      "impact22": "item2-0",
+      "impact19I": "item2-1",
+      "businessDrivers1": "item1",
+      "riskProfile1": "item1-3",
+      "aboutSystem10A": "item2-2",
+      "impact4A": "item1-2",
+      "aboutAlgorithm5": "item1-0",
+      "aboutSystem5B": "item2-0"
+    }
+  },
+  {
+    "id": "set-139",
+    "answers": {
+      "impact9": "item3-3",
+      "aboutDataSource11": "item1-0",
+      "riskProfile7": "item1-3",
+      "impact24": "item2-2",
+      "aboutDataSource7": "item4-4",
+      "impact13": "item2-2",
+      "riskProfile10": "item2-0",
+      "aboutDataSourceType1": "item1-0"
+    }
+  },
+  {
+    "id": "set-140",
+    "answers": {
+      "aboutDataSource6": "item1-4",
+      "riskProfile4": "item3-4",
+      "aboutDataSource9": "item2-2",
+      "impact28": "item3-3",
+      "impact13": "item2-2",
+      "aboutSystem4": "item3-1",
+      "aboutDataSource11": "item2-1",
+      "impact26": "item4-0"
+    }
+  },
+  {
+    "id": "set-141",
+    "answers": {
+      "impact23": "item1-1",
+      "businessDrivers11": "item4-0",
+      "aboutSystem10A": "item2-2",
+      "aboutSystem4": "item2-0",
+      "aboutSystem9": "item2-2",
+      "aboutDataSource2": "item8-0",
+      "businessDrivers9": "item1-0",
+      "aboutAlgorithm9": "item2-0"
+    }
+  },
+  {
+    "id": "set-142",
+    "answers": {
+      "aboutDataSource6": "item1-4",
+      "impact15": "item4-4",
+      "aboutAlgorithm8": "item1-3",
+      "aboutDataSource16": "item1-2",
+      "aboutDataSource10": "item1-2",
+      "aboutDataSource9": "item2-2",
+      "impact27": "item1-1",
+      "aboutDataSource3": "item1-1"
+    }
+  },
+  {
+    "id": "set-143",
+    "answers": {
+      "riskProfile3": "item1-1",
+      "aboutAlgorithm2": "item2-0",
+      "aboutAlgorithm1": "item1-1",
+      "aboutSystem3": "item4-1",
+      "aboutAlgorithm9": "item2-0",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutDataSource7": "item4-4",
+      "aboutDataSource2": "item5-4"
+    }
+  },
+  {
+    "id": "set-144",
+    "answers": {
+      "impact26": "item5-0",
+      "aboutDataSource4": "item2-0",
+      "aboutDataSource1": "item2-0",
+      "aboutDataSource2": "item5-4",
+      "aboutDataSource7": "item1-1",
+      "aboutSystem3": "item4-1",
+      "impact5": "item1-2",
+      "impact22": "item2-0"
+    }
+  },
+  {
+    "id": "set-145",
+    "answers": {
+      "impact28": "item1-1",
+      "businessDrivers5": "item2-1",
+      "impact3": "item2-0",
+      "businessDrivers9": "item1-0",
+      "aboutAlgorithm3": "item1-0",
+      "aboutDataSource16": "item3-1",
+      "aboutDataSource2": "item1-0",
+      "businessDrivers11": "item1-2"
+    }
+  },
+  {
+    "id": "set-146",
+    "answers": {
+      "riskProfile8": "item1-1",
+      "aboutDataSource17": "item3-0",
+      "aboutSystem11": "item1-1",
+      "aboutSystem7": "item2-2",
+      "impact26": "item5-0",
+      "riskProfile4": "item2-0",
+      "aboutSystem8": "item2-1",
+      "impact28": "item1-1"
+    }
+  },
+  {
+    "id": "set-147",
+    "answers": {
+      "aboutSystem6": "item2-2",
+      "aboutSystem7": "item1-0",
+      "impact9": "item1-1",
+      "aboutAlgorithm11": "item1-0",
+      "aboutDataSource16": "item2-0",
+      "impact11": "item4-4",
+      "aboutDataSource10": "item1-2",
+      "aboutAlgorithm8": "item2-0"
+    }
+  },
+  {
+    "id": "set-148",
+    "answers": {
+      "aboutDataSource14": "item1-0",
+      "aboutSystem11": "item1-1",
+      "riskProfile8": "item2-0",
+      "aboutDataSource5": "item2-0",
+      "aboutDataSource7": "item2-2",
+      "impact11": "item2-2",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSourceType3": "item2-0"
+    }
+  },
+  {
+    "id": "set-149",
+    "answers": {
+      "aboutDataSource4": "item2-0",
+      "impact18": "item6-3",
+      "aboutSystem8": "item1-0",
+      "impact15": "item4-4",
+      "businessDrivers1": "item1",
+      "impact24": "item1-1",
+      "aboutDataSourceType3": "item1-0",
+      "aboutDataSource14": "item3-1"
+    }
+  },
+  {
+    "id": "set-150",
+    "answers": {
+      "aboutAlgorithm9": "item2-0",
+      "riskProfile3": "item1-1",
+      "aboutSystem7": "item2-2",
+      "aboutAlgorithm8": "item2-0",
+      "aboutDataSourceType1": "item1-0",
+      "aboutDataSource1": "item1-2",
+      "impact28": "item2-2",
+      "aboutDataSource14": "item2-1"
+    }
+  },
+  {
+    "id": "set-151",
+    "answers": {
+      "aboutDataSourceType3": "item1-0",
+      "aboutDataSource15": "item2-2",
+      "aboutAlgorithm8A": "item2-1",
+      "aboutAlgorithm4": "item1-0",
+      "impact7": "item1-1",
+      "aboutSystem6": "item1-0",
+      "aboutSystem11": "item2-2",
+      "aboutDataSourceType1": "item2-0"
+    }
+  },
+  {
+    "id": "set-152",
+    "answers": {
+      "riskProfile1": "item2-0",
+      "impact4A": "item1-2",
+      "aboutSystem3": "item2-0",
+      "impact22": "item1-2",
+      "aboutDataSource14": "item3-1",
+      "aboutSystem1": "item1",
+      "aboutDataSourceType1": "item1-0",
+      "impact6": "item4-4"
+    }
+  },
+  {
+    "id": "set-153",
+    "answers": {
+      "riskProfile8": "item1-1",
+      "impact6": "item3-3",
+      "impact19I": "item1-0",
+      "impact24": "item3-3",
+      "riskProfile2": "item2-0",
+      "aboutSystem11": "item1-1",
+      "aboutDataSource15": "item3-1",
+      "aboutSystem1": "item3"
+    }
+  },
+  {
+    "id": "set-154",
+    "answers": {
+      "aboutDataSource5": "item2-0",
+      "riskProfile1": "item1-3",
+      "aboutAlgorithm8A": "item2-1",
+      "aboutDataSource14": "item3-1",
+      "impact18": "item6-3",
+      "aboutDataSource2": "item2-1",
+      "businessDrivers9": "item1-0",
+      "aboutSystem5B": "item2-0"
+    }
+  },
+  {
+    "id": "set-155",
+    "answers": {
+      "impact30": "item2-2",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutAlgorithm9": "item1-2",
+      "aboutSystem3": "item2-0",
+      "impact24": "item1-1",
+      "businessDrivers9": "item2-1",
+      "riskProfile9": "item2-0",
+      "aboutAlgorithm1": "item2-0"
+    }
+  },
+  {
+    "id": "set-156",
+    "answers": {
+      "impact11": "item3-3",
+      "impact13": "item3-3",
+      "aboutDataSourceType3": "item1-0",
+      "aboutSystem8": "item1-0",
+      "projectAuthority1": "item2-0",
+      "businessDrivers11": "item2-0",
+      "businessDrivers9": "item1-0",
+      "riskProfile8": "item1-1"
+    }
+  },
+  {
+    "id": "set-157",
+    "answers": {
+      "impact3": "item2-0",
+      "aboutAlgorithm11": "item2-2",
+      "aboutSystem5": "item2-1",
+      "riskProfile1": "item2-0",
+      "riskProfile10": "item2-0",
+      "aboutSystem11": "item4-4",
+      "impact13": "item4-4",
+      "riskProfile7": "item1-3"
+    }
+  },
+  {
+    "id": "set-158",
+    "answers": {
+      "riskProfile4": "item1-0",
+      "aboutAlgorithm2": "item1-3",
+      "riskProfile9": "item1-0",
+      "aboutAlgorithm1": "item1-1",
+      "aboutDataSource2": "item8-0",
+      "aboutAlgorithm9": "item1-2",
+      "riskProfile8": "item2-0",
+      "impact6": "item4-4"
+    }
+  },
+  {
+    "id": "set-159",
+    "answers": {
+      "aboutAlgorithm4": "item1-0",
+      "impact9": "item3-3",
+      "aboutAlgorithm8A": "item1-0",
+      "impact15": "item3-3",
+      "impact4A": "item2-0",
+      "riskProfile10": "item1-0",
+      "businessDrivers5": "item2-1",
+      "impact18": "item2-0"
+    }
+  },
+  {
+    "id": "set-160",
+    "answers": {
+      "decisionSector1": "item1-1",
+      "riskProfile2": "item1-3",
+      "aboutAlgorithm2": "item2-0",
+      "riskProfile10": "item2-0",
+      "aboutAlgorithm5": "item2-1",
+      "riskProfile1": "item1-3",
+      "businessDrivers5": "item1-2",
+      "impact4A": "item2-0"
+    }
+  },
+  {
+    "id": "set-161",
+    "answers": {
+      "impact5": "item2-0",
+      "riskProfile2": "item1-3",
+      "aboutDataSource3": "item3-3",
+      "aboutAlgorithm2": "item1-3",
+      "aboutDataSourceType1": "item1-0",
+      "aboutDataSource15": "item2-2",
+      "businessDrivers1": "item5",
+      "riskProfile9": "item1-0"
+    }
+  },
+  {
+    "id": "set-162",
+    "answers": {
+      "impact9": "item4-4",
+      "aboutDataSource6": "item2-0",
+      "aboutDataSource10": "item1-2",
+      "impact23": "item1-1",
+      "aboutDataSource8": "item1-1",
+      "aboutDataSourceType3": "item2-0",
+      "impact18": "item1-3",
+      "aboutSystem10A": "item1-0"
+    }
+  },
+  {
+    "id": "set-163",
+    "answers": {
+      "aboutSystem1": "item5",
+      "impact26": "item3-0",
+      "aboutSystem8": "item1-0",
+      "aboutDataSource9": "item2-2",
+      "riskProfile3": "item2-0",
+      "impact19I": "item1-0",
+      "impact23": "item1-1",
+      "aboutDataSource15": "item3-1"
+    }
+  },
+  {
+    "id": "set-164",
+    "answers": {
+      "impact26": "item4-0",
+      "aboutDataSource6": "item2-0",
+      "aboutAlgorithm3": "item2-1",
+      "aboutAlgorithm2": "item1-3",
+      "riskProfile8": "item1-1",
+      "impact15": "item4-4",
+      "riskProfile9": "item1-0",
+      "aboutSystem7": "item1-0"
+    }
+  },
+  {
+    "id": "set-165",
+    "answers": {
+      "aboutAlgorithm2": "item2-0",
+      "businessDrivers9": "item2-1",
+      "aboutDataSource14": "item1-0",
+      "aboutDataSourceType2": "item2-4",
+      "riskProfile8": "item2-0",
+      "aboutDataSource15": "item1-0",
+      "aboutDataSource2": "item5-4",
+      "aboutSystem5": "item1-0"
+    }
+  },
+  {
+    "id": "set-166",
+    "answers": {
+      "aboutDataSource6": "item2-0",
+      "aboutDataSourceType3": "item1-0",
+      "impact27": "item1-1",
+      "impact5": "item1-2",
+      "aboutSystem9": "item2-2",
+      "businessDrivers1": "item3",
+      "riskProfile8": "item1-1",
+      "projectAuthority1": "item2-0"
+    }
+  },
+  {
+    "id": "set-167",
+    "answers": {
+      "projectAuthority1": "item1-2",
+      "impact26": "item5-0",
+      "riskProfile2": "item1-3",
+      "impact28": "item3-3",
+      "impact24": "item1-1",
+      "aboutDataSourceType2": "item1-2",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSource9": "item1-0"
+    }
+  },
+  {
+    "id": "set-168",
+    "answers": {
+      "aboutDataSourceType3": "item1-0",
+      "aboutAlgorithm5": "item1-0",
+      "riskProfile3": "item1-1",
+      "aboutDataSource5": "item1-4",
+      "aboutAlgorithm1": "item1-1",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem4": "item1-0",
+      "riskProfile7": "item2-0"
+    }
+  },
+  {
+    "id": "set-169",
+    "answers": {
+      "impact4A": "item2-0",
+      "riskProfile7": "item1-3",
+      "aboutSystem9": "item1-0",
+      "riskProfile1": "item1-3",
+      "aboutDataSource6": "item1-4",
+      "riskProfile4": "item2-0",
+      "impact19I": "item2-1",
+      "aboutDataSourceType3": "item2-0"
+    }
+  },
+  {
+    "id": "set-170",
+    "answers": {
+      "impact15": "item2-2",
+      "aboutSystem8": "item1-0",
+      "aboutSystem11": "item2-2",
+      "aboutDataSource3": "item2-2",
+      "aboutSystem5B": "item1-0",
+      "aboutSystem4": "item3-1",
+      "riskProfile3": "item2-0",
+      "aboutDataSource8": "item3-3"
+    }
+  },
+  {
+    "id": "set-171",
+    "answers": {
+      "riskProfile1": "item2-0",
+      "impact11": "item3-3",
+      "aboutDataSource6": "item1-4",
+      "aboutAlgorithm2": "item1-3",
+      "aboutDataSource15": "item1-0",
+      "impact5": "item2-0",
+      "aboutSystem11": "item1-1",
+      "aboutDataSource4": "item2-0"
+    }
+  },
+  {
+    "id": "set-172",
+    "answers": {
+      "aboutAlgorithm8A": "item1-0",
+      "impact11": "item1-1",
+      "riskProfile7": "item1-3",
+      "impact24": "item2-2",
+      "aboutDataSource5": "item2-0",
+      "riskProfile10": "item1-0",
+      "projectAuthority1": "item2-0",
+      "aboutSystem6": "item2-2"
+    }
+  },
+  {
+    "id": "set-173",
+    "answers": {
+      "impact6": "item3-3",
+      "aboutAlgorithm8": "item1-3",
+      "aboutDataSourceType2": "item1-2",
+      "aboutSystem7": "item1-0",
+      "businessDrivers5": "item1-2",
+      "aboutSystem11": "item4-4",
+      "businessDrivers11": "item5-0",
+      "aboutDataSource4": "item2-0"
+    }
+  },
+  {
+    "id": "set-174",
+    "answers": {
+      "aboutSystem11": "item4-4",
+      "aboutAlgorithm3": "item2-1",
+      "aboutSystem7": "item1-0",
+      "aboutAlgorithm11": "item2-2",
+      "riskProfile1": "item1-3",
+      "aboutDataSource11": "item2-1",
+      "businessDrivers1": "item3",
+      "impact23": "item1-1"
+    }
+  },
+  {
+    "id": "set-175",
+    "answers": {
+      "impact5": "item2-0",
+      "riskProfile3": "item2-0",
+      "aboutDataSourceType2": "item2-4",
+      "riskProfile1": "item2-0",
+      "aboutSystem6": "item2-2",
+      "aboutDataSource6": "item1-4",
+      "aboutDataSource3": "item1-1",
+      "aboutDataSource16": "item3-1"
+    }
+  },
+  {
+    "id": "set-176",
+    "answers": {
+      "aboutDataSource11": "item1-0",
+      "impact27": "item2-0",
+      "aboutDataSource2": "item8-0",
+      "aboutDataSource5": "item2-0",
+      "aboutDataSourceType2": "item1-2",
+      "aboutDataSource15": "item3-1",
+      "impact23": "item2-0",
+      "impact3": "item2-0"
+    }
+  },
+  {
+    "id": "set-177",
+    "answers": {
+      "riskProfile2": "item1-3",
+      "aboutDataSourceType2": "item2-4",
+      "aboutAlgorithm11": "item1-0",
+      "businessDrivers11": "item5-0",
+      "aboutDataSource7": "item1-1",
+      "impact28": "item4-4",
+      "aboutAlgorithm2": "item1-3",
+      "impact15": "item4-4"
+    }
+  },
+  {
+    "id": "set-178",
+    "answers": {
+      "riskProfile1": "item2-0",
+      "impact28": "item1-1",
+      "impact7": "item4-4",
+      "aboutDataSource16": "item3-1",
+      "aboutAlgorithm4": "item2-1",
+      "aboutSystem3": "item1-0",
+      "aboutSystem5B": "item2-0",
+      "aboutAlgorithm5": "item1-0"
+    }
+  },
+  {
+    "id": "set-179",
+    "answers": {
+      "impact7": "item3-3",
+      "aboutSystem11": "item4-4",
+      "impact26": "item2-0",
+      "riskProfile10": "item2-0",
+      "aboutDataSourceType2": "item2-4",
+      "impact24": "item1-1",
+      "impact6": "item4-4",
+      "aboutSystem9": "item1-0"
+    }
+  },
+  {
+    "id": "set-180",
+    "answers": {
+      "impact6": "item2-2",
+      "riskProfile8": "item1-1",
+      "riskProfile1": "item2-0",
+      "impact19I": "item1-0",
+      "aboutSystem11": "item1-1",
+      "aboutAlgorithm11": "item1-0",
+      "aboutDataSource5": "item1-4",
+      "aboutDataSource2": "item2-1"
+    }
+  },
+  {
+    "id": "set-181",
+    "answers": {
+      "aboutAlgorithm8A": "item2-1",
+      "aboutDataSource4": "item2-0",
+      "impact9": "item4-4",
+      "aboutSystem7": "item1-0",
+      "aboutSystem11": "item2-2",
+      "aboutSystem8": "item2-1",
+      "impact11": "item2-2",
+      "impact30": "item1-4"
+    }
+  },
+  {
+    "id": "set-182",
+    "answers": {
+      "aboutSystem4": "item4-1",
+      "aboutAlgorithm9": "item1-2",
+      "businessDrivers11": "item6-0",
+      "decisionSector1": "item2-1",
+      "projectAuthority1": "item1-2",
+      "aboutAlgorithm11": "item2-2",
+      "impact9": "item2-2",
+      "aboutAlgorithm8A": "item2-1"
+    }
+  },
+  {
+    "id": "set-183",
+    "answers": {
+      "aboutAlgorithm2": "item1-3",
+      "aboutDataSource16": "item3-1",
+      "aboutSystem11": "item1-1",
+      "aboutSystem7": "item1-0",
+      "impact9": "item4-4",
+      "impact28": "item3-3",
+      "decisionSector1": "item7-1",
+      "aboutAlgorithm11": "item2-2"
+    }
+  },
+  {
+    "id": "set-184",
+    "answers": {
+      "impact28": "item4-4",
+      "aboutDataSourceType1": "item2-0",
+      "aboutSystem4": "item2-0",
+      "impact15": "item2-2",
+      "aboutDataSource5": "item1-4",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource14": "item2-1",
+      "businessDrivers1": "item4"
+    }
+  },
+  {
+    "id": "set-185",
+    "answers": {
+      "impact6": "item1-1",
+      "aboutDataSource16": "item3-1",
+      "businessDrivers9": "item1-0",
+      "impact26": "item3-0",
+      "riskProfile1": "item1-3",
+      "impact9": "item3-3",
+      "impact7": "item1-1",
+      "aboutSystem3": "item3-1"
+    }
+  },
+  {
+    "id": "set-186",
+    "answers": {
+      "impact3": "item1-4",
+      "impact22": "item2-0",
+      "aboutDataSource5": "item1-4",
+      "aboutAlgorithm9": "item1-2",
+      "aboutSystem7": "item2-2",
+      "aboutAlgorithm1": "item2-0",
+      "riskProfile8": "item1-1",
+      "aboutDataSource4": "item2-0"
+    }
+  },
+  {
+    "id": "set-187",
+    "answers": {
+      "aboutSystem9": "item2-2",
+      "aboutAlgorithm2": "item2-0",
+      "impact6": "item4-4",
+      "impact23": "item2-0",
+      "riskProfile2": "item1-3",
+      "aboutDataSource7": "item3-3",
+      "aboutDataSource3": "item1-1",
+      "riskProfile1": "item1-3"
+    }
+  },
+  {
+    "id": "set-188",
+    "answers": {
+      "aboutSystem5B": "item1-0",
+      "impact23": "item1-1",
+      "impact3": "item1-4",
+      "impact15": "item2-2",
+      "impact9": "item3-3",
+      "aboutDataSource16": "item1-2",
+      "impact19I": "item2-1",
+      "riskProfile10": "item2-0"
+    }
+  },
+  {
+    "id": "set-189",
+    "answers": {
+      "aboutDataSource1": "item1-2",
+      "aboutDataSource16": "item1-2",
+      "aboutSystem10A": "item1-0",
+      "impact27": "item2-0",
+      "impact4A": "item2-0",
+      "impact6": "item2-2",
+      "aboutAlgorithm5": "item1-0",
+      "aboutSystem7": "item2-2"
+    }
+  },
+  {
+    "id": "set-190",
+    "answers": {
+      "impact6": "item4-4",
+      "aboutDataSource1": "item2-0",
+      "aboutDataSource11": "item1-0",
+      "aboutDataSource14": "item3-1",
+      "impact13": "item3-3",
+      "aboutSystem5B": "item2-0",
+      "riskProfile7": "item1-3",
+      "impact11": "item1-1"
+    }
+  },
+  {
+    "id": "set-191",
+    "answers": {
+      "aboutAlgorithm11": "item1-0",
+      "riskProfile3": "item2-0",
+      "aboutAlgorithm2": "item1-3",
+      "riskProfile7": "item1-3",
+      "aboutSystem9": "item1-0",
+      "riskProfile2": "item2-0",
+      "impact26": "item2-0",
+      "businessDrivers9": "item2-1"
+    }
+  },
+  {
+    "id": "set-192",
+    "answers": {
+      "riskProfile3": "item2-0",
+      "riskProfile7": "item1-3",
+      "aboutAlgorithm1": "item2-0",
+      "riskProfile10": "item2-0",
+      "impact4A": "item1-2",
+      "riskProfile8": "item1-1",
+      "aboutDataSource5": "item1-4",
+      "aboutDataSourceType2": "item1-2"
+    }
+  },
+  {
+    "id": "set-193",
+    "answers": {
+      "businessDrivers9": "item1-0",
+      "aboutAlgorithm8": "item1-3",
+      "projectAuthority1": "item1-2",
+      "aboutDataSource5": "item1-4",
+      "impact26": "item1-0",
+      "impact30": "item2-2",
+      "decisionSector1": "item6-1",
+      "aboutDataSource14": "item5-3"
+    }
+  },
+  {
+    "id": "set-194",
+    "answers": {
+      "projectAuthority1": "item2-0",
+      "aboutSystem7": "item1-0",
+      "impact28": "item4-4",
+      "aboutAlgorithm1": "item2-0",
+      "aboutDataSource14": "item4-3",
+      "impact9": "item1-1",
+      "aboutSystem8": "item1-0",
+      "businessDrivers9": "item1-0"
+    }
+  },
+  {
+    "id": "set-195",
+    "answers": {
+      "riskProfile9": "item2-0",
+      "aboutSystem6": "item2-2",
+      "riskProfile4": "item1-0",
+      "aboutDataSource8": "item3-3",
+      "aboutDataSource7": "item4-4",
+      "businessDrivers11": "item1-2",
+      "aboutAlgorithm5": "item1-0",
+      "aboutDataSource14": "item2-1"
+    }
+  },
+  {
+    "id": "set-196",
+    "answers": {
+      "aboutDataSource1": "item2-0",
+      "aboutAlgorithm11": "item1-0",
+      "impact13": "item2-2",
+      "aboutAlgorithm3": "item2-1",
+      "riskProfile2": "item1-3",
+      "aboutAlgorithm5": "item1-0",
+      "decisionSector1": "item6-1",
+      "riskProfile8": "item1-1"
+    }
+  },
+  {
+    "id": "set-197",
+    "answers": {
+      "impact11": "item4-4",
+      "impact18": "item4-2",
+      "projectAuthority1": "item1-2",
+      "impact30": "item2-2",
+      "aboutSystem9": "item2-2",
+      "aboutDataSource7": "item4-4",
+      "riskProfile1": "item2-0",
+      "aboutDataSource8": "item3-3"
+    }
+  },
+  {
+    "id": "set-198",
+    "answers": {
+      "aboutDataSource15": "item2-2",
+      "aboutDataSource4": "item2-0",
+      "aboutAlgorithm3": "item1-0",
+      "aboutAlgorithm9": "item2-0",
+      "projectAuthority1": "item1-2",
+      "aboutSystem5B": "item1-0",
+      "aboutAlgorithm8": "item1-3",
+      "aboutSystem11": "item4-4"
+    }
+  },
+  {
+    "id": "set-199",
+    "answers": {
+      "impact5": "item1-2",
+      "aboutSystem10A": "item1-0",
+      "businessDrivers1": "item2",
+      "aboutSystem6": "item2-2",
+      "riskProfile4": "item4-4",
+      "impact3": "item2-0",
+      "impact11": "item2-2",
+      "aboutAlgorithm9": "item2-0"
+    }
+  },
+  {
+    "id": "set-200",
+    "answers": {
+      "riskProfile8": "item2-0",
+      "impact9": "item1-1",
+      "aboutDataSource2": "item7-4",
+      "aboutSystem9": "item1-0",
+      "aboutSystem11": "item3-3",
+      "impact5": "item2-0",
+      "aboutDataSource15": "item3-1",
+      "riskProfile9": "item2-0"
+    }
+  },
+  {
+    "id": "set-201",
+    "answers": {
+      "impact30": "item2-2",
+      "aboutSystem7": "item1-0",
+      "impact5": "item1-2",
+      "aboutDataSource14": "item1-0",
+      "aboutSystem6": "item2-2",
+      "aboutSystem11": "item1-1",
+      "impact11": "item2-2",
+      "riskProfile4": "item1-0"
+    }
+  },
+  {
+    "id": "set-202",
+    "answers": {
+      "aboutDataSource6": "item1-4",
+      "aboutSystem1": "item4",
+      "businessDrivers11": "item4-0",
+      "aboutAlgorithm4": "item2-1",
+      "impact26": "item2-0",
+      "aboutAlgorithm2": "item1-3",
+      "aboutDataSource15": "item3-1",
+      "businessDrivers1": "item1"
+    }
+  },
+  {
+    "id": "set-203",
+    "answers": {
+      "aboutDataSource9": "item2-2",
+      "riskProfile1": "item1-3",
+      "aboutDataSource15": "item3-1",
+      "aboutSystem9": "item2-2",
+      "projectAuthority1": "item2-0",
+      "aboutDataSource8": "item2-2",
+      "aboutAlgorithm9": "item2-0",
+      "impact18": "item2-0"
+    }
+  },
+  {
+    "id": "set-204",
+    "answers": {
+      "businessDrivers11": "item5-0",
+      "aboutDataSource15": "item1-0",
+      "aboutDataSource14": "item1-0",
+      "impact30": "item1-4",
+      "aboutDataSource2": "item1-0",
+      "riskProfile2": "item2-0",
+      "impact24": "item3-3",
+      "aboutDataSource11": "item1-0"
+    }
+  },
+  {
+    "id": "set-205",
+    "answers": {
+      "aboutDataSourceType2": "item1-2",
+      "aboutAlgorithm11": "item1-0",
+      "aboutDataSource6": "item2-0",
+      "decisionSector1": "item1-1",
+      "impact18": "item2-0",
+      "aboutDataSource7": "item1-1",
+      "aboutDataSource5": "item2-0",
+      "aboutAlgorithm9": "item1-2"
+    }
+  },
+  {
+    "id": "set-206",
+    "answers": {
+      "aboutDataSource17": "item1-0",
+      "aboutSystem3": "item4-1",
+      "impact18": "item3-2",
+      "aboutAlgorithm9": "item1-2",
+      "aboutDataSource9": "item1-0",
+      "aboutSystem8": "item1-0",
+      "businessDrivers5": "item2-1",
+      "aboutDataSourceType3": "item1-0"
+    }
+  },
+  {
+    "id": "set-207",
+    "answers": {
+      "aboutDataSource14": "item6-1",
+      "aboutDataSource7": "item2-2",
+      "aboutSystem9": "item2-2",
+      "aboutDataSource5": "item1-4",
+      "aboutAlgorithm8": "item1-3",
+      "aboutDataSource9": "item1-0",
+      "aboutDataSource10": "item2-0",
+      "impact28": "item3-3"
+    }
+  },
+  {
+    "id": "set-208",
+    "answers": {
+      "impact3": "item1-4",
+      "riskProfile3": "item2-0",
+      "impact4A": "item1-2",
+      "aboutDataSourceType1": "item1-0",
+      "aboutSystem5": "item2-1",
+      "impact19I": "item2-1",
+      "riskProfile7": "item2-0",
+      "aboutAlgorithm8": "item2-0"
+    }
+  },
+  {
+    "id": "set-209",
+    "answers": {
+      "aboutSystem5": "item2-1",
+      "aboutAlgorithm3": "item2-1",
+      "impact13": "item3-3",
+      "riskProfile2": "item2-0",
+      "riskProfile10": "item2-0",
+      "aboutAlgorithm8": "item1-3",
+      "impact28": "item3-3",
+      "aboutSystem9": "item1-0"
+    }
+  },
+  {
+    "id": "set-210",
+    "answers": {
+      "aboutDataSource10": "item1-2",
+      "impact3": "item1-4",
+      "aboutSystem8": "item2-1",
+      "aboutAlgorithm4": "item2-1",
+      "impact11": "item1-1",
+      "businessDrivers11": "item1-2",
+      "impact28": "item4-4",
+      "aboutDataSource17": "item3-0"
+    }
+  },
+  {
+    "id": "set-211",
+    "answers": {
+      "businessDrivers11": "item4-0",
+      "aboutDataSource1": "item2-0",
+      "aboutAlgorithm4": "item2-1",
+      "aboutDataSourceType2": "item1-2",
+      "aboutSystem6": "item1-0",
+      "impact18": "item2-0",
+      "impact3": "item1-4",
+      "aboutDataSource15": "item1-0"
+    }
+  },
+  {
+    "id": "set-212",
+    "answers": {
+      "projectAuthority1": "item1-2",
+      "impact18": "item5-1",
+      "aboutAlgorithm8": "item2-0",
+      "aboutSystem5B": "item2-0",
+      "aboutSystem7": "item1-0",
+      "impact30": "item1-4",
+      "businessDrivers11": "item1-2",
+      "aboutSystem8": "item1-0"
+    }
+  },
+  {
+    "id": "set-213",
+    "answers": {
+      "aboutDataSource2": "item6-3",
+      "aboutDataSource16": "item2-0",
+      "impact26": "item6-0",
+      "aboutDataSource8": "item2-2",
+      "decisionSector1": "item4-1",
+      "riskProfile3": "item2-0",
+      "aboutSystem5": "item3-2",
+      "aboutSystem3": "item3-1"
+    }
+  },
+  {
+    "id": "set-214",
+    "answers": {
+      "aboutAlgorithm4": "item1-0",
+      "aboutDataSource11": "item2-1",
+      "impact3": "item2-0",
+      "impact11": "item3-3",
+      "aboutDataSource7": "item2-2",
+      "aboutDataSource17": "item3-0",
+      "aboutAlgorithm3": "item1-0",
+      "aboutDataSource5": "item2-0"
+    }
+  },
+  {
+    "id": "set-215",
+    "answers": {
+      "aboutSystem5": "item3-2",
+      "aboutSystem7": "item2-2",
+      "impact22": "item2-0",
+      "aboutDataSourceType2": "item1-2",
+      "riskProfile2": "item2-0",
+      "impact11": "item1-1",
+      "aboutSystem9": "item1-0",
+      "impact15": "item4-4"
+    }
+  },
+  {
+    "id": "set-216",
+    "answers": {
+      "aboutDataSource17": "item2-2",
+      "aboutSystem11": "item2-2",
+      "riskProfile7": "item2-0",
+      "businessDrivers11": "item1-2",
+      "impact9": "item4-4",
+      "impact15": "item2-2",
+      "aboutAlgorithm2": "item1-3",
+      "impact4A": "item2-0"
+    }
+  },
+  {
+    "id": "set-217",
+    "answers": {
+      "impact30": "item1-4",
+      "riskProfile9": "item2-0",
+      "impact7": "item3-3",
+      "aboutDataSource15": "item3-1",
+      "aboutDataSource6": "item2-0",
+      "aboutSystem3": "item4-1",
+      "businessDrivers1": "item3",
+      "aboutDataSource2": "item6-3"
+    }
+  },
+  {
+    "id": "set-218",
+    "answers": {
+      "aboutSystem9": "item1-0",
+      "impact30": "item1-4",
+      "aboutDataSource1": "item1-2",
+      "businessDrivers11": "item4-0",
+      "impact26": "item2-0",
+      "businessDrivers1": "item4",
+      "impact3": "item1-4",
+      "aboutDataSource10": "item1-2"
+    }
+  },
+  {
+    "id": "set-219",
+    "answers": {
+      "riskProfile4": "item1-0",
+      "aboutDataSource10": "item2-0",
+      "decisionSector1": "item1-1",
+      "aboutDataSourceType1": "item2-0",
+      "aboutSystem7": "item1-0",
+      "aboutDataSource17": "item2-2",
+      "impact5": "item1-2",
+      "aboutDataSource11": "item1-0"
+    }
+  },
+  {
+    "id": "set-220",
+    "answers": {
+      "aboutDataSource8": "item1-1",
+      "businessDrivers1": "item4",
+      "impact18": "item6-3",
+      "projectAuthority1": "item1-2",
+      "aboutSystem3": "item3-1",
+      "riskProfile1": "item2-0",
+      "aboutDataSource16": "item1-2",
+      "impact5": "item2-0"
+    }
+  },
+  {
+    "id": "set-221",
+    "answers": {
+      "impact24": "item4-4",
+      "riskProfile8": "item2-0",
+      "aboutDataSource8": "item2-2",
+      "impact22": "item1-2",
+      "businessDrivers11": "item5-0",
+      "aboutAlgorithm8A": "item2-1",
+      "impact6": "item3-3",
+      "riskProfile3": "item1-1"
+    }
+  },
+  {
+    "id": "set-222",
+    "answers": {
+      "impact26": "item2-0",
+      "aboutAlgorithm11": "item2-2",
+      "aboutSystem8": "item1-0",
+      "riskProfile10": "item1-0",
+      "aboutDataSource2": "item8-0",
+      "riskProfile3": "item2-0",
+      "riskProfile7": "item1-3",
+      "impact7": "item2-2"
+    }
+  },
+  {
+    "id": "set-223",
+    "answers": {
+      "aboutDataSource11": "item2-1",
+      "aboutSystem7": "item1-0",
+      "impact7": "item3-3",
+      "impact13": "item1-1",
+      "aboutDataSourceType1": "item2-0",
+      "impact9": "item3-3",
+      "businessDrivers1": "item3",
+      "businessDrivers9": "item1-0"
+    }
+  },
+  {
+    "id": "set-224",
+    "answers": {
+      "riskProfile1": "item1-3",
+      "impact4A": "item2-0",
+      "impact5": "item1-2",
+      "aboutDataSource1": "item2-0",
+      "riskProfile2": "item2-0",
+      "aboutSystem5B": "item2-0",
+      "aboutDataSourceType2": "item2-4",
+      "aboutDataSource4": "item2-0"
+    }
+  },
+  {
+    "id": "set-225",
+    "answers": {
+      "riskProfile7": "item2-0",
+      "impact24": "item1-1",
+      "aboutDataSource5": "item1-4",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutAlgorithm5": "item2-1",
+      "aboutSystem7": "item1-0",
+      "impact7": "item1-1",
+      "impact18": "item4-2"
+    }
+  },
+  {
+    "id": "set-226",
+    "answers": {
+      "aboutDataSource2": "item1-0",
+      "aboutDataSource11": "item1-0",
+      "riskProfile10": "item1-0",
+      "aboutDataSource4": "item1-2",
+      "impact24": "item3-3",
+      "impact28": "item2-2",
+      "businessDrivers1": "item6",
+      "aboutDataSource1": "item2-0"
+    }
+  },
+  {
+    "id": "set-227",
+    "answers": {
+      "impact26": "item5-0",
+      "impact11": "item2-2",
+      "aboutSystem7": "item2-2",
+      "impact28": "item3-3",
+      "aboutSystem8": "item2-1",
+      "aboutDataSource8": "item4-4",
+      "riskProfile2": "item2-0",
+      "aboutDataSource11": "item1-0"
+    }
+  },
+  {
+    "id": "set-228",
+    "answers": {
+      "aboutDataSourceType1": "item2-0",
+      "aboutDataSource7": "item1-1",
+      "aboutDataSource14": "item6-1",
+      "impact22": "item1-2",
+      "impact13": "item2-2",
+      "aboutDataSourceType2": "item1-2",
+      "aboutAlgorithm8A": "item1-0",
+      "aboutDataSource17": "item1-0"
+    }
+  }
+]

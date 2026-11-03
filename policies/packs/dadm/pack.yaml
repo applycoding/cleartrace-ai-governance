@@ -15,7 +15,10 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: aia_record
+    required: true
 - control_key: CA-DADM-6-3-7
   clause_ref: 6.3.7
   title_en: Obtain peer review appropriate to the impact level.
@@ -24,7 +27,10 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: peer_review_report
+    required: true
 - control_key: CA-DADM-APP-C-03
   clause_ref: Appendix C row 3
   title_en: Level III requires qualified expert peer review of the system and AIA.
@@ -34,4 +40,7 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: peer_review_report
+    required: true

@@ -15,7 +15,10 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: adm_accountability_record
+    required: true
 - control_key: CA-PSD-4-1-26
   clause_ref: 4.1.26
   title_en: Design for accessibility, official languages, privacy, environment and
@@ -26,4 +29,7 @@ controls:
     required.
   remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
     révision humaine si requis.
-  applicability_expr: planned_production_use == True
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: design_by_default_record
+    required: true
