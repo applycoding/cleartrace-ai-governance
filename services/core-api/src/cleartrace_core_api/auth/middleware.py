@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import secrets
 import time
 from typing import Any
@@ -17,6 +18,8 @@ from cleartrace_db.session import tenant_transaction
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.responses import Response
+
+_LOG = logging.getLogger(__name__)
 
 
 class _JwksCache:
@@ -73,7 +76,8 @@ def is_dev_token(settings: Settings, token: str) -> bool:
     )
 
 
-def _dev_tenant_from_request(request: Request, settings: Settings) -> UUID | None:
+def _dev_tenant_from_request(request: Request) -> UUID | None:
+    """Read X-ClearTrace-Dev-Tenant. Callers must check is_dev_token first."""
     raw = request.headers.get("X-ClearTrace-Dev-Tenant", "").strip()
     if not raw:
         return None
@@ -83,11 +87,14 @@ def _dev_tenant_from_request(request: Request, settings: Settings) -> UUID | Non
         raise ValueError("invalid X-ClearTrace-Dev-Tenant") from exc
 
 
-async def decode_bearer_token(settings: Settings, token: str, request: Request | None = None) -> AuthContext:
+async def decode_bearer_token(
+    settings: Settings, token: str, request: Request | None = None
+) -> AuthContext:
     if is_dev_token(settings, token):
+        # Dev headers (tenant, roles, principal) only ever apply behind this guard.
         tenant_id = settings.dev_tenant_id
         if request is not None:
-            override = _dev_tenant_from_request(request, settings)
+            override = _dev_tenant_from_request(request)
             if override is not None:
                 tenant_id = override
         return AuthContext(
@@ -146,11 +153,12 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
         token = auth.removeprefix("Bearer ").strip()
         try:
             ctx = await decode_bearer_token(settings, token, request)
-        except Exception as exc:
+        except Exception:
+            # Generic message only: token parsing errors must not leak to the caller.
             return problem_response(
                 status=401,
                 title="Unauthorized",
-                detail=str(exc),
+                detail="Bearer token is invalid or expired",
                 type_uri="https://cleartrace.local/problems/unauthorized",
             )
         if is_dev_token(settings, token):
@@ -241,4 +249,8 @@ def _audit_authz_denial(request: Request, auth: AuthContext, action: str) -> Non
                 payload={"attempted_action": action, "path": request.url.path},
             )
     except Exception:
-        return
+        # The request is still denied; record that the audit write failed instead of hiding it.
+        _LOG.exception(
+            "authz.denied audit write failed",
+            extra={"tenant_id": str(auth.tenant_id), "attempted_action": action},
+        )

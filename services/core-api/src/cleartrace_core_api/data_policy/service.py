@@ -491,8 +491,10 @@ class DataPolicyService:
                 (tenant_id,),
             )
             rows = cur.fetchall()
+        # Stored rows are trusted output, so build them without re-applying the
+        # request-side validators (model_construct skips validation).
         return [
-            RetentionRuleBody(
+            RetentionRuleBody.model_construct(
                 artefact_class=r[0],
                 configured_retention_days=r[1],
                 statutory_floor_days=r[2],

@@ -75,7 +75,7 @@ async def review_action(
     settings = request.app.state.settings
     reviewer = get_reviewer(request)
     ledger = get_audit_ledger(request)
-    actor = UUID(str(auth.raw_claims.get("principal_id") or auth.subject))
+    actor = auth.actor_id
 
     def audit_append(
         conn: object,

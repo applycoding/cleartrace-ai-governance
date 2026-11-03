@@ -6,8 +6,8 @@ from uuid import UUID
 
 from cleartrace_connectors.manifest import ConnectorManifest
 from cleartrace_connectors.runtime import ConnectorRuntime
-from fastapi import APIRouter, Request
-from pydantic import BaseModel
+from fastapi import APIRouter, HTTPException, Request
+from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
 router = APIRouter(prefix="/connectors", tags=["connectors"])
@@ -23,19 +23,22 @@ class ConnectorSummary(BaseModel):
 
 
 class ConnectorInstall(BaseModel):
-    manifest_name: str
+    # A shipped manifest name such as ``mlflow`` or ``mlflow.yaml``; never a path.
+    manifest_name: str = Field(pattern=r"^[a-z][a-z0-9_]{0,63}(\.yaml)?$")
 
 
 class ConnectorRunBody(BaseModel):
     system_id: UUID
-    fixture_name: str = "default"
+    fixture_name: str = Field(default="default", pattern=r"^[a-z0-9][a-z0-9_-]{0,63}$")
 
 
 @router.get("")
-async def list_connectors() -> dict[str, list[ConnectorSummary]]:
+async def list_connectors(request: Request) -> dict[str, list[ConnectorSummary]]:
+    tenant = str(request.state.auth.tenant_id)
     items = [
         ConnectorSummary(id=UUID(cid), name=meta["name"], version=meta["version"])
         for cid, meta in _installed.items()
+        if meta.get("tenant_id") == tenant
     ]
     return {"items": items}
 
@@ -44,16 +47,21 @@ async def list_connectors() -> dict[str, list[ConnectorSummary]]:
 async def install_connector(request: Request, body: ConnectorInstall) -> dict[str, str]:
     auth = request.state.auth
     settings = request.app.state.settings
-    manifest_path = _MANIFESTS / body.manifest_name
-    if not manifest_path.exists():
-        manifest_path = _MANIFESTS / f"{body.manifest_name}.yaml"
+    stem = body.manifest_name.removesuffix(".yaml")
+    manifest_path = (_MANIFESTS / f"{stem}.yaml").resolve()
+    if not manifest_path.is_relative_to(_MANIFESTS.resolve()) or not manifest_path.is_file():
+        raise HTTPException(status_code=404, detail="Connector manifest not found")
     runtime = ConnectorRuntime(
         settings.database_url.replace("+psycopg", ""),
         auth.tenant_id,
     )
     manifest = runtime.load_manifest(manifest_path)
     connector_id = uuid7()
-    _installed[str(connector_id)] = {"name": manifest.name, "version": manifest.version}
+    _installed[str(connector_id)] = {
+        "tenant_id": str(auth.tenant_id),
+        "name": manifest.name,
+        "version": manifest.version,
+    }
     return {"id": str(connector_id), "name": manifest.name}
 
 
@@ -66,7 +74,8 @@ async def run_connector(
     auth = request.state.auth
     settings = request.app.state.settings
     meta = _installed.get(str(connector_id))
-    if meta is None:
+    # Installed connectors belong to the installing tenant.
+    if meta is None or meta.get("tenant_id") != str(auth.tenant_id):
         return {"status": "not_found"}
     manifest_path = _MANIFESTS / f"{meta['name']}.yaml"
     runtime = ConnectorRuntime(

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+from uuid import UUID
 
 from cleartrace_engine.framework_studio import list_packs, load_pack, pack_to_oscal_catalog
 from fastapi import APIRouter, HTTPException
@@ -27,9 +28,9 @@ class FrameworkPackSummary(BaseModel):
 
 
 class AssignmentCreate(BaseModel):
-    framework_version_id: str
-    ai_system_id: str | None = None
-    group_id: str | None = None
+    framework_version_id: UUID
+    ai_system_id: UUID | None = None
+    group_id: UUID | None = None
     criteria_overrides: dict[str, Any] = Field(default_factory=dict)
 
 
@@ -72,9 +73,9 @@ def create_assignment(body: AssignmentCreate) -> dict[str, str]:
         )
     record = AssignmentRecord(
         id=uuid.uuid4(),
-        framework_version_id=uuid.UUID(body.framework_version_id),
-        ai_system_id=uuid.UUID(body.ai_system_id) if body.ai_system_id else None,
-        group_id=uuid.UUID(body.group_id) if body.group_id else None,
+        framework_version_id=body.framework_version_id,
+        ai_system_id=body.ai_system_id,
+        group_id=body.group_id,
         criteria_overrides=body.criteria_overrides,
     )
     _lifecycle.add_assignment(record)

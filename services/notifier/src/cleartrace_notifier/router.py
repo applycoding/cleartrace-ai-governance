@@ -6,19 +6,20 @@ from typing import Any, cast
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Request
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
 from cleartrace_notifier.models import WebhookSubscription
 from cleartrace_notifier.service import NotifierService
+from cleartrace_notifier.webhook import WebhookURLError, validate_webhook_url
 
 router = APIRouter(tags=["notifications"])
 
 
 class WebhookCreate(BaseModel):
-    url: str
-    secret: str
-    channel: str = "generic"
+    url: str = Field(max_length=2048, pattern=r"^https://[A-Za-z0-9.-]+(:[0-9]{1,5})?([/?#][^\s]*)?$")
+    secret: str = Field(min_length=16, max_length=256)
+    channel: str = Field(default="generic", pattern=r"^[a-z][a-z0-9_-]{0,31}$")
 
 
 class AlertCreate(BaseModel):
@@ -75,6 +76,10 @@ async def list_notifications(request: Request) -> dict[str, list[dict[str, str]]
 async def create_webhook(body: WebhookCreate, request: Request) -> dict[str, str]:
     svc = _service(request)
     tenant_id = _tenant_id(request)
+    try:
+        validate_webhook_url(body.url)
+    except WebhookURLError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
     sub = WebhookSubscription(
         id=uuid7(),
         tenant_id=tenant_id,

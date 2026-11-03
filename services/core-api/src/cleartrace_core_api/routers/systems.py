@@ -4,12 +4,12 @@ from typing import Annotated
 from uuid import UUID
 
 from cleartrace_db.session import tenant_transaction
-from fastapi import APIRouter, Header, Query, Request, Response
+from fastapi import APIRouter, Header, HTTPException, Query, Request, Response
 from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
 from cleartrace_core_api.errors import problem_response
-from cleartrace_core_api.pagination import decode_cursor, encode_cursor
+from cleartrace_core_api.pagination import InvalidCursorError, decode_cursor, encode_cursor
 
 router = APIRouter(prefix="/systems", tags=["systems"])
 
@@ -55,7 +55,10 @@ async def list_systems(
     items = [
         SystemSummary.model_validate(v) for v in _store.values() if v.get("tenant_id") == tenant_key
     ]
-    start = decode_cursor(cursor) if cursor else 0
+    try:
+        start = decode_cursor(cursor) if cursor else 0
+    except InvalidCursorError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     page = items[start : start + limit]
     next_cursor = encode_cursor(start + limit) if start + limit < len(items) else None
     response.headers["Cache-Control"] = "no-store"
@@ -70,8 +73,10 @@ async def create_system(
 ) -> SystemSummary | Response:
     auth = request.state.auth
     settings = request.app.state.settings
+    # Keys are scoped per tenant so one tenant's key never replays another's resource.
+    idem_slot = f"idempotency:{auth.tenant_id}:{idempotency_key}"
     if idempotency_key:
-        cached = _store.get(f"idempotency:{idempotency_key}")
+        cached = _store.get(idem_slot)
         if cached:
             summary = SystemSummary.model_validate(cached["resource"])
             return summary
@@ -94,7 +99,7 @@ async def create_system(
             (system_id, auth.tenant_id, body.system_key),
         )
     if idempotency_key:
-        _store[f"idempotency:{idempotency_key}"] = {"resource": record}
+        _store[idem_slot] = {"resource": record}
     summary = SystemSummary(
         id=system_id,
         system_key=body.system_key,
@@ -130,7 +135,7 @@ async def list_system_findings(
             JOIN finding_version fv ON fv.finding_id = f.id
               AND fv.version_number = f.current_version_number
             WHERE f.tenant_id = %s AND f.ai_system_id = %s
-              AND (%s IS NULL OR fv.outcome_state = %s)
+              AND (%s::text IS NULL OR fv.outcome_state::text = %s::text)
             """,
             (auth.tenant_id, system_id, state, state),
         )
@@ -149,16 +154,23 @@ async def patch_system(
     body: CreateSystemRequest,
     if_match: Annotated[str | None, Header(alias="If-Match")] = None,
 ) -> SystemSummary | Response:
+    auth = request.state.auth
     key = str(system_id)
     record = _store.get(key)
-    if not record:
+    if not record or record.get("tenant_id") != str(auth.tenant_id):
         return problem_response(status=404, title="Not found", detail="System not found")
     current = _etags.get(key)
-    if if_match is None or if_match != current:
+    if if_match is None:
         return problem_response(
             status=428,
             title="Precondition Required",
-            detail="If-Match header must match the current ETag",
+            detail="If-Match header is required; send the current ETag",
+        )
+    if if_match != current:
+        return problem_response(
+            status=412,
+            title="Precondition Failed",
+            detail="If-Match does not match the current ETag",
         )
     record.update(
         {

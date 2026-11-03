@@ -1,12 +1,19 @@
 from __future__ import annotations
 
+import asyncio
+import json
 import os
+import time
 from pathlib import Path
 
+import jwt
 import pytest
 from cleartrace_core_api.app import create_app
-from cleartrace_core_api.auth.middleware import is_dev_token
+from cleartrace_core_api.auth import middleware as auth_middleware
+from cleartrace_core_api.auth.middleware import decode_bearer_token, is_dev_token
 from cleartrace_core_api.config import Settings
+from cryptography.hazmat.primitives.asymmetric import rsa
+from fastapi import Request
 from fastapi.testclient import TestClient
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -59,3 +66,53 @@ def test_helm_cannot_enable_dev_auth() -> None:
     assert "devskipauth" not in values
     assert "dev_auth" not in values
     assert "extraenv" not in values
+
+
+OTHER_TENANT = "22222222-2222-7222-8222-222222222202"
+JWT_TENANT = "33333333-3333-7333-8333-333333333303"
+
+
+def _request(headers: dict[str, str]) -> Request:
+    raw = [(k.lower().encode(), v.encode()) for k, v in headers.items()]
+    return Request({"type": "http", "method": "GET", "path": "/", "headers": raw})
+
+
+def test_dev_tenant_header_applies_only_with_dev_token() -> None:
+    settings = Settings(dev_skip_auth=True, dev_auth_token=TOKEN)
+    ctx = asyncio.run(
+        decode_bearer_token(settings, TOKEN, _request({"X-ClearTrace-Dev-Tenant": OTHER_TENANT}))
+    )
+    assert str(ctx.tenant_id) == OTHER_TENANT
+
+
+def test_dev_tenant_header_rejected_when_flag_off() -> None:
+    settings = Settings(
+        dev_skip_auth=False, dev_auth_token=TOKEN, keycloak_jwks_url=UNREACHABLE_JWKS
+    )
+    assert _status(settings, TOKEN, {"X-ClearTrace-Dev-Tenant": OTHER_TENANT}) == 401
+    settings = Settings(dev_skip_auth=True, dev_auth_token="", keycloak_jwks_url=UNREACHABLE_JWKS)
+    assert _status(settings, "", {"X-ClearTrace-Dev-Tenant": OTHER_TENANT}) == 401
+
+
+def test_dev_tenant_header_ignored_for_real_jwt(monkeypatch: pytest.MonkeyPatch) -> None:
+    key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    jwk = json.loads(jwt.algorithms.RSAAlgorithm.to_jwk(key.public_key()))
+    jwk["kid"] = "unit"
+
+    async def _keys(_url: str) -> dict[str, object]:
+        return {"keys": [jwk]}
+
+    monkeypatch.setattr(auth_middleware._jwks_cache, "get_keys", _keys)
+    settings = Settings(dev_skip_auth=True, dev_auth_token=TOKEN)
+    claims = {
+        "sub": "real-user",
+        "tenant_id": JWT_TENANT,
+        "aud": settings.keycloak_audience,
+        "iss": settings.keycloak_issuer,
+        "exp": int(time.time()) + 300,
+    }
+    token = jwt.encode(claims, key, algorithm="RS256", headers={"kid": "unit"})
+    ctx = asyncio.run(
+        decode_bearer_token(settings, token, _request({"X-ClearTrace-Dev-Tenant": OTHER_TENANT}))
+    )
+    assert str(ctx.tenant_id) == JWT_TENANT

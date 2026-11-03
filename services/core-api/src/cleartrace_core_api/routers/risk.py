@@ -29,8 +29,8 @@ class MetricSummary(BaseModel):
 class ObservationItem(BaseModel):
     metric_code: str
     ai_system_id: UUID
-    value: float
-    binding: bool = False
+    value: float = Field(strict=True)
+    binding: bool = Field(default=False, strict=True)
     linked_control_id: UUID | None = None
 
 

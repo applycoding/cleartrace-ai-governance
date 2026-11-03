@@ -1,15 +1,68 @@
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import hmac
+import ipaddress
 import json
+import socket
 from datetime import UTC, datetime, timedelta
 from typing import Any, Protocol
+from urllib.parse import urlsplit
 from uuid import UUID
 
 import httpx
 
 MAX_WEBHOOK_ATTEMPTS = 7
+_BLOCKED_HOSTNAMES = {"localhost", "localhost.localdomain", "metadata.google.internal"}
+
+
+class WebhookURLError(ValueError):
+    """Webhook destination is not an allowed public HTTPS endpoint."""
+
+
+def _check_ip(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> None:
+    if not ip.is_global or ip.is_multicast:
+        raise WebhookURLError(f"webhook destination {ip} is not a public address")
+
+
+def validate_webhook_url(url: str) -> str:
+    """Reject webhook URLs that could reach internal services (SSRF, ASVS V5.2.6).
+
+    Only ``https`` URLs with a hostname, no user-info and, for IP literals, a public
+    address are accepted. Hostnames are resolved again at delivery time.
+    """
+    parts = urlsplit(url)
+    if parts.scheme != "https":
+        raise WebhookURLError("webhook URL must use https")
+    host = parts.hostname
+    if not host or parts.username is not None or parts.password is not None:
+        raise WebhookURLError("webhook URL must name a host and carry no credentials")
+    if host.lower().rstrip(".") in _BLOCKED_HOSTNAMES or host.lower().endswith(".localhost"):
+        raise WebhookURLError("webhook URL must not target localhost")
+    try:
+        literal = ipaddress.ip_address(host)
+    except ValueError:
+        literal = None
+    if literal is not None:
+        _check_ip(literal)
+    try:
+        _ = parts.port
+    except ValueError as exc:
+        raise WebhookURLError("webhook URL has an invalid port") from exc
+    return url
+
+
+async def _assert_resolves_public(url: str) -> None:
+    parts = urlsplit(url)
+    host = parts.hostname or ""
+    loop = asyncio.get_running_loop()
+    try:
+        infos = await loop.getaddrinfo(host, parts.port or 443, type=socket.SOCK_STREAM)
+    except OSError as exc:
+        raise WebhookURLError(f"webhook host does not resolve: {host}") from exc
+    for info in infos:
+        _check_ip(ipaddress.ip_address(info[4][0]))
 
 
 def sign_payload(secret: str, body: bytes, timestamp: str) -> str:
@@ -49,7 +102,15 @@ class HttpxWebhookTransport:
         self._owned = client is None
 
     async def post(self, url: str, headers: dict[str, str], content: bytes) -> tuple[int, str]:
-        resp = await self._client.post(url, headers=headers, content=content)
+        """POST to a validated public HTTPS URL; network errors are a failed attempt."""
+        try:
+            validate_webhook_url(url)
+            await _assert_resolves_public(url)
+            resp = await self._client.post(url, headers=headers, content=content)
+        except WebhookURLError as exc:
+            return 0, f"blocked: {exc}"
+        except httpx.HTTPError as exc:
+            return 0, f"transport error: {type(exc).__name__}"
         return resp.status_code, resp.text
 
 

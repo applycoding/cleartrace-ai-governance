@@ -65,8 +65,34 @@ def test_t13_requires_both_golden_and_shipped_modules(tmp_path: Path) -> None:
     )
     outcome = trl5_report._outcome_for_test("T-13", parsed)
     assert outcome is not None and outcome.failed == 0
-    assert trl5_report.status_for("T-13", outcome) == "pass"
-    assert _status(tmp_path, "T-11", [("test_t11_certainty_index", "a", "pass")]) == "pass"
+    # Golden set is template-generated, so a green T-13 run is still partial.
+    assert trl5_report.status_for("T-13", outcome) == "partial"
+
+
+def test_t11_is_partial_and_reports_measured_numbers(tmp_path: Path) -> None:
+    assert _status(tmp_path, "T-11", [("test_t11_certainty_index", "a", "pass")]) == "partial"
+    path = tmp_path / "junit.xml"
+    path.write_text(
+        "<testsuites><testsuite>"
+        '<testcase classname="tests.trl5.test_t11_certainty_index" name="m" time="0.1">'
+        '<properties><property name="t11_coverage" value="0.50"/>'
+        '<property name="t11_ece" value="0.40"/></properties></testcase>'
+        "</testsuite></testsuites>",
+        encoding="utf-8",
+    )
+    text = trl5_report.build_report(junit_paths=[path], run_id="1", run_url="", commit="x")
+    assert "Uncalibrated index" in text and "coverage 0.50" in text and "ECE 0.40" in text
+    assert "| calibrated" not in text
+
+
+def test_t26_needs_a_passing_gate_summary(tmp_path: Path) -> None:
+    parsed = trl5_report._parse_junit(
+        _junit(tmp_path, [("test_t26_security_gate", "a", "pass")])
+    )
+    outcome = trl5_report._outcome_for_test("T-26", parsed)
+    assert trl5_report.status_for("T-26", outcome) == "fail"
+    assert trl5_report.status_for("T-26", outcome, {"gate_passed": False}) == "fail"
+    assert trl5_report.status_for("T-26", outcome, {"gate_passed": True}) == "pass"
 
 
 def test_t21_and_t29_modules_can_reach_pass(tmp_path: Path) -> None:

@@ -4,7 +4,7 @@ from datetime import datetime
 from enum import StrEnum
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class DeletionCertificateStatus(StrEnum):
@@ -13,9 +13,17 @@ class DeletionCertificateStatus(StrEnum):
 
 
 class RetentionRuleBody(BaseModel):
-    artefact_class: str
-    configured_retention_days: int = Field(ge=1)
-    statutory_floor_days: int = Field(default=730, ge=0)
+    artefact_class: str = Field(min_length=1, max_length=64, pattern=r"^[a-z][a-z0-9_]*$")
+    configured_retention_days: int = Field(ge=1, le=36_500)
+    statutory_floor_days: int = Field(default=730, ge=0, le=36_500)
+
+    @field_validator("configured_retention_days", "statutory_floor_days", mode="before")
+    @classmethod
+    def _reject_bool(cls, value: object) -> object:
+        # JSON true/false is not a day count; pydantic's lax mode would coerce it.
+        if isinstance(value, bool):
+            raise ValueError("must be an integer, not a boolean")
+        return value
 
 
 class TenantDataPolicyView(BaseModel):
@@ -28,8 +36,8 @@ class TenantDataPolicyView(BaseModel):
 
 class LegalHoldCreate(BaseModel):
     scope: dict[str, object]
-    reason_en: str
-    reason_fr: str
+    reason_en: str = Field(min_length=1, max_length=2000)
+    reason_fr: str = Field(min_length=1, max_length=2000)
 
 
 class LegalHoldView(BaseModel):

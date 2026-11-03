@@ -34,17 +34,16 @@ class _TenantRateLimiter:
             return True, 0
 
 
-_limiter: _TenantRateLimiter | None = None
-
-
-def _limiter_for(settings: Settings) -> _TenantRateLimiter:
-    global _limiter
-    if _limiter is None or _limiter._limit != settings.tenant_rate_limit_per_window:
-        _limiter = _TenantRateLimiter(
+def _limiter_for(request: Request, settings: Settings) -> _TenantRateLimiter:
+    """One limiter per app instance, so separate apps (and tests) never share buckets."""
+    limiter: _TenantRateLimiter | None = getattr(request.app.state, "tenant_rate_limiter", None)
+    if limiter is None:
+        limiter = _TenantRateLimiter(
             limit=settings.tenant_rate_limit_per_window,
             window_seconds=float(settings.tenant_rate_limit_window_seconds),
         )
-    return _limiter
+        request.app.state.tenant_rate_limiter = limiter
+    return limiter
 
 
 class TenantRateLimitMiddleware(BaseHTTPMiddleware):
@@ -65,7 +64,7 @@ class TenantRateLimitMiddleware(BaseHTTPMiddleware):
         auth: AuthContext | None = getattr(request.state, "auth", None)
         if auth is None:
             return await call_next(request)
-        limiter = _limiter_for(settings)
+        limiter = _limiter_for(request, settings)
         allowed, retry_after = limiter.allow(str(auth.tenant_id))
         if not allowed:
             return problem_response(

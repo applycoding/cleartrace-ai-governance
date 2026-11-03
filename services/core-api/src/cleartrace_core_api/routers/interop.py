@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+from typing import Literal
 from uuid import UUID
 
 from fastapi import APIRouter, Request, Response
 from fastapi.responses import JSONResponse
 
+from cleartrace_core_api.errors import problem_response
 from cleartrace_core_api.interop.exporter import InteropExportService
 
 router = APIRouter(tags=["interop"])
@@ -31,16 +33,19 @@ async def get_capabilities() -> JSONResponse:
 
 
 @router.get("/export/oscal/{export_type}")
-async def export_oscal(export_type: str, request: Request) -> Response:
+async def export_oscal(
+    export_type: Literal["catalog", "profile", "ssp", "assessment-results", "poam"],
+    request: Request,
+) -> Response:
     seed_demo_dossiers()
     system_key = request.query_params.get("system_key", "demo-alpha")
     dossier = _dossiers.get(system_key)
     if dossier is None:
-        return Response(status_code=404, content=b"system dossier not found")
+        return problem_response(status=404, title="Not found", detail="System dossier not found")
     try:
         payload = _exporter.export_oscal(export_type, dossier)
     except ValueError as exc:
-        return Response(status_code=422, content=str(exc).encode())
+        return problem_response(status=422, title="Unsupported export", detail=str(exc))
     return Response(
         content=payload,
         media_type="application/json",
@@ -55,7 +60,7 @@ async def export_cyclonedx(system_id: UUID, request: Request) -> Response:
     system_key = request.query_params.get("system_key", "demo-alpha")
     dossier = _dossiers.get(system_key)
     if dossier is None:
-        return Response(status_code=404, content=b"system dossier not found")
+        return problem_response(status=404, title="Not found", detail="System dossier not found")
     system = dossier["system"]
     if not isinstance(system, dict):
         return Response(status_code=500, content=b"system dossier is malformed")

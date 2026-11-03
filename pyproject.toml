@@ -44,6 +44,8 @@ testpaths = ["tests", "services"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 pythonpath = ["."]
+# xunit1 keeps record_property values in the JUnit XML that tools/trl5_report.py reads.
+junit_family = "xunit1"
 markers = [
   "integration: tests that need Postgres/PgBouncer or Compose stack",
   "trl5: TRL 5 evidence suites (section 18)",

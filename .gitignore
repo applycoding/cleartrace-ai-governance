@@ -16,3 +16,6 @@ dist/
 build/
 coverage.xml
 .coverage
+# Local T-26 security suite outputs
+.schemathesis/
+artifacts/

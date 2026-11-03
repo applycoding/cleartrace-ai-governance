@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from uuid import UUID
 
@@ -59,6 +58,10 @@ def _headers(tenant_id: UUID, principal_id: str, role: str = "assessor") -> dict
     }
 
 
+def _sqlalchemy_url(dsn: str) -> str:
+    return dsn.replace("postgresql://", "postgresql+psycopg://", 1)
+
+
 @pytest.fixture(scope="module")
 def dsn() -> str:
     return pg_dsn()
@@ -75,10 +78,8 @@ def client(dsn: str, tmp_path_factory: pytest.TempPathFactory) -> TestClient:
         tenant_rate_limit_window_seconds=60,
         audit_worm_root=str(worm),
         audit_signer_key_path=str(keys / "signer.key"),
-        database_url=os.environ.get(
-            "CLEARTRACE_DATABASE_URL",
-            "postgresql+psycopg://cleartrace_app:cleartrace_app@127.0.0.1:6432/cleartrace",
-        ),
+        # The API runs as cleartrace_app through PgBouncer, like the deployed stack.
+        database_url=_sqlalchemy_url(dsn),
     )
     return TestClient(create_app(settings))
 
@@ -173,3 +174,19 @@ def test_t21_three_tenants_isolated_policies_and_rate_limits(
         )
         burst_codes.append(resp.status_code)
     assert 429 in burst_codes, burst_codes
+    assert burst_codes[-1] == 429, burst_codes
+    assert set(burst_codes) <= {202, 429}, burst_codes
+
+    # The limit is per tenant: while alpha is throttled, beta and gamma still get answers.
+    for other_tid in (TENANT_BETA, TENANT_GAMMA):
+        other_meta = tenant_context[other_tid]
+        other = client.get(
+            f"/api/v1/findings/{findings_by_tenant[other_tid]}",
+            headers=_headers(other_tid, other_meta["owner"], "oversight_reviewer"),
+        )
+        assert other.status_code == 200, (other_tid, other.status_code)
+    still_throttled = client.get(
+        f"/api/v1/findings/{findings_by_tenant[tenant_id]}",
+        headers=_headers(tenant_id, meta["owner"], "oversight_reviewer"),
+    )
+    assert still_throttled.status_code == 429

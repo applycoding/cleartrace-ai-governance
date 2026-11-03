@@ -13,6 +13,9 @@ from cleartrace_core_api.errors import problem_response
 
 router = APIRouter(prefix="/evidence", tags=["evidence"])
 
+# Upper bound on one evidence upload (ASVS V12.1.1); larger files get 413.
+MAX_EVIDENCE_BYTES = 25 * 1024 * 1024
+
 
 class EvidenceVersionResponse(BaseModel):
     id: UUID
@@ -42,8 +45,15 @@ async def upload_evidence(
     settings = request.app.state.settings
     evidence_store = get_evidence_store(request)
     ledger = get_audit_ledger(request)
-    payload = await file.read()
-    principal_id = UUID(str(auth.raw_claims.get("principal_id") or uuid7()))
+    payload = await file.read(MAX_EVIDENCE_BYTES + 1)
+    if len(payload) > MAX_EVIDENCE_BYTES:
+        return problem_response(
+            status=413,
+            title="Payload too large",
+            detail=f"Evidence files are limited to {MAX_EVIDENCE_BYTES} bytes",
+        )
+    # actor_id never raises on a malformed principal claim, so a bad header is not a 500.
+    principal_id = auth.actor_id if auth.raw_claims.get("principal_id") else uuid7()
     metadata = {
         "artefact_class": artefact_class,
         "title_en": title_en,

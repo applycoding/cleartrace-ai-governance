@@ -41,7 +41,7 @@ async def list_audit_events(
         ledger.append_event_tx(
             conn,
             tenant_id=auth.tenant_id,
-            actor_id=UUID(str(auth.raw_claims.get("principal_id") or auth.subject)),
+            actor_id=auth.actor_id,
             action="audit.read",
             resource_type="audit_ledger",
             resource_id=None,

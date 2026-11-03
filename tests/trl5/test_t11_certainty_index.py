@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
+
 from cleartrace_engine.calibration_metrics import calibration_report
 from cleartrace_engine.certainty import certainty_band, certainty_index_v0
 from cleartrace_engine.evaluate import EvaluationInput, evaluate_control, objective_from_rule
@@ -102,25 +104,30 @@ def test_t11_certainty_index_v0_is_uncalibrated_but_bounded() -> None:
     assert min(scores) <= 0.5
 
 
-def test_t11_adjudicated_uci_corpus_reports_calibration_metrics() -> None:
+def test_t11_adjudicated_uci_corpus_reports_calibration_metrics(
+    record_property: Callable[[str, object], None],
+) -> None:
     corpus = build_adjudicated_corpus()
     events = [row[3] for row in corpus]
     scores = [row[2] for row in corpus]
     report = calibration_report(events, scores)
     assert report.n_total == len(corpus)
     assert report.n_held_out >= 1
-    # Blueprint: v0 remains an index until thresholds are met on held-out data.
-    if report.calibrated:
-        assert report.ece <= 0.06
-        assert report.coverage >= 0.60
-        assert report.selective_accuracy >= 0.94
-    else:
-        assert report.calibrated is False
-        # Measured values must be reported even when uncalibrated (stored in assertion message).
-        summary = (
-            f"uncalibrated index v0: coverage={report.coverage}, "
-            f"selective_accuracy={report.selective_accuracy}, ece={report.ece}"
-        )
-        assert report.coverage >= 0.0, summary
-        assert 0.0 <= report.selective_accuracy <= 1.0, summary
-        assert report.ece >= 0.0, summary
+    # Section 18 reports coverage and selective accuracy either way; the JUnit
+    # properties carry the measured numbers into the TRL 5 report.
+    record_property("t11_coverage", f"{report.coverage:.2f}")
+    record_property("t11_selective_accuracy", f"{report.selective_accuracy:.2f}")
+    record_property("t11_ece", f"{report.ece:.2f}")
+    record_property("t11_n_total", report.n_total)
+    record_property("t11_n_held_out", report.n_held_out)
+    record_property("t11_n_selective", report.n_selective)
+    assert 0.0 <= report.coverage <= 1.0
+    assert 0.0 <= report.selective_accuracy <= 1.0
+    assert report.ece >= 0.0
+    # The labels are derived from the corpus, not adjudicated by independent EN/FR
+    # reviewers (section 6), so the index must be reported as uncalibrated even if
+    # the thresholds were met numerically.
+    assert report.calibrated is False, (
+        "certainty index v0 must not be reported as calibrated without "
+        "independently adjudicated EN/FR findings"
+    )
