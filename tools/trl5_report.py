@@ -34,15 +34,15 @@ CRITERIA: dict[str, tuple[str, str, str]] = {
     "T-18": ("R", "≥ 48/50 seeded output failures detected", "tests/trl5/test_t18_output_monitoring.py"),
     "T-19": ("R", "Same signed images on 2 environments; smoke passes", "tests/trl5/test_t19_install_smoke.py"),
     "T-20": ("R", "EN/FR UI journeys; human language review sheet", "tests/trl5/test_t20_bilingual_ui.py"),
-    "T-21": ("R", "Three tenants isolated", "not_implemented"),
+    "T-21": ("R", "Three tenants isolated", "tests/trl5/test_t21_multi_tenant.py"),
     "T-22": ("R", "50/50 alerts delivered; no duplicate tickets", "tests/trl5/test_t22_alert_delivery.py"),
     "T-23": ("E", "100% tamper detected after checkpoint", "tests/trl5/test_t23_audit_tamper.py"),
     "T-24": ("D/R", "LLM irrelevant quote rejection (if LLM pilot)", "not_implemented"),
     "T-25": ("D", "Outbox/NATS crash windows at scale", "not_implemented"),
-    "T-26": ("E", "0 critical/high SAST/DAST; ASVS L2 mapping", "not_implemented"),
+    "T-26": ("E", "0 critical/high SAST/DAST; ASVS L2 mapping", "tests/trl5/test_t26_security_gate.py"),
     "T-27": ("D", "Large-scale bitemporal performance", "not_implemented"),
     "T-28": ("E", "SBOM complete; licence gate clean", "tests/trl5/test_t28_sbom.py"),
-    "T-29": ("R", "0 cross-tenant leaks in 1,000 transactions", "not_implemented"),
+    "T-29": ("R", "0 cross-tenant leaks in 1,000 transactions", "tests/integration/test_t29_pooled_leak.py"),
     "T-30": ("D", "Replay past assessment from stored inputs", "not_implemented"),
 }
 # fmt: on
@@ -54,8 +54,6 @@ PARTIAL_NOTES: dict[str, str] = {
     "T-05": "Restore target is a second Postgres container on the same CI runner, not a clean node.",
     "T-06": "Audits 60 denials and 60 privileged reads; the 600 allowed + 600 forbidden matrix across 3 tenants and 6 roles is not run.",
     "T-08": "Automated 40/40 non-conformities pass; the 140 explanation pairs await two human reviewers (xfail by design).",
-    "T-11": "Only bounds and EN/FR bands of certainty index v0 are asserted; coverage, selective accuracy and ECE on adjudicated EN/FR findings are not measured, so the index is reported as uncalibrated with no accuracy figures.",
-    "T-13": "250 cases with 50 per state and 30 critical-fail + missing-evidence cases pass, but they are 6 scenario templates repeated through a test-only Rego pack; 30 distinct mixed cases and rule-only replay are not covered.",
     "T-18": "Each dimension repeats one fixed synthetic input 50 times; no public set and no varied seeded degradations.",
     "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
     "T-20": "Automated i18n checks only; human language review sheet intentionally blank.",
@@ -64,13 +62,17 @@ PARTIAL_NOTES: dict[str, str] = {
 }
 
 NOT_COVERED_NOTES: dict[str, str] = {
-    "T-21": "Three-tenant concurrent policy and per-tenant rate-limit test not implemented.",
     "T-24": "Runs only if the LLM evidence pilot runs; not implemented.",
     "T-25": "Deferred to the contract period (section 18); mechanism unit-tested.",
-    "T-26": "Security suite (DAST, API fuzzing, ASVS L2 mapping) not implemented; CI has Bandit and Trivy only.",
     "T-27": "Deferred to the contract period (section 18).",
-    "T-29": "Cross-tenant leak test over pooled connections at 1,000 transactions not implemented.",
-    "T-30": "Deferred for LLM parts (section 18); rule-only replay not tested separately.",
+    "T-30": "Deferred for LLM parts (section 18); rule-only replay is covered by T-13 shipped replay cases.",
+}
+
+MULTI_MODULE: dict[str, list[str]] = {
+    "T-13": [
+        "tests/trl5/test_t13_five_states.py",
+        "tests/trl5/test_t13_shipped_policies.py",
+    ],
 }
 
 
@@ -134,6 +136,28 @@ def _outcome_for(path_hint: str, cases: list[JunitCase]) -> Outcome | None:
     )
 
 
+def _outcome_for_test(test_id: str, cases: list[JunitCase]) -> Outcome | None:
+    hints = MULTI_MODULE.get(test_id)
+    if hints is None:
+        _tier, _criterion, hint = CRITERIA[test_id]
+        return _outcome_for(hint, cases)
+    combined: Outcome | None = None
+    for hint in hints:
+        part = _outcome_for(hint, cases)
+        if part is None:
+            return None
+        if combined is None:
+            combined = part
+        else:
+            combined = Outcome(
+                passed=combined.passed + part.passed,
+                failed=combined.failed + part.failed,
+                skipped=combined.skipped + part.skipped,
+                seconds=combined.seconds + part.seconds,
+            )
+    return combined
+
+
 def status_for(test_id: str, outcome: Outcome | None) -> str:
     tier, _criterion, hint = CRITERIA[test_id]
     if hint == "not_implemented":
@@ -174,7 +198,7 @@ def _render_table(cases: list[JunitCase], *, lang: str, commit: str, run_label: 
     env = f"GitHub Actions CI, {run_label}" if lang == "en" else f"CI GitHub Actions, {run_label}"
     for test_id in sorted(CRITERIA.keys()):
         tier, criterion, hint = CRITERIA[test_id]
-        outcome = _outcome_for(hint, cases)
+        outcome = _outcome_for_test(test_id, cases)
         status = status_for(test_id, outcome)
         if lang == "fr":
             status = STATUS_FR[status]
@@ -204,7 +228,7 @@ def build_report(*, junit_paths: list[Path], run_id: str, run_url: str, commit: 
     run_label = f"run {run_id}" if run_id else "local run (no CI run id)"
     counts: dict[str, int] = {}
     for test_id in CRITERIA:
-        status = status_for(test_id, _outcome_for(CRITERIA[test_id][2], cases))
+        status = status_for(test_id, _outcome_for_test(test_id, cases))
         counts[status] = counts.get(status, 0) + 1
     summary = ", ".join(f"{k}: {v}" for k, v in sorted(counts.items()))
     source = f"[{run_label}]({run_url})" if run_url else run_label

@@ -29,3 +29,11 @@ class Settings(BaseSettings):
     evidence_storage_root: str = ".data/evidence"
     audit_worm_root: str = ".data/worm-audit"
     audit_signer_key_path: str = ".data/audit-checkpoint-signer.key"
+    tenant_rate_limit_per_window: int = Field(
+        default=120,
+        description="Max authenticated API requests per tenant per window (0 disables)",
+    )
+    tenant_rate_limit_window_seconds: int = Field(
+        default=60,
+        description="Sliding window length for per-tenant rate limits",
+    )

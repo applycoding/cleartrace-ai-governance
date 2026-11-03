@@ -73,11 +73,26 @@ def is_dev_token(settings: Settings, token: str) -> bool:
     )
 
 
-async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
+def _dev_tenant_from_request(request: Request, settings: Settings) -> UUID | None:
+    raw = request.headers.get("X-ClearTrace-Dev-Tenant", "").strip()
+    if not raw:
+        return None
+    try:
+        return UUID(raw)
+    except ValueError as exc:
+        raise ValueError("invalid X-ClearTrace-Dev-Tenant") from exc
+
+
+async def decode_bearer_token(settings: Settings, token: str, request: Request | None = None) -> AuthContext:
     if is_dev_token(settings, token):
+        tenant_id = settings.dev_tenant_id
+        if request is not None:
+            override = _dev_tenant_from_request(request, settings)
+            if override is not None:
+                tenant_id = override
         return AuthContext(
             subject="dev-user",
-            tenant_id=settings.dev_tenant_id,
+            tenant_id=tenant_id,
             roles=frozenset({"tenant_admin"}),
             org_unit=None,
             raw_claims={},
@@ -130,7 +145,7 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
             )
         token = auth.removeprefix("Bearer ").strip()
         try:
-            ctx = await decode_bearer_token(settings, token)
+            ctx = await decode_bearer_token(settings, token, request)
         except Exception as exc:
             return problem_response(
                 status=401,

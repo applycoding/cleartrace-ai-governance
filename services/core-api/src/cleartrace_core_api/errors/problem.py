@@ -14,6 +14,7 @@ def problem_response(
     type_uri: str = "about:blank",
     instance: str | None = None,
     errors: list[dict[str, Any]] | None = None,
+    headers: dict[str, str] | None = None,
 ) -> JSONResponse:
     body = ProblemDetail(
         type=type_uri,
@@ -27,4 +28,5 @@ def problem_response(
         status_code=status,
         content=body.model_dump(exclude_none=True),
         media_type="application/problem+json",
+        headers=headers,
     )

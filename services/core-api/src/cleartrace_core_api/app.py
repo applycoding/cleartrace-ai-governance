@@ -16,6 +16,7 @@ from cleartrace_core_api.errors import register_exception_handlers
 from cleartrace_core_api.middleware.idempotency import IdempotencyMiddleware
 from cleartrace_core_api.middleware.language import LanguageMiddleware
 from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddleware
+from cleartrace_core_api.middleware.tenant_rate_limit import TenantRateLimitMiddleware
 from cleartrace_core_api.routers import (
     admin,
     aia,
@@ -64,6 +65,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.add_middleware(IdempotencyMiddleware)
     app.add_middleware(OptimisticLockMiddleware)
     app.add_middleware(CedarAuthMiddleware)
+    app.add_middleware(TenantRateLimitMiddleware)
     app.add_middleware(AuthContextMiddleware)
 
     register_exception_handlers(app)

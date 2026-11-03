@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from cleartrace_engine.certainty import certainty_index_v0
 from cleartrace_engine.evaluate import (
     evaluate_applicability,
     evaluate_control,
@@ -32,7 +33,7 @@ def _objectives_from_opa(raw: list[dict[str, Any]]) -> list[ObjectiveResult]:
     return objectives
 
 
-def assess_pack_control(
+def _assess_pack_control_payload(
     *,
     pack: dict[str, Any],
     control: dict[str, Any],
@@ -42,7 +43,7 @@ def assess_pack_control(
     cel_context: dict[str, Any] | None = None,
     extra_opa_input: dict[str, Any] | None = None,
     skip_cel: bool = False,
-) -> tuple[EvaluationOutput, ControlContext]:
+) -> tuple[EvaluationOutput, ControlContext, EvaluationInput]:
     """CEL applicability → OPA objectives/evidence → five-state reducer."""
     ctx = control_context_from_pack(pack, control)
     digest = engine_bundle_digest()
@@ -70,7 +71,8 @@ def assess_pack_control(
                 evidence_issues=[],
                 engine_bundle_digest=digest,
             )
-            return evaluate_control(payload), ctx
+            out = evaluate_control(payload)
+            return out, ctx, payload
 
     evidence_specs = control.get("evidence_specs") or []
     opa_input: dict[str, Any] = {
@@ -110,7 +112,56 @@ def assess_pack_control(
         evidence_issues=evidence_issues,
         engine_bundle_digest=digest,
     )
-    return evaluate_control(payload), ctx
+    out = evaluate_control(payload)
+    return out, ctx, payload
+
+
+def assess_pack_control(
+    *,
+    pack: dict[str, Any],
+    control: dict[str, Any],
+    system: dict[str, Any],
+    evidence: list[dict[str, Any]],
+    pack_slug: str,
+    cel_context: dict[str, Any] | None = None,
+    extra_opa_input: dict[str, Any] | None = None,
+    skip_cel: bool = False,
+) -> tuple[EvaluationOutput, ControlContext]:
+    out, ctx, _payload = _assess_pack_control_payload(
+        pack=pack,
+        control=control,
+        system=system,
+        evidence=evidence,
+        pack_slug=pack_slug,
+        cel_context=cel_context,
+        extra_opa_input=extra_opa_input,
+        skip_cel=skip_cel,
+    )
+    return out, ctx
+
+
+def assess_pack_control_with_index(
+    *,
+    pack: dict[str, Any],
+    control: dict[str, Any],
+    system: dict[str, Any],
+    evidence: list[dict[str, Any]],
+    pack_slug: str,
+    cel_context: dict[str, Any] | None = None,
+    extra_opa_input: dict[str, Any] | None = None,
+    skip_cel: bool = False,
+) -> tuple[EvaluationOutput, ControlContext, float]:
+    out, ctx, payload = _assess_pack_control_payload(
+        pack=pack,
+        control=control,
+        system=system,
+        evidence=evidence,
+        pack_slug=pack_slug,
+        cel_context=cel_context,
+        extra_opa_input=extra_opa_input,
+        skip_cel=skip_cel,
+    )
+    return out, ctx, certainty_index_v0(payload)
 
 
 def finding_metadata(
