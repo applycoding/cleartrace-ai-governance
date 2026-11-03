@@ -8,9 +8,11 @@ resolution-markers = [
 
 [manifest]
 members = [
+    "cleartrace-audit",
     "cleartrace-contracts",
     "cleartrace-core-api",
     "cleartrace-db",
+    "cleartrace-evidence",
     "cleartrace-workspace",
 ]
 
@@ -260,6 +262,25 @@ wheels = [
 ]
 
 [[package]]
+name = "cleartrace-audit"
+version = "0.1.0"
+source = { editable = "services/audit" }
+dependencies = [
+    { name = "cleartrace-contracts" },
+    { name = "cleartrace-db" },
+    { name = "cryptography" },
+    { name = "uuid6" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "cleartrace-db", editable = "db" },
+    { name = "cryptography", specifier = ">=44.0" },
+    { name = "uuid6", specifier = ">=2024.7" },
+]
+
+[[package]]
 name = "cleartrace-contracts"
 version = "0.1.0"
 source = { editable = "packages/cleartrace-contracts" }
@@ -280,10 +301,13 @@ version = "0.1.0"
 source = { editable = "services/core-api" }
 dependencies = [
     { name = "cedarpy" },
+    { name = "cleartrace-audit" },
     { name = "cleartrace-contracts" },
     { name = "cleartrace-db" },
+    { name = "cleartrace-evidence" },
     { name = "fastapi" },
     { name = "httpx" },
+    { name = "pydantic-settings" },
     { name = "pyjwt", extra = ["crypto"] },
     { name = "python-multipart" },
     { name = "uuid6" },
@@ -293,10 +317,13 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "cedarpy", specifier = ">=4.4" },
+    { name = "cleartrace-audit", editable = "services/audit" },
     { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
     { name = "cleartrace-db", editable = "db" },
+    { name = "cleartrace-evidence", editable = "services/evidence" },
     { name = "fastapi", specifier = ">=0.115" },
     { name = "httpx", specifier = ">=0.28" },
+    { name = "pydantic-settings", specifier = ">=2.6" },
     { name = "pyjwt", extras = ["crypto"], specifier = ">=2.10" },
     { name = "python-multipart", specifier = ">=0.0.18" },
     { name = "uuid6", specifier = ">=2024.7" },
@@ -317,6 +344,23 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.14" },
     { name = "psycopg", extras = ["binary", "pool"], specifier = ">=3.2" },
+    { name = "uuid6", specifier = ">=2024.7" },
+]
+
+[[package]]
+name = "cleartrace-evidence"
+version = "0.1.0"
+source = { editable = "services/evidence" }
+dependencies = [
+    { name = "cleartrace-contracts" },
+    { name = "cleartrace-db" },
+    { name = "uuid6" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cleartrace-contracts", editable = "packages/cleartrace-contracts" },
+    { name = "cleartrace-db", editable = "db" },
     { name = "uuid6", specifier = ">=2024.7" },
 ]
 

@@ -8,8 +8,11 @@ import httpx
 import jwt
 from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
 from cleartrace_core_api.auth.context import AuthContext
+from cleartrace_core_api.auth.package_b_authz import authorize_package_b_route
 from cleartrace_core_api.config import Settings
+from cleartrace_core_api.deps import get_audit_ledger
 from cleartrace_core_api.errors import problem_response
+from cleartrace_db.session import tenant_transaction
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.responses import Response
@@ -130,6 +133,19 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
                 type_uri="https://cleartrace.local/problems/unauthorized",
             )
         authorizer: CedarAuthorizer = request.app.state.cedar_authorizer
+        path = request.url.path
+        method = request.method.upper()
+        if _is_package_b_path(path):
+            allowed, action = authorize_package_b_route(auth=auth, path=path, method=method)
+            if not allowed:
+                _audit_authz_denial(request, auth, action)
+                return problem_response(
+                    status=403,
+                    title="Forbidden",
+                    detail="Role not permitted for this action",
+                    type_uri="https://cleartrace.local/problems/forbidden",
+                )
+            return await call_next(request)
         action = _action_for_request(request)
         principal = {
             "type": "ClearTrace::User",
@@ -154,6 +170,7 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
                 "roles": sorted(auth.roles),
             },
         ):
+            _audit_authz_denial(request, auth, action)
             return problem_response(
                 status=403,
                 title="Forbidden",
@@ -178,3 +195,29 @@ def _action_for_request(request: Request) -> str:
     if path == "/api/v1/health":
         return "health"
     return "view_dashboard"
+
+
+def _is_package_b_path(path: str) -> bool:
+    return (
+        path.startswith("/api/v1/evidence")
+        or path.startswith("/api/v1/audit")
+        or ("/findings/" in path and path.endswith("/actions"))
+    )
+
+
+def _audit_authz_denial(request: Request, auth: AuthContext, action: str) -> None:
+    settings: Settings = request.app.state.settings
+    ledger = get_audit_ledger(request)
+    try:
+        with tenant_transaction(settings.database_url, auth.tenant_id) as conn:
+            ledger.append_event_tx(
+                conn,
+                tenant_id=auth.tenant_id,
+                actor_id=None,
+                action="authz.denied",
+                resource_type="api",
+                resource_id=None,
+                payload={"attempted_action": action, "path": request.url.path},
+            )
+    except Exception:
+        return

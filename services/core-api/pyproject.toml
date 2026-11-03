@@ -7,18 +7,23 @@ license = { text = "Apache-2.0" }
 dependencies = [
   "cleartrace-contracts",
   "cleartrace-db",
+  "cleartrace-evidence",
+  "cleartrace-audit",
   "fastapi>=0.115",
   "uvicorn[standard]>=0.32",
   "httpx>=0.28",
   "pyjwt[crypto]>=2.10",
   "cedarpy>=4.4",
   "python-multipart>=0.0.18",
+  "pydantic-settings>=2.6",
   "uuid6>=2024.7",
 ]
 
 [tool.uv.sources]
 cleartrace-contracts = { workspace = true }
 cleartrace-db = { workspace = true }
+cleartrace-evidence = { workspace = true }
+cleartrace-audit = { workspace = true }
 
 [project.scripts]
 cleartrace-api = "cleartrace_core_api.main:run"

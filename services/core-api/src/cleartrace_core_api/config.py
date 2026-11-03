@@ -13,3 +13,6 @@ class Settings(BaseSettings):
     cedar_policy_path: str = "policies/cedar/authz.cedar"
     cors_origins: list[str] = ["http://localhost:3000"]
     dev_skip_auth: bool = False
+    evidence_storage_root: str = ".data/evidence"
+    audit_worm_root: str = ".data/worm-audit"
+    audit_signer_key_path: str = ".data/audit-checkpoint-signer.key"
