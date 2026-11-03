@@ -257,8 +257,9 @@ def _measurement(
         if "t29_distinct_backends" in props:
             text += (
                 f" {props.get('t29_transactions')} transactions over "
-                f"{props['t29_distinct_backends']} pooled server backends "
-                f"({props.get('t29_backends_shared_by_tenants')} shared by several tenants); "
+                f"PgBouncer using {props['t29_distinct_backends']} server backend(s), "
+                f"{props.get('t29_backends_shared_by_tenants')} of them serving more than "
+                "one tenant; "
                 f"{props.get('t29_rolled_back')} rolled back, "
                 f"{props.get('t29_foreign_inserts_blocked')} foreign-tenant inserts refused, "
                 f"{props.get('t29_leaks')} leaks."
