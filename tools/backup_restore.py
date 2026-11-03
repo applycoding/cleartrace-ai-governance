@@ -24,7 +24,12 @@ DATA_POLICY_TABLES = (
 )
 
 
-def ensure_postgres_cluster(data_dir: Path, port: int, *, superuser: str = "cleartrace_super") -> None:
+def ensure_postgres_cluster(
+    data_dir: Path,
+    port: int,
+    *,
+    superuser: str = "cleartrace_super",
+) -> None:
     """Start a dedicated Postgres cluster for restore tests (not a separate physical node)."""
     pg_bin = os.environ.get("PG_BIN", "/usr/lib/postgresql/16/bin")
     initdb = Path(pg_bin) / "initdb"
@@ -55,6 +60,14 @@ def ensure_postgres_cluster(data_dir: Path, port: int, *, superuser: str = "clea
             hba.read_text(encoding="utf-8") + "host all all 127.0.0.1/32 trust\n",
             encoding="utf-8",
         )
+    pg_isready = Path(pg_bin) / "pg_isready"
+    if pg_isready.exists():
+        ready = subprocess.run(
+            [str(pg_isready), "-h", "127.0.0.1", "-p", str(port)],
+            capture_output=True,
+        )
+        if ready.returncode == 0:
+            return
     subprocess.run(
         [str(pg_ctl), "-D", str(data_dir), "-l", str(data_dir / "postgres.log"), "start"],
         check=True,
@@ -75,7 +88,11 @@ def export_encrypted_object_store(dsn: str, dest: Path) -> dict[str, str]:
             path = dest / f"{payload_id}.bin"
             path.write_bytes(blob)
             manifest[str(payload_id)] = digest
-    (dest / "manifest.json").write_text(json.dumps(manifest, sort_keys=True, indent=2), encoding="utf-8")
+    manifest_path = dest / "manifest.json"
+    manifest_path.write_text(
+        json.dumps(manifest, sort_keys=True, indent=2),
+        encoding="utf-8",
+    )
     return manifest
 
 
@@ -161,5 +178,7 @@ def pg_restore_database(super_dsn: str, db_name: str, dump_path: Path) -> None:
 
 def compare_table_checksums(left: dict[str, str], right: dict[str, str]) -> tuple[int, int]:
     keys = set(left.keys()) | set(right.keys())
-    matched = sum(1 for key in keys if left.get(key) == right.get(key) and left.get(key) != "missing")
+    matched = sum(
+        1 for key in keys if left.get(key) == right.get(key) and left.get(key) != "missing"
+    )
     return matched, len(keys)
