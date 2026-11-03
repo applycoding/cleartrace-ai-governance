@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import secrets
 import time
 from typing import Any
 from uuid import UUID
@@ -53,10 +54,14 @@ def _roles_from_claims(claims: dict[str, Any]) -> frozenset[str]:
 
 
 async def decode_bearer_token(settings: Settings, token: str) -> AuthContext:
-    if settings.dev_skip_auth and token == "dev":
+    if (
+        settings.dev_skip_auth
+        and settings.dev_auth_token
+        and secrets.compare_digest(token, settings.dev_auth_token)
+    ):
         return AuthContext(
             subject="dev-user",
-            tenant_id=UUID("11111111-1111-7111-8111-111111111101"),
+            tenant_id=settings.dev_tenant_id,
             roles=frozenset({"tenant_admin"}),
             org_unit=None,
             raw_claims={},

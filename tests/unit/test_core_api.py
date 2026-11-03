@@ -4,9 +4,13 @@ from cleartrace_core_api.app import create_app
 from cleartrace_core_api.config import Settings
 from fastapi.testclient import TestClient
 
+TEST_DEV_TOKEN = "unit-test-local-bearer-token"
+
 
 def test_health_unauthenticated() -> None:
-    app = create_app(Settings(dev_skip_auth=True))
+    app = create_app(
+        Settings(dev_skip_auth=True, dev_auth_token=TEST_DEV_TOKEN),
+    )
     client = TestClient(app)
     resp = client.get("/api/v1/health")
     assert resp.status_code == 200
@@ -22,11 +26,16 @@ def test_problem_json_on_missing_token() -> None:
 
 
 def test_dev_auth_and_language_header() -> None:
-    app = create_app(Settings(dev_skip_auth=True))
+    app = create_app(
+        Settings(dev_skip_auth=True, dev_auth_token=TEST_DEV_TOKEN),
+    )
     client = TestClient(app)
     resp = client.get(
         "/api/v1/systems",
-        headers={"Authorization": "Bearer dev", "Accept-Language": "fr-CA"},
+        headers={
+            "Authorization": f"Bearer {TEST_DEV_TOKEN}",
+            "Accept-Language": "fr-CA",
+        },
     )
     assert resp.status_code == 200
     assert resp.headers.get("Content-Language") == "fr-CA"
