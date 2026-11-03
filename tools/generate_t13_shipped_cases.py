@@ -56,13 +56,14 @@ def main() -> None:
     profiles = [
         (
             "dadm",
-            "CA-DADM-MIX-T13",
-            {"planned_production_use": True},
+            "CA-DADM-6-3-8",
+            {"planned_production_use": True, "impact_level": 2},
             [
                 {
-                    "type": "aia_record",
+                    "type": "gba_plus_record",
                     "authorized_submitter": True,
                     "valid_until": "2099-01-01",
+                    "covers": ["population_impact_assessment", "di_experts_consulted"],
                 }
             ],
         ),

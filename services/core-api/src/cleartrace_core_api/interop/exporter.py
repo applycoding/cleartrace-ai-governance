@@ -12,6 +12,7 @@ from cleartrace_core_api.interop.oscal_profile import (
     OSCAL_PROFILE_NS,
     OUTCOME_TO_OSCAL,
     build_finding_props,
+    decode_finding_outcome,
 )
 from cleartrace_core_api.interop.validation import validate_oscal_document, validate_references
 
@@ -113,6 +114,7 @@ class InteropExportService:
     ) -> dict[str, Any]:
         system_id = uuid4()
         findings = []
+        source_outcomes: dict[str, str] = {}
         states = (
             OutcomeState.MET,
             OutcomeState.PARTIALLY_MET,
@@ -142,6 +144,7 @@ class InteropExportService:
                 if props:
                     finding["props"] = props
                 findings.append(finding)
+                source_outcomes[finding_uuid] = outcome.value
         return {
             "system": {
                 "id": str(system_id),
@@ -152,6 +155,8 @@ class InteropExportService:
                 "models": [{"id": str(uuid4()), "name": "primary", "version": "1"}],
             },
             "findings": findings,
+            # Source of truth for round-trip checks; not copied into OSCAL documents.
+            "source_outcomes": source_outcomes,
             "lossy_note": LOSSY_NOTE,
         }
 
@@ -244,20 +249,16 @@ class InteropExportService:
             "props": [{"name": "generator", "value": "ClearTrace interop exporter"}],
         }
 
-    def outcome_states_preserved(self, document: dict[str, Any]) -> tuple[int, int]:
+    def outcome_states_preserved(
+        self, document: dict[str, Any], expected: dict[str, OutcomeState]
+    ) -> tuple[int, int]:
+        """Count findings whose decoded outcome equals the source outcome, by finding uuid."""
         results = document.get("assessment-results", {}).get("results", [{}])
         findings = results[0].get("findings", [])
-        preserved = 0
-        for finding in findings:
-            props = finding.get("props") or []
-            outcome_prop = next((p for p in props if p.get("name") == "outcome-state"), None)
-            status = finding.get("target", {}).get("status", {})
-            state = status.get("state")
-            reason = status.get("reason")
-            if (
-                (state == "satisfied" and reason == "pass")
-                or outcome_prop is not None
-                or (state == "not-satisfied" and reason == "fail")
-            ):
-                preserved += 1
+        preserved = sum(
+            1
+            for finding in findings
+            if finding.get("uuid") in expected
+            and decode_finding_outcome(finding) == expected[finding["uuid"]]
+        )
         return preserved, len(findings)

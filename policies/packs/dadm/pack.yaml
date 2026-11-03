@@ -44,13 +44,20 @@ controls:
   evidence_specs:
   - type: peer_review_report
     required: true
-- control_key: CA-DADM-MIX-T13
-  clause_ref: T-13 mixed objectives (shipped golden)
-  title_en: Mixed objective outcomes for TRL 5 golden cases.
-  title_fr: Résultats d'objectifs mixtes pour les cas dorés TRL 5.
-  remediation_en: Provide AIA evidence and close the remaining peer-review gap.
-  remediation_fr: Fournir une preuve EIA et combler l'écart d'examen par les pairs.
+- control_key: CA-DADM-6-3-8
+  clause_ref: 6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)
+  title_en: Complete a Gender-based Analysis Plus that covers the elements required
+    by Appendix C.
+  title_fr: Réaliser une analyse comparative entre les sexes plus qui couvre les éléments
+    exigés à l'annexe C.
+  remediation_en: Complete the Gender-based Analysis Plus so that it assesses impacts
+    on different population groups, records consultation with the department's diversity
+    and inclusion experts, and details measures for the risks it identifies.
+  remediation_fr: Compléter l'analyse comparative entre les sexes plus afin qu'elle
+    évalue les incidences sur différents groupes de population, consigne la consultation
+    des experts en diversité et inclusion du ministère et précise les mesures prévues
+    pour les risques relevés.
   applicability_expr: planned_production_use == true
   evidence_specs:
-  - type: aia_record
+  - type: gba_plus_record
     required: true

@@ -11,6 +11,8 @@ pytestmark = pytest.mark.trl5
 ROOT = Path(__file__).resolve().parents[2]
 SEEDS = json.loads((ROOT / "tests" / "trl5" / "fixtures" / "t18_output_seeds.json").read_text())
 DIMENSIONS = OutputMonitor.DIMENSIONS
+# All seeds are hand-written; none comes from a public dataset.
+SYNTHETIC_LABEL = "synthetic (hand-written, tools/generate_t18_seeds.py)"
 
 
 def _failure_case(dimension: str, seed: dict) -> bool:
@@ -56,7 +58,8 @@ def test_t18_output_monitoring(dimension: str) -> None:
     failure_seeds = SEEDS[dimension]["failure"]
     clean_seeds = SEEDS[dimension]["clean"]
     assert len(failure_seeds) >= 50
-    assert failure_seeds[0].get("dataset"), f"{dimension} failure seeds must cite a public dataset"
+    labels = {seed.get("dataset") for seed in failure_seeds + clean_seeds}
+    assert labels == {SYNTHETIC_LABEL}, f"{dimension} seeds carry unexpected origin labels: {labels}"
     detected = sum(1 for seed in failure_seeds[:50] if _failure_case(dimension, seed))
     false_alarms = sum(1 for seed in clean_seeds[:50] if _clean_case(dimension, seed))
     assert detected >= 48, f"{dimension}: {detected}/50 failures detected"

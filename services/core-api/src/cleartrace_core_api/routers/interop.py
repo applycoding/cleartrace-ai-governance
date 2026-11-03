@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 
 from cleartrace_core_api.errors import problem_response
 from cleartrace_core_api.interop.exporter import InteropExportService
+from cleartrace_core_api.privileged_read import record_privileged_read
 
 router = APIRouter(tags=["interop"])
 _exporter = InteropExportService()
@@ -46,6 +47,12 @@ async def export_oscal(
         payload = _exporter.export_oscal(export_type, dossier)
     except ValueError as exc:
         return problem_response(status=422, title="Unsupported export", detail=str(exc))
+    record_privileged_read(
+        request,
+        action="export.read",
+        resource_type="oscal_export",
+        payload={"export_type": export_type, "system_key": system_key},
+    )
     return Response(
         content=payload,
         media_type="application/json",
@@ -65,4 +72,10 @@ async def export_cyclonedx(system_id: UUID, request: Request) -> Response:
     if not isinstance(system, dict):
         return Response(status_code=500, content=b"system dossier is malformed")
     payload = _exporter.export_cyclonedx(system)
+    record_privileged_read(
+        request,
+        action="export.read",
+        resource_type="cyclonedx_export",
+        payload={"system_key": system_key},
+    )
     return Response(content=payload, media_type="application/json")

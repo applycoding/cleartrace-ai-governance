@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 from uuid import UUID
 
+import psycopg
 from cleartrace_db.session import tenant_transaction
 
 from cleartrace_audit.verify import verify_tenant_chain
@@ -28,8 +29,13 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     tenant_id = UUID(args.tenant_id)
     worm_root = Path(args.worm_root)
-    with tenant_transaction(args.dsn, tenant_id, role="cleartrace_migrator") as conn:
-        report = verify_tenant_chain(conn, tenant_id=tenant_id, worm_root=worm_root)
+    try:
+        with tenant_transaction(args.dsn, tenant_id, role="cleartrace_migrator") as conn:
+            report = verify_tenant_chain(conn, tenant_id=tenant_id, worm_root=worm_root)
+    except psycopg.Error as exc:
+        # Exit 2, not 1: a connection or privilege error must never read as tampering.
+        print(f"Could not read the audit ledger: {exc}", file=sys.stderr)
+        return 2
     print(json.dumps(_report_dict(report), indent=2, sort_keys=True))
     return 0 if report.ok else 1
 
@@ -44,9 +50,17 @@ def _report_dict(report: object) -> dict[str, object]:
         "ok": report.ok,
         "tree_size": report.tree_size,
         "checkpoint_count": report.checkpoint_count,
+        "exposure_window_events": report.exposure_window_events,
         "exposure_window_seconds": report.exposure_window_seconds,
+        "exposure_window_start": report.exposure_window_start,
         "findings": [
-            {"kind": f.kind, "row_index": f.row_index, "detail": f.detail} for f in report.findings
+            {
+                "kind": f.kind,
+                "row_index": f.row_index,
+                "checkpoint_index": f.checkpoint_index,
+                "detail": f.detail,
+            }
+            for f in report.findings
         ],
     }
 

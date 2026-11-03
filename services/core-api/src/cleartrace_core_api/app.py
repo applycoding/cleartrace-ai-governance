@@ -76,6 +76,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             title=f"{app.title} – API docs",
             swagger_js_url="/api/v1/swagger-ui/swagger-ui-bundle.js",
             swagger_css_url="/api/v1/swagger-ui/swagger-ui.css",
+            swagger_favicon_url="/api/v1/swagger-ui/favicon-32x32.png",
         )
     app.state.settings = cfg
     app.state.cedar_authorizer = CedarAuthorizer(cfg.cedar_policy_path)

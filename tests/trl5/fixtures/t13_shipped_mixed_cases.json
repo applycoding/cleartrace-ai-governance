@@ -2,15 +2,20 @@
   {
     "id": "shipped-mixed-00",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-MIX-T13",
+    "control_key": "CA-DADM-6-3-8",
     "system": {
-      "planned_production_use": true
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "gba_plus_record",
         "authorized_submitter": true,
-        "valid_until": "2099-01-01"
+        "valid_until": "2099-01-01",
+        "covers": [
+          "population_impact_assessment",
+          "di_experts_consulted"
+        ]
       }
     ],
     "expect": {
@@ -185,15 +190,20 @@
   {
     "id": "shipped-mixed-11",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-MIX-T13",
+    "control_key": "CA-DADM-6-3-8",
     "system": {
-      "planned_production_use": true
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "gba_plus_record",
         "authorized_submitter": true,
-        "valid_until": "2099-01-01"
+        "valid_until": "2099-01-01",
+        "covers": [
+          "population_impact_assessment",
+          "di_experts_consulted"
+        ]
       }
     ],
     "expect": {
@@ -368,15 +378,20 @@
   {
     "id": "shipped-mixed-22",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-MIX-T13",
+    "control_key": "CA-DADM-6-3-8",
     "system": {
-      "planned_production_use": true
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "gba_plus_record",
         "authorized_submitter": true,
-        "valid_until": "2099-01-01"
+        "valid_until": "2099-01-01",
+        "covers": [
+          "population_impact_assessment",
+          "di_experts_consulted"
+        ]
       }
     ],
     "expect": {

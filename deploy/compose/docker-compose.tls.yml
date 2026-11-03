@@ -1,10 +1,11 @@
-# Optional TLS overlay for local Compose (ASVS V1.9.1 evidence).
+# Optional TLS overlay for local Compose. It encrypts only the PgBouncer to Postgres
+# hop; API to PgBouncer, NATS and OPA stay plaintext, so ASVS V1.9.1 and V9.2.2 remain Fail.
 #
 # Usage:
 #   ./deploy/compose/tls/generate-certs.sh
 #   docker compose -f deploy/compose/docker-compose.yml -f deploy/compose/docker-compose.tls.yml up
 #
-# Postgres listens with TLS; the app uses sslmode=require via DATABASE_URL.
+# Postgres listens with TLS; PgBouncer connects to it with sslmode=require.
 
 services:
   postgres:

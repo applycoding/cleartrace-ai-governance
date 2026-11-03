@@ -4,7 +4,12 @@ import json
 from pathlib import Path
 
 import pytest
+from cleartrace_contracts.models import OutcomeState
 from cleartrace_core_api.interop.exporter import InteropExportService
+from cleartrace_core_api.interop.oscal_profile import (
+    LOSSY_FOR_STATE_ONLY,
+    decode_finding_outcome,
+)
 from cleartrace_core_api.interop.validation import validate_oscal_document, validate_references
 from jsonschema import Draft202012Validator
 
@@ -41,6 +46,9 @@ def test_t03_oscal_and_cyclonedx_exports() -> None:
     validated = 0
     preserved_total = 0
     finding_total = 0
+    states_seen: set[OutcomeState] = set()
+    lossy_status_only = 0
+    lossy_expected = 0
     for dossier in dossiers:
         raw = exporter.export_oscal("assessment-results", dossier)
         doc = json.loads(raw)
@@ -48,16 +56,34 @@ def test_t03_oscal_and_cyclonedx_exports() -> None:
         dangling = validate_references(doc)
         assert dangling == []
         validated += 1
-        preserved, total = exporter.outcome_states_preserved(doc)
+        expected = {u: OutcomeState(v) for u, v in dossier["source_outcomes"].items()}
+        assert "source_outcomes" not in raw.decode()
+        preserved, total = exporter.outcome_states_preserved(doc, expected)
         preserved_total += preserved
         finding_total += total
+        states_seen.update(expected.values())
+        # Lossy fields: a consumer that reads only target.status loses exactly the
+        # states the profile reports as lossy, and no others.
+        for finding in doc["assessment-results"]["results"][0]["findings"]:
+            status_only = {k: v for k, v in finding.items() if k != "props"}
+            source = expected[finding["uuid"]]
+            if source in LOSSY_FOR_STATE_ONLY:
+                lossy_expected += 1
+                if decode_finding_outcome(status_only) is None:
+                    lossy_status_only += 1
+            else:
+                assert decode_finding_outcome(status_only) == source
         cyclone = json.loads(exporter.export_cyclonedx(dossier["system"]))
         schema = _load_cyclonedx_schema()
         Draft202012Validator(schema).validate(cyclone)
 
     caps = exporter.capabilities()
     assert caps["five_state_profile"]["understood"] is True
-    assert "lossy" in caps["five_state_profile"]["lossy_export_note"]
+    note = caps["five_state_profile"]["lossy_export_note"]
+    for state in LOSSY_FOR_STATE_ONLY:
+        assert state.value.replace("_", "-") in note, f"lossy note omits {state.value}"
+    assert lossy_expected == 30 and lossy_status_only == 30
+    assert states_seen == set(OutcomeState)
 
     assert validated == 2
     assert finding_total == 50

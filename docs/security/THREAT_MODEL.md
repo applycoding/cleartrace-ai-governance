@@ -1,6 +1,6 @@
 # Threat model (ClearTrace TRL 5)
 
-This document summarises STRIDE threats per major component from `docs/blueprint/BLUEPRINT.md` sections 4–7 and 10. It is maintained with design changes (ASVS V1.1.2).
+This document summarises STRIDE threats per major component from `docs/blueprint/BLUEPRINT.md` sections 4–7 and 10. It is a TRL 5 snapshot; no process yet requires it to be updated for each design change (ASVS V1.1.2 stays Fail).
 
 ## Trust boundaries
 
@@ -51,7 +51,7 @@ Data crosses B1 on every authenticated API call (bearer JWT). Tenant id and role
 | STRIDE | Threat | Mitigation |
 | --- | --- | --- |
 | Tampering | Edit/delete/reorder events | Hash chain + Merkle checkpoints (T-23) |
-| Repudiation | Missing privileged read | `audit.read` logged on ledger access |
+| Repudiation | Missing privileged read | `audit.read`, `admin.read` and `export.read` audit events, written before the response; the read fails with 503 if the audit write fails (`privileged_read.py`, T-06) |
 | Information disclosure | PII in audit payload | PII envelope + classification |
 
 ### Postgres / PgBouncer
@@ -80,6 +80,6 @@ Data crosses B1 on every authenticated API call (bearer JWT). Tenant id and role
 
 ## Residual risks (accepted at TRL 5)
 
-- TLS between all Compose services is optional via `deploy/compose/docker-compose.tls.yml` (self-signed); production expects ingress TLS and managed DB TLS.
+- Inter-component traffic is plaintext except the PgBouncer to Postgres hop, which the optional overlay `deploy/compose/docker-compose.tls.yml` (self-signed) encrypts; API to PgBouncer, NATS and OPA have no TLS. Production expects ingress TLS and managed DB TLS.
 - Image signing (cosign) pending (T-19).
 - Human EN/FR copy review pending (T-20).

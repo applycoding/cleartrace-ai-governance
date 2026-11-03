@@ -10,14 +10,14 @@ Requirement text is not reproduced; see the standard. OWASP ASVS 4.0.3 is © OWA
 
 Paths in backticks are relative to the repository root; `routers/…`, `auth/…`, `middleware/…` and `errors/…` shorthand is under `services/core-api/src/cleartrace_core_api/`.
 
-Totals: 112 Pass, 59 Fail, 88 N/A (259 requirements).
+Totals: 107 Pass, 64 Fail, 88 N/A (259 requirements).
 
 | Requirement | Status | Evidence or reason |
 | --- | --- | --- |
 | V1.1.1 | Pass | Build rules and CI gates: `BUILD_RULES.md`, `.github/workflows/ci.yml` (lint, type, SAST, licence, secrets, SBOM, Trivy, tests) |
-| V1.1.2 | Pass | STRIDE threat model per component in `docs/security/THREAT_MODEL.md` (maintained with TRL 5 design) |
+| V1.1.2 | Fail | A STRIDE threat model now exists (`docs/security/THREAT_MODEL.md`), but nothing requires it to be revisited for every design change or sprint (no PR template, checklist or CI check) |
 | V1.1.3 | Fail | Features are traced to blueprint requirements (`docs/blueprint/traceability.md`) but user stories carry no explicit security constraints |
-| V1.1.4 | Pass | Trust boundaries and data flows documented in `docs/security/THREAT_MODEL.md` with blueprint cross-reference |
+| V1.1.4 | Fail | `docs/security/THREAT_MODEL.md` lists four trust boundaries, but significant data flows (API to engine/OPA, outbox to NATS, evidence to object store, notifier to webhooks) are not documented or justified per boundary |
 | V1.1.5 | Fail | No documented security analysis of the high-level architecture and connected remote services |
 | V1.1.6 | Pass | Central controls: auth and Cedar middleware `services/core-api/src/cleartrace_core_api/auth/middleware.py`, RLS via `db/src/cleartrace_db/session.py`, problem+json errors `services/core-api/src/cleartrace_core_api/errors/problem.py` |
 | V1.1.7 | Fail | `BUILD_RULES.md` and `SECURITY.md` exist but there is no secure coding checklist for developers and testers |
@@ -36,11 +36,11 @@ Totals: 112 Pass, 59 Fail, 88 N/A (259 requirements).
 | V1.6.2 | Fail | Master key comes from an environment variable or a per-process random key (`services/core-api/src/cleartrace_core_api/data_policy/crypto.py`); there is no key vault or KMS |
 | V1.6.3 | Fail | No documented key rotation or re-encryption process |
 | V1.6.4 | Pass | No client-side secrets protect data; the web shell only carries the user's bearer token (`web/`) |
-| V1.7.1 | Pass | Structured JSON logging supported via `CLEARTRACE_JSON_LOGS` and `docs/config/logging.json.example` (`services/core-api/src/cleartrace_core_api/logging_setup.py`) |
+| V1.7.1 | Pass | One API process (`cleartrace-api`) with all services in-process; `services/core-api/src/cleartrace_core_api/logging_setup.py` applies one stdlib logging format to every logger, JSON when `CLEARTRACE_JSON_LOGS` is set (`docs/config/logging.json.example`) |
 | V1.7.2 | Fail | Logs are not shipped to a remote system |
 | V1.8.1 | Pass | Classification ceiling and data classes per tenant: `db/migrations/versions/0601_data_policy.py`, `services/core-api/src/cleartrace_core_api/data_policy/models.py` |
 | V1.8.2 | Fail | Retention is defined per artefact class (`services/core-api/src/cleartrace_core_api/data_policy/service.py`) but encryption and integrity requirements per protection level are not defined |
-| V1.9.1 | Pass | Optional TLS overlay for Compose Postgres (`deploy/compose/docker-compose.tls.yml`, `deploy/compose/tls/generate-certs.sh`); Helm ingress TLS block in `deploy/helm/cleartrace/templates/ingress.yaml` |
+| V1.9.1 | Fail | Only the PgBouncer to Postgres hop can use TLS (optional overlay `deploy/compose/docker-compose.tls.yml`); API to PgBouncer, NATS and OPA stay plaintext, and the default Compose file has no TLS |
 | V1.9.2 | Fail | No mutual authentication or certificate verification between components |
 | V1.10.1 | Fail | Git with pull requests and CI, but nothing requires a commit or PR to reference an issue or change ticket |
 | V1.11.1 | Pass | Services and their functions are listed in `docs/blueprint/BLUEPRINT.md` and `README.md` |
@@ -202,11 +202,11 @@ Totals: 112 Pass, 59 Fail, 88 N/A (259 requirements).
 | V8.3.6 | Fail | Python cannot reliably zero memory; not addressed |
 | V8.3.7 | Pass | AES-GCM authenticated encryption for protected records (`services/core-api/src/cleartrace_core_api/data_policy/crypto.py`) |
 | V8.3.8 | Pass | Retention rules and certified deletion (`tests/integration/test_t07_deletion.py`) |
-| V9.1.1 | Pass | Helm ingress supports TLS secrets (`deploy/helm/cleartrace/values.yaml`); Compose TLS overlay documented |
-| V9.1.2 | Pass | Compose TLS overlay enables sslmode=require to Postgres (`deploy/compose/docker-compose.tls.yml`) |
+| V9.1.1 | Pass | Client traffic terminates TLS at the Helm ingress when `cleartrace.ingress.tls` names a certificate secret (`deploy/helm/cleartrace/templates/ingress.yaml`, `deploy/helm/cleartrace/values.yaml`); the API also sends HSTS (`middleware/security_headers.py`). Plain-HTTP fallback is left to the ingress controller, and the default values ship with `tls: []` |
+| V9.1.2 | Fail | Client TLS terminates at the Helm ingress (`deploy/helm/cleartrace/templates/ingress.yaml`), but the chart sets no protocol or cipher-suite policy and no TLS scanner has been run against a deployment, so strong-cipher-only cannot be shown |
 | V9.1.3 | Fail | No TLS protocol configuration in the shipped deployment |
 | V9.2.1 | Fail | No certificates configured between components |
-| V9.2.2 | Pass | Compose TLS overlay encrypts app→Postgres via PgBouncer (`deploy/compose/docker-compose.tls.yml`) |
+| V9.2.2 | Fail | Only the PgBouncer to Postgres hop can be encrypted (`deploy/compose/docker-compose.tls.yml`); API to PgBouncer, NATS and OPA connections are plaintext (`deploy/compose/docker-compose.yml`) |
 | V9.2.3 | Pass | Outbound webhooks are https only and HMAC-signed (`services/notifier/src/cleartrace_notifier/webhook.py`) |
 | V9.2.4 | Fail | No OCSP stapling or revocation checking configured |
 | V10.2.1 | Pass | No telemetry or phone-home; OPA is started with `--disable-telemetry`, Semgrep with `--metrics off` (`scripts/ci_security_suite.sh`) |
@@ -256,7 +256,7 @@ Totals: 112 Pass, 59 Fail, 88 N/A (259 requirements).
 | V14.1.4 | Pass | Compose and Helm deployments are scripted (`deploy/compose/docker-compose.yml`, `deploy/helm/cleartrace/`) |
 | V14.2.1 | Pass | Trivy fails on fixable critical/high issues (`.github/workflows/ci.yml`) |
 | V14.2.2 | Fail | Demo dossiers are seeded by the interop export routes (`services/core-api/src/cleartrace_core_api/routers/interop.py`) and API docs are always on |
-| V14.2.3 | Pass | Swagger UI JS/CSS served from the API static mount, not an unpinned CDN (`services/core-api/static/swagger-ui/`, `services/core-api/src/cleartrace_core_api/app.py`) |
+| V14.2.3 | Pass | No externally hosted assets: Swagger UI JS, CSS and favicon are vendored and served same-origin under the API docs mount (`services/core-api/static/swagger-ui/`, `services/core-api/src/cleartrace_core_api/app.py`), and the docs CSP allows no external host (`middleware/security_headers.py`) |
 | V14.2.4 | Pass | Dependencies from PyPI and npm, locked (`uv.lock`, `web/package-lock.json`) and licence-gated (`tools/licence_gate.py`) |
 | V14.2.5 | Pass | CycloneDX SBOM in CI (`.github/workflows/ci.yml`, `tests/trl5/test_t28_sbom.py`) |
 | V14.2.6 | Fail | Third-party libraries are not sandboxed or encapsulated |
