@@ -103,35 +103,45 @@ class InteropExportService:
         }
         return json.dumps(doc, indent=2).encode()
 
-    def dossier_from_seed(self, *, system_key: str, name_en: str, name_fr: str) -> dict[str, Any]:
+    def dossier_from_seed(
+        self,
+        *,
+        system_key: str,
+        name_en: str,
+        name_fr: str,
+        findings_per_state: int = 1,
+    ) -> dict[str, Any]:
         system_id = uuid4()
         findings = []
-        for outcome, control_id in (
-            (OutcomeState.MET, "control-1"),
-            (OutcomeState.PARTIALLY_MET, "control-2"),
-            (OutcomeState.NOT_MET, "control-3"),
-            (OutcomeState.NOT_APPLICABLE, "control-4"),
-            (OutcomeState.UNABLE_TO_DETERMINE, "control-5"),
-        ):
-            finding_uuid = str(uuid4())
-            mapping = OUTCOME_TO_OSCAL[outcome]
-            props = build_finding_props(outcome)
-            finding: dict[str, Any] = {
-                "uuid": finding_uuid,
-                "title": f"Finding for {control_id}",
-                "description": f"ClearTrace outcome {outcome.value}",
-                "target": {
-                    "type": "objective-id",
-                    "target-id": control_id,
-                    "status": {
-                        "state": mapping["status_state"],
-                        "reason": mapping["reason"],
+        states = (
+            OutcomeState.MET,
+            OutcomeState.PARTIALLY_MET,
+            OutcomeState.NOT_MET,
+            OutcomeState.NOT_APPLICABLE,
+            OutcomeState.UNABLE_TO_DETERMINE,
+        )
+        for outcome in states:
+            for idx in range(findings_per_state):
+                control_id = f"control-{outcome.value}-{idx + 1}"
+                finding_uuid = str(uuid4())
+                mapping = OUTCOME_TO_OSCAL[outcome]
+                props = build_finding_props(outcome)
+                finding: dict[str, Any] = {
+                    "uuid": finding_uuid,
+                    "title": f"Finding for {control_id}",
+                    "description": f"ClearTrace outcome {outcome.value}",
+                    "target": {
+                        "type": "objective-id",
+                        "target-id": control_id,
+                        "status": {
+                            "state": mapping["status_state"],
+                            "reason": mapping["reason"],
+                        },
                     },
-                },
-            }
-            if props:
-                finding["props"] = props
-            findings.append(finding)
+                }
+                if props:
+                    finding["props"] = props
+                findings.append(finding)
         return {
             "system": {
                 "id": str(system_id),

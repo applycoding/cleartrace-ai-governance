@@ -44,3 +44,13 @@ controls:
   evidence_specs:
   - type: peer_review_report
     required: true
+- control_key: CA-DADM-MIX-T13
+  clause_ref: T-13 mixed objectives (shipped golden)
+  title_en: Mixed objective outcomes for TRL 5 golden cases.
+  title_fr: Résultats d'objectifs mixtes pour les cas dorés TRL 5.
+  remediation_en: Provide AIA evidence and close the remaining peer-review gap.
+  remediation_fr: Fournir une preuve EIA et combler l'écart d'examen par les pairs.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: aia_record
+    required: true

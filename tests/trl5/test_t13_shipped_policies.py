@@ -36,6 +36,7 @@ def test_t13_shipped_policy_mixed_cases(case: dict) -> None:
 def test_t13_shipped_mixed_case_count() -> None:
     cases = json.loads(MIXED.read_text(encoding="utf-8"))
     assert len(cases) >= 30
+    assert any(c["expect"]["outcome_state"] == "partially_met" for c in cases)
 
 
 @pytest.mark.parametrize("entry", json.loads(REPLAY.read_text(encoding="utf-8")))

@@ -21,6 +21,15 @@ def test_t28_full_inventory_sbom_and_licence_gate() -> None:
     assert "application" in types
     assert "library" in types
     assert "data" in types or any(c.get("type") == "container" for c in components)
+    containers = [c for c in components if c.get("type") == "container"]
+    assert len(containers) >= 3, "shipped Compose images must appear in the SBOM"
+    compose = (ROOT / "deploy" / "compose" / "docker-compose.yml").read_text(encoding="utf-8")
+    for line in compose.splitlines():
+        if "image:" in line:
+            ref = line.split("image:", maxsplit=1)[1].strip()
+            assert any(ref in str(c.get("name", "")) or ref in str(c.get("properties", "")) for c in containers), (
+                f"missing container SBOM entry for {ref}"
+            )
 
     gate = subprocess.run(["uv", "run", "python", "tools/licence_gate.py"], cwd=ROOT)
     assert gate.returncode == 0, "licence gate must report 0 disallowed licences"

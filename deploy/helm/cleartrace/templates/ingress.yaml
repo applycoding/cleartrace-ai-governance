@@ -7,6 +7,16 @@ metadata:
     {{- include "cleartrace.labels" . | nindent 4 }}
 spec:
   ingressClassName: {{ .Values.cleartrace.ingress.className }}
+  {{- with .Values.cleartrace.ingress.tls }}
+  tls:
+    {{- range . }}
+    - secretName: {{ .secretName }}
+      hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+    {{- end }}
+  {{- end }}
   rules:
     {{- range .Values.cleartrace.ingress.hosts }}
     - host: {{ .host | quote }}

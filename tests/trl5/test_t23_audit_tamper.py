@@ -80,6 +80,7 @@ def test_t23_audit_tamper_detection(dsn: str, tmp_path_factory: pytest.TempPathF
             report = verify_tenant_chain(conn, tenant_id=TENANT_ALPHA, worm_root=worm_root)
             if not report.ok and report.findings:
                 detected += 1
+                assert report.exposure_window_seconds == 60
 
     cli = subprocess.run(
         [
@@ -100,6 +101,8 @@ def test_t23_audit_tamper_detection(dsn: str, tmp_path_factory: pytest.TempPathF
     )
     assert detected == 4
     assert cli.returncode != 0
+    assert "exposure_window_seconds" in cli.stdout
+    assert '"exposure_window_seconds": 60' in cli.stdout or "60" in cli.stdout
 
 
 def _seed_events(dsn: str, ledger: AuditLedgerService, *, count: int) -> None:

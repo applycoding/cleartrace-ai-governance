@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Any
 
 from cleartrace_notifier.router import register_notifier_routes
@@ -9,6 +10,8 @@ from cleartrace_notifier.service import NotifierService
 from cleartrace_register.api.router import mount_register_routes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.staticfiles import StaticFiles
 
 from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
 from cleartrace_core_api.auth.middleware import AuthContextMiddleware, CedarAuthMiddleware
@@ -20,6 +23,10 @@ from cleartrace_core_api.middleware.language import LanguageMiddleware
 from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddleware
 from cleartrace_core_api.middleware.security_headers import SecurityHeadersMiddleware
 from cleartrace_core_api.middleware.tenant_rate_limit import TenantRateLimitMiddleware
+from cleartrace_core_api.openapi_contract import (
+    IDEMPOTENCY_KEY_PATTERN,
+    apply_contract_annotations,
+)
 from cleartrace_core_api.routers import (
     admin,
     aia,
@@ -51,9 +58,25 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         title="ClearTrace Governance API",
         version="0.1.0",
         openapi_url="/api/v1/openapi.json",
-        docs_url="/api/v1/docs",
+        docs_url=None,
         lifespan=lifespan,
     )
+    static_root = Path(__file__).resolve().parents[2] / "static"
+    if (static_root / "swagger-ui").is_dir():
+        app.mount(
+            "/api/v1/swagger-ui",
+            StaticFiles(directory=str(static_root / "swagger-ui")),
+            name="swagger-ui",
+        )
+
+    @app.get("/api/v1/docs", include_in_schema=False)
+    async def swagger_ui() -> object:
+        return get_swagger_ui_html(
+            openapi_url=app.openapi_url or "/api/v1/openapi.json",
+            title=f"{app.title} – API docs",
+            swagger_js_url="/api/v1/swagger-ui/swagger-ui-bundle.js",
+            swagger_css_url="/api/v1/swagger-ui/swagger-ui.css",
+        )
     app.state.settings = cfg
     app.state.cedar_authorizer = CedarAuthorizer(cfg.cedar_policy_path)
 
@@ -104,7 +127,7 @@ _IDEMPOTENCY_KEY_SCHEMA: dict[str, object] = {
     "type": "string",
     "minLength": 1,
     "maxLength": 128,
-    "pattern": "^[!-~]{1,128}$",
+    "pattern": IDEMPOTENCY_KEY_PATTERN,
 }
 _PROBLEM_CONTENT = {"application/problem+json": {"schema": {"$ref": "#/components/schemas/ProblemDetail"}}}
 # Responses the middleware stack can return on any protected operation.
@@ -180,6 +203,7 @@ def _document_common_errors(app: FastAPI) -> None:
                     op["responses"].setdefault(
                         code, {"description": description, "content": _PROBLEM_CONTENT}
                     )
+        apply_contract_annotations(schema)
         app.openapi_schema = schema
         return schema
 

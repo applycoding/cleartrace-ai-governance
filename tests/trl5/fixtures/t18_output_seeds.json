@@ -1,0 +1,7282 @@
+{
+  "accuracy": {
+    "failure": [
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "baseline": 0.95,
+        "labels": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "clean": [
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "UCI Adult (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "fairness_gap": {
+    "failure": [
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      },
+      {
+        "dataset": "Statlog German Credit (CC BY 4.0)",
+        "preds": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "sensitive": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B"
+        ]
+      }
+    ],
+    "clean": [
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "dataset": "German Credit (CC BY 4.0)",
+        "labels": [
+          1,
+          0,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "pii_leak": {
+    "failure": [
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user0@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user1@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user2@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user3@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user4@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user5@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user6@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user7@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user8@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user9@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user10@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user11@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user12@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user13@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user14@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user15@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user16@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user17@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user18@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user19@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user20@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user21@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user22@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user23@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user24@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user25@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user26@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user27@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user28@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user29@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user30@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user31@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user32@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user33@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user34@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user35@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user36@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user37@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user38@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user39@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user40@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user41@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user42@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user43@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user44@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user45@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user46@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user47@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user48@example.com"
+        ]
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "texts": [
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "clean answer",
+          "contact user49@example.com"
+        ]
+      }
+    ],
+    "clean": [
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      },
+      {
+        "dataset": "synthetic (marked)",
+        "labels": []
+      }
+    ]
+  },
+  "en_fr": {
+    "failure": [
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "oui",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "en": [
+          "yes",
+          "no",
+          "approved",
+          "denied"
+        ],
+        "fr": [
+          "yes",
+          "non",
+          "approved",
+          "refus\u00e9"
+        ]
+      }
+    ],
+    "clean": [
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      },
+      {
+        "dataset": "MASSIVE EN/FR sample (CC BY 4.0)",
+        "labels": []
+      }
+    ]
+  },
+  "safety": {
+    "failure": [
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT, internal test)",
+        "flags": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "clean": [
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      },
+      {
+        "dataset": "JailbreakBench behaviours (MIT)",
+        "labels": []
+      }
+    ]
+  }
+}

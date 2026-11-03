@@ -15,6 +15,12 @@ cleartrace:
   ingress:
     enabled: false
     className: ""
+    tls: []
+    # Example TLS (requires a cert secret in the cluster):
+    # tls:
+    #   - secretName: cleartrace-tls
+    #     hosts:
+    #       - cleartrace.example.gc.ca
     hosts:
       - host: cleartrace.local
         paths:

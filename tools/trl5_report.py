@@ -52,17 +52,11 @@ CRITERIA: dict[str, tuple[str, str, str]] = {
 # Tests whose suite exists and can pass in CI but does not yet exercise the full
 # section 18 pass criterion. A green run for these is reported as "partial".
 PARTIAL_NOTES: dict[str, str] = {
-    "T-03": "Exports and validates 2 dossiers but checks 10 findings, not 50/50 outcome states.",
     "T-05": "Restore target is a second Postgres container on the same CI runner, not a clean node.",
-    "T-06": "Audits 60 denials and 60 privileged reads; the 600 allowed + 600 forbidden matrix across 3 tenants and 6 roles is not run.",
     "T-08": "Automated 40/40 non-conformities pass; the 140 explanation pairs await two human reviewers (xfail by design).",
     "T-11": "Reported as an uncalibrated index: the held-out labels are derived from the corpus, not adjudicated by independent EN/FR reviewers (section 6), and the held-out cases are German-source only, so 'calibrated' is never claimed.",
-    "T-13": "250 cases with 50 per state pass, but they come from 6 scenario templates through a test-only Rego pack; the shipped-policy set is 10 distinct inputs x 3 with engine-generated expectations and no partially_met case. Rule-only replay of 10 snapshots passes.",
-    "T-18": "Each dimension repeats one fixed synthetic input 50 times; no public set and no varied seeded degradations.",
     "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
     "T-20": "Automated i18n checks only; human language review sheet intentionally blank.",
-    "T-23": "Edit, delete, reorder and truncate detected; the exposure window is not asserted.",
-    "T-28": "Repository SBOM and licence gate only; shipped container images are not inventoried.",
 }
 
 NOT_COVERED_NOTES: dict[str, str] = {
@@ -73,6 +67,10 @@ NOT_COVERED_NOTES: dict[str, str] = {
 }
 
 MULTI_MODULE: dict[str, list[str]] = {
+    "T-06": [
+        "tests/trl5/test_t06_audit_slice.py",
+        "tests/trl5/test_t06_auth_matrix.py",
+    ],
     "T-13": [
         "tests/trl5/test_t13_five_states.py",
         "tests/trl5/test_t13_shipped_policies.py",
