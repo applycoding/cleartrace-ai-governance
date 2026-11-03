@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cleartrace.local/schemas/evaluation-contract.json",
+  "title": "ClearTrace control evaluation contract",
+  "type": "object",
+  "required": ["contract_version", "control_id", "inputs", "outputs"],
+  "properties": {
+    "contract_version": { "type": "string" },
+    "control_id": { "type": "string" },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "system": { "type": "object" },
+        "evidence": { "type": "array", "items": { "type": "object" } },
+        "metrics": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["outcome_state", "reason_code"],
+      "properties": {
+        "outcome_state": {
+          "type": "string",
+          "enum": [
+            "met",
+            "partially_met",
+            "not_met",
+            "not_applicable",
+            "unable_to_determine"
+          ]
+        },
+        "reason_code": { "type": "string" },
+        "certainty_index": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string" },
+          "message_en": { "type": "string" },
+          "message_fr": { "type": "string" }
+        }
+      }
+    }
+  }
+}

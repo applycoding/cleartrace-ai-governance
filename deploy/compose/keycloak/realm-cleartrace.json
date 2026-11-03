@@ -1,0 +1,77 @@
+{
+  "realm": "cleartrace",
+  "enabled": true,
+  "registrationAllowed": false,
+  "roles": {
+    "realm": [
+      { "name": "platform_operator" },
+      { "name": "tenant_admin" },
+      { "name": "policy_steward" },
+      { "name": "system_owner" },
+      { "name": "assessor" },
+      { "name": "oversight_reviewer" },
+      { "name": "approver" },
+      { "name": "auditor" },
+      { "name": "read_only_viewer" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "cleartrace-api",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "cleartrace-api-secret",
+      "redirectUris": ["http://localhost:3000/*"],
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "protocolMappers": [
+        {
+          "name": "tenant-id-mapper",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "config": {
+            "user.attribute": "tenant_id",
+            "claim.name": "tenant_id",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "groups": [
+    { "name": "tenant-alpha", "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111101"] } },
+    { "name": "tenant-beta", "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111102"] } },
+    { "name": "tenant-gamma", "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111103"] } }
+  ],
+  "users": [
+    {
+      "username": "alpha-admin",
+      "enabled": true,
+      "email": "alpha-admin@example.gc.ca",
+      "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111101"] },
+      "credentials": [{ "type": "password", "value": "ChangeMe123!", "temporary": false }],
+      "realmRoles": ["tenant_admin"],
+      "groups": ["/tenant-alpha"]
+    },
+    {
+      "username": "beta-owner",
+      "enabled": true,
+      "email": "beta-owner@example.gc.ca",
+      "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111102"] },
+      "credentials": [{ "type": "password", "value": "ChangeMe123!", "temporary": false }],
+      "realmRoles": ["system_owner"],
+      "groups": ["/tenant-beta"]
+    },
+    {
+      "username": "gamma-viewer",
+      "enabled": true,
+      "email": "gamma-viewer@example.gc.ca",
+      "attributes": { "tenant_id": ["11111111-1111-7111-8111-111111111103"] },
+      "credentials": [{ "type": "password", "value": "ChangeMe123!", "temporary": false }],
+      "realmRoles": ["read_only_viewer"],
+      "groups": ["/tenant-gamma"]
+    }
+  ]
+}

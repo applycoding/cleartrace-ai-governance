@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install Python dependencies
+        run: uv sync --all-packages --group dev
+      - name: Ruff
+        run: uv run ruff check .
+      - name: Mypy
+        run: uv run mypy packages/cleartrace-contracts/src services/core-api/src db/src
+      - name: Bandit
+        run: uv run bandit -r packages services/core-api db -q
+      - name: Licence gate
+        run: uv run python tools/licence_gate.py
+      - name: Secrets scan
+        run: uv run python tools/secrets_scan.py
+      - name: SBOM
+        run: uv run python tools/sbom_placeholder.py
+      - name: Trivy placeholder
+        run: uv run python tools/trivy_placeholder.py
+      - name: Unit tests
+        run: uv run pytest -q tests/unit
+      - name: Integration tests
+        run: |
+          sudo apt-get update && sudo apt-get install -y postgresql-common
+          echo | sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y || true
+          sudo apt-get install -y postgresql-16 postgresql-client-16 pgbouncer || true
+          bash scripts/dev_stack.sh
+          uv run pytest -q tests/integration
+
+  web-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci || npm install
+      - name: Typecheck
+        working-directory: web
+        run: npm run typecheck

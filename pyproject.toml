@@ -1,0 +1,57 @@
+[project]
+name = "cleartrace-workspace"
+version = "0.1.0"
+description = "ClearTrace AI governance platform workspace"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+
+[tool.uv.workspace]
+members = [
+  "packages/cleartrace-contracts",
+  "services/core-api",
+  "db",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.24",
+  "pytest-cov>=6.0",
+  "ruff>=0.8",
+  "mypy>=1.13",
+  "bandit>=1.8",
+  "types-PyYAML>=6.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+  "integration: tests that need Postgres/PgBouncer or Compose stack",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["packages", "services", "db", "tests", "tools"]
+
+[tool.ruff.lint.per-file-ignores]
+"db/migrations/**" = ["E501"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+mypy_path = ["packages/cleartrace-contracts/src", "services/core-api/src", "db/src"]
+
+[[tool.mypy.overrides]]
+module = ["cedarpy.*", "asyncpg.*"]
+ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]

@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: cleartrace_migrator
+      POSTGRES_PASSWORD: cleartrace_migrator
+      POSTGRES_DB: cleartrace
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cleartrace_migrator -d cleartrace"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  pgbouncer:
+    image: edoburu/pgbouncer:v1.24.1-p1
+    environment:
+      DATABASE_URL: postgres://cleartrace_app:cleartrace_app@postgres:5432/cleartrace
+      POOL_MODE: transaction
+      SERVER_RESET_QUERY: DISCARD ALL
+      AUTH_TYPE: plain
+    ports:
+      - "6432:5432"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  seaweedfs:
+    image: chrislusf/seaweedfs:3.80
+    command: server -s3 -dir=/data
+    ports:
+      - "8333:8333"
+      - "8888:8888"
+    volumes:
+      - seaweed_data:/data
+
+  nats:
+    image: nats:2.10
+    command: ["-js", "-m", "8222"]
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_HTTP_PORT: 8080
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./keycloak/realm-cleartrace.json:/opt/keycloak/data/import/realm-cleartrace.json:ro
+
+volumes:
+  postgres_data:
+  seaweed_data:

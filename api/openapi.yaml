@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: ClearTrace Governance API
+  version: 0.1.0
+  description: REST API for the ClearTrace AI governance platform (blueprint section 10.1).
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+tags:
+  - name: systems
+  - name: frameworks
+  - name: assessments
+  - name: audit
+paths:
+  /health:
+    get:
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+  /systems:
+    get:
+      tags: [systems]
+      summary: List AI systems (cursor pagination)
+      parameters:
+        - $ref: "#/components/parameters/Cursor"
+        - $ref: "#/components/parameters/AcceptLanguage"
+      responses:
+        "200":
+          description: Page of systems
+    post:
+      tags: [systems]
+      summary: Register a system
+      parameters:
+        - $ref: "#/components/parameters/IdempotencyKey"
+      responses:
+        "201":
+          description: Created
+  /systems/{id}:
+    get:
+      tags: [systems]
+      summary: Get system
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+      responses:
+        "200":
+          description: System
+    patch:
+      tags: [systems]
+      summary: Update system (If-Match required)
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+        - $ref: "#/components/parameters/IfMatch"
+      responses:
+        "200":
+          description: Updated
+        "428":
+          description: Precondition required
+  /systems/{id}/history:
+    get:
+      tags: [systems]
+      summary: Bitemporal history
+      parameters:
+        - $ref: "#/components/parameters/SystemId"
+        - name: as_of
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: History view
+  /frameworks:
+    get:
+      tags: [frameworks]
+      summary: List frameworks
+      responses:
+        "200":
+          description: Frameworks
+  /assessments:
+    post:
+      tags: [assessments]
+      summary: Start assessment job
+      responses:
+        "202":
+          description: Accepted
+  /findings/{id}/actions:
+    post:
+      tags: [assessments]
+      summary: Reviewer action
+      responses:
+        "200":
+          description: Action recorded
+  /audit/events:
+    get:
+      tags: [audit]
+      summary: Query audit ledger
+      responses:
+        "200":
+          description: Events
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Cursor:
+      name: cursor
+      in: query
+      schema:
+        type: string
+    AcceptLanguage:
+      name: Accept-Language
+      in: header
+      schema:
+        type: string
+        enum: [en-CA, fr-CA]
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema:
+        type: string
+    IfMatch:
+      name: If-Match
+      in: header
+      schema:
+        type: string
+    SystemId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    ProblemDetail:
+      type: object
+      required: [type, title, status]
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
