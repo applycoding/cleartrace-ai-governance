@@ -26,3 +26,6 @@ class Settings(BaseSettings):
         ),
     )
     dev_tenant_id: UUID = UUID("11111111-1111-7111-8111-111111111101")
+    evidence_storage_root: str = ".data/evidence"
+    audit_worm_root: str = ".data/worm-audit"
+    audit_signer_key_path: str = ".data/audit-checkpoint-signer.key"

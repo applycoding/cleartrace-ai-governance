@@ -22,6 +22,7 @@ if [[ ! -f "$DATA_DIR/PG_VERSION" ]]; then
   cat >> "$DATA_DIR/postgresql.conf" <<CONF
 listen_addresses = '127.0.0.1'
 port = ${PORT}
+unix_socket_directories = '${DATA_DIR}'
 CONF
   echo "host all all 127.0.0.1/32 trust" >> "$DATA_DIR/pg_hba.conf"
   sed -i 's/^host    all             all             127.0.0.1\/32            scram-sha-256/host    all             all             127.0.0.1\/32            trust/' "$DATA_DIR/pg_hba.conf"

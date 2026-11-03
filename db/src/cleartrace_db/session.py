@@ -17,7 +17,7 @@ def tenant_transaction(
     role: str = "cleartrace_app",
 ) -> Iterator[Connection[Any]]:
     """Open a transaction with tenant context for RLS (PgBouncer-safe SET LOCAL)."""
-    with psycopg.connect(dsn, autocommit=False) as conn:
+    with psycopg.connect(dsn, autocommit=False, prepare_threshold=None) as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT current_user")
             row = cur.fetchone()
