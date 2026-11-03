@@ -8,3 +8,4 @@
 6. Plain English in docs, comments and UI text; every user-facing string in both English and French.
 7. CI (`.github/workflows/`) runs only on push to `main` and on manual dispatch. Do not add `pull_request` triggers. Run the full test suite on your own machine before pushing.
 8. Stay inside the folders your task owns. Change shared contracts (`api/`, `db/`, `services/core-api/` shared modules) only when your task says so, and list any needed contract change in your report instead.
+9. The product name is "ClearTrace". Do not use "Tri-Vision" in the product name, package names, UI titles or image names.
