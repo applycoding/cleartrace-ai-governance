@@ -7,11 +7,23 @@ import argparse
 import json
 import os
 import re
+import sys
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tools.review_sheets import (  # noqa: E402
+    T08_PASS_CORRECT,
+    T08_TOTAL_PAIRS,
+    t08_summary,
+    t20_pass_threshold,
+    t20_summary,
+)
+
 REPORT_PATH = ROOT / "docs" / "trl5" / "TRL5_TEST_REPORT.md"
 
 # fmt: off
@@ -53,12 +65,11 @@ CRITERIA: dict[str, tuple[str, str, str]] = {
 # section 18 pass criterion. A green run for these is reported as "partial".
 PARTIAL_NOTES: dict[str, str] = {
     "T-05": "Restore target is a second Postgres container on the same CI runner, not a clean node.",
-    "T-08": "Automated 40/40 non-conformities pass; the 140 explanation pairs await two human reviewers (xfail by design).",
+    "T-08": "40/40 seeded non-conformities found and 0/40 false not_met pass, but the 40 cover only 3 shipped controls (DADM 6.1.1, 6.3.8, Appendix C row 3; 16 only add unrelated evidence), not 40 different controls across seeded systems. The 140 explanation pairs (75 distinct texts) await two human reviewers.",
     "T-11": "Reported as an uncalibrated index: the held-out labels are derived from the corpus, not adjudicated by independent EN/FR reviewers (section 6), and the held-out cases are German-source only, so 'calibrated' is never claimed.",
     "T-13": "250 cases (50 per state) on the shipped packs pass, but they hold 67 behaviourally distinct inputs (not_applicable 13, met 13, partially_met 6, not_met 8, unable_to_determine 27); partially_met comes from one control (DADM 6.3.8 GBA+), and 59 cases only add unrelated evidence. Expected states are engine output checked against the selected state, not derived independently from the clause text. Rule-only replay of 10 snapshots passes.",
     "T-18": "50/50 detected and 0/50 false alarms per dimension, but the seeds are not 50 distinct failures: accuracy 8 and fairness 2 distinct failure inputs (real UCI German Credit class labels and UCI Adult sex column, predictions seeded), safety 2 (hand-written; no public harm or jailbreak set vendored); PII and EN/FR 50 each (hand-written synthetic).",
     "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
-    "T-20": "Automated i18n checks only; human language review sheet intentionally blank.",
     "T-28": "Repository SBOM and licence gate cover source paths and container references only; Python dependency licences are not recorded, and shipped runtime dependencies include LGPL (psycopg, psycopg-pool, paramiko, svglib) and MPL-2.0 (orjson, certifi, tqdm) packages. Syft image SBOMs list OS packages of the third-party images, which carry GPL/LGPL/MPL-licensed packages; these are reported in the image-sbom artifact, not gated, and no approved exception file exists. The ClearTrace core-api image is not built or published, so it is not scanned.",
 }
 
@@ -164,6 +175,35 @@ def _outcome_for_test(test_id: str, cases: list[JunitCase]) -> Outcome | None:
     return combined
 
 
+def _sheet_gate_status(test_id: str) -> str | None:
+    """Human review sheet gate: partial, fail, or None when satisfied."""
+    if test_id == "T-08":
+        sheet = t08_summary()
+        if not sheet.get("present"):
+            return "partial"
+        state = str(sheet.get("state"))
+        if state == "blank":
+            return "partial"
+        if state == "partial":
+            return "fail"
+        if state == "complete" and not sheet.get("passes_threshold"):
+            return "fail"
+        return None
+    if test_id == "T-20":
+        sheet = t20_summary()
+        if not sheet.get("present"):
+            return "partial"
+        state = str(sheet.get("state"))
+        if state == "blank":
+            return "partial"
+        if state == "partial":
+            return "fail"
+        if state == "complete" and not sheet.get("passes_threshold"):
+            return "fail"
+        return None
+    return None
+
+
 def status_for(test_id: str, outcome: Outcome | None, t26: dict[str, object] | None = None) -> str:
     tier, _criterion, hint = CRITERIA[test_id]
     if hint == "not_implemented":
@@ -172,9 +212,14 @@ def status_for(test_id: str, outcome: Outcome | None, t26: dict[str, object] | N
         return "not run"
     if outcome.failed:
         return "fail"
+    sheet_gate = _sheet_gate_status(test_id)
+    if sheet_gate == "fail":
+        return "fail"
     # T-26 passes only on the security gate's own result over the real tool outputs.
     if test_id == "T-26" and (t26 is None or t26.get("gate_passed") is not True):
         return "fail"
+    if sheet_gate == "partial":
+        return "partial"
     if outcome.skipped or test_id in PARTIAL_NOTES:
         return "partial"
     return "pass"
@@ -263,6 +308,40 @@ def _measurement(
             )
     if test_id == "T-26" and outcome is not None:
         text += " " + _t26_text(t26)
+    if test_id == "T-08":
+        sheet = t08_summary()
+        if not sheet.get("present"):
+            text += " T-08 explanation review sheet missing."
+        elif sheet.get("state") == "blank":
+            text += (
+                f" Human review pending: 0/{sheet.get('total')} explanation pairs scored "
+                f"(need ≥{T08_PASS_CORRECT}/{T08_TOTAL_PAIRS} marked correct by both reviewers)."
+            )
+        elif sheet.get("state") == "partial":
+            text += f" T-08 review sheet partly filled: {sheet.get('detail')}"
+        else:
+            text += (
+                f" Human review: {sheet.get('agreed_correct')}/{sheet.get('total')} pairs "
+                f"marked correct by both reviewers (threshold ≥{T08_PASS_CORRECT})."
+            )
+    if test_id == "T-20":
+        sheet = t20_summary()
+        total = int(sheet.get("total") or 0)
+        threshold = int(sheet.get("pass_threshold") or t20_pass_threshold(total))
+        if not sheet.get("present"):
+            text += " T-20 language review sheet missing."
+        elif sheet.get("state") == "blank":
+            text += (
+                f" Human language review pending: 0/{total} rows scored "
+                f"(need ≥{threshold} acceptable at 95%)."
+            )
+        elif sheet.get("state") == "partial":
+            text += f" T-20 language sheet partly filled: {sheet.get('detail')}"
+        else:
+            text += (
+                f" Human language review: {sheet.get('acceptable')}/{total} rows acceptable "
+                f"(threshold ≥{threshold})."
+            )
     return f"{text} {note}".strip()
 
 

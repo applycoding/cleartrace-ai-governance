@@ -55,4 +55,13 @@ def test_csv_report_en() -> None:
         },
     )
     text = artefact.body.decode("utf-8")
-    assert "field" in text.splitlines()[0]
+    assert text.splitlines()[0] == "metric,value"
+
+
+def test_unknown_report_type_falls_back_to_dossier() -> None:
+    """The API default type "system_dossier" is not a ReportType member; it must render."""
+    artefact = ReportService().build_sync(
+        TENANT,
+        {"type": "system_dossier", "language": "en-CA", "format": ReportFormat.HTML, "scope": {}},
+    )
+    assert "Compliance dossier" in artefact.body.decode("utf-8")

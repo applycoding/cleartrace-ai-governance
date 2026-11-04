@@ -90,16 +90,20 @@ def _round_robin(groups: dict[str, list[dict[str, Any]]], limit: int) -> list[di
     return picked
 
 
-def build() -> list[dict[str, Any]]:
+_ENUMERATION: tuple[dict[str, dict[str, list[dict[str, Any]]]], set[str]] | None = None
+
+
+def _enumerate() -> tuple[dict[str, dict[str, list[dict[str, Any]]]], set[str]]:
+    global _ENUMERATION
+    if _ENUMERATION is not None:
+        return _ENUMERATION
     controls: list[tuple[dict[str, Any], dict[str, Any]]] = []
-    all_types: set[str] = set()
+    all_types: set[str] = {"gba_plus_record"}
     for path in list_packs(PACKS):
         pack = load_pack(path)
         for control in pack["controls"]:
             controls.append((pack, control))
             all_types.update(str(e["type"]) for e in control.get("evidence_specs", []))
-    all_types.add("gba_plus_record")
-
     by_state: dict[str, dict[str, list[dict[str, Any]]]] = {s: defaultdict(list) for s in STATES}
     for pack, control in controls:
         for system, evidence in _inputs(control):
@@ -114,29 +118,43 @@ def build() -> list[dict[str, Any]]:
                     "output": output,
                 }
             )
+    _ENUMERATION = (by_state, all_types)
+    return _ENUMERATION
 
+
+def select_cases(state: str, count: int, *, skip: int = 0) -> list[dict[str, Any]]:
+    """``count`` cases for ``state``: enumerated inputs spread across controls first,
+    then inputs with unrelated valid evidence added. ``skip`` drops that many from the
+    front of the enumerated round-robin (used to keep two selections apart)."""
+    by_state, all_types = _enumerate()
+    ordered = _round_robin(by_state[state], 10_000)[skip:]
+    chosen = ordered[:count]
+    if len(chosen) < count:
+        extra: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for base in [c for group in by_state[state].values() for c in group]:
+            own = {str(e["type"]) for e in base["control"].get("evidence_specs", [])} | {"gba_plus_record"}
+            for kind in sorted(all_types - own):
+                evidence = [*base["evidence"], _ev(kind)]
+                output = _assess(base["pack"], base["control"], base["system"], evidence)
+                if output.outcome_state != state:
+                    raise RuntimeError(f"unrelated {kind} evidence changed {base['control']['control_key']}")
+                extra[base["control"]["control_key"]].append(
+                    {**base, "evidence": evidence, "variation": "unrelated_evidence_added", "output": output}
+                )
+        chosen += _round_robin(extra, count - len(chosen))
+    if len(chosen) != count:
+        raise RuntimeError(f"{state}: only {len(chosen)} cases")
+    for item in chosen:
+        if item["output"].outcome_state != state:
+            raise RuntimeError(f"{state}: selected case gave {item['output'].outcome_state}")
+    return chosen
+
+
+def build() -> list[dict[str, Any]]:
     cases: list[dict[str, Any]] = []
     for state in STATES:
-        chosen = _round_robin(by_state[state], PER_STATE)
-        if len(chosen) < PER_STATE:
-            extra: dict[str, list[dict[str, Any]]] = defaultdict(list)
-            for base in [c for group in by_state[state].values() for c in group]:
-                own = {str(e["type"]) for e in base["control"].get("evidence_specs", [])} | {"gba_plus_record"}
-                for kind in sorted(all_types - own):
-                    evidence = [*base["evidence"], _ev(kind)]
-                    output = _assess(base["pack"], base["control"], base["system"], evidence)
-                    if output.outcome_state != state:
-                        raise RuntimeError(f"unrelated {kind} evidence changed {base['control']['control_key']}")
-                    extra[base["control"]["control_key"]].append(
-                        {**base, "evidence": evidence, "variation": "unrelated_evidence_added", "output": output}
-                    )
-            chosen += _round_robin(extra, PER_STATE - len(chosen))
-        if len(chosen) != PER_STATE:
-            raise RuntimeError(f"{state}: only {len(chosen)} cases")
-        for idx, item in enumerate(chosen):
+        for idx, item in enumerate(select_cases(state, PER_STATE)):
             output = item["output"]
-            if output.outcome_state != state:
-                raise RuntimeError(f"{state}: selected case gave {output.outcome_state}")
             control = item["control"]
             cases.append(
                 {
