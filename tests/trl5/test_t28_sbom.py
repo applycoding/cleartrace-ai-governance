@@ -27,20 +27,43 @@ def test_t28_full_inventory_sbom_and_licence_gate() -> None:
     for line in compose.splitlines():
         if "image:" in line:
             ref = line.split("image:", maxsplit=1)[1].strip()
-            assert any(ref in str(c.get("name", "")) or ref in str(c.get("properties", "")) for c in containers), (
-                f"missing container SBOM entry for {ref}"
-            )
+            assert any(
+                ref in str(c.get("name", "")) or ref in str(c.get("properties", ""))
+                for c in containers
+            ), f"missing container SBOM entry for {ref}"
 
     gate = subprocess.run(["uv", "run", "python", "tools/licence_gate.py"], cwd=ROOT)
     assert gate.returncode == 0, "licence gate must report 0 disallowed licences"
 
-    disallowed = ("AGPL", "GPL", "LGPL", "SSPL", "BSL", "Elastic License", "MPL-2.0")
-    blob = sbom_path.read_text(encoding="utf-8")
-    for token in disallowed:
-        assert token not in blob
+    import sys
+
+    sys.path.insert(0, str(ROOT / "tools"))
+    from third_party_licences import classify
+
+    app = [c for c in components if c.get("type") == "application"]
+    assert app, "ClearTrace application component missing"
+    assert {"expression": "LicenseRef-ClearTrace-Evaluation-Only"} in app[0].get("licenses", [])
+    shipped = [c for c in components if c.get("type") == "library" and c.get("scope") == "required"]
+    assert len(shipped) >= 100, "shipped Python and npm dependencies must be listed with licences"
+    for comp in shipped:
+        recorded = [
+            e["expression"]
+            for e in comp.get("licenses", [])
+            if isinstance(e, dict) and "expression" in e
+        ]
+        assert recorded, f"no licence recorded for shipped component {comp.get('name')}"
+        # docs/LICENSE_POLICY.md: permissive allowed; LGPL/MPL only when listed as used
+        # unmodified in THIRD_PARTY_LICENSES.md (checked by the gate above); strong
+        # copyleft, source-available and unknown licences are not allowed.
+        assert classify(recorded[0]) in {"permissive", "weak-copyleft"}, (
+            comp.get("name"),
+            recorded,
+        )
 
 
-def test_t28_image_inventory_lists_every_shipped_image(record_property: pytest.RecordProperty) -> None:
+def test_t28_image_inventory_lists_every_shipped_image(
+    record_property: pytest.RecordProperty,
+) -> None:
     """Every shipped image is either scanned by Syft or listed as not scanned with a reason.
 
     This records the OS-package licence findings; it does not assert they are clean,

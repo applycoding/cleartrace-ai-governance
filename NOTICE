@@ -1,6 +1,10 @@
 ClearTrace
-Copyright 2026 Arpan Bom, Tri-Vision AI & Robotics Inc.
-Licensed under the Apache License, Version 2.0.
+Copyright (c) 2026 Arpan Bom. All rights reserved.
+Evaluation-only permission; see LICENSE (SPDX: LicenseRef-ClearTrace-Evaluation-Only).
+This is not an open-source licence.
+
+Third-party components, data and files keep their own licences. The full list,
+with versions, licences and source locations, is in THIRD_PARTY_LICENSES.md.
 
 This product includes third-party software vendored in source form:
 

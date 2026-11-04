@@ -3,7 +3,7 @@ name = "cleartrace-register"
 version = "0.1.0"
 description = "ClearTrace system register (15 governance categories)"
 requires-python = ">=3.12"
-license = { text = "Apache-2.0" }
+license = { text = "LicenseRef-ClearTrace-Evaluation-Only" }
 dependencies = [
   "cleartrace-contracts",
   "cleartrace-db",

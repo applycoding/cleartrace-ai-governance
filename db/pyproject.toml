@@ -3,7 +3,7 @@ name = "cleartrace-db"
 version = "0.1.0"
 description = "ClearTrace database migrations and helpers"
 requires-python = ">=3.12"
-license = { text = "Apache-2.0" }
+license = { text = "LicenseRef-ClearTrace-Evaluation-Only" }
 dependencies = [
   "alembic>=1.14",
   "psycopg[binary,pool]>=3.2",

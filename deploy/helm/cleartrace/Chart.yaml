@@ -4,3 +4,7 @@ description: ClearTrace AI governance platform Helm chart
 type: application
 version: 0.1.0
 appVersion: "0.1.0"
+annotations:
+  artifacthub.io/license: LicenseRef-ClearTrace-Evaluation-Only
+  cleartrace.io/license-file: LICENSE
+  cleartrace.io/third-party-licenses: THIRD_PARTY_LICENSES.md

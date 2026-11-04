@@ -604,7 +604,7 @@ Not used in the product: HashiCorp Vault (BSL), MinIO (AGPL), Grafana (AGPL), Re
 
 ```
 aigov/
-  README.md  LICENSE (Apache-2.0)  NOTICE  SECURITY.md  CONTRIBUTING.md
+  README.md  LICENSE (evaluation-only, LicenseRef-ClearTrace-Evaluation-Only)  NOTICE  THIRD_PARTY_LICENSES.md  SECURITY.md  CONTRIBUTING.md
   docs/            architecture, ADRs (adr-0001-three-engines.md …), runbooks, test reports EN/FR
   api/             openapi.yaml, asyncapi.yaml, json-schemas/ (evaluation contract, connector manifest)
   services/

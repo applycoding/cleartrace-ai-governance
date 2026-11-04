@@ -72,7 +72,7 @@ SPECS: list[FixtureSpec] = [
     FixtureSpec(
         "synthetic/marked-synthetic-patients.json",
         "",
-        "Apache-2.0 (generated synthetic data)",
+        "ClearTrace generated synthetic data (repo licence, see LICENSE)",
         "ClearTrace synthetic Synthea-style patient records for tests",
     ),
 ]

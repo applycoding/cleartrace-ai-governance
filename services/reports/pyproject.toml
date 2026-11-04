@@ -3,7 +3,7 @@ name = "cleartrace-reports"
 version = "0.1.0"
 description = "ClearTrace EN/FR report builders (HTML, PDF, CSV)"
 requires-python = ">=3.12"
-license = { text = "Apache-2.0" }
+license = { text = "LicenseRef-ClearTrace-Evaluation-Only" }
 dependencies = [
   "cleartrace-contracts",
   "jinja2>=3.1",

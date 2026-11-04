@@ -3,7 +3,7 @@ name = "cleartrace-connectors"
 version = "0.1.0"
 description = "ClearTrace connector SDK and built-in connectors"
 requires-python = ">=3.12"
-license = { text = "Apache-2.0" }
+license = { text = "LicenseRef-ClearTrace-Evaluation-Only" }
 dependencies = [
   "cleartrace-contracts",
   "cleartrace-register",

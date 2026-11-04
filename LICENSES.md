@@ -1,6 +1,6 @@
 # Third-party code vendored in this repository
 
-Dependencies installed from PyPI and npm are locked in `uv.lock` and `web/package-lock.json` and checked by the licence gate (`tools/licence_gate.py`). The files below are copied into the repository instead, so they are listed here and in `NOTICE`. Test datasets and fixtures are registered separately in `tests/fixtures/LICENSES.md`.
+Dependencies installed from PyPI and npm are locked in `uv.lock` and `web/package-lock.json` and checked by the licence gate (`tools/licence_gate.py`) against `docs/LICENSE_POLICY.md`; every shipped dependency is listed in `THIRD_PARTY_LICENSES.md`. The files below are copied into the repository instead, so they are listed here and in `NOTICE`. Test datasets and fixtures are registered separately in `tests/fixtures/LICENSES.md`.
 
 | Component | Version | Path | Licence | Copyright | Source |
 | --- | --- | --- | --- | --- | --- |

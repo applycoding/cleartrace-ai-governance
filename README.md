@@ -80,4 +80,10 @@ The Next.js app defaults to `NEXT_PUBLIC_API_BASE=http://127.0.0.1:4010/api/v1`.
 2. In one terminal: `npm run mock-api` (serves mock JSON from `web/scripts/mock-api-server.mjs`)
 3. In another: `npm run dev` and open `http://127.0.0.1:3000` — switch EN/FR in the shell to exercise locale strings under test T-20.
 
-Author: Arpan Bom, Tri-Vision AI & Robotics Inc. Licence: Apache-2.0.
+Author: Arpan Bom, Tri-Vision AI & Robotics Inc.
+
+## Licence
+
+Copyright (c) 2026 Arpan Bom. All rights reserved. ClearTrace is source-available for evaluation only: you may read it and run it unmodified to evaluate and verify the results published here. Any other use needs prior written permission. See [`LICENSE`](LICENSE) (SPDX `LicenseRef-ClearTrace-Evaluation-Only`).
+
+Third-party components, data and files keep their own licences, listed in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) (regenerate with `uv run python tools/third_party_licences.py`). The dependency licence policy is in [`docs/LICENSE_POLICY.md`](docs/LICENSE_POLICY.md).

@@ -3,7 +3,7 @@ name = "cleartrace-engine"
 version = "0.1.0"
 description = "ClearTrace assessment engine (OPA, CEL, five-state reducer)"
 requires-python = ">=3.12"
-license = { text = "Apache-2.0" }
+license = { text = "LicenseRef-ClearTrace-Evaluation-Only" }
 dependencies = [
   "cleartrace-contracts",
   "pyyaml>=6.0",
