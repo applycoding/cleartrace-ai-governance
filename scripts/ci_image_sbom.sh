@@ -27,11 +27,16 @@ status="${OUT}/scan_status.tsv"
 for ref in "${REFS[@]}"; do
   safe="$(echo "${ref}" | tr '/:@' '___')"
   echo "Syft scan ${ref}"
-  if syft "registry:${ref}" -q -o cyclonedx-json > "${OUT}/${safe}.json" 2> "${OUT}/${safe}.err"; then
+  # No -q: syft's quiet mode also drops the error text, which is the recorded reason.
+  rc=0
+  syft "registry:${ref}" -o cyclonedx-json > "${OUT}/${safe}.json" 2> "${OUT}/${safe}.err" || rc=$?
+  if [ "${rc}" -eq 0 ]; then
     printf '%s\tscanned\t%s.json\n' "${ref}" "${safe}" >> "${status}"
   else
     rm -f "${OUT}/${safe}.json"
-    printf '%s\tnot_scanned\t%s\n' "${ref}" "$(tail -n 1 "${OUT}/${safe}.err" | tr '\t' ' ' | cut -c1-300)" >> "${status}"
+    reason="$(grep -v '^[[:space:]]*$' "${OUT}/${safe}.err" | tail -n 1 | tr '\t' ' ' | cut -c1-300 || true)"
+    [ -n "${reason}" ] || reason="syft exited with code ${rc} and printed no error text"
+    printf '%s\tnot_scanned\t%s\n' "${ref}" "${reason}" >> "${status}"
   fi
 done
 
