@@ -8,6 +8,7 @@ from uuid6 import uuid7
 
 from cleartrace_reports.builders import NA_NOTE_EN, NA_NOTE_FR, html_to_pdf, render_csv, render_html
 from cleartrace_reports.models import ReportArtefact, ReportFormat, ReportSpec, ReportType
+from cleartrace_reports.user_strings import REPORT_COPY
 
 
 class ReportService:
@@ -77,37 +78,17 @@ def _sample_content(
     spec: ReportSpec,
 ) -> tuple[str, list[tuple[str, str]], list[dict[str, str]]]:
     lang_fr = spec.language.startswith("fr")
-    if spec.report_type == ReportType.PORTFOLIO_STATUS:
-        title = "État du portefeuille" if lang_fr else "Portfolio status"
-        sections = [
-            (
-                "Systèmes actifs" if lang_fr else "Active systems",
-                "12" if not lang_fr else "12",
-            ),
-            (
-                "Non-conformités ouvertes" if lang_fr else "Open non-conformities",
-                "3",
-            ),
-        ]
+    report_type = ReportType(str(spec.report_type))
+    copy = REPORT_COPY.get(report_type, REPORT_COPY[ReportType.SYSTEM_DOSSIER])
+    title = copy.title_fr if lang_fr else copy.title_en
+    sections = copy.sections_fr if lang_fr else copy.sections_en
+    if lang_fr:
         rows = [
-            {"metric" if not lang_fr else "indicateur": "systems", "value": "12"},
-            {"metric" if not lang_fr else "indicateur": "open_nc", "value": "3"},
+            {"indicateur": label.lower().replace(" ", "_"), "valeur": value}
+            for label, value in sections
         ]
-        return title, sections, rows
-
-    title = "Dossier de conformité" if lang_fr else "Compliance dossier"
-    system_label = "Système" if lang_fr else "System"
-    sections = [
-        (system_label, str(spec.scope.get("system_id", "SYS-01"))),
-        (
-            "Cadres appliqués" if lang_fr else "Frameworks applied",
-            "DADM, AIA",
-        ),
-    ]
-    rows = [
-        {"field": "system_id", "value": str(spec.scope.get("system_id", "SYS-01"))},
-        {"field": "frameworks", "value": "DADM,AIA"},
-    ]
+    else:
+        rows = [{"metric": label.lower().replace(" ", "_"), "value": value} for label, value in sections]
     return title, sections, rows
 
 

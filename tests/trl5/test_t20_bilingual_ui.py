@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 
-import csv
 import json
 import subprocess
 from pathlib import Path
+
+import pytest
+from tools.review_sheets import (
+    t20_acceptable_verdicts,
+    t20_fill_state,
+    t20_load_rows,
+    t20_pass_threshold,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "web"
@@ -26,12 +33,21 @@ def test_t20_locale_files_have_zero_missing_keys() -> None:
     assert payload["hard_coded_strings"] == 0
 
 
-def test_t20_human_language_review_pending() -> None:
-    assert REVIEW_SHEET.is_file()
-    with REVIEW_SHEET.open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle))
-    assert len(rows) >= 8
-    for row in rows:
-        assert row["verdict"].strip() == ""
-        assert row["reviewer name"].strip() == ""
-        assert row["date"].strip() == ""
+def test_t20_language_review_sheet() -> None:
+    assert REVIEW_SHEET.is_file(), "Run tools/generate_t20_review_sheet.py"
+    rows = t20_load_rows()
+    assert len(rows) >= 10
+    categories = {row["category"] for row in rows}
+    assert "screen" in categories
+    assert "notification" in categories
+    assert "report" in categories
+    fill = t20_fill_state(rows)
+    if fill.state == "blank":
+        return
+    if fill.state == "partial":
+        pytest.fail(f"T-20 language sheet partly filled: {fill.detail}")
+    acceptable = t20_acceptable_verdicts(rows)
+    pass_bar = t20_pass_threshold(len(rows))
+    assert acceptable >= pass_bar, (
+        f"T-20 human gate: {acceptable}/{len(rows)} rows marked acceptable; need ≥{pass_bar} (95%)."
+    )

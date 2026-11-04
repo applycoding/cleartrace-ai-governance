@@ -55,4 +55,4 @@ def test_csv_report_en() -> None:
         },
     )
     text = artefact.body.decode("utf-8")
-    assert "field" in text.splitlines()[0]
+    assert text.splitlines()[0] == "metric,value"

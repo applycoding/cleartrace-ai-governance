@@ -4,10 +4,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-NA_NOTE_EN = "Pass rates exclude N/A outcomes (lossy-for-state-only-consumers)."
-NA_NOTE_FR = (
-    "Les taux de réussite excluent les résultats N/A (perte pour les consommateurs d'état seul)."
-)
+from cleartrace_reports.user_strings import NA_NOTE_EN, NA_NOTE_FR
 
 
 def _env() -> Environment:

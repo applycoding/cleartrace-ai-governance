@@ -1,0 +1,1482 @@
+{
+  "non_conformities": [
+    {
+      "id": "NC-000",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 0,
+        "case_id": "NC-000"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-001",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 1,
+        "case_id": "NC-001"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-002",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 2,
+        "case_id": "NC-002"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-003",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 3,
+        "case_id": "NC-003"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-004",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 4,
+        "case_id": "NC-004"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-005",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 5,
+        "case_id": "NC-005"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-006",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 6,
+        "case_id": "NC-006"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-007",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 7,
+        "case_id": "NC-007"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-008",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 8,
+        "case_id": "NC-008"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-009",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 9,
+        "case_id": "NC-009"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-010",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 10,
+        "case_id": "NC-010"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-011",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 11,
+        "case_id": "NC-011"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-012",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 12,
+        "case_id": "NC-012"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-013",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 13,
+        "case_id": "NC-013"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-014",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 14,
+        "case_id": "NC-014"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-015",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 15,
+        "case_id": "NC-015"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-016",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 16,
+        "case_id": "NC-016"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-017",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 17,
+        "case_id": "NC-017"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-018",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 18,
+        "case_id": "NC-018"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-019",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 19,
+        "case_id": "NC-019"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-020",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 20,
+        "case_id": "NC-020"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-021",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 21,
+        "case_id": "NC-021"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-022",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 22,
+        "case_id": "NC-022"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-023",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 23,
+        "case_id": "NC-023"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-024",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 24,
+        "case_id": "NC-024"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-025",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 25,
+        "case_id": "NC-025"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-026",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 26,
+        "case_id": "NC-026"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-027",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 27,
+        "case_id": "NC-027"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-028",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 28,
+        "case_id": "NC-028"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-029",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 29,
+        "case_id": "NC-029"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-030",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 30,
+        "case_id": "NC-030"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-031",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 31,
+        "case_id": "NC-031"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-032",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 32,
+        "case_id": "NC-032"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-033",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 33,
+        "case_id": "NC-033"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-034",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 34,
+        "case_id": "NC-034"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-035",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 35,
+        "case_id": "NC-035"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-036",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 36,
+        "case_id": "NC-036"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-037",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 37,
+        "case_id": "NC-037"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-038",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 4,
+        "profile_variant": 38,
+        "case_id": "NC-038"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-039",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 39,
+        "case_id": "NC-039"
+      },
+      "evidence": [],
+      "target_state": "not_met",
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    }
+  ],
+  "conformant": [
+    {
+      "id": "CONF-000",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 2,
+        "profile_variant": 0,
+        "case_id": "CONF-000"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-10"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-001",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 1,
+        "case_id": "CONF-001"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-11"
+        },
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-11"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-002",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 5,
+        "profile_variant": 2,
+        "case_id": "CONF-002"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-12"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-003",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 3,
+        "case_id": "CONF-003"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-13"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-004",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-28",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 4,
+        "case_id": "CONF-004"
+      },
+      "evidence": [
+        {
+          "type": "adm_accountability_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-14"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-005",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-26",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 5,
+        "case_id": "CONF-005"
+      },
+      "evidence": [
+        {
+          "type": "design_by_default_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-15"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-006",
+      "pack_slug": "dsd",
+      "control_key": "CA-DSD-4-3-24",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 6,
+        "case_id": "CONF-006"
+      },
+      "evidence": [
+        {
+          "type": "canadian_facility_assessment",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-16"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-007",
+      "pack_slug": "ai-strategy",
+      "control_key": "CA-GC-AI-P4-REGISTER",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 7,
+        "case_id": "CONF-007"
+      },
+      "evidence": [
+        {
+          "type": "ai_register_entry",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-17"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-008",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 8,
+        "case_id": "CONF-008"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-18"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-009",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-02",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 9,
+        "case_id": "CONF-009"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-19"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-010",
+      "pack_slug": "nist-ai-rmf",
+      "control_key": "NIST-AI-RMF-GV-1.1",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 10,
+        "case_id": "CONF-010"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-011",
+      "pack_slug": "iso42001-ids",
+      "control_key": "ISO-42001-AI-POLICY",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 11,
+        "case_id": "CONF-011"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-012",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 2,
+        "profile_variant": 12,
+        "case_id": "CONF-012"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-22"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-013",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 13,
+        "case_id": "CONF-013"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-23"
+        },
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-23"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-014",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 5,
+        "profile_variant": 14,
+        "case_id": "CONF-014"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-24"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-015",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 15,
+        "case_id": "CONF-015"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-25"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-016",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-28",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 16,
+        "case_id": "CONF-016"
+      },
+      "evidence": [
+        {
+          "type": "adm_accountability_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-26"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-017",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-26",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 17,
+        "case_id": "CONF-017"
+      },
+      "evidence": [
+        {
+          "type": "design_by_default_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-27"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-018",
+      "pack_slug": "dsd",
+      "control_key": "CA-DSD-4-3-24",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 18,
+        "case_id": "CONF-018"
+      },
+      "evidence": [
+        {
+          "type": "canadian_facility_assessment",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-10"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-019",
+      "pack_slug": "ai-strategy",
+      "control_key": "CA-GC-AI-P4-REGISTER",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 19,
+        "case_id": "CONF-019"
+      },
+      "evidence": [
+        {
+          "type": "ai_register_entry",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-11"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-020",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 20,
+        "case_id": "CONF-020"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-12"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-021",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-02",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 21,
+        "case_id": "CONF-021"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-13"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-022",
+      "pack_slug": "nist-ai-rmf",
+      "control_key": "NIST-AI-RMF-GV-1.1",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 22,
+        "case_id": "CONF-022"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-023",
+      "pack_slug": "iso42001-ids",
+      "control_key": "ISO-42001-AI-POLICY",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 23,
+        "case_id": "CONF-023"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-024",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 2,
+        "profile_variant": 24,
+        "case_id": "CONF-024"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-16"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-025",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 25,
+        "case_id": "CONF-025"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-17"
+        },
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-17"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-026",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 5,
+        "profile_variant": 26,
+        "case_id": "CONF-026"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-18"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-027",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 27,
+        "case_id": "CONF-027"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-19"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-028",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-28",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 28,
+        "case_id": "CONF-028"
+      },
+      "evidence": [
+        {
+          "type": "adm_accountability_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-20"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-029",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-26",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 29,
+        "case_id": "CONF-029"
+      },
+      "evidence": [
+        {
+          "type": "design_by_default_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-21"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-030",
+      "pack_slug": "dsd",
+      "control_key": "CA-DSD-4-3-24",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 30,
+        "case_id": "CONF-030"
+      },
+      "evidence": [
+        {
+          "type": "canadian_facility_assessment",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-22"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-031",
+      "pack_slug": "ai-strategy",
+      "control_key": "CA-GC-AI-P4-REGISTER",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 31,
+        "case_id": "CONF-031"
+      },
+      "evidence": [
+        {
+          "type": "ai_register_entry",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-23"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-032",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 32,
+        "case_id": "CONF-032"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-24"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-033",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-02",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 33,
+        "case_id": "CONF-033"
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-25"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-034",
+      "pack_slug": "nist-ai-rmf",
+      "control_key": "NIST-AI-RMF-GV-1.1",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 34,
+        "case_id": "CONF-034"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-035",
+      "pack_slug": "iso42001-ids",
+      "control_key": "ISO-42001-AI-POLICY",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 35,
+        "case_id": "CONF-035"
+      },
+      "evidence": [],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-036",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-1",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 2,
+        "profile_variant": 36,
+        "case_id": "CONF-036"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-10"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-037",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3,
+        "profile_variant": 37,
+        "case_id": "CONF-037"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-11"
+        },
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-11"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-038",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 5,
+        "profile_variant": 38,
+        "case_id": "CONF-038"
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-12"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-039",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
+      "system": {
+        "planned_production_use": true,
+        "profile_variant": 39,
+        "case_id": "CONF-039"
+      },
+      "evidence": [
+        {
+          "type": "aia_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-13"
+        }
+      ],
+      "target_state": "met",
+      "expect": {
+        "outcome_state": "met"
+      }
+    }
+  ]
+}

@@ -6,6 +6,7 @@ from typing import Literal
 from uuid import UUID
 
 from cleartrace_notifier.models import NotificationRecord
+from cleartrace_notifier.user_strings import DIGEST_EMPTY, DIGEST_SUBJECT
 
 
 @dataclass(slots=True)
@@ -39,13 +40,13 @@ def build_digest(
     items_en = [n.alert.title_en for n in notifications]
     items_fr = [n.alert.title_fr for n in notifications]
     if language == "fr":
-        subject = f"Sommaire ClearTrace — {len(notifications)} alertes"
+        subject = DIGEST_SUBJECT.fr.format(count=len(notifications))
         lines = [f"- {title}" for title in items_fr]
-        body_text = "\n".join(lines) if lines else "Aucune alerte sur la période."
+        body_text = "\n".join(lines) if lines else DIGEST_EMPTY.fr
     else:
-        subject = f"ClearTrace digest — {len(notifications)} alerts"
+        subject = DIGEST_SUBJECT.en.format(count=len(notifications))
         lines = [f"- {title}" for title in items_en]
-        body_text = "\n".join(lines) if lines else "No alerts in the period."
+        body_text = "\n".join(lines) if lines else DIGEST_EMPTY.en
     body_html = "<br/>".join(lines) if lines else ""
     return DigestDocument(
         tenant_id=tenant_id,
