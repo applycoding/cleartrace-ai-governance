@@ -10,8 +10,8 @@ from cleartrace_notifier.service import NotifierService
 from cleartrace_register.api.router import mount_register_routes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import FileResponse
 
 from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
 from cleartrace_core_api.auth.middleware import AuthContextMiddleware, CedarAuthMiddleware
@@ -70,14 +70,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         )
 
     @app.get("/api/v1/docs", include_in_schema=False)
-    async def swagger_ui() -> object:
-        return get_swagger_ui_html(
-            openapi_url=app.openapi_url or "/api/v1/openapi.json",
-            title=f"{app.title} – API docs",
-            swagger_js_url="/api/v1/swagger-ui/swagger-ui-bundle.js",
-            swagger_css_url="/api/v1/swagger-ui/swagger-ui.css",
-            swagger_favicon_url="/api/v1/swagger-ui/favicon-32x32.png",
-        )
+    async def swagger_ui() -> FileResponse:
+        # Vendored page: same-origin assets and an external initializer, no inline script.
+        return FileResponse(static_root / "swagger-ui" / "index.html", media_type="text/html")
+
     app.state.settings = cfg
     app.state.cedar_authorizer = CedarAuthorizer(cfg.cedar_policy_path)
 

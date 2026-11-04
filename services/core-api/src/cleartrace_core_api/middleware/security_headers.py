@@ -6,12 +6,12 @@ from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoin
 from starlette.requests import Request
 from starlette.responses import Response
 
-# The API serves JSON only. Swagger UI at /api/v1/docs loads its vendored assets
-# from /api/v1/swagger-ui (same origin) and starts from one inline script, so that
-# page gets a CSP allowing same-origin assets plus that inline script, and nothing else.
+# The API serves JSON only. Swagger UI at /api/v1/docs loads its vendored assets and
+# its initializer from /api/v1/swagger-ui (same origin), so that page gets a CSP that
+# allows same-origin scripts, styles and images only: no inline script, no CDN.
 _API_CSP = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
 _DOCS_CSP = (
-    "default-src 'none'; script-src 'self' 'unsafe-inline'; "
+    "default-src 'none'; script-src 'self'; "
     "style-src 'self'; img-src 'self' data:; "
     "connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
 )

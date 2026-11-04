@@ -53,19 +53,17 @@ def test_missing_or_skipped_cases_are_not_pass(tmp_path: Path) -> None:
     assert _status(tmp_path, "T-01", mixed) == "partial"
 
 
-def test_t13_requires_both_golden_and_shipped_modules(tmp_path: Path) -> None:
+def test_t13_green_run_is_still_partial(tmp_path: Path) -> None:
     parsed = trl5_report._parse_junit(
         _junit(
             tmp_path,
-            [
-                ("test_t13_five_states", "a", "pass"),
-                ("test_t13_shipped_policies", "b", "pass"),
-            ],
+            [("test_t13_five_states", "a", "pass")],
         )
     )
     outcome = trl5_report._outcome_for_test("T-13", parsed)
     assert outcome is not None and outcome.failed == 0
-    # Golden set is template-generated, so a green T-13 run is still partial.
+    # 250 cases but far fewer distinct (control, input) pairs, and expectations are
+    # engine output checked against a hand-chosen target, so a green run is partial.
     assert trl5_report.status_for("T-13", outcome) == "partial"
 
 

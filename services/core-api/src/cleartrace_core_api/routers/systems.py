@@ -5,11 +5,16 @@ from uuid import UUID
 
 from cleartrace_db.session import tenant_transaction
 from fastapi import APIRouter, Header, HTTPException, Query, Request, Response
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StringConstraints
 from uuid6 import uuid7
 
 from cleartrace_core_api.errors import problem_response
 from cleartrace_core_api.pagination import InvalidCursorError, decode_cursor, encode_cursor
+
+IssuedCursor = Annotated[
+    str,
+    StringConstraints(pattern=r"^[A-Za-z0-9_-]+=*$", min_length=4, max_length=24),
+]
 
 router = APIRouter(prefix="/systems", tags=["systems"])
 
@@ -45,7 +50,7 @@ class FindingListItem(BaseModel):
 async def list_systems(
     request: Request,
     response: Response,
-    cursor: Annotated[str | None, Query()] = None,
+    cursor: Annotated[IssuedCursor | None, Query()] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 20,
     accept_language: Annotated[str | None, Header(alias="Accept-Language")] = None,
 ) -> SystemPage:

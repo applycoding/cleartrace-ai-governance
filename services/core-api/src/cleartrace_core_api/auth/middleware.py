@@ -129,6 +129,14 @@ async def decode_bearer_token(
     )
 
 
+# Vendored Swagger UI files served from /api/v1/swagger-ui for the public docs page.
+# Exact paths only, so nothing else under that mount bypasses authentication.
+DOCS_ASSET_PATHS = frozenset(
+    f"/api/v1/swagger-ui/{name}"
+    for name in ("swagger-ui.css", "swagger-ui-bundle.js", "swagger-initializer.js", "favicon-32x32.png")
+)
+
+
 class AuthContextMiddleware(BaseHTTPMiddleware):
     """Validate OIDC bearer tokens and attach tenant context."""
 
@@ -140,7 +148,7 @@ class AuthContextMiddleware(BaseHTTPMiddleware):
             "/api/v1/docs",
             "/api/v1/capabilities",
         }
-        if request.url.path in public_paths:
+        if request.url.path in public_paths or request.url.path in DOCS_ASSET_PATHS:
             return await call_next(request)
         auth = request.headers.get("Authorization", "")
         if not auth.startswith("Bearer "):
@@ -189,7 +197,7 @@ class CedarAuthMiddleware(BaseHTTPMiddleware):
             "/api/v1/docs",
             "/api/v1/capabilities",
         }
-        if request.url.path in public_paths:
+        if request.url.path in public_paths or request.url.path in DOCS_ASSET_PATHS:
             return await call_next(request)
         auth: AuthContext | None = getattr(request.state, "auth", None)
         if auth is None:

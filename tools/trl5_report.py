@@ -55,11 +55,11 @@ PARTIAL_NOTES: dict[str, str] = {
     "T-05": "Restore target is a second Postgres container on the same CI runner, not a clean node.",
     "T-08": "Automated 40/40 non-conformities pass; the 140 explanation pairs await two human reviewers (xfail by design).",
     "T-11": "Reported as an uncalibrated index: the held-out labels are derived from the corpus, not adjudicated by independent EN/FR reviewers (section 6), and the held-out cases are German-source only, so 'calibrated' is never claimed.",
-    "T-13": "250 golden cases with 50 per state pass, but they come from 6 scenario templates through a test-only Rego pack. The shipped-policy set is 10 distinct inputs x 3 with engine-generated expectations; it now includes a partially_met case from the DADM 6.3.8 / Appendix C GBA+ control. Rule-only replay of 10 snapshots passes.",
-    "T-18": "All seeds are synthetic and hand-written (tools/generate_t18_seeds.py); no public dataset (UCI Adult, German Credit, MASSIVE, JailbreakBench) is used for the seeded degradations.",
+    "T-13": "250 cases (50 per state) on the shipped packs pass, but they hold 67 behaviourally distinct inputs (not_applicable 13, met 13, partially_met 6, not_met 8, unable_to_determine 27); partially_met comes from one control (DADM 6.3.8 GBA+), and 59 cases only add unrelated evidence. Expected states are engine output checked against the selected state, not derived independently from the clause text. Rule-only replay of 10 snapshots passes.",
+    "T-18": "50/50 detected and 0/50 false alarms per dimension, but the seeds are not 50 distinct failures: accuracy 8 and fairness 2 distinct failure inputs (real UCI German Credit class labels and UCI Adult sex column, predictions seeded), safety 2 (hand-written; no public harm or jailbreak set vendored); PII and EN/FR 50 each (hand-written synthetic).",
     "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
     "T-20": "Automated i18n checks only; human language review sheet intentionally blank.",
-    "T-28": "Repository SBOM and licence gate cover code and Python dependencies; container images are listed by reference only, so their OS packages and licences are not inventoried or gated.",
+    "T-28": "Repository SBOM and licence gate cover source paths and container references only; Python dependency licences are not recorded, and shipped runtime dependencies include LGPL (psycopg, psycopg-pool, paramiko, svglib) and MPL-2.0 (orjson, certifi, tqdm) packages. Syft image SBOMs list OS packages of the third-party images, which carry GPL/LGPL/MPL-licensed packages; these are reported in the image-sbom artifact, not gated, and no approved exception file exists. The ClearTrace core-api image is not built or published, so it is not scanned.",
 }
 
 NOT_COVERED_NOTES: dict[str, str] = {
@@ -73,10 +73,6 @@ MULTI_MODULE: dict[str, list[str]] = {
     "T-06": [
         "tests/trl5/test_t06_audit_slice.py",
         "tests/trl5/test_t06_auth_matrix.py",
-    ],
-    "T-13": [
-        "tests/trl5/test_t13_five_states.py",
-        "tests/trl5/test_t13_shipped_policies.py",
     ],
 }
 

@@ -64,9 +64,9 @@ def test_invalid_cursor_is_rejected() -> None:
             decode_cursor(bad)
 
 
-def test_bad_cursor_is_a_400_not_a_500(client: TestClient) -> None:
+def test_bad_cursor_is_a_422_not_a_500(client: TestClient) -> None:
     resp = client.get("/api/v1/systems?cursor=%%%", headers=_h())
-    assert resp.status_code == 400
+    assert resp.status_code == 422
     assert resp.headers["content-type"].startswith("application/problem+json")
 
 
@@ -252,3 +252,24 @@ def test_imported_register_systems_are_tenant_scoped(client: TestClient) -> None
     path = f"/api/v1/register/systems/{system_id}"
     assert client.get(path, headers=_h(TENANT_A)).status_code == 200
     assert client.get(path, headers=_h(TENANT_B)).status_code == 404
+
+
+def test_docs_page_runs_without_inline_script_or_cdn(client: TestClient) -> None:
+    import re
+
+    resp = client.get("/api/v1/docs")
+    assert resp.status_code == 200
+    csp = resp.headers["Content-Security-Policy"]
+    assert "'unsafe-inline'" not in csp
+    assert "http" not in csp
+    assert "script-src 'self';" in csp
+    html = resp.text
+    assert "http://" not in html and "https://" not in html
+    assert not re.search(r"<script(?![^>]*\bsrc=)[^>]*>", html), "inline script found"
+    for src in re.findall(r'(?:src|href)="([^"]+)"', html):
+        asset = client.get(src)
+        assert asset.status_code == 200, src
+
+
+def test_only_listed_docs_assets_are_public(client: TestClient) -> None:
+    assert client.get("/api/v1/swagger-ui/NOTICE").status_code == 401

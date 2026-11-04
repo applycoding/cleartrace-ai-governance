@@ -75,8 +75,15 @@ def annotate_list_systems_cursor(schema: dict[str, Any]) -> None:
         if isinstance(param, dict) and param.get("name") == "cursor" and param.get("in") == "query":
             param.setdefault("schema", {})
             if isinstance(param["schema"], dict):
-                param["schema"]["type"] = "string"
-                param["schema"]["pattern"] = CURSOR_PATTERN
+                param["schema"] = {
+                    "type": "string",
+                    "pattern": CURSOR_PATTERN,
+                    "minLength": 4,
+                    "maxLength": 24,
+                }
+                param["description"] = (
+                    "Opaque pagination cursor previously issued in next_cursor (URL-safe base64)."
+                )
     get_op.setdefault("responses", {})["400"] = {
         "description": "Invalid pagination cursor",
         "content": {
@@ -147,13 +154,15 @@ def annotate_evidence_multipart(schema: dict[str, Any]) -> None:
     if not isinstance(multipart, dict):
         return
     props = multipart.setdefault("properties", {})
+    props.setdefault("file", {"type": "string", "format": "binary"})
     props.setdefault(
         "artefact_class",
         {"type": "string", "pattern": NO_NUL_PATTERN, "minLength": 1},
     )
     required = multipart.setdefault("required", [])
-    if "artefact_class" not in required:
-        required.append("artefact_class")
+    for field in ("file", "artefact_class"):
+        if field not in required:
+            required.append(field)
 
 
 def _all_control_keys() -> list[str]:
@@ -182,14 +191,46 @@ def annotate_assessment_control_keys(schema: dict[str, Any]) -> None:
 
 
 def annotate_assignment_exactly_one(schema: dict[str, Any]) -> None:
+    """Document the assignment body as exactly one of the two closed shapes."""
     components = schema.setdefault("components", {}).setdefault("schemas", {})
-    body = components.get("AssignmentCreate")
-    if not isinstance(body, dict):
+    if not isinstance(components.get("AssignmentCreate"), dict):
         return
-    body["oneOf"] = [
-        {"required": ["framework_version_id", "ai_system_id"]},
-        {"required": ["framework_version_id", "group_id"]},
-    ]
+    overrides = {"type": "object", "additionalProperties": True}
+    uuid = {"type": "string", "format": "uuid"}
+    for name, target in (("FrameworkAssignmentBySystem", "ai_system_id"), ("FrameworkAssignmentByGroup", "group_id")):
+        components[name] = {
+            "type": "object",
+            "required": ["framework_version_id", target],
+            "properties": {"framework_version_id": uuid, target: uuid, "criteria_overrides": overrides},
+            "additionalProperties": False,
+        }
+    post = schema.get("paths", {}).get("/api/v1/frameworks/assignments", {}).get("post")
+    if not isinstance(post, dict):
+        return
+    body = post.get("requestBody", {}).get("content", {}).get("application/json")
+    if isinstance(body, dict):
+        body["schema"] = {
+            "oneOf": [
+                {"$ref": "#/components/schemas/FrameworkAssignmentBySystem"},
+                {"$ref": "#/components/schemas/FrameworkAssignmentByGroup"},
+            ]
+        }
+
+
+WEBHOOK_URL_PATTERN = (
+    r"^https://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+"
+    r"[A-Za-z]{2,63}(:[0-9]{1,5})?(?:/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$"
+)
+
+
+def annotate_webhook_url(schema: dict[str, Any]) -> None:
+    """Express the notifier's DNS-host rule (an IP literal is refused) in the schema."""
+    components = schema.get("components", {}).get("schemas", {})
+    for name, body in components.items():
+        if name.endswith("WebhookCreate") and isinstance(body, dict):
+            url = body.get("properties", {}).get("url")
+            if isinstance(url, dict):
+                url["pattern"] = WEBHOOK_URL_PATTERN
 
 
 def apply_contract_annotations(schema: dict[str, Any]) -> None:
@@ -200,3 +241,4 @@ def apply_contract_annotations(schema: dict[str, Any]) -> None:
     annotate_assessment_control_keys(schema)
     annotate_assignment_exactly_one(schema)
     annotate_evidence_multipart(schema)
+    annotate_webhook_url(schema)

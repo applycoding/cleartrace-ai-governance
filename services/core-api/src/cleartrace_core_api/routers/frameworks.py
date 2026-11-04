@@ -6,7 +6,7 @@ from uuid import UUID
 
 from cleartrace_engine.framework_studio import list_packs, load_pack, pack_to_oscal_catalog
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from cleartrace_core_api.framework.lifecycle import (
     AssignmentRecord,
@@ -28,6 +28,10 @@ class FrameworkPackSummary(BaseModel):
 
 
 class AssignmentCreate(BaseModel):
+    """Exactly one of ai_system_id or group_id; unknown keys are refused (closed shapes)."""
+
+    model_config = ConfigDict(extra="forbid")
+
     framework_version_id: UUID
     ai_system_id: UUID | None = None
     group_id: UUID | None = None
@@ -66,7 +70,8 @@ def export_pack_oscal(slug: str) -> dict[str, Any]:
 def create_assignment(body: AssignmentCreate) -> dict[str, str]:
     import uuid
 
-    if bool(body.ai_system_id) == bool(body.group_id):
+    targets = {"ai_system_id", "group_id"} & body.model_fields_set
+    if len(targets) != 1 or bool(body.ai_system_id) == bool(body.group_id):
         raise HTTPException(
             status_code=400,
             detail="Provide exactly one of ai_system_id or group_id",

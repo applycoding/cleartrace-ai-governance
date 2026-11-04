@@ -11,7 +11,6 @@ PACK_SLUG_TO_OPA: dict[str, str] = {
     "guiding-principles": "guiding_principles",
     "nist-ai-rmf": "nist_ai_rmf",
     "iso42001-ids": "iso42001_ids",
-    "golden": "golden",
 }
 
 

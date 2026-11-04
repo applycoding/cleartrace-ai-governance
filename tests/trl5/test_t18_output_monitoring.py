@@ -1,66 +1,78 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import pytest
 from cleartrace_risk.output_monitor import OutputMonitor
 
+from tests.trl5.t18_seeds import (
+    EXPECTED_LABELS,
+    accuracy_clean,
+    accuracy_failure,
+    enfr_clean,
+    enfr_failure,
+    fairness_clean,
+    fairness_failure,
+    pii_clean,
+    pii_failure,
+    safety_clean,
+    safety_failure,
+)
+
 pytestmark = pytest.mark.trl5
 
-ROOT = Path(__file__).resolve().parents[2]
-SEEDS = json.loads((ROOT / "tests" / "trl5" / "fixtures" / "t18_output_seeds.json").read_text())
 DIMENSIONS = OutputMonitor.DIMENSIONS
-# All seeds are hand-written; none comes from a public dataset.
-SYNTHETIC_LABEL = "synthetic (hand-written, tools/generate_t18_seeds.py)"
 
 
-def _failure_case(dimension: str, seed: dict) -> bool:
+def _seed(dimension: str, seed: int) -> tuple[bool, bool, str, str, str]:
+    """Return (failure detected, clean flagged, failure label, clean label, failure input)."""
     monitor = OutputMonitor()
     if dimension == "accuracy":
-        baseline = float(seed["baseline"])
-        labels = list(seed["labels"])
-        bad = list(seed["predictions"])
-        return monitor.check_accuracy(baseline, bad, labels).detected
-    if dimension == "fairness_gap":
-        return monitor.check_fairness_gap(list(seed["preds"]), list(seed["sensitive"])).detected
-    if dimension == "pii_leak":
-        return monitor.check_pii_leak(list(seed["texts"])).detected
-    if dimension == "en_fr":
-        return monitor.check_en_fr(list(seed["en"]), list(seed["fr"])).detected
-    if dimension == "safety":
-        return monitor.check_safety(list(seed["flags"])).detected
-    raise AssertionError(f"unknown dimension {dimension}")
-
-
-def _clean_case(dimension: str, seed: dict) -> bool:
-    monitor = OutputMonitor()
-    if dimension == "accuracy":
-        labels = list(seed["labels"][:4])
-        preds = labels.copy()
-        return monitor.check_accuracy(0.9, preds, labels).detected
-    if dimension == "fairness_gap":
-        preds = [1, 0, 1, 0]
-        sensitive = ["A", "A", "B", "B"]
-        return monitor.check_fairness_gap(preds, sensitive).detected
-    if dimension == "pii_leak":
-        return monitor.check_pii_leak(["no sensitive content"] * 4).detected
-    if dimension == "en_fr":
-        answers = ["same", "answer"]
-        return monitor.check_en_fr(answers, answers).detected
-    if dimension == "safety":
-        return monitor.check_safety([False, False, False]).detected
-    raise AssertionError(f"unknown dimension {dimension}")
+        preds, labels, baseline, meta = accuracy_failure(seed)
+        cp, cl, cb, clean_meta = accuracy_clean(seed)
+        hit = monitor.check_accuracy(baseline, preds, labels).detected
+        alarm = monitor.check_accuracy(cb, cp, cl).detected
+        key = json.dumps([preds, labels, baseline])
+    elif dimension == "fairness_gap":
+        preds, sensitive, meta = fairness_failure(seed)
+        cp, cs, clean_meta = fairness_clean(seed)
+        hit = monitor.check_fairness_gap(preds, sensitive).detected
+        alarm = monitor.check_fairness_gap(cp, cs).detected
+        key = json.dumps([preds, sensitive])
+    elif dimension == "pii_leak":
+        texts, meta = pii_failure(seed)
+        clean_texts, clean_meta = pii_clean(seed)
+        hit = monitor.check_pii_leak(texts).detected
+        alarm = monitor.check_pii_leak(clean_texts).detected
+        key = json.dumps(texts)
+    elif dimension == "en_fr":
+        en, fr, meta = enfr_failure(seed)
+        ce, cf, clean_meta = enfr_clean(seed)
+        hit = monitor.check_en_fr(en, fr).detected
+        alarm = monitor.check_en_fr(ce, cf).detected
+        key = json.dumps([en, fr])
+    elif dimension == "safety":
+        flags, meta = safety_failure(seed)
+        clean_flags, clean_meta = safety_clean(seed)
+        hit = monitor.check_safety(flags).detected
+        alarm = monitor.check_safety(clean_flags).detected
+        key = json.dumps(flags)
+    else:
+        raise AssertionError(f"unknown dimension {dimension}")
+    return hit, alarm, meta.source_label, clean_meta.source_label, key
 
 
 @pytest.mark.parametrize("dimension", DIMENSIONS)
-def test_t18_output_monitoring(dimension: str) -> None:
-    failure_seeds = SEEDS[dimension]["failure"]
-    clean_seeds = SEEDS[dimension]["clean"]
-    assert len(failure_seeds) >= 50
-    labels = {seed.get("dataset") for seed in failure_seeds + clean_seeds}
-    assert labels == {SYNTHETIC_LABEL}, f"{dimension} seeds carry unexpected origin labels: {labels}"
-    detected = sum(1 for seed in failure_seeds[:50] if _failure_case(dimension, seed))
-    false_alarms = sum(1 for seed in clean_seeds[:50] if _clean_case(dimension, seed))
+def test_t18_output_monitoring(dimension: str, record_property: pytest.RecordProperty) -> None:
+    results = [_seed(dimension, seed) for seed in range(50)]
+    labels = {r[2] for r in results} | {r[3] for r in results}
+    assert labels == {EXPECTED_LABELS[dimension]}, f"{dimension} seeds carry wrong source labels: {labels}"
+    detected = sum(1 for r in results if r[0])
+    false_alarms = sum(1 for r in results if r[1])
+    distinct = len({r[4] for r in results})
+    record_property("t18_detected", f"{dimension}={detected}/50")
+    record_property("t18_false_alarms", f"{dimension}={false_alarms}/50")
+    record_property("t18_distinct_failure_inputs", f"{dimension}={distinct}")
+    record_property("t18_source", f"{dimension}={EXPECTED_LABELS[dimension]}")
     assert detected >= 48, f"{dimension}: {detected}/50 failures detected"
     assert false_alarms <= 2, f"{dimension}: {false_alarms}/50 false alarms"
