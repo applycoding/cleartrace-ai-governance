@@ -1,1749 +1,5126 @@
 [
   {
-    "id": "na-0",
+    "id": "no-dadm-000",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 2,
+      "case_variant": 0
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-1",
+    "id": "no-dadm-001",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-2",
+    "id": "no-dadm-002",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 5,
+      "case_variant": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-3",
+    "id": "no-aia-003",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 3,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-4",
+    "id": "no-psd-004",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 4,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-5",
+    "id": "no-psd-005",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 5,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-6",
+    "id": "no-dsd-006",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 6,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-7",
+    "id": "no-ai-strategy-007",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 7,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-8",
+    "id": "no-guiding-principles-008",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 8,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-9",
+    "id": "no-guiding-principles-009",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "citation_en": "Be transparent about when and how AI supports decisions.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 9,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-10",
+    "id": "no-dadm-010",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 10
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-11",
+    "id": "no-dadm-011",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 4,
+      "case_variant": 11
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-12",
+    "id": "no-dadm-012",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 12
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-13",
+    "id": "no-aia-013",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 13,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-14",
+    "id": "no-psd-014",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 14,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-15",
+    "id": "no-psd-015",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 15,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-16",
+    "id": "no-dsd-016",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 16,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-17",
+    "id": "no-ai-strategy-017",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 17,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-18",
+    "id": "no-guiding-principles-018",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 18,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-19",
+    "id": "no-guiding-principles-019",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "citation_en": "Be transparent about when and how AI supports decisions.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 19,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-20",
+    "id": "no-dadm-020",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 4,
+      "case_variant": 20
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-21",
+    "id": "no-dadm-021",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 2,
+      "case_variant": 21
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-22",
+    "id": "no-dadm-022",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 4,
+      "case_variant": 22
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-23",
+    "id": "no-aia-023",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 23,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-24",
+    "id": "no-psd-024",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 24,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-25",
+    "id": "no-psd-025",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 25,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-26",
+    "id": "no-dsd-026",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 26,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-27",
+    "id": "no-ai-strategy-027",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 27,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-28",
+    "id": "no-guiding-principles-028",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 28,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-29",
+    "id": "no-guiding-principles-029",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "citation_en": "Be transparent about when and how AI supports decisions.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 29,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-30",
+    "id": "no-dadm-030",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 2,
+      "case_variant": 30
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-31",
+    "id": "no-dadm-031",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 31
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-32",
+    "id": "no-dadm-032",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 5,
+      "case_variant": 32
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-33",
+    "id": "no-aia-033",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 33,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-34",
+    "id": "no-psd-034",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 34,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-35",
+    "id": "no-psd-035",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 35,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-36",
+    "id": "no-dsd-036",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 36,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-37",
+    "id": "no-ai-strategy-037",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 37,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-38",
+    "id": "no-guiding-principles-038",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 38,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-39",
+    "id": "no-guiding-principles-039",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "citation_en": "Be transparent about when and how AI supports decisions.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 39,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-40",
+    "id": "no-dadm-040",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 40
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-41",
+    "id": "no-dadm-041",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 4,
+      "case_variant": 41
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-42",
+    "id": "no-dadm-042",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 3,
+      "case_variant": 42
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-43",
+    "id": "no-aia-043",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 43,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-44",
+    "id": "no-psd-044",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 44,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-45",
+    "id": "no-psd-045",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 45,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-46",
+    "id": "no-dsd-046",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 46,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-47",
+    "id": "no-ai-strategy-047",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 47,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-48",
+    "id": "no-guiding-principles-048",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 48,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "na-49",
+    "id": "no-guiding-principles-049",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "citation_en": "Be transparent about when and how AI supports decisions.",
+    "system": {
+      "planned_production_use": false,
+      "case_variant": 49,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
     }
   },
   {
-    "id": "met-0",
+    "id": "me-dadm-000",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 0
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-1",
+    "id": "me-dadm-001",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 1
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      },
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-2",
+    "id": "me-dadm-002",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 2
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-12"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-3",
+    "id": "me-aia-003",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 3,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-13"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-4",
+    "id": "me-psd-004",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 4,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-5",
+    "id": "me-psd-005",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 5,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-6",
+    "id": "me-dsd-006",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 6,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "canadian_facility_assessment",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-16"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-7",
+    "id": "me-ai-strategy-007",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 7,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "ai_register_entry",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-17"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-8",
+    "id": "me-guiding-principles-008",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 8,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-9",
+    "id": "me-nist-ai-rmf-009",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "citation_en": "Governance mapping placeholder for GOVERN function.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 9,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-10",
+    "id": "me-iso42001-ids-010",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-AI-POLICY",
+    "clause_ref": "Clause 5",
+    "citation_en": "Document an AI policy commitment (customer licensed text).",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 10,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-11",
+    "id": "me-dadm-011",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 11
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-12",
+    "id": "me-dadm-012",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 12
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      },
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-13",
+    "id": "me-dadm-013",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 13
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-23"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-14",
+    "id": "me-aia-014",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 14,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-24"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-15",
+    "id": "me-psd-015",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 15,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-25"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-16",
+    "id": "me-psd-016",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 16,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-26"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-17",
+    "id": "me-dsd-017",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 17,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "canadian_facility_assessment",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-27"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-18",
+    "id": "me-ai-strategy-018",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 18,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "ai_register_entry",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-19",
+    "id": "me-guiding-principles-019",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 19,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-20",
+    "id": "me-nist-ai-rmf-020",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "citation_en": "Governance mapping placeholder for GOVERN function.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 20,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-21",
+    "id": "me-iso42001-ids-021",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-AI-POLICY",
+    "clause_ref": "Clause 5",
+    "citation_en": "Document an AI policy commitment (customer licensed text).",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 21,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-22",
+    "id": "me-dadm-022",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 22
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-23",
+    "id": "me-dadm-023",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 23
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      },
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-24",
+    "id": "me-dadm-024",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 24
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-16"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-25",
+    "id": "me-aia-025",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 25,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-17"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-26",
+    "id": "me-psd-026",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 26,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-27",
+    "id": "me-psd-027",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 27,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-28",
+    "id": "me-dsd-028",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 28,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "canadian_facility_assessment",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-20"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-29",
+    "id": "me-ai-strategy-029",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 29,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "ai_register_entry",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-30",
+    "id": "me-guiding-principles-030",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 30,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-31",
+    "id": "me-nist-ai-rmf-031",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "citation_en": "Governance mapping placeholder for GOVERN function.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 31,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-32",
+    "id": "me-iso42001-ids-032",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-AI-POLICY",
+    "clause_ref": "Clause 5",
+    "citation_en": "Document an AI policy commitment (customer licensed text).",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 32,
+      "impact_level": 3
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-33",
+    "id": "me-dadm-033",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 33
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-25"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-34",
+    "id": "me-dadm-034",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 34
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-26"
+      },
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-26"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-35",
+    "id": "me-dadm-035",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 35
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-27"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-36",
+    "id": "me-aia-036",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 36,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-37",
+    "id": "me-psd-037",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 37,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-38",
+    "id": "me-psd-038",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 38,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-12"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-39",
+    "id": "me-dsd-039",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "citation_en": "Identify and assess Canadian facilities as a principal delivery option.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 39,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "canadian_facility_assessment",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-13"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-40",
+    "id": "me-ai-strategy-040",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "citation_en": "Maintain AI Register transparency aligned with strategy engagement goals.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 40,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "ai_register_entry",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-41",
+    "id": "me-guiding-principles-041",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-01",
+    "clause_ref": "Principle 1",
+    "citation_en": "Ensure AI use is guided, safe, and respects rights.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 41,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-42",
+    "id": "me-nist-ai-rmf-042",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "citation_en": "Governance mapping placeholder for GOVERN function.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 42,
+      "impact_level": 1
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-43",
+    "id": "me-iso42001-ids-043",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-AI-POLICY",
+    "clause_ref": "Clause 5",
+    "citation_en": "Document an AI policy commitment (customer licensed text).",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 43,
+      "impact_level": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-44",
+    "id": "me-dadm-044",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 44
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-45",
+    "id": "me-dadm-045",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 45
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      },
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-46",
+    "id": "me-dadm-046",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 46
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-20"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-47",
+    "id": "me-aia-047",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 47,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-48",
+    "id": "me-psd-048",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 48,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "met-49",
+    "id": "me-psd-049",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 49,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-23"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
     }
   },
   {
-    "id": "pm-0",
+    "id": "pa-dadm-000",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 0
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-1",
+    "id": "pa-dadm-001",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 1
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-2",
+    "id": "pa-dadm-002",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 2
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-12"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-3",
+    "id": "pa-dadm-003",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 3
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-13"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-4",
+    "id": "pa-dadm-004",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 4
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-5",
+    "id": "pa-dadm-005",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 5
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-6",
+    "id": "pa-dadm-006",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 6
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-16"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-7",
+    "id": "pa-dadm-007",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 7
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-17"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-8",
+    "id": "pa-dadm-008",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 8
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-9",
+    "id": "pa-dadm-009",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 9
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-10",
+    "id": "pa-dadm-010",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 10
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-20"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-11",
+    "id": "pa-dadm-011",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 11
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-12",
+    "id": "pa-dadm-012",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 12
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-13",
+    "id": "pa-dadm-013",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 13
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-23"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-14",
+    "id": "pa-dadm-014",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 14
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-24"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-15",
+    "id": "pa-dadm-015",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 15
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-25"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-16",
+    "id": "pa-dadm-016",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 16
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-26"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-17",
+    "id": "pa-dadm-017",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 17
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-27"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-18",
+    "id": "pa-dadm-018",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 18
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-19",
+    "id": "pa-dadm-019",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 19
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-20",
+    "id": "pa-dadm-020",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 20
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-12"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-21",
+    "id": "pa-dadm-021",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 21
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-13"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-22",
+    "id": "pa-dadm-022",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 22
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-23",
+    "id": "pa-dadm-023",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 23
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-24",
+    "id": "pa-dadm-024",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 24
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-16"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-25",
+    "id": "pa-dadm-025",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 25
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-17"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-26",
+    "id": "pa-dadm-026",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 26
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-27",
+    "id": "pa-dadm-027",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 27
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-28",
+    "id": "pa-dadm-028",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 28
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-20"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-29",
+    "id": "pa-dadm-029",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 29
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-30",
+    "id": "pa-dadm-030",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 30
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-31",
+    "id": "pa-dadm-031",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 31
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-23"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-32",
+    "id": "pa-dadm-032",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 32
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-24"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-33",
+    "id": "pa-dadm-033",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 33
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-25"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-34",
+    "id": "pa-dadm-034",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 34
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-26"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-35",
+    "id": "pa-dadm-035",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 35
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-27"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-36",
+    "id": "pa-dadm-036",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 36
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-10"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-37",
+    "id": "pa-dadm-037",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 37
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-11"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-38",
+    "id": "pa-dadm-038",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 38
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-12"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-39",
+    "id": "pa-dadm-039",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 39
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-13"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-40",
+    "id": "pa-dadm-040",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 40
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-14"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-41",
+    "id": "pa-dadm-041",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 41
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-15"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-42",
+    "id": "pa-dadm-042",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 42
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-16"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-43",
+    "id": "pa-dadm-043",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 43
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-17"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-44",
+    "id": "pa-dadm-044",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 44
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-18"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-45",
+    "id": "pa-dadm-045",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 45
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-19"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-46",
+    "id": "pa-dadm-046",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 46
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-20"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-47",
+    "id": "pa-dadm-047",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 5,
+      "case_variant": 47
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-21"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-48",
+    "id": "pa-dadm-048",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2,
+      "case_variant": 48
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-22"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "pm-49",
+    "id": "pa-dadm-049",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 49
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-23"
+      }
+    ],
     "expect": {
       "outcome_state": "partially_met",
       "reason_code": "MIXED_OBJECTIVE_RESULTS"
     }
   },
   {
-    "id": "nm-fail-0",
+    "id": "no-dadm-000",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 0
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-001",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-002",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 2
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-1",
+    "id": "no-dadm-003",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 3
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-004",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 4
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-005",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 5
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-2",
+    "id": "no-dadm-006",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 6
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-007",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 7
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-008",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 8
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-3",
+    "id": "no-dadm-009",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 9
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-010",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 10
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-011",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 11
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-4",
+    "id": "no-dadm-012",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 12
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-013",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 13
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-014",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 14
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-5",
+    "id": "no-dadm-015",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 15
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-016",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 16
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-017",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 17
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-6",
+    "id": "no-dadm-018",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 18
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-019",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 19
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-020",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 20
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-7",
+    "id": "no-dadm-021",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 21
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-022",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 22
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-023",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 23
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-8",
+    "id": "no-dadm-024",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 24
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-025",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 25
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-026",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 26
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-9",
+    "id": "no-dadm-027",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 27
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-028",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 28
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-029",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 29
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-10",
+    "id": "no-dadm-030",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 30
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-031",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 31
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-032",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 32
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-11",
+    "id": "no-dadm-033",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 33
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-034",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 34
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-035",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 35
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-12",
+    "id": "no-dadm-036",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 36
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-037",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 37
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-038",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 38
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-13",
+    "id": "no-dadm-039",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 39
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-040",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 40
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-041",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 41
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-14",
+    "id": "no-dadm-042",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 42
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-043",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 43
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-044",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 44
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-15",
+    "id": "no-dadm-045",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 45
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-046",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 46
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "no-dadm-047",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7",
+    "citation_en": "Obtain peer review appropriate to the impact level.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 4,
+      "case_variant": 47
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
-    "id": "nm-fail-16",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
-    "id": "nm-fail-17",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
-    "id": "nm-fail-18",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
-    "id": "nm-fail-19",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-0",
+    "id": "no-dadm-048",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3",
+    "citation_en": "Level III requires qualified expert peer review of the system and AIA.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 48
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
-    "id": "nm-critical-missing-1",
+    "id": "no-dadm-049",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
+    "citation_en": "Complete an Algorithmic Impact Assessment before production.",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3,
+      "case_variant": 49
+    },
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
-    "id": "nm-critical-missing-2",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-3",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-4",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-5",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-6",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-7",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-8",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-9",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-10",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-11",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-12",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-13",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-14",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-15",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-16",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-17",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-18",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-19",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-20",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-21",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-22",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-23",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-24",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-25",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-26",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-27",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-28",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "nm-critical-missing-29",
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "utd-missing-0",
+    "id": "un-aia-000",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 0,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-1",
+    "id": "un-psd-001",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 1,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-2",
+    "id": "un-psd-002",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 2,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-3",
+    "id": "un-aia-003",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 3,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-4",
+    "id": "un-psd-004",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 4,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-5",
+    "id": "un-psd-005",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 5,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-6",
+    "id": "un-aia-006",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 6,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-7",
+    "id": "un-psd-007",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 7,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-8",
+    "id": "un-psd-008",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 8,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-9",
+    "id": "un-aia-009",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 9,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-10",
+    "id": "un-psd-010",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 10,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-11",
+    "id": "un-psd-011",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 11,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-12",
+    "id": "un-aia-012",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 12,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-13",
+    "id": "un-psd-013",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 13,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-14",
+    "id": "un-psd-014",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 14,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-15",
+    "id": "un-aia-015",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 15,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-16",
+    "id": "un-psd-016",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 16,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-17",
+    "id": "un-psd-017",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 17,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-18",
+    "id": "un-aia-018",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 18,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-19",
+    "id": "un-psd-019",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 19,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-20",
+    "id": "un-psd-020",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 20,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-21",
+    "id": "un-aia-021",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 21,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-22",
+    "id": "un-psd-022",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 22,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-23",
+    "id": "un-psd-023",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 23,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-24",
+    "id": "un-aia-024",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 24,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-25",
+    "id": "un-psd-025",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 25,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-26",
+    "id": "un-psd-026",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 26,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-27",
+    "id": "un-aia-027",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 27,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-28",
+    "id": "un-psd-028",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 28,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-29",
+    "id": "un-psd-029",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 29,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-30",
+    "id": "un-aia-030",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 30,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-31",
+    "id": "un-psd-031",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 31,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-32",
+    "id": "un-psd-032",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 32,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-33",
+    "id": "un-aia-033",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 33,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-34",
+    "id": "un-psd-034",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 34,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-35",
+    "id": "un-psd-035",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 35,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-36",
+    "id": "un-aia-036",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 36,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-37",
+    "id": "un-psd-037",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 37,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-38",
+    "id": "un-psd-038",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 38,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-39",
+    "id": "un-aia-039",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 39,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-40",
+    "id": "un-psd-040",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 40,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-41",
+    "id": "un-psd-041",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 41,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-42",
+    "id": "un-aia-042",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 42,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-43",
+    "id": "un-psd-043",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 43,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-44",
+    "id": "un-psd-044",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 44,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-45",
+    "id": "un-aia-045",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 45,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-46",
+    "id": "un-psd-046",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 46,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-47",
+    "id": "un-psd-047",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "citation_en": "Manage automated decision systems with clear accountability.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 47,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-48",
+    "id": "un-aia-048",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "citation_en": "Publish a valid AIA with scores computed using the official method.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 48,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "aia_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-01-01"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
     }
   },
   {
-    "id": "utd-missing-49",
+    "id": "un-psd-049",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "citation_en": "Design for accessibility, official languages, privacy, environment and security.",
+    "system": {
+      "planned_production_use": true,
+      "case_variant": 49,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"

@@ -97,6 +97,15 @@ jobs:
       - name: Integration stack (Docker Compose)
         run: bash scripts/ci_compose_stack.sh
 
+      - name: Image SBOM (Syft, shipped containers)
+        run: bash scripts/ci_image_sbom.sh
+
+      - name: Full inventory SBOM merge
+        run: uv run python tools/sbom_builder.py
+
+      - name: Licence gate (sources and merged SBOM)
+        run: uv run python tools/licence_gate.py
+
       - name: Integration and TRL 5 tests
         env:
           CLEARTRACE_DATABASE_URL: postgresql+psycopg://cleartrace_super:cleartrace_super@127.0.0.1:5432/cleartrace

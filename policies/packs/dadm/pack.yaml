@@ -30,7 +30,9 @@ controls:
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: peer_review_report
-    required: true
+    required: false
+  - type: aia_record
+    required: false
 - control_key: CA-DADM-APP-C-03
   clause_ref: Appendix C row 3
   title_en: Level III requires qualified expert peer review of the system and AIA.

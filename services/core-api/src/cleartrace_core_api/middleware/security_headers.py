@@ -10,7 +10,7 @@ from starlette.responses import Response
 # CDN, so that one page gets a CSP that allows those assets and nothing else.
 _API_CSP = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
 _DOCS_CSP = (
-    "default-src 'none'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+    "default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; "
     "style-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; "
     "connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
 )

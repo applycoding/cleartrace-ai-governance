@@ -75,12 +75,22 @@ objectives_aia_record := [{
 	"critical_gate": true,
 }]
 
-objectives_peer_generic := [{
-	"key": "peer_review",
-	"applicable": true,
-	"passed": evidence.evidence_passed("peer_review_report"),
-	"critical_gate": false,
-}]
+# Clause 6.3.7 expects peer review and an AIA on file before production; both are
+# non-critical gates so one can pass while the other fails (partially_met).
+objectives_peer_generic := [
+	{
+		"key": "peer_review",
+		"applicable": true,
+		"passed": evidence.evidence_passed("peer_review_report"),
+		"critical_gate": false,
+	},
+	{
+		"key": "aia_record",
+		"applicable": true,
+		"passed": evidence.evidence_passed("aia_record"),
+		"critical_gate": false,
+	},
+]
 
 objectives_appendix_c := [{
 	"key": "peer_review",

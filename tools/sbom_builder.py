@@ -98,13 +98,45 @@ def _image_components() -> list[dict[str, object]]:
     return images
 
 
+_PERMISSIVE_SPDX = {
+    "MIT",
+    "ISC",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "Apache-2.0",
+    "PostgreSQL",
+    "0BSD",
+    "Unlicense",
+    "CC0-1.0",
+}
+
+
+def _merge_image_sboms() -> list[dict[str, object]]:
+    image_dir = ROOT / "artifacts" / "image-sbom"
+    if not image_dir.is_dir():
+        return []
+    merged: list[dict[str, object]] = []
+    for path in sorted(image_dir.glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        for component in doc.get("components", []) or []:
+            if not isinstance(component, dict):
+                continue
+            merged.append(component)
+    return merged
+
+
 def build_sbom() -> dict[str, object]:
+    image_os = _merge_image_sboms()
     components = (
         [_component("cleartrace-platform", "0.1.0", "application")]
         + _python_packages()
         + _fixture_components()
         + _image_components()
+        + image_os
     )
+    inventory = "code,python-deps,fixtures,containers"
+    if image_os:
+        inventory += ",os-packages"
     return {
         "bomFormat": "CycloneDX",
         "specVersion": "1.6",
@@ -117,7 +149,7 @@ def build_sbom() -> dict[str, object]:
                 "version": "0.1.0",
             },
             "properties": [
-                {"name": "cleartrace:inventory", "value": "code,python-deps,fixtures,containers"},
+                {"name": "cleartrace:inventory", "value": inventory},
             ],
         },
         "components": components,

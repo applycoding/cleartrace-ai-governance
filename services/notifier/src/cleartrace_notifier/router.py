@@ -17,7 +17,13 @@ router = APIRouter(tags=["notifications"])
 
 
 class WebhookCreate(BaseModel):
-    url: str = Field(max_length=2048, pattern=r"^https://[A-Za-z0-9.-]+(:[0-9]{1,5})?([/?#][^\s]*)?$")
+    url: str = Field(
+        max_length=2048,
+        pattern=(
+            r"^https://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+"
+            r"[A-Za-z]{2,63}(:[0-9]{1,5})?(?:/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$"
+        ),
+    )
     secret: str = Field(min_length=16, max_length=256)
     channel: str = Field(default="generic", pattern=r"^[a-z][a-z0-9_-]{0,31}$")
 

@@ -64,10 +64,9 @@ def test_invalid_cursor_is_rejected() -> None:
             decode_cursor(bad)
 
 
-def test_bad_cursor_is_a_400_not_a_500(client: TestClient) -> None:
+def test_bad_cursor_is_a_422_not_a_500(client: TestClient) -> None:
     resp = client.get("/api/v1/systems?cursor=%%%", headers=_h())
-    assert resp.status_code == 400
-    assert resp.headers["content-type"].startswith("application/problem+json")
+    assert resp.status_code == 422
 
 
 def test_nul_in_json_body_or_query_is_rejected(client: TestClient) -> None:

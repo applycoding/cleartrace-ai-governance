@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Any
 
 from cleartrace_notifier.router import register_notifier_routes
@@ -9,6 +10,8 @@ from cleartrace_notifier.service import NotifierService
 from cleartrace_register.api.router import mount_register_routes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.responses import FileResponse
+from starlette.staticfiles import StaticFiles
 
 from cleartrace_core_api.auth.cedar_engine import CedarAuthorizer
 from cleartrace_core_api.auth.middleware import AuthContextMiddleware, CedarAuthMiddleware
@@ -20,6 +23,7 @@ from cleartrace_core_api.middleware.language import LanguageMiddleware
 from cleartrace_core_api.middleware.optimistic_lock import OptimisticLockMiddleware
 from cleartrace_core_api.middleware.security_headers import SecurityHeadersMiddleware
 from cleartrace_core_api.middleware.tenant_rate_limit import TenantRateLimitMiddleware
+from cleartrace_core_api.openapi_schema import apply_openapi_patches
 from cleartrace_core_api.routers import (
     admin,
     aia,
@@ -51,7 +55,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         title="ClearTrace Governance API",
         version="0.1.0",
         openapi_url="/api/v1/openapi.json",
-        docs_url="/api/v1/docs",
+        docs_url=None,
+        redoc_url=None,
         lifespan=lifespan,
     )
     app.state.settings = cfg
@@ -94,9 +99,25 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(reports.router, prefix=prefix)
     mount_register_routes(app, prefix=prefix)
     register_notifier_routes(app, NotifierService())
+    _mount_docs(app)
     _document_common_errors(app)
 
     return app
+
+
+_STATIC = Path(__file__).resolve().parent / "static"
+
+
+def _mount_docs(app: FastAPI) -> None:
+    app.mount(
+        "/api/v1/docs/assets",
+        StaticFiles(directory=_STATIC),
+        name="swagger-docs-assets",
+    )
+
+    @app.get("/api/v1/docs", include_in_schema=False)
+    async def swagger_ui_html() -> FileResponse:
+        return FileResponse(_STATIC / "swagger-ui.html", media_type="text/html")
 
 
 # Matches IdempotencyMiddleware: 1-128 visible ASCII characters, no spaces.
@@ -180,6 +201,7 @@ def _document_common_errors(app: FastAPI) -> None:
                     op["responses"].setdefault(
                         code, {"description": description, "content": _PROBLEM_CONTENT}
                     )
+        apply_openapi_patches(schema)
         app.openapi_schema = schema
         return schema
 

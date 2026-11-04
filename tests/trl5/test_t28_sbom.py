@@ -21,6 +21,10 @@ def test_t28_full_inventory_sbom_and_licence_gate() -> None:
     assert "application" in types
     assert "library" in types
     assert "data" in types or any(c.get("type") == "container" for c in components)
+    if (ROOT / "artifacts" / "image-sbom").is_dir():
+        assert any(c.get("type") == "operating-system" for c in components), (
+            "merged image SBOM must list OS packages when artifacts/image-sbom exists"
+        )
 
     gate = subprocess.run(["uv", "run", "python", "tools/licence_gate.py"], cwd=ROOT)
     assert gate.returncode == 0, "licence gate must report 0 disallowed licences"
