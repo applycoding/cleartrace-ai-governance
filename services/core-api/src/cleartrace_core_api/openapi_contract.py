@@ -29,14 +29,39 @@ def _walk_schemas(node: Any, *, apply: Any) -> None:
             _walk_schemas(item, apply=apply)
 
 
+# Response-only schemas. ProblemDetail.detail may quote the rejected input (which can
+# hold NUL), so a no-NUL pattern there would make valid error responses fail the schema.
+_RESPONSE_ONLY_COMPONENTS = frozenset({"ProblemDetail"})
+
+
 def apply_no_nul_string_pattern(schema: dict[str, Any]) -> None:
-    """Tighten OpenAPI string types so fuzzers do not emit NUL (ST202)."""
+    """Add a no-NUL pattern to request-side string schemas (Schemathesis ST202).
+
+    Operation responses and response-only components are left unchanged. Free-form
+    objects (additionalProperties) can still carry NUL in keys or values, which the
+    JSON input guard rejects with 422; a string pattern cannot express that.
+    """
 
     def _patch(obj: dict[str, Any]) -> None:
         if obj.get("type") == "string" and "pattern" not in obj:
             obj["pattern"] = NO_NUL_PATTERN
 
-    _walk_schemas(schema, apply=_patch)
+    for operations in schema.get("paths", {}).values():
+        if not isinstance(operations, dict):
+            continue
+        for key, op in operations.items():
+            if key == "parameters":
+                _walk_schemas(op, apply=_patch)
+                continue
+            if not isinstance(op, dict):
+                continue
+            for section, value in op.items():
+                if section != "responses":
+                    _walk_schemas(value, apply=_patch)
+    components = schema.get("components", {}).get("schemas", {})
+    for name, component in components.items():
+        if name not in _RESPONSE_ONLY_COMPONENTS:
+            _walk_schemas(component, apply=_patch)
 
 
 def annotate_list_systems_cursor(schema: dict[str, Any]) -> None:
