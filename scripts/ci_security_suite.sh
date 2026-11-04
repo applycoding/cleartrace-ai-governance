@@ -15,6 +15,9 @@ cd "$ROOT"
 
 API_PORT="${CLEARTRACE_T26_API_PORT:-8080}"
 OPA_PORT="${CLEARTRACE_T26_OPA_PORT:-8181}"
+# ZAP shares the host network; a fixed proxy port avoids the race in zap-api-scan's
+# own free-port pick (run 41756667418: "Address already in use", ZAP never started).
+ZAP_PORT="${CLEARTRACE_T26_ZAP_PORT:-8095}"
 API_URL="http://127.0.0.1:${API_PORT}"
 
 status=0
@@ -83,7 +86,7 @@ if command -v docker >/dev/null 2>&1; then
     -e ZAP_AUTH_HEADER=Authorization \
     -e ZAP_AUTH_HEADER_VALUE="Bearer ${CLEARTRACE_DEV_AUTH_TOKEN}" \
     -e ZAP_AUTH_HEADER_SITE=127.0.0.1 \
-    ghcr.io/zaproxy/zaproxy:stable zap-api-scan.py \
+    ghcr.io/zaproxy/zaproxy:stable zap-api-scan.py -P "$ZAP_PORT" \
     -t "$API_URL/api/v1/openapi.json" -f openapi \
     -r zap-report.html -J zap-report.json \
     -z "-config replacer.full_list(0).description=roles -config replacer.full_list(0).enabled=true -config replacer.full_list(0).matchtype=REQ_HEADER -config replacer.full_list(0).matchstr=X-ClearTrace-Dev-Roles -config replacer.full_list(0).regex=false -config replacer.full_list(0).replacement=tenant_admin" \
