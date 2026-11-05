@@ -56,7 +56,7 @@ async def upload_evidence(
         )
     form = await request.form()
     allowed_fields = {"file", "artefact_class", "title_en", "title_fr"}
-    unknown = sorted({str(name) for name in form.keys() if str(name) not in allowed_fields})
+    unknown = sorted({str(name) for name in form if str(name) not in allowed_fields})
     if unknown:
         return problem_response(
             status=422,
