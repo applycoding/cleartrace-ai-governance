@@ -34,3 +34,14 @@ def test_request_strings_carry_no_nul_pattern() -> None:
         for op in operations.values():
             if isinstance(op, dict):
                 assert _patterns(op.get("responses", {})) == []
+
+
+def test_evidence_file_upload_allows_binary_nul() -> None:
+    """Binary file parts may contain NUL; Schemathesis ST201 flagged a no-NUL pattern here."""
+    schema = _schema()
+    body = schema["components"]["schemas"]["Body_upload_evidence_api_v1_evidence_post"]
+    file_schema = body["properties"]["file"]
+    assert file_schema.get("format") == "binary"
+    assert "pattern" not in file_schema
+    assert body["properties"]["title_en"].get("pattern") == NO_NUL_PATTERN
+    assert "enum" in body["properties"]["artefact_class"]

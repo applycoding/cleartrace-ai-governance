@@ -63,8 +63,15 @@ def apply_no_nul_string_pattern(schema: dict[str, Any]) -> None:
     """
 
     def _patch(obj: dict[str, Any]) -> None:
-        if obj.get("type") == "string" and "pattern" not in obj:
-            obj["pattern"] = NO_NUL_PATTERN
+        if obj.get("type") != "string" or "pattern" in obj:
+            return
+        # Binary uploads may legally contain NUL bytes; do not constrain them.
+        if obj.get("format") == "binary":
+            return
+        media = str(obj.get("contentMediaType", "")).lower()
+        if media.startswith("application/octet-stream") or media.startswith("image/"):
+            return
+        obj["pattern"] = NO_NUL_PATTERN
 
     for operations in schema.get("paths", {}).values():
         if not isinstance(operations, dict):
@@ -187,24 +194,42 @@ def annotate_evidence_multipart(schema: dict[str, Any]) -> None:
     if not isinstance(post, dict):
         return
     content = post.setdefault("requestBody", {}).setdefault("content", {})
-    multipart = content.setdefault("multipart/form-data", {}).setdefault("schema", {})
+    multipart_wrapper = content.setdefault("multipart/form-data", {})
+    multipart = multipart_wrapper.setdefault("schema", {})
     if not isinstance(multipart, dict):
         return
-    props = multipart.setdefault("properties", {})
-    props.setdefault("file", {"type": "string", "format": "binary"})
-    props["artefact_class"] = {
-        "type": "string",
-        "enum": sorted(ARTEFACT_CLASSES),
-        "pattern": NO_NUL_PATTERN,
-        "minLength": 1,
-    }
-    props.setdefault("title_en", {"type": "string", "pattern": NO_NUL_PATTERN})
-    props.setdefault("title_fr", {"type": "string", "pattern": NO_NUL_PATTERN})
-    multipart["additionalProperties"] = False
-    required = multipart.setdefault("required", [])
-    for field in ("file", "artefact_class"):
-        if field not in required:
-            required.append(field)
+    targets: list[dict[str, Any]] = [multipart]
+    ref = multipart.get("$ref")
+    if isinstance(ref, str) and ref.startswith("#/components/schemas/"):
+        name = ref.rsplit("/", 1)[-1]
+        component = schema.get("components", {}).get("schemas", {}).get(name)
+        if isinstance(component, dict):
+            targets.append(component)
+    for target in targets:
+        props = target.setdefault("properties", {})
+        # Binary file bodies may contain NUL; never attach the no-NUL pattern.
+        props["file"] = {"type": "string", "format": "binary"}
+        props["artefact_class"] = {
+            "type": "string",
+            "enum": sorted(ARTEFACT_CLASSES),
+            "pattern": NO_NUL_PATTERN,
+            "minLength": 1,
+        }
+        props["title_en"] = {
+            "type": "string",
+            "pattern": NO_NUL_PATTERN,
+            "default": "Evidence artefact",
+        }
+        props["title_fr"] = {
+            "type": "string",
+            "pattern": NO_NUL_PATTERN,
+            "default": "Artefact de preuve",
+        }
+        target["additionalProperties"] = False
+        required = target.setdefault("required", [])
+        for field in ("file", "artefact_class"):
+            if field not in required:
+                required.append(field)
 
 
 def _all_control_keys() -> list[str]:
