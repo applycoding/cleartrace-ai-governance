@@ -54,6 +54,15 @@ async def upload_evidence(
             title="Payload too large",
             detail=f"Evidence files are limited to {MAX_EVIDENCE_BYTES} bytes",
         )
+    form = await request.form()
+    allowed_fields = {"file", "artefact_class", "title_en", "title_fr"}
+    unknown = sorted({str(name) for name in form.keys() if str(name) not in allowed_fields})
+    if unknown:
+        return problem_response(
+            status=422,
+            title="Validation failed",
+            detail=f"Unexpected form fields: {', '.join(unknown)}",
+        )
     if artefact_class not in ARTEFACT_CLASSES:
         return problem_response(
             status=404,
