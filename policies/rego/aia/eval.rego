@@ -10,24 +10,18 @@ default evaluation := {
 	"evidence_issues": [],
 }
 
-evaluation := {
-	"applicability_known": true,
-	"applicability": true,
-	"objectives": [{
-		"key": "aia_score_valid",
-		"applicable": true,
-		"passed": evidence.evidence_passed("aia_record"),
-		"critical_gate": false,
-	}],
-	"evidence_issues": evidence.evidence_issue_list,
-} if {
+evaluation := result if {
 	input.control_key == "CA-AIA-SCORE-01"
 	input.system.planned_production_use == true
-}
-
-not_applicable := {
-	"applicability_known": true,
-	"applicability": false,
-	"objectives": [],
-	"evidence_issues": [],
+	result := {
+		"applicability_known": true,
+		"applicability": true,
+		"objectives": [{
+			"key": "aia_score",
+			"applicable": true,
+			"passed": evidence.evidence_passed("aia_record"),
+			"critical_gate": true,
+		}],
+		"evidence_issues": evidence.evidence_issue_list,
+	}
 }

@@ -3,7 +3,6 @@ from __future__ import annotations
 from uuid import UUID
 
 from fastapi import APIRouter, Request, Response
-from pydantic import BaseModel
 
 from cleartrace_core_api.data_policy.models import (
     DeletionCertificateView,
@@ -16,11 +15,12 @@ from cleartrace_core_api.data_policy.models import (
 )
 from cleartrace_core_api.data_policy.service import DataPolicyService
 from cleartrace_core_api.errors import problem_response
+from cleartrace_core_api.strict import StrictModel
 
 router = APIRouter(prefix="/data-policy", tags=["data-policy"])
 
 
-class RetentionUpdateBody(BaseModel):
+class RetentionUpdateBody(StrictModel):
     rules: list[RetentionRuleBody]
 
 

@@ -6,7 +6,7 @@ from typing import Any, cast
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Request
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from uuid6 import uuid7
 
 from cleartrace_notifier.models import WebhookSubscription
@@ -17,6 +17,7 @@ router = APIRouter(tags=["notifications"])
 
 
 class WebhookCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     url: str = Field(
         max_length=2048,
         pattern=(
@@ -29,6 +30,8 @@ class WebhookCreate(BaseModel):
 
 
 class AlertCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     alert_type: str
     system_id: UUID | None = None
     control_id: str | None = None

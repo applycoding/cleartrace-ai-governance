@@ -53,18 +53,12 @@ def test_missing_or_skipped_cases_are_not_pass(tmp_path: Path) -> None:
     assert _status(tmp_path, "T-01", mixed) == "partial"
 
 
-def test_t13_green_run_is_still_partial(tmp_path: Path) -> None:
-    parsed = trl5_report._parse_junit(
-        _junit(
-            tmp_path,
-            [("test_t13_five_states", "a", "pass")],
-        )
-    )
-    outcome = trl5_report._outcome_for_test("T-13", parsed)
-    assert outcome is not None and outcome.failed == 0
-    # 250 cases but far fewer distinct (control, input) pairs, and expectations are
-    # engine output checked against a hand-chosen target, so a green run is partial.
-    assert trl5_report.status_for("T-13", outcome) == "partial"
+def test_t13_green_run_is_pass_with_independent_oracle(tmp_path: Path) -> None:
+    """T-13 stays out of PARTIAL_NOTES once cases are distinct and oracle-backed."""
+    assert "T-13" not in trl5_report.PARTIAL_NOTES
+    cases = [("test_t13_five_states", "test_t13_golden_outcome", "pass")]
+    assert _status(tmp_path, "T-13", cases) == "pass"
+
 
 
 def test_t11_is_partial_and_reports_measured_numbers(tmp_path: Path) -> None:

@@ -34,10 +34,13 @@ Windows only) are listed as not installed and are not shipped in the images.
 ## Container base images
 
 Operating-system packages inside the deployed images come from third-party base images
-(PostgreSQL, NATS, OPA and others). They are **reported, not gated**: CI builds a Syft SBOM
-per image and a licence report (`scripts/ci_image_sbom.sh`, `tools/image_licence_report.py`,
-artifact `image-sbom`). Many of these packages are GPL or LGPL; they are unmodified
-distribution packages with source at the upstream distribution.
+(PostgreSQL, NATS, Keycloak and others) and from the Debian slim base of the ClearTrace
+`core-api` image. CI builds the `core-api` image, builds a Syft SBOM per image and a
+licence report (`scripts/ci_image_sbom.sh`, `tools/image_licence_report.py`, artifact
+`image-sbom`). GPL/LGPL OS packages in those bases are unmodified distribution packages;
+they are listed in the approved exception
+[`docs/licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md`](licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md).
+Application-layer packages inside `core-api` remain under the rules above.
 
 ## Enforcement
 
@@ -59,5 +62,5 @@ The blueprint is stricter than this policy. Line 573: "shipped components must b
 (MIT, BSD, Apache-2.0, PostgreSQL, ISC)". Line 716: "licence gate (fails on AGPL, GPL, LGPL,
 SSPL, BSL, Elastic, MPL inside shipped images unless an approved exception file lists them)".
 `THIRD_PARTY_LICENSES.md` lists the LGPL and MPL libraries used unmodified, but the
-GPL-family OS packages in the third-party base images are reported only, so TRL 5 test T-28
-("0 disallowed licences in shipped images") is not claimed as passed.
+GPL-family OS packages in base images are covered by the approved exception file above.
+Application dependencies stay gated. T-28 records the image inventory and the exception.

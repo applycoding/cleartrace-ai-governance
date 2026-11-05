@@ -10,24 +10,18 @@ default evaluation := {
 	"evidence_issues": [],
 }
 
-evaluation := {
-	"applicability_known": true,
-	"applicability": true,
-	"objectives": [{
-		"key": "canadian_facilities",
-		"applicable": true,
-		"passed": evidence.evidence_passed("canadian_facility_assessment"),
-		"critical_gate": false,
-	}],
-	"evidence_issues": evidence.evidence_issue_list,
-} if {
+evaluation := result if {
 	input.control_key == "CA-DSD-4-3-24"
 	input.system.planned_production_use == true
-}
-
-not_applicable := {
-	"applicability_known": true,
-	"applicability": false,
-	"objectives": [],
-	"evidence_issues": [],
+	result := {
+		"applicability_known": true,
+		"applicability": true,
+		"objectives": [{
+			"key": "canadian_facility",
+			"applicable": true,
+			"passed": evidence.evidence_passed("canadian_facility_assessment"),
+			"critical_gate": true,
+		}],
+		"evidence_issues": evidence.evidence_issue_list,
+	}
 }

@@ -273,3 +273,12 @@ def test_docs_page_runs_without_inline_script_or_cdn(client: TestClient) -> None
 
 def test_only_listed_docs_assets_are_public(client: TestClient) -> None:
     assert client.get("/api/v1/swagger-ui/NOTICE").status_code == 401
+
+
+def test_unknown_but_well_formed_cursor_is_empty_page(client: TestClient) -> None:
+    # Pattern-valid cursor this API did not issue → empty page (ST202 accepts 2xx).
+    resp = client.get("/api/v1/systems?cursor=YWJjZGVmZ2hpams=", headers=_h())
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["items"] == []
+    assert body["next_cursor"] is None

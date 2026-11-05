@@ -6,13 +6,15 @@ from uuid import UUID
 
 from pydantic import BaseModel, Field, field_validator
 
+from cleartrace_core_api.strict import StrictModel
+
 
 class DeletionCertificateStatus(StrEnum):
     PENDING = "pending"
     FINAL = "final"
 
 
-class RetentionRuleBody(BaseModel):
+class RetentionRuleBody(StrictModel):
     artefact_class: str = Field(min_length=1, max_length=64, pattern=r"^[a-z][a-z0-9_]*$")
     configured_retention_days: int = Field(ge=1, le=36_500)
     statutory_floor_days: int = Field(default=730, ge=0, le=36_500)
@@ -34,7 +36,7 @@ class TenantDataPolicyView(BaseModel):
     retention_rules: list[RetentionRuleBody]
 
 
-class LegalHoldCreate(BaseModel):
+class LegalHoldCreate(StrictModel):
     scope: dict[str, object]
     reason_en: str = Field(min_length=1, max_length=2000)
     reason_fr: str = Field(min_length=1, max_length=2000)
@@ -49,7 +51,7 @@ class LegalHoldView(BaseModel):
     created_at: datetime
 
 
-class DeletionRequestCreate(BaseModel):
+class DeletionRequestCreate(StrictModel):
     payload_ids: list[UUID] = Field(min_length=1)
 
 

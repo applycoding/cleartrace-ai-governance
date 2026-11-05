@@ -2,13 +2,10 @@
 """Generate T-08 automated cases and the 140-pair human explanation review sheet.
 
 Cases come from the same enumeration of shipped controls as the T-13 golden set
-(tools/generate_t13_golden.py): no padding keys. Where a state has too few
-enumerated inputs, inputs with unrelated valid evidence added are used and are
-labelled ``unrelated_evidence_added``. The non-conformities cover only the shipped
-controls that can be not_met (DADM 6.1.1, Appendix C row 3 and 6.3.8), so they
-are 40 cases on 3 controls, not 40 different controls; the TRL 5 report says so.
-Reviewer columns are written blank.
+(tools/generate_t13_golden.py), with expected states from the independent clause
+oracle. Reviewer columns are written blank.
 """
+
 
 from __future__ import annotations
 

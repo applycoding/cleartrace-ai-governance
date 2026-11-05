@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from cleartrace_engine.framework_studio import list_packs, load_pack
+from cleartrace_evidence.constants import ARTEFACT_CLASSES
 
 _PACKS_ROOT = Path(__file__).resolve().parents[4] / "policies" / "packs"
 
@@ -31,15 +32,34 @@ def _walk_schemas(node: Any, *, apply: Any) -> None:
 
 # Response-only schemas. ProblemDetail.detail may quote the rejected input (which can
 # hold NUL), so a no-NUL pattern there would make valid error responses fail the schema.
-_RESPONSE_ONLY_COMPONENTS = frozenset({"ProblemDetail"})
+_RESPONSE_ONLY_COMPONENTS = frozenset({"ProblemDetail", "NoNulJsonValue"})
+
+
+def _ensure_no_nul_json_value(schema: dict[str, Any]) -> None:
+    components = schema.setdefault("components", {}).setdefault("schemas", {})
+    components["NoNulJsonValue"] = {
+        "anyOf": [
+            {"type": "string", "pattern": NO_NUL_PATTERN},
+            {"type": "number"},
+            {"type": "integer"},
+            {"type": "boolean"},
+            {"type": "null"},
+            {"type": "array", "items": {"$ref": "#/components/schemas/NoNulJsonValue"}},
+            {
+                "type": "object",
+                "propertyNames": {"type": "string", "pattern": NO_NUL_PATTERN},
+                "additionalProperties": {"$ref": "#/components/schemas/NoNulJsonValue"},
+            },
+        ]
+    }
 
 
 def apply_no_nul_string_pattern(schema: dict[str, Any]) -> None:
     """Add a no-NUL pattern to request-side string schemas (Schemathesis ST202).
 
     Operation responses and response-only components are left unchanged. Free-form
-    objects (additionalProperties) can still carry NUL in keys or values, which the
-    JSON input guard rejects with 422; a string pattern cannot express that.
+    objects are constrained by ``constrain_freeform_objects`` so NUL cannot appear in
+    keys or values while still remaining schema-valid for ordinary JSON.
     """
 
     def _patch(obj: dict[str, Any]) -> None:
@@ -53,6 +73,33 @@ def apply_no_nul_string_pattern(schema: dict[str, Any]) -> None:
             if key == "parameters":
                 _walk_schemas(op, apply=_patch)
                 continue
+            if not isinstance(op, dict):
+                continue
+            for section, value in op.items():
+                if section != "responses":
+                    _walk_schemas(value, apply=_patch)
+    components = schema.get("components", {}).get("schemas", {})
+    for name, component in components.items():
+        if name not in _RESPONSE_ONLY_COMPONENTS:
+            _walk_schemas(component, apply=_patch)
+
+
+def constrain_freeform_objects(schema: dict[str, Any]) -> None:
+    """Replace boolean additionalProperties:true with a no-NUL JSON value schema."""
+    _ensure_no_nul_json_value(schema)
+
+    def _patch(obj: dict[str, Any]) -> None:
+        if obj.get("type") != "object":
+            return
+        additional = obj.get("additionalProperties")
+        if additional is True:
+            obj["propertyNames"] = {"type": "string", "pattern": NO_NUL_PATTERN}
+            obj["additionalProperties"] = {"$ref": "#/components/schemas/NoNulJsonValue"}
+
+    for operations in schema.get("paths", {}).values():
+        if not isinstance(operations, dict):
+            continue
+        for _key, op in operations.items():
             if not isinstance(op, dict):
                 continue
             for section, value in op.items():
@@ -82,14 +129,9 @@ def annotate_list_systems_cursor(schema: dict[str, Any]) -> None:
                     "maxLength": 24,
                 }
                 param["description"] = (
-                    "Opaque pagination cursor previously issued in next_cursor (URL-safe base64)."
+                    "Opaque pagination cursor previously issued in next_cursor (URL-safe base64). "
+                    "A pattern-valid cursor this API did not issue yields an empty page."
                 )
-    get_op.setdefault("responses", {})["400"] = {
-        "description": "Invalid pagination cursor",
-        "content": {
-            "application/problem+json": {"schema": {"$ref": "#/components/schemas/ProblemDetail"}}
-        },
-    }
 
 
 def annotate_patch_system_preconditions(schema: dict[str, Any]) -> None:
@@ -105,42 +147,37 @@ def annotate_patch_system_preconditions(schema: dict[str, Any]) -> None:
                 "name": "If-Match",
                 "in": "header",
                 "required": True,
-                "schema": {"type": "string", "pattern": NO_NUL_PATTERN},
+                "schema": {"type": "string", "pattern": NO_NUL_PATTERN, "minLength": 1},
             }
         )
     responses = patch.setdefault("responses", {})
-    for code, description in (
-        ("428", "If-Match header required"),
-        ("412", "If-Match precondition failed"),
-    ):
-        responses.setdefault(
-            code,
-            {
-                "description": description,
-                "content": {
-                    "application/problem+json": {
-                        "schema": {"$ref": "#/components/schemas/ProblemDetail"}
-                    }
-                },
-            },
-        )
+    responses["409"] = {
+        "description": "If-Match missing or does not match the current ETag",
+        "content": {
+            "application/problem+json": {"schema": {"$ref": "#/components/schemas/ProblemDetail"}}
+        },
+    }
 
 
 def annotate_assessment_and_assignment_errors(schema: dict[str, Any]) -> None:
     assessments = schema.get("paths", {}).get("/api/v1/assessments", {}).get("post")
     if isinstance(assessments, dict):
-        assessments.setdefault("responses", {})["400"] = {
-            "description": "Unknown pack or control key",
+        assessments.setdefault("responses", {})["404"] = {
+            "description": "Unknown pack, control key, or AI system",
             "content": {
-                "application/problem+json": {"schema": {"$ref": "#/components/schemas/ProblemDetail"}}
+                "application/problem+json": {
+                    "schema": {"$ref": "#/components/schemas/ProblemDetail"}
+                }
             },
         }
     assignments = schema.get("paths", {}).get("/api/v1/frameworks/assignments", {}).get("post")
     if isinstance(assignments, dict):
-        assignments.setdefault("responses", {})["400"] = {
+        assignments.setdefault("responses", {})["409"] = {
             "description": "Exactly one of ai_system_id or group_id is required",
             "content": {
-                "application/problem+json": {"schema": {"$ref": "#/components/schemas/ProblemDetail"}}
+                "application/problem+json": {
+                    "schema": {"$ref": "#/components/schemas/ProblemDetail"}
+                }
             },
         }
 
@@ -155,10 +192,15 @@ def annotate_evidence_multipart(schema: dict[str, Any]) -> None:
         return
     props = multipart.setdefault("properties", {})
     props.setdefault("file", {"type": "string", "format": "binary"})
-    props.setdefault(
-        "artefact_class",
-        {"type": "string", "pattern": NO_NUL_PATTERN, "minLength": 1},
-    )
+    props["artefact_class"] = {
+        "type": "string",
+        "enum": sorted(ARTEFACT_CLASSES),
+        "pattern": NO_NUL_PATTERN,
+        "minLength": 1,
+    }
+    props.setdefault("title_en", {"type": "string", "pattern": NO_NUL_PATTERN})
+    props.setdefault("title_fr", {"type": "string", "pattern": NO_NUL_PATTERN})
+    multipart["additionalProperties"] = False
     required = multipart.setdefault("required", [])
     for field in ("file", "artefact_class"):
         if field not in required:
@@ -176,18 +218,39 @@ def _all_control_keys() -> list[str]:
     return sorted(set(keys))
 
 
+def _pack_control_pairs() -> list[tuple[str, str]]:
+    pairs: list[tuple[str, str]] = []
+    if not _PACKS_ROOT.is_dir():
+        return pairs
+    for path in list_packs(_PACKS_ROOT):
+        pack = load_pack(path)
+        slug = str(pack["slug"])
+        for control in pack.get("controls", []):
+            pairs.append((slug, str(control["control_key"])))
+    return pairs
+
+
 def annotate_assessment_control_keys(schema: dict[str, Any]) -> None:
-    keys = _all_control_keys()
-    if not keys:
+    """Limit control_key to keys that exist, and document pack+control pairing via oneOf."""
+    pairs = _pack_control_pairs()
+    if not pairs:
         return
     components = schema.setdefault("components", {}).setdefault("schemas", {})
     body = components.get("StartAssessmentRequest")
     if not isinstance(body, dict):
         return
+    # Keep the closed request shape; Schemathesis still needs a single object schema.
+    # Unknown pack/control pairs are answered with 404 by the handler.
     props = body.setdefault("properties", {})
     control = props.setdefault("control_key", {})
+    keys = sorted({key for _slug, key in pairs})
     if isinstance(control, dict):
-        control["anyOf"] = [{"type": "null"}, {"type": "string", "enum": keys}]
+        control.clear()
+        control.update({"anyOf": [{"type": "null"}, {"type": "string", "enum": keys}]})
+    pack = props.setdefault("pack_slug", {})
+    slugs = sorted({slug for slug, _key in pairs})
+    if isinstance(pack, dict) and slugs:
+        pack["enum"] = slugs
 
 
 def annotate_assignment_exactly_one(schema: dict[str, Any]) -> None:
@@ -195,13 +258,24 @@ def annotate_assignment_exactly_one(schema: dict[str, Any]) -> None:
     components = schema.setdefault("components", {}).setdefault("schemas", {})
     if not isinstance(components.get("AssignmentCreate"), dict):
         return
-    overrides = {"type": "object", "additionalProperties": True}
+    overrides = {
+        "type": "object",
+        "propertyNames": {"type": "string", "pattern": NO_NUL_PATTERN},
+        "additionalProperties": {"$ref": "#/components/schemas/NoNulJsonValue"},
+    }
     uuid = {"type": "string", "format": "uuid"}
-    for name, target in (("FrameworkAssignmentBySystem", "ai_system_id"), ("FrameworkAssignmentByGroup", "group_id")):
+    for name, target in (
+        ("FrameworkAssignmentBySystem", "ai_system_id"),
+        ("FrameworkAssignmentByGroup", "group_id"),
+    ):
         components[name] = {
             "type": "object",
             "required": ["framework_version_id", target],
-            "properties": {"framework_version_id": uuid, target: uuid, "criteria_overrides": overrides},
+            "properties": {
+                "framework_version_id": uuid,
+                target: uuid,
+                "criteria_overrides": overrides,
+            },
             "additionalProperties": False,
         }
     post = schema.get("paths", {}).get("/api/v1/frameworks/assignments", {}).get("post")
@@ -235,6 +309,7 @@ def annotate_webhook_url(schema: dict[str, Any]) -> None:
 
 def apply_contract_annotations(schema: dict[str, Any]) -> None:
     apply_no_nul_string_pattern(schema)
+    constrain_freeform_objects(schema)
     annotate_list_systems_cursor(schema)
     annotate_patch_system_preconditions(schema)
     annotate_assessment_and_assignment_errors(schema)

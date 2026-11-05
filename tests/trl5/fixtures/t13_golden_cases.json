@@ -33,9 +33,9 @@
   },
   {
     "id": "not_applicable-02",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -49,9 +49,9 @@
   },
   {
     "id": "not_applicable-03",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -65,9 +65,9 @@
   },
   {
     "id": "not_applicable-04",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -81,9 +81,9 @@
   },
   {
     "id": "not_applicable-05",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -97,9 +97,9 @@
   },
   {
     "id": "not_applicable-06",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -113,9 +113,9 @@
   },
   {
     "id": "not_applicable-07",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -129,9 +129,9 @@
   },
   {
     "id": "not_applicable-08",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-3",
+    "clause_ref": "6.1.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -145,9 +145,9 @@
   },
   {
     "id": "not_applicable-09",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -161,9 +161,9 @@
   },
   {
     "id": "not_applicable-10",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -177,9 +177,9 @@
   },
   {
     "id": "not_applicable-11",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-7",
+    "clause_ref": "6.2.7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -193,9 +193,9 @@
   },
   {
     "id": "not_applicable-12",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-1",
+    "clause_ref": "6.3.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -209,21 +209,15 @@
   },
   {
     "id": "not_applicable-13",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-10",
+    "clause_ref": "6.3.10",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -231,21 +225,15 @@
   },
   {
     "id": "not_applicable-14",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-11",
+    "clause_ref": "6.3.11",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -253,21 +241,15 @@
   },
   {
     "id": "not_applicable-15",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-12",
+    "clause_ref": "6.3.12",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -276,20 +258,14 @@
   {
     "id": "not_applicable-16",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -298,20 +274,14 @@
   {
     "id": "not_applicable-17",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "control_key": "CA-DADM-6-3-14",
+    "clause_ref": "6.3.14; Appendix C row 7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -320,20 +290,14 @@
   {
     "id": "not_applicable-18",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-2",
+    "clause_ref": "6.3.2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -342,20 +306,14 @@
   {
     "id": "not_applicable-19",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-3",
+    "clause_ref": "6.3.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -363,21 +321,15 @@
   },
   {
     "id": "not_applicable-20",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-5",
+    "clause_ref": "6.3.5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -385,21 +337,15 @@
   },
   {
     "id": "not_applicable-21",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-6",
+    "clause_ref": "6.3.6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -407,21 +353,15 @@
   },
   {
     "id": "not_applicable-22",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -429,21 +369,15 @@
   },
   {
     "id": "not_applicable-23",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_applicable",
       "reason_code": "NOT_APPLICABLE"
@@ -451,13 +385,13 @@
   },
   {
     "id": "not_applicable-24",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -467,13 +401,13 @@
   },
   {
     "id": "not_applicable-25",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-4-1",
+    "clause_ref": "6.4.1; 6.4.1.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -483,6 +417,150 @@
   },
   {
     "id": "not_applicable-26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-5-1",
+    "clause_ref": "6.5.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-27",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-5-2",
+    "clause_ref": "6.5.2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3 (Levels III-IV peer review)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-29",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-30",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-31",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-32",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-33",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-5-2",
+    "clause_ref": "5.2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-34",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-35",
     "pack_slug": "guiding-principles",
     "control_key": "CA-AI-PRIN-01",
     "clause_ref": "Principle 1",
@@ -494,205 +572,7 @@
     "evidence": [
       {
         "type": "principle_alignment_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-27",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-28",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-29",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-30",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-31",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-32",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-33",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-34",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-35",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": false,
+        "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
     ],
@@ -703,82 +583,6 @@
   },
   {
     "id": "not_applicable-36",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-37",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 3
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-38",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 3
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-39",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": false,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_applicable",
-      "reason_code": "NOT_APPLICABLE"
-    }
-  },
-  {
-    "id": "not_applicable-40",
     "pack_slug": "guiding-principles",
     "control_key": "CA-AI-PRIN-02",
     "clause_ref": "Principle 2",
@@ -791,7 +595,95 @@
       {
         "type": "principle_alignment_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-37",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-38",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-39",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_applicable",
+      "reason_code": "NOT_APPLICABLE"
+    }
+  },
+  {
+    "id": "not_applicable-40",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": false,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -813,7 +705,7 @@
       {
         "type": "aia_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -835,7 +727,7 @@
       {
         "type": "aia_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -846,8 +738,8 @@
   {
     "id": "not_applicable-43",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "control_key": "CA-DADM-6-1-3",
+    "clause_ref": "6.1.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -855,9 +747,9 @@
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "aia_update_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -868,8 +760,8 @@
   {
     "id": "not_applicable-44",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -877,9 +769,9 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -890,8 +782,8 @@
   {
     "id": "not_applicable-45",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -899,9 +791,9 @@
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "explanation_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -911,9 +803,9 @@
   },
   {
     "id": "not_applicable-46",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-7",
+    "clause_ref": "6.2.7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -921,9 +813,9 @@
     },
     "evidence": [
       {
-        "type": "canadian_facility_assessment",
+        "type": "decision_trace_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -933,9 +825,9 @@
   },
   {
     "id": "not_applicable-47",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-1",
+    "clause_ref": "6.3.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -943,9 +835,9 @@
     },
     "evidence": [
       {
-        "type": "ai_register_entry",
+        "type": "preprod_test_report",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -955,9 +847,9 @@
   },
   {
     "id": "not_applicable-48",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-10",
+    "clause_ref": "6.3.10",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -965,9 +857,9 @@
     },
     "evidence": [
       {
-        "type": "design_by_default_record",
+        "type": "security_risk_assessment",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -977,9 +869,9 @@
   },
   {
     "id": "not_applicable-49",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-11",
+    "clause_ref": "6.3.11",
     "variation": "enumerated",
     "system": {
       "planned_production_use": false,
@@ -987,9 +879,9 @@
     },
     "evidence": [
       {
-        "type": "adm_accountability_record",
+        "type": "integrity_controls_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -1043,6 +935,94 @@
   },
   {
     "id": "met-02",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-03",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-04",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-05",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-06",
     "pack_slug": "aia",
     "control_key": "CA-AIA-SCORE-01",
     "clause_ref": "Tool",
@@ -1064,7 +1044,7 @@
     }
   },
   {
-    "id": "met-03",
+    "id": "met-07",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-1-1",
     "clause_ref": "6.1.1",
@@ -1086,103 +1066,10 @@
     }
   },
   {
-    "id": "met-04",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-05",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted",
-          "mitigation_measures"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-06",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-07",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
     "id": "met-08",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-1-3",
+    "clause_ref": "6.1.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1190,7 +1077,7 @@
     },
     "evidence": [
       {
-        "type": "ai_register_entry",
+        "type": "aia_update_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1202,9 +1089,9 @@
   },
   {
     "id": "met-09",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1212,9 +1099,15 @@
     },
     "evidence": [
       {
-        "type": "design_by_default_record",
+        "type": "notice_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01"
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "in_person",
+          "mail",
+          "telephone"
+        ]
       }
     ],
     "expect": {
@@ -1224,9 +1117,9 @@
   },
   {
     "id": "met-10",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1234,7 +1127,32 @@
     },
     "evidence": [
       {
-        "type": "adm_accountability_record",
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "general_public"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-11",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-7",
+    "clause_ref": "6.2.7",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "decision_trace_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1245,32 +1163,22 @@
     }
   },
   {
-    "id": "met-11",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
     "id": "met-12",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-1",
+    "clause_ref": "6.3.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "preprod_test_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
@@ -1278,17 +1186,17 @@
   },
   {
     "id": "met-13",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-10",
+    "clause_ref": "6.3.10",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "security_risk_assessment",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1300,17 +1208,17 @@
   },
   {
     "id": "met-14",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-11",
+    "clause_ref": "6.3.11",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "integrity_controls_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1322,17 +1230,17 @@
   },
   {
     "id": "met-15",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-12",
+    "clause_ref": "6.3.12",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "legal_consultation_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1345,18 +1253,21 @@
   {
     "id": "met-16",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01"
+        "valid_until": "2099-06-01",
+        "covers": [
+          "qa_involvement"
+        ]
       }
     ],
     "expect": {
@@ -1367,16 +1278,16 @@
   {
     "id": "met-17",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "control_key": "CA-DADM-6-3-14",
+    "clause_ref": "6.3.14; Appendix C row 7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "operational_approval_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1389,23 +1300,18 @@
   {
     "id": "met-18",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-2",
+    "clause_ref": "6.3.2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "monitoring_schedule_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted",
-          "mitigation_measures"
-        ]
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -1416,16 +1322,16 @@
   {
     "id": "met-19",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-3",
+    "clause_ref": "6.3.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "human_rights_attestation",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1437,17 +1343,17 @@
   },
   {
     "id": "met-20",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-5",
+    "clause_ref": "6.3.5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "canadian_facility_assessment",
+        "type": "dataset_validation_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1459,17 +1365,17 @@
   },
   {
     "id": "met-21",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-6",
+    "clause_ref": "6.3.6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "ai_register_entry",
+        "type": "data_governance_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1481,9 +1387,9 @@
   },
   {
     "id": "met-22",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1491,7 +1397,7 @@
     },
     "evidence": [
       {
-        "type": "design_by_default_record",
+        "type": "peer_review_report",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1503,9 +1409,9 @@
   },
   {
     "id": "met-23",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1513,7 +1419,59 @@
     },
     "evidence": [
       {
-        "type": "adm_accountability_record",
+        "type": "gba_plus_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "population_impact_assessment",
+          "di_experts_consulted",
+          "mitigation_measures"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "usage_explanation"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-25",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-4-1",
+    "clause_ref": "6.4.1; 6.4.1.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "recourse_notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1524,50 +1482,18 @@
     }
   },
   {
-    "id": "met-24",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-25",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
     "id": "met-26",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-5-1",
+    "clause_ref": "6.5.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "effectiveness_publication",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1579,17 +1505,17 @@
   },
   {
     "id": "met-27",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-5-2",
+    "clause_ref": "6.5.2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "fairness_publication",
         "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
@@ -1601,53 +1527,9 @@
   },
   {
     "id": "met-28",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-29",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-30",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3 (Levels III-IV peer review)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1666,10 +1548,426 @@
     }
   },
   {
+    "id": "met-29",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "canadian_facility_assessment",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-30",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "ai_register_entry",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
     "id": "met-31",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "design_by_default_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-32",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "adm_accountability_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-33",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-5-2",
+    "clause_ref": "5.2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "iso_policy_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-34",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "nist_govern_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-35",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "in_person",
+          "mail",
+          "telephone",
+          "explanation_link"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-36",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "general_public",
+          "individualized_denial"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-37",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "human_involvement_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "qa_involvement",
+          "final_human_decision"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-38",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": []
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-39",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "gba_plus_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "population_impact_assessment",
+          "di_experts_consulted",
+          "mitigation_measures"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-40",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "usage_explanation",
+          "technical"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-41",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3 (Levels III-IV peer review)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": []
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-42",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "in_person",
+          "mail",
+          "telephone"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-43",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "general_public",
+          "individualized_denial"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-44",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "human_involvement_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "qa_involvement"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-45",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "expert_1"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "met",
+      "reason_code": "ALL_OBJECTIVES_MET"
+    }
+  },
+  {
+    "id": "met-46",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -1693,334 +1991,26 @@
     }
   },
   {
-    "id": "met-32",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-33",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-34",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-35",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-36",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-37",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-38",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-39",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-40",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-41",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-42",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-43",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-44",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-45",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
-    "id": "met-46",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "met",
-      "reason_code": "ALL_OBJECTIVES_MET"
-    }
-  },
-  {
     "id": "met-47",
-    "pack_slug": "iso42001-ids",
-    "control_key": "ISO-42001-AI-POLICY",
-    "clause_ref": "Clause 5",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "usage_explanation",
+          "privacy_fairness_rights"
+        ]
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
@@ -2028,15 +2018,24 @@
   },
   {
     "id": "met-48",
-    "pack_slug": "nist-ai-rmf",
-    "control_key": "NIST-AI-RMF-GV-1.1",
-    "clause_ref": "GV-1.1",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3 (Levels III-IV peer review)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 3
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "expert_1"
+        ]
+      }
+    ],
     "expect": {
       "outcome_state": "met",
       "reason_code": "ALL_OBJECTIVES_MET"
@@ -2044,24 +2043,26 @@
   },
   {
     "id": "met-49",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 1
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "notice_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "in_person",
+          "mail",
+          "telephone",
+          "explanation_link"
+        ]
       }
     ],
     "expect": {
@@ -2072,20 +2073,20 @@
   {
     "id": "partially_met-00",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment"
+          "web"
         ]
       }
     ],
@@ -2097,8 +2098,8 @@
   {
     "id": "partially_met-01",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -2106,11 +2107,11 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "explanation_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "di_experts_consulted"
+          "general_public"
         ]
       }
     ],
@@ -2122,20 +2123,20 @@
   {
     "id": "partially_met-02",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "qa_involvement"
         ]
       }
     ],
@@ -2147,21 +2148,20 @@
   {
     "id": "partially_met-03",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 4
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "peer_review_report",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "expert_1"
         ]
       }
     ],
@@ -2174,63 +2174,11 @@
     "id": "partially_met-04",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment",
-          "mitigation_measures"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-05",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted",
-          "mitigation_measures"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-06",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
     },
     "evidence": [
       {
@@ -2248,10 +2196,10 @@
     }
   },
   {
-    "id": "partially_met-07",
+    "id": "partially_met-05",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -2259,11 +2207,61 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "di_experts_consulted"
+          "technical"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-06",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "in_person"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-07",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "individualized_denial"
         ]
       }
     ],
@@ -2275,8 +2273,8 @@
   {
     "id": "partially_met-08",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -2284,11 +2282,11 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "final_human_decision"
         ]
       }
     ],
@@ -2300,21 +2298,20 @@
   {
     "id": "partially_met-09",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 4
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "peer_review_report",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "expert_2"
         ]
       }
     ],
@@ -2327,88 +2324,11 @@
     "id": "partially_met-10",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment",
-          "mitigation_measures"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-11",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted",
-          "mitigation_measures"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-12",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-13",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 2
     },
     "evidence": [
       {
@@ -2426,10 +2346,85 @@
     }
   },
   {
+    "id": "partially_met-11",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "privacy_fairness_rights"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-12",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "mail"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-13",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "general_public"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
     "id": "partially_met-14",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -2437,11 +2432,11 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "qa_involvement"
         ]
       }
     ],
@@ -2454,11 +2449,136 @@
     "id": "partially_met-15",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "gba_plus_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "mitigation_measures"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-16",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "evaluate_override"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-17",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "telephone"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-18",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "individualized_denial"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-19",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 4
+    },
+    "evidence": [
+      {
+        "type": "human_involvement_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "final_human_decision"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-20",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
@@ -2477,14 +2597,91 @@
     }
   },
   {
-    "id": "partially_met-16",
+    "id": "partially_met-21",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "usage_explanation",
+          "technical"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-22",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "in_person"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-23",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 4
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "general_public"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-24",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
@@ -2503,14 +2700,91 @@
     }
   },
   {
-    "id": "partially_met-17",
+    "id": "partially_met-25",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "usage_explanation",
+          "privacy_fairness_rights"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "web",
+          "mail"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-27",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 4
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": [
+          "individualized_denial"
+        ]
+      }
+    ],
+    "expect": {
+      "outcome_state": "partially_met",
+      "reason_code": "MIXED_OBJECTIVE_RESULTS"
+    }
+  },
+  {
+    "id": "partially_met-28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
     },
     "evidence": [
       {
@@ -2529,358 +2803,24 @@
     }
   },
   {
-    "id": "partially_met-18",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-19",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-20",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-21",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-22",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-23",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-24",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "population_impact_assessment"
-        ]
-      },
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-25",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted"
-        ]
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-26",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted"
-        ]
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-27",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted"
-        ]
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
-    "id": "partially_met-28",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": [
-          "di_experts_consulted"
-        ]
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "partially_met",
-      "reason_code": "MIXED_OBJECTIVE_RESULTS"
-    }
-  },
-  {
     "id": "partially_met-29",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "di_experts_consulted"
+          "usage_explanation",
+          "evaluate_override"
         ]
-      },
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -2891,26 +2831,22 @@
   {
     "id": "partially_met-30",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "di_experts_consulted"
+          "web",
+          "telephone"
         ]
-      },
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -2922,11 +2858,11 @@
     "id": "partially_met-31",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -2934,13 +2870,8 @@
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "di_experts_consulted"
+          "population_impact_assessment"
         ]
-      },
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -2951,26 +2882,22 @@
   {
     "id": "partially_met-32",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "technical",
+          "privacy_fairness_rights"
         ]
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -2981,26 +2908,22 @@
   {
     "id": "partially_met-33",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "web",
+          "explanation_link"
         ]
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3012,11 +2935,11 @@
     "id": "partially_met-34",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -3024,13 +2947,8 @@
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "di_experts_consulted"
         ]
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3041,26 +2959,22 @@
   {
     "id": "partially_met-35",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "technical",
+          "evaluate_override"
         ]
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3071,26 +2985,22 @@
   {
     "id": "partially_met-36",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "in_person",
+          "mail"
         ]
-      },
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3102,11 +3012,11 @@
     "id": "partially_met-37",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -3116,11 +3026,6 @@
         "covers": [
           "mitigation_measures"
         ]
-      },
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3131,26 +3036,22 @@
   {
     "id": "partially_met-38",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "mitigation_measures"
+          "privacy_fairness_rights",
+          "evaluate_override"
         ]
-      },
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3161,27 +3062,22 @@
   {
     "id": "partially_met-39",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "in_person",
+          "telephone"
         ]
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3193,11 +3089,11 @@
     "id": "partially_met-40",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -3208,11 +3104,6 @@
           "population_impact_assessment",
           "di_experts_consulted"
         ]
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3223,27 +3114,23 @@
   {
     "id": "partially_met-41",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "usage_explanation",
+          "technical",
+          "privacy_fairness_rights"
         ]
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3254,27 +3141,22 @@
   {
     "id": "partially_met-42",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "in_person",
+          "explanation_link"
         ]
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3286,11 +3168,11 @@
     "id": "partially_met-43",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -3299,13 +3181,8 @@
         "valid_until": "2099-06-01",
         "covers": [
           "population_impact_assessment",
-          "di_experts_consulted"
+          "mitigation_measures"
         ]
-      },
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3316,27 +3193,23 @@
   {
     "id": "partially_met-44",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "usage_explanation",
+          "technical",
+          "evaluate_override"
         ]
-      },
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3347,27 +3220,22 @@
   {
     "id": "partially_met-45",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "di_experts_consulted"
+          "mail",
+          "telephone"
         ]
-      },
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3379,11 +3247,11 @@
     "id": "partially_met-46",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -3391,14 +3259,9 @@
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
+          "di_experts_consulted",
           "mitigation_measures"
         ]
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3409,27 +3272,23 @@
   {
     "id": "partially_met-47",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "training_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "mitigation_measures"
+          "usage_explanation",
+          "privacy_fairness_rights",
+          "evaluate_override"
         ]
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3440,27 +3299,22 @@
   {
     "id": "partially_met-48",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "mitigation_measures"
+          "mail",
+          "explanation_link"
         ]
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3472,11 +3326,11 @@
     "id": "partially_met-49",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 4
     },
     "evidence": [
       {
@@ -3484,14 +3338,8 @@
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": [
-          "population_impact_assessment",
-          "mitigation_measures"
+          "population_impact_assessment"
         ]
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3501,9 +3349,9 @@
   },
   {
     "id": "not_met-00",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -3518,34 +3366,28 @@
   {
     "id": "not_met-01",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-1-1",
+    "clause_ref": "6.1.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-02",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-1-3",
+    "clause_ref": "6.1.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -3556,8 +3398,8 @@
   {
     "id": "not_met-03",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -3565,32 +3407,31 @@
     },
     "evidence": [
       {
-        "type": "aia_record",
-        "authorized_submitter": false,
+        "type": "notice_record",
+        "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
+      "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
     "id": "not_met-04",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "explanation_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": []
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3601,20 +3442,14 @@
   {
     "id": "not_met-05",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-2-7",
+    "clause_ref": "6.2.7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3623,20 +3458,14 @@
   {
     "id": "not_met-06",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-1",
+    "clause_ref": "6.3.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3645,42 +3474,30 @@
   {
     "id": "not_met-07",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-10",
+    "clause_ref": "6.3.10",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-08",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-11",
+    "clause_ref": "6.3.11",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3689,12 +3506,12 @@
   {
     "id": "not_met-09",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-12",
+    "clause_ref": "6.3.12",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -3705,19 +3522,18 @@
   {
     "id": "not_met-10",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": []
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3728,12 +3544,12 @@
   {
     "id": "not_met-11",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-14",
+    "clause_ref": "6.3.14; Appendix C row 7",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -3744,20 +3560,14 @@
   {
     "id": "not_met-12",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-2",
+    "clause_ref": "6.3.2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3766,42 +3576,30 @@
   {
     "id": "not_met-13",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-3",
+    "clause_ref": "6.3.3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-14",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-5",
+    "clause_ref": "6.3.5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3810,20 +3608,14 @@
   {
     "id": "not_met-15",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-6",
+    "clause_ref": "6.3.6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3832,8 +3624,8 @@
   {
     "id": "not_met-16",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -3841,10 +3633,9 @@
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "peer_review_report",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": []
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -3855,34 +3646,56 @@
   {
     "id": "not_met-17",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "gba_plus_record",
         "authorized_submitter": true,
-        "valid_until": "expired"
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
+      "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
     "id": "not_met-18",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "OBJECTIVES_FAILED"
+    }
+  },
+  {
+    "id": "not_met-19",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-4-1",
+    "clause_ref": "6.4.1; 6.4.1.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -3891,44 +3704,16 @@
     }
   },
   {
-    "id": "not_met-19",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
     "id": "not_met-20",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-5-1",
+    "clause_ref": "6.5.1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3937,12 +3722,12 @@
   {
     "id": "not_met-21",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-6-5-2",
+    "clause_ref": "6.5.2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -3953,20 +3738,14 @@
   {
     "id": "not_met-22",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "control_key": "CA-DADM-APP-C-03",
+    "clause_ref": "Appendix C row 3 (Levels III-IV peer review)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 3
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3974,21 +3753,15 @@
   },
   {
     "id": "not_met-23",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
+    "pack_slug": "dsd",
+    "control_key": "CA-DSD-4-3-24",
+    "clause_ref": "4.3.24",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 4
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -3996,21 +3769,15 @@
   },
   {
     "id": "not_met-24",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "ai-strategy",
+    "control_key": "CA-GC-AI-P4-REGISTER",
+    "clause_ref": "Priority 4",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -4018,48 +3785,31 @@
   },
   {
     "id": "not_met-25",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-26",
+    "clause_ref": "4.1.26",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-26",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "psd",
+    "control_key": "CA-PSD-4-1-28",
+    "clause_ref": "4.1.28",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -4067,21 +3817,15 @@
   },
   {
     "id": "not_met-27",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "iso42001-ids",
+    "control_key": "ISO-42001-5-2",
+    "clause_ref": "5.2",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
       "reason_code": "CRITICAL_GATE_FAILED"
@@ -4089,45 +3833,34 @@
   },
   {
     "id": "not_met-28",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "nist-ai-rmf",
+    "control_key": "NIST-AI-RMF-GV-1.1",
+    "clause_ref": "GV-1.1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
+    "evidence": [],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-29",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "pack_slug": "aia",
+    "control_key": "CA-AIA-SCORE-01",
+    "clause_ref": "Tool",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
+        "type": "aia_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4141,15 +3874,15 @@
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-1-1",
     "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
+        "type": "aia_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4161,66 +3894,17 @@
   {
     "id": "not_met-31",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
-    "id": "not_met-32",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "not_met-33",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-1-3",
+    "clause_ref": "6.1.3",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
+        "type": "aia_update_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4230,25 +3914,21 @@
     }
   },
   {
-    "id": "not_met-34",
+    "id": "not_met-32",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "notice_record",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
+        "valid_until": "2099-06-01",
+        "covers": []
       }
     ],
     "expect": {
@@ -4257,19 +3937,64 @@
     }
   },
   {
-    "id": "not_met-35",
+    "id": "not_met-33",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "canadian_facility_assessment",
+        "type": "explanation_record",
         "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": []
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "OBJECTIVES_FAILED"
+    }
+  },
+  {
+    "id": "not_met-34",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-7",
+    "clause_ref": "6.2.7",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "decision_trace_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "CRITICAL_GATE_FAILED"
+    }
+  },
+  {
+    "id": "not_met-35",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-1",
+    "clause_ref": "6.3.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "preprod_test_report",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4281,17 +4006,17 @@
   {
     "id": "not_met-36",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-10",
+    "clause_ref": "6.3.10",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
+        "type": "security_risk_assessment",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4303,44 +4028,39 @@
   {
     "id": "not_met-37",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-11",
+    "clause_ref": "6.3.11",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
+        "type": "integrity_controls_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-38",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-12",
+    "clause_ref": "6.3.12",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
+        "type": "legal_consultation_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4352,17 +4072,40 @@
   {
     "id": "not_met-39",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "human_involvement_record",
         "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": []
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "OBJECTIVES_FAILED"
+    }
+  },
+  {
+    "id": "not_met-40",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-14",
+    "clause_ref": "6.3.14; Appendix C row 7",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "operational_approval_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4372,46 +4115,19 @@
     }
   },
   {
-    "id": "not_met-40",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
-    }
-  },
-  {
     "id": "not_met-41",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-2",
+    "clause_ref": "6.3.2",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
+        "type": "monitoring_schedule_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4423,22 +4139,17 @@
   {
     "id": "not_met-42",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-3",
+    "clause_ref": "6.3.3",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "human_rights_attestation",
         "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4450,49 +4161,39 @@
   {
     "id": "not_met-43",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-5",
+    "clause_ref": "6.3.5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
+        "type": "dataset_validation_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
     "id": "not_met-44",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-6",
+    "clause_ref": "6.3.6",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "data_governance_record",
         "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4504,36 +4205,32 @@
   {
     "id": "not_met-45",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 1
+      "impact_level": 4
     },
     "evidence": [
       {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "ai_register_entry",
+        "type": "peer_review_report",
         "authorized_submitter": true,
-        "valid_until": "2099-06-01"
+        "valid_until": "2099-06-01",
+        "covers": []
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
+      "reason_code": "OBJECTIVES_FAILED"
     }
   },
   {
     "id": "not_met-46",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 2
@@ -4544,11 +4241,6 @@
         "authorized_submitter": true,
         "valid_until": "2099-06-01",
         "covers": []
-      },
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -4559,49 +4251,40 @@
   {
     "id": "not_met-47",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-APP-C-03",
-    "clause_ref": "Appendix C row 3",
-    "variation": "unrelated_evidence_added",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 3
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "not_met",
-      "reason_code": "CRITICAL_GATE_FAILED"
-    }
-  },
-  {
-    "id": "not_met-48",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-1-1",
-    "clause_ref": "6.1.1",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
       "impact_level": 1
     },
     "evidence": [
       {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      },
-      {
-        "type": "canadian_facility_assessment",
+        "type": "training_record",
         "authorized_submitter": true,
+        "valid_until": "2099-06-01",
+        "covers": []
+      }
+    ],
+    "expect": {
+      "outcome_state": "not_met",
+      "reason_code": "OBJECTIVES_FAILED"
+    }
+  },
+  {
+    "id": "not_met-48",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-4-1",
+    "clause_ref": "6.4.1; 6.4.1.1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "recourse_notice_record",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
@@ -4613,29 +4296,23 @@
   {
     "id": "not_met-49",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "unrelated_evidence_added",
+    "control_key": "CA-DADM-6-5-1",
+    "clause_ref": "6.5.1",
+    "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "2099-06-01",
-        "covers": []
-      },
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
+        "type": "effectiveness_publication",
+        "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
     ],
     "expect": {
       "outcome_state": "not_met",
-      "reason_code": "OBJECTIVES_FAILED"
+      "reason_code": "CRITICAL_GATE_FAILED"
     }
   },
   {
@@ -4672,9 +4349,9 @@
   },
   {
     "id": "unable_to_determine-02",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4688,9 +4365,9 @@
   },
   {
     "id": "unable_to_determine-03",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4704,13 +4381,13 @@
   },
   {
     "id": "unable_to_determine-04",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
     "evidence": [],
     "expect": {
@@ -4720,9 +4397,9 @@
   },
   {
     "id": "unable_to_determine-05",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4736,9 +4413,9 @@
   },
   {
     "id": "unable_to_determine-06",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4752,9 +4429,9 @@
   },
   {
     "id": "unable_to_determine-07",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4768,9 +4445,9 @@
   },
   {
     "id": "unable_to_determine-08",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4784,6 +4461,54 @@
   },
   {
     "id": "unable_to_determine-09",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-10",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-11",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-12",
     "pack_slug": "guiding-principles",
     "control_key": "CA-AI-PRIN-01",
     "clause_ref": "Principle 1",
@@ -4795,72 +4520,6 @@
     "evidence": [
       {
         "type": "principle_alignment_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-10",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-11",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-12",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
         "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
@@ -4872,9 +4531,207 @@
   },
   {
     "id": "unable_to_determine-13",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-02",
+    "clause_ref": "Principle 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-14",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-15",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-16",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-17",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-18",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-19",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-20",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "human_involvement_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-21",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-22",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4893,10 +4750,10 @@
     }
   },
   {
-    "id": "unable_to_determine-14",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "id": "unable_to_determine-23",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -4904,7 +4761,7 @@
     },
     "evidence": [
       {
-        "type": "canadian_facility_assessment",
+        "type": "training_record",
         "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
@@ -4915,73 +4772,7 @@
     }
   },
   {
-    "id": "unable_to_determine-15",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-16",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-17",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-18",
+    "id": "unable_to_determine-24",
     "pack_slug": "guiding-principles",
     "control_key": "CA-AI-PRIN-01",
     "clause_ref": "Principle 1",
@@ -5003,7 +4794,7 @@
     }
   },
   {
-    "id": "unable_to_determine-19",
+    "id": "unable_to_determine-25",
     "pack_slug": "guiding-principles",
     "control_key": "CA-AI-PRIN-02",
     "clause_ref": "Principle 2",
@@ -5025,142 +4816,10 @@
     }
   },
   {
-    "id": "unable_to_determine-20",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-21",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "peer_review_report",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-22",
-    "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "gba_plus_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-23",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-24",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-25",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 1
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
     "id": "unable_to_determine-26",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-03",
+    "clause_ref": "Principle 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5168,7 +4827,7 @@
     },
     "evidence": [
       {
-        "type": "adm_accountability_record",
+        "type": "principle_alignment_record",
         "authorized_submitter": true,
         "valid_until": "expired"
       }
@@ -5181,14 +4840,20 @@
   {
     "id": "unable_to_determine-27",
     "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
+    "control_key": "CA-AI-PRIN-06",
+    "clause_ref": "Principle 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
@@ -5197,14 +4862,20 @@
   {
     "id": "unable_to_determine-28",
     "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
+    "control_key": "CA-AI-PRIN-08",
+    "clause_ref": "Principle 8",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
@@ -5212,15 +4883,21 @@
   },
   {
     "id": "unable_to_determine-29",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "guiding-principles",
+    "control_key": "CA-AI-PRIN-09",
+    "clause_ref": "Principle 9",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 1
     },
-    "evidence": [],
+    "evidence": [
+      {
+        "type": "principle_alignment_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
     "expect": {
       "outcome_state": "unable_to_determine",
       "reason_code": "EVIDENCE_MISSING"
@@ -5229,8 +4906,140 @@
   {
     "id": "unable_to_determine-30",
     "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "notice_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-31",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "explanation_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-32",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "human_involvement_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-33",
+    "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "clause_ref": "6.3.7; Appendix C row 3",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "peer_review_report",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-34",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [
+      {
+        "type": "gba_plus_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-35",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 1
+    },
+    "evidence": [
+      {
+        "type": "training_record",
+        "authorized_submitter": true,
+        "valid_until": "expired"
+      }
+    ],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-36",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5243,10 +5052,42 @@
     }
   },
   {
-    "id": "unable_to_determine-31",
+    "id": "unable_to_determine-37",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-38",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 2
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-39",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5259,10 +5100,26 @@
     }
   },
   {
-    "id": "unable_to_determine-32",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
+    "id": "unable_to_determine-40",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-8",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
+    "variation": "enumerated",
+    "system": {
+      "planned_production_use": true,
+      "impact_level": 3
+    },
+    "evidence": [],
+    "expect": {
+      "outcome_state": "unable_to_determine",
+      "reason_code": "EVIDENCE_MISSING"
+    }
+  },
+  {
+    "id": "unable_to_determine-41",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5275,58 +5132,10 @@
     }
   },
   {
-    "id": "unable_to_determine-33",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-34",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-35",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-36",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
+    "id": "unable_to_determine-42",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5334,7 +5143,7 @@
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "notice_record",
         "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
@@ -5345,10 +5154,10 @@
     }
   },
   {
-    "id": "unable_to_determine-37",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
+    "id": "unable_to_determine-43",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5356,7 +5165,7 @@
     },
     "evidence": [
       {
-        "type": "principle_alignment_record",
+        "type": "explanation_record",
         "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
@@ -5367,10 +5176,10 @@
     }
   },
   {
-    "id": "unable_to_determine-38",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "id": "unable_to_determine-44",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-13",
+    "clause_ref": "6.3.13; Appendix C row 6",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5378,7 +5187,7 @@
     },
     "evidence": [
       {
-        "type": "aia_record",
+        "type": "human_involvement_record",
         "authorized_submitter": false,
         "valid_until": "2099-06-01"
       }
@@ -5389,14 +5198,14 @@
     }
   },
   {
-    "id": "unable_to_determine-39",
+    "id": "unable_to_determine-45",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "clause_ref": "6.3.7; Appendix C row 3",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 2
+      "impact_level": 3
     },
     "evidence": [
       {
@@ -5411,10 +5220,10 @@
     }
   },
   {
-    "id": "unable_to_determine-40",
+    "id": "unable_to_determine-46",
     "pack_slug": "dadm",
     "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "clause_ref": "6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5433,142 +5242,10 @@
     }
   },
   {
-    "id": "unable_to_determine-41",
-    "pack_slug": "dsd",
-    "control_key": "CA-DSD-4-3-24",
-    "clause_ref": "4.3.24",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "canadian_facility_assessment",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-42",
-    "pack_slug": "ai-strategy",
-    "control_key": "CA-GC-AI-P4-REGISTER",
-    "clause_ref": "Priority 4",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "ai_register_entry",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-43",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-26",
-    "clause_ref": "4.1.26",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "design_by_default_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-44",
-    "pack_slug": "psd",
-    "control_key": "CA-PSD-4-1-28",
-    "clause_ref": "4.1.28",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "adm_accountability_record",
-        "authorized_submitter": false,
-        "valid_until": "2099-06-01"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-45",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-01",
-    "clause_ref": "Principle 1",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
-    "id": "unable_to_determine-46",
-    "pack_slug": "guiding-principles",
-    "control_key": "CA-AI-PRIN-02",
-    "clause_ref": "Principle 2",
-    "variation": "enumerated",
-    "system": {
-      "planned_production_use": true,
-      "impact_level": 2
-    },
-    "evidence": [
-      {
-        "type": "principle_alignment_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
-      }
-    ],
-    "expect": {
-      "outcome_state": "unable_to_determine",
-      "reason_code": "EVIDENCE_MISSING"
-    }
-  },
-  {
     "id": "unable_to_determine-47",
-    "pack_slug": "aia",
-    "control_key": "CA-AIA-SCORE-01",
-    "clause_ref": "Tool",
+    "pack_slug": "dadm",
+    "control_key": "CA-DADM-6-3-9",
+    "clause_ref": "6.3.9; Appendix C row 5",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5576,9 +5253,9 @@
     },
     "evidence": [
       {
-        "type": "aia_record",
-        "authorized_submitter": true,
-        "valid_until": "expired"
+        "type": "training_record",
+        "authorized_submitter": false,
+        "valid_until": "2099-06-01"
       }
     ],
     "expect": {
@@ -5589,8 +5266,8 @@
   {
     "id": "unable_to_determine-48",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-7",
-    "clause_ref": "6.3.7",
+    "control_key": "CA-DADM-6-2-1",
+    "clause_ref": "6.2.1; Appendix C row 1",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
@@ -5598,7 +5275,7 @@
     },
     "evidence": [
       {
-        "type": "peer_review_report",
+        "type": "notice_record",
         "authorized_submitter": true,
         "valid_until": "expired"
       }
@@ -5611,16 +5288,16 @@
   {
     "id": "unable_to_determine-49",
     "pack_slug": "dadm",
-    "control_key": "CA-DADM-6-3-8",
-    "clause_ref": "6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)",
+    "control_key": "CA-DADM-6-2-3",
+    "clause_ref": "6.2.3; Appendix C row 2",
     "variation": "enumerated",
     "system": {
       "planned_production_use": true,
-      "impact_level": 3
+      "impact_level": 2
     },
     "evidence": [
       {
-        "type": "gba_plus_record",
+        "type": "explanation_record",
         "authorized_submitter": true,
         "valid_until": "expired"
       }

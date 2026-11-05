@@ -20,6 +20,13 @@ if ! command -v syft >/dev/null 2>&1; then
 fi
 
 cd "${ROOT}"
+
+CORE_API_REF="ghcr.io/applycoding/cleartrace-core-api:0.1.0"
+if command -v docker >/dev/null 2>&1; then
+  echo "Building ClearTrace core-api image ${CORE_API_REF}"
+  docker build -t "${CORE_API_REF}" -f services/core-api/Dockerfile .
+fi
+
 mapfile -t REFS < <(uv run python tools/image_licence_report.py --list-images)
 
 status="${OUT}/scan_status.tsv"
@@ -29,7 +36,11 @@ for ref in "${REFS[@]}"; do
   echo "Syft scan ${ref}"
   # No -q: syft's quiet mode also drops the error text, which is the recorded reason.
   rc=0
-  syft "registry:${ref}" -o cyclonedx-json > "${OUT}/${safe}.json" 2> "${OUT}/${safe}.err" || rc=$?
+  src="registry:${ref}"
+  if docker image inspect "${ref}" >/dev/null 2>&1; then
+    src="docker:${ref}"
+  fi
+  syft "${src}" -o cyclonedx-json > "${OUT}/${safe}.json" 2> "${OUT}/${safe}.err" || rc=$?
   if [ "${rc}" -eq 0 ]; then
     printf '%s\tscanned\t%s.json\n' "${ref}" "${safe}" >> "${status}"
   else

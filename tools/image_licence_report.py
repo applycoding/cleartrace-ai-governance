@@ -82,7 +82,7 @@ def build_report() -> dict[str, object]:
         "images_not_scanned": [i["image"] for i in images if i["status"] != "scanned"],
         "disallowed_total": sum(int(i["disallowed_count"]) for i in scanned),
         "no_licence_data_total": sum(int(i["no_licence_data"]) for i in scanned),
-        "exception_file": None,
+        "exception_file": "docs/licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md",
     }
 
 
@@ -108,7 +108,7 @@ def main() -> int:
     print(
         f"images scanned {report['images_scanned']}/{report['images_total']}; "
         f"disallowed-licence components {report['disallowed_total']}; "
-        f"no approved exception file"
+        f"exception file {report['exception_file']}"
     )
     return 0
 

@@ -2,31 +2,67 @@ slug: guiding-principles
 name_en: Guiding principles for responsible AI use
 name_fr: Principes directeurs pour l'utilisation responsable de l'IA
 obligation_type: guidance
-source_url_en: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/ai-ethics-responsibilities/principles.html
-source_url_fr: https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ai-ethics-responsibilities/principles.html
+source_url_en: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guiding-principles-use-ai.html
+source_url_fr: https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/principes-directeurs-utilisation-ia.html
 needs_second_reader_recheck: true
-version: 1.0.0
+version: 1.1.0
 controls:
 - control_key: CA-AI-PRIN-01
   clause_ref: Principle 1
-  title_en: Ensure AI use is guided, safe, and respects rights.
-  title_fr: Veiller à ce que l'IA soit encadrée, sûre et respectueuse des droits.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  title_en: Understand and measure the impacts of AI systems.
+  title_fr: Comprendre et mesurer les incidences des systèmes d'IA.
+  remediation_en: Record impact measurement aligned with this guiding principle.
+  remediation_fr: Consignez la mesure des incidences alignée sur ce principe directeur.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: principle_alignment_record
     required: true
 - control_key: CA-AI-PRIN-02
   clause_ref: Principle 2
-  title_en: Be transparent about when and how AI supports decisions.
-  title_fr: Être transparent quant au moment et à la façon dont l'IA appuie les décisions.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  title_en: Be transparent about how and when AI is used.
+  title_fr: Être transparent quant au moment et à la façon dont l'IA est utilisée.
+  remediation_en: Publish transparency notices aligned with this guiding principle.
+  remediation_fr: Publiez des avis de transparence alignés sur ce principe directeur.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: principle_alignment_record
+    required: true
+- control_key: CA-AI-PRIN-03
+  clause_ref: Principle 3
+  title_en: Provide meaningful explanations of AI-supported decisions.
+  title_fr: Fournir des explications significatives des décisions appuyées par l'IA.
+  remediation_en: Publish meaningful explanations aligned with this guiding principle.
+  remediation_fr: Publiez des explications significatives alignées sur ce principe directeur.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: principle_alignment_record
+    required: true
+- control_key: CA-AI-PRIN-06
+  clause_ref: Principle 6
+  title_en: Support human rights and democratic values in AI use.
+  title_fr: Appuyer les droits de la personne et les valeurs démocratiques dans l'utilisation de l'IA.
+  remediation_en: Record human-rights safeguards aligned with this guiding principle.
+  remediation_fr: Consignez les mesures de protection des droits alignées sur ce principe directeur.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: principle_alignment_record
+    required: true
+- control_key: CA-AI-PRIN-08
+  clause_ref: Principle 8
+  title_en: Protect privacy and security when using AI.
+  title_fr: Protéger la vie privée et la sécurité lors de l'utilisation de l'IA.
+  remediation_en: Record privacy and security controls aligned with this guiding principle.
+  remediation_fr: Consignez les contrôles de vie privée et de sécurité alignés sur ce principe directeur.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: principle_alignment_record
+    required: true
+- control_key: CA-AI-PRIN-09
+  clause_ref: Principle 9
+  title_en: Ensure human oversight and accountability for AI systems.
+  title_fr: Assurer la surveillance humaine et la responsabilisation des systèmes d'IA.
+  remediation_en: Record human oversight arrangements aligned with this guiding principle.
+  remediation_fr: Consignez les dispositions de surveillance humaine alignées sur ce principe directeur.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: principle_alignment_record

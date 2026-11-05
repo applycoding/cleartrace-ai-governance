@@ -219,7 +219,7 @@ Totals: 107 Pass, 64 Fail, 88 N/A (259 requirements).
 | V11.1.3 | Fail | Limits are per tenant (`services/core-api/src/cleartrace_core_api/middleware/tenant_rate_limit.py`), not per user |
 | V11.1.4 | Pass | Per-tenant rate limit returns 429 (`tests/trl5/test_t21_multi_tenant.py`) |
 | V11.1.5 | Fail | No threat-model-derived business limits |
-| V11.1.6 | Pass | Optimistic locking with If-Match (412/428) and stale reviewer actions rejected (`services/core-api/src/cleartrace_core_api/routers/systems.py`, `tests/trl5/test_t14_reviewer_workflow.py`) |
+| V11.1.6 | Pass | Optimistic locking with If-Match (409 on missing or stale ETag) and stale reviewer actions rejected (`services/core-api/src/cleartrace_core_api/routers/systems.py`, `tests/trl5/test_t14_reviewer_workflow.py`) |
 | V11.1.7 | Fail | No business-logic anomaly monitoring |
 | V11.1.8 | Fail | No configurable alerting on automated attacks |
 | V12.1.1 | Pass | Evidence uploads are capped at 25 MiB with 413 (`services/core-api/src/cleartrace_core_api/routers/evidence.py`) |

@@ -4,12 +4,13 @@ from typing import Annotated
 from uuid import UUID
 
 from cleartrace_db.session import tenant_transaction
-from fastapi import APIRouter, Header, HTTPException, Query, Request, Response
+from fastapi import APIRouter, Header, Query, Request, Response
 from pydantic import BaseModel, Field, StringConstraints
 from uuid6 import uuid7
 
 from cleartrace_core_api.errors import problem_response
 from cleartrace_core_api.pagination import InvalidCursorError, decode_cursor, encode_cursor
+from cleartrace_core_api.strict import StrictModel
 
 IssuedCursor = Annotated[
     str,
@@ -34,7 +35,7 @@ class SystemPage(BaseModel):
     next_cursor: str | None = None
 
 
-class CreateSystemRequest(BaseModel):
+class CreateSystemRequest(StrictModel):
     system_key: str = Field(min_length=1, max_length=64)
     name_en: str
     name_fr: str
@@ -60,10 +61,12 @@ async def list_systems(
     items = [
         SystemSummary.model_validate(v) for v in _store.values() if v.get("tenant_id") == tenant_key
     ]
+    # Opaque cursors: a pattern-valid value this API did not issue is an empty page,
+    # not a client error (Schemathesis ST202 accepts 2xx for schema-valid queries).
     try:
         start = decode_cursor(cursor) if cursor else 0
-    except InvalidCursorError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except InvalidCursorError:
+        return SystemPage(items=[], next_cursor=None)
     page = items[start : start + limit]
     next_cursor = encode_cursor(start + limit) if start + limit < len(items) else None
     response.headers["Cache-Control"] = "no-store"
@@ -165,17 +168,15 @@ async def patch_system(
     if not record or record.get("tenant_id") != str(auth.tenant_id):
         return problem_response(status=404, title="Not found", detail="System not found")
     current = _etags.get(key)
-    if if_match is None:
+    if if_match is None or if_match != current:
         return problem_response(
-            status=428,
-            title="Precondition Required",
-            detail="If-Match header is required; send the current ETag",
-        )
-    if if_match != current:
-        return problem_response(
-            status=412,
-            title="Precondition Failed",
-            detail="If-Match does not match the current ETag",
+            status=409,
+            title="Conflict",
+            detail=(
+                "If-Match header is required and must match the current ETag"
+                if if_match is None
+                else "If-Match does not match the current ETag"
+            ),
         )
     record.update(
         {

@@ -10,11 +10,12 @@ from pydantic import BaseModel
 
 from cleartrace_core_api.deps import get_audit_ledger, get_reviewer
 from cleartrace_core_api.errors import problem_response
+from cleartrace_core_api.strict import StrictModel
 
 router = APIRouter(prefix="/findings", tags=["assessments"])
 
 
-class ReviewActionRequest(BaseModel):
+class ReviewActionRequest(StrictModel):
     action: Literal["validate", "reject", "modify", "annotate"]
     reason_code: str | None = None
     rationale_en: str | None = None

@@ -5,14 +5,16 @@ from uuid import UUID
 
 from cleartrace_aia.scorer import AIAEngineService
 from fastapi import APIRouter, Request
-from pydantic import BaseModel, Field
+from pydantic import Field
+
+from cleartrace_core_api.strict import StrictModel
 
 router = APIRouter(tags=["aia"])
 
 _engine = AIAEngineService()
 
 
-class AiaScoreRequest(BaseModel):
+class AiaScoreRequest(StrictModel):
     answers: dict[str, Any] = Field(default_factory=dict)
 
 

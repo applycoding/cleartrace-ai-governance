@@ -1,18 +1,19 @@
 slug: nist-ai-rmf
-name_en: NIST AI RMF 1.0 (identifier pack)
-name_fr: NIST AI RMF 1.0 (identifiants seulement)
-obligation_type: voluntary
+name_en: NIST AI RMF
+name_fr: NIST AI RMF
+obligation_type: voluntary_framework
 source_url_en: https://www.nist.gov/itl/ai-risk-management-framework
 source_url_fr: https://www.nist.gov/itl/ai-risk-management-framework
 needs_second_reader_recheck: true
-version: 1.0.0
+version: 1.1.0
 controls:
 - control_key: NIST-AI-RMF-GV-1.1
   clause_ref: GV-1.1
-  title_en: Governance mapping placeholder for GOVERN function.
-  title_fr: Correspondance de gouvernance pour la fonction GOVERN.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  title_en: "Govern function - establish AI risk management policies and accountability."
+  title_fr: "Fonction Gouverner - établir les politiques et la responsabilisation de la gestion des risques liés à l'IA."
+  remediation_en: Collect evidence mapped to this clause and obtain human review where required.
+  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une révision humaine si requis.
   applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: nist_govern_record
+    required: true

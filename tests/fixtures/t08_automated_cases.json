@@ -2,8 +2,8 @@
   "non_conformities": [
     {
       "id": "NC-000",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -17,19 +17,13 @@
     {
       "id": "NC-001",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-1-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -37,11 +31,11 @@
     {
       "id": "NC-002",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-1-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [],
       "expect": {
@@ -51,7 +45,7 @@
     {
       "id": "NC-003",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-2-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -59,8 +53,8 @@
       },
       "evidence": [
         {
-          "type": "aia_record",
-          "authorized_submitter": false,
+          "type": "notice_record",
+          "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
       ],
@@ -71,18 +65,17 @@
     {
       "id": "NC-004",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-2-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
+          "type": "explanation_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01",
-          "covers": []
+          "valid_until": "2099-06-01"
         }
       ],
       "expect": {
@@ -92,19 +85,13 @@
     {
       "id": "NC-005",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-2-7",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "peer_review_report",
-          "authorized_submitter": false,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -112,19 +99,13 @@
     {
       "id": "NC-006",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-3-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "expired"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -132,19 +113,13 @@
     {
       "id": "NC-007",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-3-10",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -152,19 +127,13 @@
     {
       "id": "NC-008",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-3-11",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "peer_review_report",
-          "authorized_submitter": true,
-          "valid_until": "expired"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -172,11 +141,11 @@
     {
       "id": "NC-009",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-3-12",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [],
       "expect": {
@@ -186,18 +155,17 @@
     {
       "id": "NC-010",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-3-13",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
+          "type": "human_involvement_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01",
-          "covers": []
+          "valid_until": "2099-06-01"
         }
       ],
       "expect": {
@@ -207,11 +175,11 @@
     {
       "id": "NC-011",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-3-14",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
       "evidence": [],
       "expect": {
@@ -221,19 +189,13 @@
     {
       "id": "NC-012",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-3-2",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": false,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -241,19 +203,13 @@
     {
       "id": "NC-013",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-3-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -261,7 +217,35 @@
     {
       "id": "NC-014",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-3-5",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [],
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-015",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-6",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [],
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-016",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -270,49 +254,8 @@
       "evidence": [
         {
           "type": "peer_review_report",
-          "authorized_submitter": false,
+          "authorized_submitter": true,
           "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "not_met"
-      }
-    },
-    {
-      "id": "NC-015",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "expired"
-        }
-      ],
-      "expect": {
-        "outcome_state": "not_met"
-      }
-    },
-    {
-      "id": "NC-016",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 4
-      },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01",
-          "covers": []
         }
       ],
       "expect": {
@@ -322,17 +265,17 @@
     {
       "id": "NC-017",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-3-8",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 2
       },
       "evidence": [
         {
-          "type": "peer_review_report",
+          "type": "gba_plus_record",
           "authorized_submitter": true,
-          "valid_until": "expired"
+          "valid_until": "2099-06-01"
         }
       ],
       "expect": {
@@ -342,30 +285,16 @@
     {
       "id": "NC-018",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-3-9",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "not_met"
-      }
-    },
-    {
-      "id": "NC-019",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "aia_record",
-          "authorized_submitter": false,
+          "type": "training_record",
+          "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
       ],
@@ -374,21 +303,29 @@
       }
     },
     {
-      "id": "NC-020",
+      "id": "NC-019",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-4-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "expired"
-        }
-      ],
+      "evidence": [],
+      "expect": {
+        "outcome_state": "not_met"
+      }
+    },
+    {
+      "id": "NC-020",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-5-1",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
@@ -396,11 +333,11 @@
     {
       "id": "NC-021",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-5-2",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
       "evidence": [],
       "expect": {
@@ -410,166 +347,114 @@
     {
       "id": "NC-022",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-APP-C-03",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 3
       },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": false,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-023",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "pack_slug": "dsd",
+      "control_key": "CA-DSD-4-3-24",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "expired"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-024",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "ai-strategy",
+      "control_key": "CA-GC-AI-P4-REGISTER",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "adm_accountability_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-025",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-26",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        },
-        {
-          "type": "adm_accountability_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-026",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "psd",
+      "control_key": "CA-PSD-4-1-28",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "adm_accountability_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-027",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "iso42001-ids",
+      "control_key": "ISO-42001-5-2",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "ai_register_entry",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-028",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "nist-ai-rmf",
+      "control_key": "NIST-AI-RMF-GV-1.1",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        },
-        {
-          "type": "ai_register_entry",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
+      "evidence": [],
       "expect": {
         "outcome_state": "not_met"
       }
     },
     {
       "id": "NC-029",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "unrelated_evidence_added",
+      "pack_slug": "aia",
+      "control_key": "CA-AIA-SCORE-01",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "ai_register_entry",
-          "authorized_submitter": true,
+          "type": "aia_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -581,15 +466,15 @@
       "id": "NC-030",
       "pack_slug": "dadm",
       "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
       "evidence": [
         {
-          "type": "canadian_facility_assessment",
-          "authorized_submitter": true,
+          "type": "aia_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -600,21 +485,16 @@
     {
       "id": "NC-031",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-1-3",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        },
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
+          "type": "aia_update_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -625,17 +505,18 @@
     {
       "id": "NC-032",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-2-1",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "aia_record",
+          "type": "notice_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01"
+          "valid_until": "2099-06-01",
+          "covers": []
         }
       ],
       "expect": {
@@ -645,17 +526,18 @@
     {
       "id": "NC-033",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-2-3",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
       "evidence": [
         {
-          "type": "design_by_default_record",
+          "type": "explanation_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01"
+          "valid_until": "2099-06-01",
+          "covers": []
         }
       ],
       "expect": {
@@ -665,21 +547,16 @@
     {
       "id": "NC-034",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-2-7",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        },
-        {
-          "type": "canadian_facility_assessment",
-          "authorized_submitter": true,
+          "type": "decision_trace_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -690,16 +567,16 @@
     {
       "id": "NC-035",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-3-1",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "canadian_facility_assessment",
-          "authorized_submitter": true,
+          "type": "preprod_test_report",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -710,16 +587,16 @@
     {
       "id": "NC-036",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-3-10",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
       "evidence": [
         {
-          "type": "peer_review_report",
-          "authorized_submitter": true,
+          "type": "security_risk_assessment",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -730,21 +607,16 @@
     {
       "id": "NC-037",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-3-11",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        },
-        {
-          "type": "design_by_default_record",
-          "authorized_submitter": true,
+          "type": "integrity_controls_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -755,16 +627,16 @@
     {
       "id": "NC-038",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-3-12",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "design_by_default_record",
-          "authorized_submitter": true,
+          "type": "legal_consultation_record",
+          "authorized_submitter": false,
           "valid_until": "2099-06-01"
         }
       ],
@@ -775,17 +647,18 @@
     {
       "id": "NC-039",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "unrelated_evidence_added",
+      "control_key": "CA-DADM-6-3-13",
+      "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
       "evidence": [
         {
-          "type": "principle_alignment_record",
+          "type": "human_involvement_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01"
+          "valid_until": "2099-06-01",
+          "covers": []
         }
       ],
       "expect": {
@@ -836,6 +709,86 @@
     },
     {
       "id": "CONF-002",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-03",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-003",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-06",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-004",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-08",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-005",
+      "pack_slug": "guiding-principles",
+      "control_key": "CA-AI-PRIN-09",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "principle_alignment_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-006",
       "pack_slug": "aia",
       "control_key": "CA-AIA-SCORE-01",
       "variation": "enumerated",
@@ -855,7 +808,7 @@
       }
     },
     {
-      "id": "CONF-003",
+      "id": "CONF-007",
       "pack_slug": "dadm",
       "control_key": "CA-DADM-6-1-1",
       "variation": "enumerated",
@@ -875,94 +828,9 @@
       }
     },
     {
-      "id": "CONF-004",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-7",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 1
-      },
-      "evidence": [
-        {
-          "type": "peer_review_report",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-005",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [
-        {
-          "type": "gba_plus_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01",
-          "covers": [
-            "population_impact_assessment",
-            "di_experts_consulted",
-            "mitigation_measures"
-          ]
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-006",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [
-        {
-          "type": "peer_review_report",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-007",
-      "pack_slug": "dsd",
-      "control_key": "CA-DSD-4-3-24",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 1
-      },
-      "evidence": [
-        {
-          "type": "canadian_facility_assessment",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
       "id": "CONF-008",
-      "pack_slug": "ai-strategy",
-      "control_key": "CA-GC-AI-P4-REGISTER",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-1-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -970,7 +838,7 @@
       },
       "evidence": [
         {
-          "type": "ai_register_entry",
+          "type": "aia_update_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -981,8 +849,8 @@
     },
     {
       "id": "CONF-009",
-      "pack_slug": "psd",
-      "control_key": "CA-PSD-4-1-26",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-2-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -990,9 +858,15 @@
       },
       "evidence": [
         {
-          "type": "design_by_default_record",
+          "type": "notice_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01"
+          "valid_until": "2099-06-01",
+          "covers": [
+            "web",
+            "in_person",
+            "mail",
+            "telephone"
+          ]
         }
       ],
       "expect": {
@@ -1001,8 +875,8 @@
     },
     {
       "id": "CONF-010",
-      "pack_slug": "psd",
-      "control_key": "CA-PSD-4-1-28",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-2-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
@@ -1010,7 +884,30 @@
       },
       "evidence": [
         {
-          "type": "adm_accountability_record",
+          "type": "explanation_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "general_public"
+          ]
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-011",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-2-7",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "decision_trace_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1020,45 +917,37 @@
       }
     },
     {
-      "id": "CONF-011",
-      "pack_slug": "iso42001-ids",
-      "control_key": "ISO-42001-AI-POLICY",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 1
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
       "id": "CONF-012",
-      "pack_slug": "nist-ai-rmf",
-      "control_key": "NIST-AI-RMF-GV-1.1",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
         "impact_level": 1
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "preprod_test_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
       "expect": {
         "outcome_state": "met"
       }
     },
     {
       "id": "CONF-013",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-01",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-10",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "principle_alignment_record",
+          "type": "security_risk_assessment",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1069,16 +958,16 @@
     },
     {
       "id": "CONF-014",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-02",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-11",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "principle_alignment_record",
+          "type": "integrity_controls_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1089,16 +978,16 @@
     },
     {
       "id": "CONF-015",
-      "pack_slug": "aia",
-      "control_key": "CA-AIA-SCORE-01",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-12",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "aia_record",
+          "type": "legal_consultation_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1110,17 +999,20 @@
     {
       "id": "CONF-016",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
+      "control_key": "CA-DADM-6-3-13",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "aia_record",
+          "type": "human_involvement_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01"
+          "valid_until": "2099-06-01",
+          "covers": [
+            "qa_involvement"
+          ]
         }
       ],
       "expect": {
@@ -1130,15 +1022,15 @@
     {
       "id": "CONF-017",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-7",
+      "control_key": "CA-DADM-6-3-14",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "peer_review_report",
+          "type": "operational_approval_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1150,22 +1042,17 @@
     {
       "id": "CONF-018",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-3-8",
+      "control_key": "CA-DADM-6-3-2",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "gba_plus_record",
+          "type": "monitoring_schedule_record",
           "authorized_submitter": true,
-          "valid_until": "2099-06-01",
-          "covers": [
-            "population_impact_assessment",
-            "di_experts_consulted",
-            "mitigation_measures"
-          ]
+          "valid_until": "2099-06-01"
         }
       ],
       "expect": {
@@ -1175,15 +1062,15 @@
     {
       "id": "CONF-019",
       "pack_slug": "dadm",
-      "control_key": "CA-DADM-APP-C-03",
+      "control_key": "CA-DADM-6-3-3",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "peer_review_report",
+          "type": "human_rights_attestation",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1194,16 +1081,16 @@
     },
     {
       "id": "CONF-020",
-      "pack_slug": "dsd",
-      "control_key": "CA-DSD-4-3-24",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-5",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "canadian_facility_assessment",
+          "type": "dataset_validation_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1214,16 +1101,16 @@
     },
     {
       "id": "CONF-021",
-      "pack_slug": "ai-strategy",
-      "control_key": "CA-GC-AI-P4-REGISTER",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-6",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 2
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "ai_register_entry",
+          "type": "data_governance_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1234,160 +1121,12 @@
     },
     {
       "id": "CONF-022",
-      "pack_slug": "psd",
-      "control_key": "CA-PSD-4-1-26",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [
-        {
-          "type": "design_by_default_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-023",
-      "pack_slug": "psd",
-      "control_key": "CA-PSD-4-1-28",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [
-        {
-          "type": "adm_accountability_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-024",
-      "pack_slug": "iso42001-ids",
-      "control_key": "ISO-42001-AI-POLICY",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-025",
-      "pack_slug": "nist-ai-rmf",
-      "control_key": "NIST-AI-RMF-GV-1.1",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 2
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-026",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-01",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [
-        {
-          "type": "principle_alignment_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-027",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-02",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [
-        {
-          "type": "principle_alignment_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-028",
-      "pack_slug": "aia",
-      "control_key": "CA-AIA-SCORE-01",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-029",
-      "pack_slug": "dadm",
-      "control_key": "CA-DADM-6-1-1",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [
-        {
-          "type": "aia_record",
-          "authorized_submitter": true,
-          "valid_until": "2099-06-01"
-        }
-      ],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-030",
       "pack_slug": "dadm",
       "control_key": "CA-DADM-6-3-7",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 2
       },
       "evidence": [
         {
@@ -1401,13 +1140,13 @@
       }
     },
     {
-      "id": "CONF-031",
+      "id": "CONF-023",
       "pack_slug": "dadm",
       "control_key": "CA-DADM-6-3-8",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 2
       },
       "evidence": [
         {
@@ -1426,13 +1165,116 @@
       }
     },
     {
-      "id": "CONF-032",
+      "id": "CONF-024",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-9",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "training_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "usage_explanation"
+          ]
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-025",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-4-1",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "recourse_notice_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-026",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-5-1",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "effectiveness_publication",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-027",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-5-2",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "fairness_publication",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-028",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-APP-C-03",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-029",
       "pack_slug": "dsd",
       "control_key": "CA-DSD-4-3-24",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
@@ -1446,13 +1288,13 @@
       }
     },
     {
-      "id": "CONF-033",
+      "id": "CONF-030",
       "pack_slug": "ai-strategy",
       "control_key": "CA-GC-AI-P4-REGISTER",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
@@ -1466,13 +1308,13 @@
       }
     },
     {
-      "id": "CONF-034",
+      "id": "CONF-031",
       "pack_slug": "psd",
       "control_key": "CA-PSD-4-1-26",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
@@ -1486,13 +1328,13 @@
       }
     },
     {
-      "id": "CONF-035",
+      "id": "CONF-032",
       "pack_slug": "psd",
       "control_key": "CA-PSD-4-1-28",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
+        "impact_level": 1
       },
       "evidence": [
         {
@@ -1506,45 +1348,17 @@
       }
     },
     {
-      "id": "CONF-036",
+      "id": "CONF-033",
       "pack_slug": "iso42001-ids",
-      "control_key": "ISO-42001-AI-POLICY",
+      "control_key": "ISO-42001-5-2",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-037",
-      "pack_slug": "nist-ai-rmf",
-      "control_key": "NIST-AI-RMF-GV-1.1",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 3
-      },
-      "evidence": [],
-      "expect": {
-        "outcome_state": "met"
-      }
-    },
-    {
-      "id": "CONF-038",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-01",
-      "variation": "enumerated",
-      "system": {
-        "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "principle_alignment_record",
+          "type": "iso_policy_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
         }
@@ -1554,19 +1368,140 @@
       }
     },
     {
-      "id": "CONF-039",
-      "pack_slug": "guiding-principles",
-      "control_key": "CA-AI-PRIN-02",
+      "id": "CONF-034",
+      "pack_slug": "nist-ai-rmf",
+      "control_key": "NIST-AI-RMF-GV-1.1",
       "variation": "enumerated",
       "system": {
         "planned_production_use": true,
-        "impact_level": 4
+        "impact_level": 1
       },
       "evidence": [
         {
-          "type": "principle_alignment_record",
+          "type": "nist_govern_record",
           "authorized_submitter": true,
           "valid_until": "2099-06-01"
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-035",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-2-1",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "notice_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "web",
+            "in_person",
+            "mail",
+            "telephone",
+            "explanation_link"
+          ]
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-036",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-2-3",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "explanation_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "general_public",
+            "individualized_denial"
+          ]
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-037",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-13",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 1
+      },
+      "evidence": [
+        {
+          "type": "human_involvement_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "qa_involvement",
+            "final_human_decision"
+          ]
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-038",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-7",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 2
+      },
+      "evidence": [
+        {
+          "type": "peer_review_report",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": []
+        }
+      ],
+      "expect": {
+        "outcome_state": "met"
+      }
+    },
+    {
+      "id": "CONF-039",
+      "pack_slug": "dadm",
+      "control_key": "CA-DADM-6-3-8",
+      "variation": "enumerated",
+      "system": {
+        "planned_production_use": true,
+        "impact_level": 3
+      },
+      "evidence": [
+        {
+          "type": "gba_plus_record",
+          "authorized_submitter": true,
+          "valid_until": "2099-06-01",
+          "covers": [
+            "population_impact_assessment",
+            "di_experts_consulted",
+            "mitigation_measures"
+          ]
         }
       ],
       "expect": {

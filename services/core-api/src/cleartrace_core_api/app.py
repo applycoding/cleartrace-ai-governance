@@ -133,9 +133,7 @@ _COMMON_ERRORS: dict[str, str] = {
     "401": "Missing or invalid bearer token",
     "403": "Cedar policy denied this action",
     "404": "Resource not found or not visible to this tenant",
-    "409": "Conflict (idempotency key reuse or state conflict)",
-    "412": "If-Match precondition failed",
-    "428": "If-Match required",
+    "409": "Conflict (idempotency reuse, If-Match, or state conflict)",
     "429": "Per-tenant rate limit exceeded",
 }
 _PUBLIC_OPENAPI_PATHS = {"/api/v1/health", "/api/v1/capabilities"}

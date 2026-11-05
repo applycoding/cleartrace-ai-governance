@@ -20,7 +20,7 @@ evaluation := result if {
 			"key": "accountability",
 			"applicable": true,
 			"passed": evidence.evidence_passed("adm_accountability_record"),
-			"critical_gate": false,
+			"critical_gate": true,
 		}],
 		"evidence_issues": evidence.evidence_issue_list,
 	}
@@ -36,15 +36,8 @@ evaluation := result if {
 			"key": "design_by_default",
 			"applicable": true,
 			"passed": evidence.evidence_passed("design_by_default_record"),
-			"critical_gate": false,
+			"critical_gate": true,
 		}],
 		"evidence_issues": evidence.evidence_issue_list,
 	}
-}
-
-not_applicable := {
-	"applicability_known": true,
-	"applicability": false,
-	"objectives": [],
-	"evidence_issues": [],
 }

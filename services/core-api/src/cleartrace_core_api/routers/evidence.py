@@ -4,6 +4,7 @@ from typing import Annotated
 from uuid import UUID
 
 from cleartrace_db.session import tenant_transaction
+from cleartrace_evidence.constants import ARTEFACT_CLASSES
 from fastapi import APIRouter, File, Form, Request, UploadFile
 from pydantic import BaseModel, Field
 from uuid6 import uuid7
@@ -51,6 +52,12 @@ async def upload_evidence(
             status=413,
             title="Payload too large",
             detail=f"Evidence files are limited to {MAX_EVIDENCE_BYTES} bytes",
+        )
+    if artefact_class not in ARTEFACT_CLASSES:
+        return problem_response(
+            status=404,
+            title="Not found",
+            detail=f"Unknown artefact class: {artefact_class}",
         )
     # actor_id never raises on a malformed principal claim, so a bad header is not a 500.
     principal_id = auth.actor_id if auth.raw_claims.get("principal_id") else uuid7()

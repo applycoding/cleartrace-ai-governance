@@ -14,6 +14,7 @@ from uuid6 import uuid7
 
 from cleartrace_core_api.deps import get_audit_ledger, get_reviewer
 from cleartrace_core_api.errors import problem_response
+from cleartrace_core_api.strict import StrictModel
 
 router = APIRouter(tags=["assessments"])
 
@@ -22,7 +23,7 @@ _jobs: dict[str, dict[str, Any]] = {}
 _PACKS_ROOT = Path(__file__).resolve().parents[5] / "policies" / "packs"
 
 
-class StartAssessmentRequest(BaseModel):
+class StartAssessmentRequest(StrictModel):
     ai_system_id: UUID
     framework_version_id: UUID | None = None
     pack_slug: str = Field(
@@ -136,11 +137,11 @@ async def start_assessment(
                 },
             )
     except ValueError as exc:
-        # Unknown pack/control or invalid input. Engine or database outages are not
-        # caught here so they surface as server errors instead of client errors.
+        # Unknown pack/control is a missing resource for this tenant's request.
+        # Engine or database outages are not caught here so they surface as 5xx.
         return problem_response(
-            status=400,
-            title="Assessment failed",
+            status=404,
+            title="Not found",
             detail=str(exc),
         )
 

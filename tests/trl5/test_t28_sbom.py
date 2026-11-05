@@ -66,9 +66,10 @@ def test_t28_image_inventory_lists_every_shipped_image(
 ) -> None:
     """Every shipped image is either scanned by Syft or listed as not scanned with a reason.
 
-    This records the OS-package licence findings; it does not assert they are clean,
-    because the third-party images do carry GPL-family packages and no approved
-    exception file exists. T-28 therefore stays partial.
+    OS-package GPL/LGPL findings are covered by
+    docs/licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md. The ClearTrace core-api
+    image must appear in the inventory; T-28 stays partial until CI records it as
+    scanned.
     """
     import sys
 
@@ -77,6 +78,12 @@ def test_t28_image_inventory_lists_every_shipped_image(
 
     report = build_report()
     images = report["images"]
+    exception = ROOT / "docs" / "licence_exceptions" / "SHIPPED_IMAGE_OS_PACKAGES.md"
+    assert exception.is_file(), "approved OS-package exception file missing"
+    assert report.get("exception_file"), "licence report must record the exception file"
+    assert any(
+        "cleartrace-core-api" in str(i["image"]) for i in images
+    ), "ClearTrace core-api image missing from inventory"
     assert isinstance(images, list)
     assert sorted(str(i["image"]) for i in images) == shipped_images()
     for image in images:
@@ -89,3 +96,4 @@ def test_t28_image_inventory_lists_every_shipped_image(
     record_property("t28_images_not_scanned", ",".join(report["images_not_scanned"]))  # type: ignore[arg-type]
     record_property("t28_os_disallowed_licence_components", report["disallowed_total"])
     record_property("t28_os_no_licence_data", report["no_licence_data_total"])
+    record_property("t28_exception_file", str(report.get("exception_file")))

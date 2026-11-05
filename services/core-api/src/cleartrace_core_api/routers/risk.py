@@ -12,6 +12,8 @@ from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
+from cleartrace_core_api.strict import StrictModel
+
 router = APIRouter(tags=["risk"])
 
 _catalogue = catalogue_by_code()
@@ -26,7 +28,7 @@ class MetricSummary(BaseModel):
     area: str
 
 
-class ObservationItem(BaseModel):
+class ObservationItem(StrictModel):
     metric_code: str
     ai_system_id: UUID
     value: float = Field(strict=True)
@@ -34,7 +36,7 @@ class ObservationItem(BaseModel):
     linked_control_id: UUID | None = None
 
 
-class ObservationBatch(BaseModel):
+class ObservationBatch(StrictModel):
     observations: list[ObservationItem] = Field(min_length=1)
 
 

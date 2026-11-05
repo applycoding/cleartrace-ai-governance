@@ -6,6 +6,8 @@ from cleartrace_policy_watch.service import PolicyWatcherService
 from fastapi import APIRouter, Request
 from pydantic import BaseModel
 
+from cleartrace_core_api.strict import StrictModel
+
 router = APIRouter(tags=["policy-watch"])
 
 _watcher = PolicyWatcherService()
@@ -16,7 +18,7 @@ class PolicySource(BaseModel):
     locale: str
 
 
-class CaptureBody(BaseModel):
+class CaptureBody(StrictModel):
     policy_slug: str
     locale: str
     html: str

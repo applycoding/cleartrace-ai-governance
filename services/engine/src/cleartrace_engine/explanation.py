@@ -32,12 +32,17 @@ def build_explanation(
     band_en, band_fr = certainty_band(score)
     ctrl = payload.control
     evidence_count = len(payload.evidence)
+    obj_bits = ", ".join(
+        f"{o.objective_key}={'pass' if o.passed else 'fail'}"
+        for o in payload.objective_results
+        if o.applicable
+    ) or "none"
     en = (
         f"**Requirement:** {ctrl.requirement_en} "
         f"**Control:** {ctrl.control_id} v{ctrl.control_version}. "
         f"**Result:** {_state_label(outcome_state, 'en')}. "
         f"**Why:** Reason code {reason_code}. "
-        f"Objectives evaluated: {len(payload.objective_results)}. "
+        f"Objectives evaluated: {len(payload.objective_results)} ({obj_bits}). "
         f"**Evidence used:** search over {evidence_count} artefact(s). "
         f"**Certainty index:** {score:.2f} ({band_en}; deterministic rules). "
         f"**What to do:** {ctrl.remediation_en} "
@@ -49,7 +54,7 @@ def build_explanation(
         f"**Contrôle :** {ctrl.control_id} v{ctrl.control_version}. "
         f"**Résultat :** {_state_label(outcome_state, 'fr')}. "
         f"**Pourquoi :** Code de motif {reason_code}. "
-        f"Objectifs évalués : {len(payload.objective_results)}. "
+        f"Objectifs évalués : {len(payload.objective_results)} ({obj_bits}). "
         f"**Preuves utilisées :** recherche sur {evidence_count} artefact(s). "
         f"**Indice de certitude :** {score:.2f} ({band_fr}; règles déterministes). "
         f"**Mesure à prendre :** {ctrl.remediation_fr} "

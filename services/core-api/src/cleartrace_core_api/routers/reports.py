@@ -6,9 +6,10 @@ from uuid import UUID
 from cleartrace_reports.models import ReportFormat
 from cleartrace_reports.service import ReportService
 from fastapi import APIRouter, Request, Response
-from pydantic import BaseModel, Field
+from pydantic import Field
 
 from cleartrace_core_api.errors import problem_response
+from cleartrace_core_api.strict import StrictModel
 
 router = APIRouter(prefix="/reports", tags=["reports"])
 
@@ -16,7 +17,7 @@ _service = ReportService()
 _artifacts: dict[str, dict[str, Any]] = {}
 
 
-class ReportCreate(BaseModel):
+class ReportCreate(StrictModel):
     type: str = Field(default="system_dossier", max_length=64)
     scope: dict[str, Any] = Field(default_factory=dict)
     language: str = Field(default="en-CA", pattern=r"^(en|fr)(-CA)?$")

@@ -73,7 +73,7 @@ def create_assignment(body: AssignmentCreate) -> dict[str, str]:
     targets = {"ai_system_id", "group_id"} & body.model_fields_set
     if len(targets) != 1 or bool(body.ai_system_id) == bool(body.group_id):
         raise HTTPException(
-            status_code=400,
+            status_code=409,
             detail="Provide exactly one of ai_system_id or group_id",
         )
     record = AssignmentRecord(

@@ -5,59 +5,225 @@ obligation_type: binding_policy
 source_url_en: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592
 source_url_fr: https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592
 needs_second_reader_recheck: true
-version: 1.0.0
+version: 1.1.0
 controls:
 - control_key: CA-DADM-6-1-1
   clause_ref: 6.1.1
-  title_en: Complete an Algorithmic Impact Assessment before production.
-  title_fr: Réaliser une EIA avant la mise en production.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  title_en: Complete, approve and publish an Algorithmic Impact Assessment before production.
+  title_fr: Compléter, faire approuver et publier une EIA avant la mise en production.
+  remediation_en: Complete and publish the AIA on the Open Government Portal before production use.
+  remediation_fr: Compléter et publier l'EIA sur le portail du gouvernement ouvert avant la mise en production.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: aia_record
     required: true
+- control_key: CA-DADM-6-1-3
+  clause_ref: 6.1.3
+  title_en: Review, approve and update the published AIA on a schedule and when scope changes.
+  title_fr: Réviser, faire approuver et mettre à jour l'EIA publiée selon un calendrier et lors de changements de portée.
+  remediation_en: Schedule AIA reviews and re-publish when functionality or scope changes.
+  remediation_fr: Planifier les révisions de l'EIA et la republier lorsque la fonctionnalité ou la portée change.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: aia_update_record
+    required: true
+- control_key: CA-DADM-6-2-1
+  clause_ref: 6.2.1; Appendix C row 1
+  title_en: Provide plain-language notice through every service delivery channel in use.
+  title_fr: Fournir un avis en langage clair par chaque canal de prestation de services utilisé.
+  remediation_en: Publish bilingual notices on every active channel (web, in person, mail, telephone) and keep proof.
+  remediation_fr: Publier des avis bilingues sur chaque canal actif (web, en personne, courrier, téléphone) et conserver la preuve.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: notice_record
+    required: true
+- control_key: CA-DADM-6-2-3
+  clause_ref: 6.2.3; Appendix C row 2
+  title_en: Provide a meaningful explanation of how and why decisions are made, per Appendix C.
+  title_fr: Fournir une explication significative de la façon et des motifs des décisions, selon l'annexe C.
+  remediation_en: Publish the general explanation and, for Levels II-IV denials or regulatory actions, the individualized explanation.
+  remediation_fr: Publier l'explication générale et, pour les refus ou mesures réglementaires des niveaux II à IV, l'explication individualisée.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: explanation_record
+    required: true
+- control_key: CA-DADM-6-2-7
+  clause_ref: 6.2.7
+  title_en: Document decisions and assessments made or assisted by the automated decision system.
+  title_fr: Documenter les décisions et évaluations prises ou assistées par le système décisionnel automatisé.
+  remediation_en: Keep an immutable decision trace covering inputs, model version, assessment, human review and final decision.
+  remediation_fr: Conserver une trace immuable des décisions couvrant les entrées, la version du modèle, l'évaluation, la révision humaine et la décision finale.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: decision_trace_record
+    required: true
+- control_key: CA-DADM-6-3-1
+  clause_ref: 6.3.1
+  title_en: Test data, information and the model before production for accuracy and unintended bias.
+  title_fr: Tester les données, l'information et le modèle avant la production pour l'exactitude et les biais non intentionnels.
+  remediation_en: Produce signed pre-production fairness and accuracy test evidence before deployment.
+  remediation_fr: Produire des preuves signées de tests d'équité et d'exactitude avant le déploiement.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: preprod_test_report
+    required: true
+- control_key: CA-DADM-6-3-2
+  clause_ref: 6.3.2
+  title_en: Monitor outcomes on a schedule to safeguard against unintended results and verify compliance.
+  title_fr: Surveiller les résultats selon un calendrier pour prévenir les effets non intentionnels et vérifier la conformité.
+  remediation_en: Configure scheduled monitoring of drift, accuracy and outcome parity with alerting.
+  remediation_fr: Configurer une surveillance planifiée de la dérive, de l'exactitude et de la parité des résultats avec alertes.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: monitoring_schedule_record
+    required: true
+- control_key: CA-DADM-6-3-3
+  clause_ref: 6.3.3
+  title_en: Assess consistency with the Charter, the Canadian Human Rights Act and the UNDRIP Act.
+  title_fr: Évaluer la conformité à la Charte, à la Loi canadienne sur les droits de la personne et à la Loi sur la DNUDPA.
+  remediation_en: Complete a human-rights and Indigenous-rights impact attestation linked to fairness metrics.
+  remediation_fr: Compléter une attestation d'incidence sur les droits de la personne et les droits autochtones liée aux mesures d'équité.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: human_rights_attestation
+    required: true
+- control_key: CA-DADM-6-3-5
+  clause_ref: 6.3.5
+  title_en: Validate that training and input data are relevant, accurate, up to date and Privacy Act compliant.
+  title_fr: Valider que les données d'entraînement et d'entrée sont pertinentes, exactes, à jour et conformes à la Loi sur la protection des renseignements personnels.
+  remediation_en: Maintain dataset cards with freshness, schema completeness and collection authority.
+  remediation_fr: Tenir des fiches de jeux de données avec fraîcheur, exhaustivité du schéma et autorité de collecte.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: dataset_validation_record
+    required: true
+- control_key: CA-DADM-6-3-6
+  clause_ref: 6.3.6
+  title_en: Ensure data used and produced are traceable, protected and lawfully collected, used, retained, disclosed and disposed of.
+  title_fr: Veiller à ce que les données utilisées et produites soient traçables, protégées et légalement collectées, utilisées, conservées, divulguées et éliminées.
+  remediation_en: Link lineage, access controls and retention schedules for system data.
+  remediation_fr: Relier la lignée, les contrôles d'accès et les calendriers de conservation aux données du système.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: data_governance_record
+    required: true
 - control_key: CA-DADM-6-3-7
-  clause_ref: 6.3.7
-  title_en: Obtain peer review appropriate to the impact level.
-  title_fr: Obtenir un examen par les pairs adapté au niveau d'incidence.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  clause_ref: 6.3.7; Appendix C row 3
+  title_en: Complete peer review appropriate to the impact level and publish the review or a plain-language summary.
+  title_fr: Compléter un examen par les pairs adapté au niveau d'incidence et publier l'examen ou un résumé en langage clair.
+  remediation_en: Engage the required number of qualified experts for the impact level and publish the summary before production.
+  remediation_fr: Faire appel au nombre requis d'experts qualifiés pour le niveau d'incidence et publier le résumé avant la production.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: peer_review_report
     required: true
 - control_key: CA-DADM-APP-C-03
-  clause_ref: Appendix C row 3
-  title_en: Level III requires qualified expert peer review of the system and AIA.
-  title_fr: Le niveau III exige un examen par des experts qualifiés du système et
-    de l'EIA.
-  remediation_en: Collect evidence mapped to this clause and obtain human review where
-    required.
-  remediation_fr: Recueillir des preuves correspondant à cette clause et obtenir une
-    révision humaine si requis.
+  clause_ref: Appendix C row 3 (Levels III-IV peer review)
+  title_en: Levels III and IV require qualified expert peer review of the system and AIA before production.
+  title_fr: Les niveaux III et IV exigent un examen par des experts qualifiés du système et de l'EIA avant la production.
+  remediation_en: Obtain one (Level III) or two (Level IV) qualified expert reviews and publish the summary.
+  remediation_fr: Obtenir un (niveau III) ou deux (niveau IV) examens d'experts qualifiés et publier le résumé.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: peer_review_report
     required: true
 - control_key: CA-DADM-6-3-8
-  clause_ref: 6.3.8; Appendix C (Gender-based Analysis Plus, Levels II-IV)
-  title_en: Complete a Gender-based Analysis Plus that covers the elements required
-    by Appendix C.
-  title_fr: Réaliser une analyse comparative entre les sexes plus qui couvre les éléments
-    exigés à l'annexe C.
-  remediation_en: Complete the Gender-based Analysis Plus so that it assesses impacts
-    on different population groups, records consultation with the department's diversity
-    and inclusion experts, and details measures for the risks it identifies.
-  remediation_fr: Compléter l'analyse comparative entre les sexes plus afin qu'elle
-    évalue les incidences sur différents groupes de population, consigne la consultation
-    des experts en diversité et inclusion du ministère et précise les mesures prévues
-    pour les risques relevés.
+  clause_ref: 6.3.8; Appendix C row 4 (Gender-based Analysis Plus, Levels II-IV)
+  title_en: Complete a Gender-based Analysis Plus that covers the elements required by Appendix C.
+  title_fr: Réaliser une analyse comparative entre les sexes plus qui couvre les éléments exigés à l'annexe C.
+  remediation_en: Complete the GBA Plus so that it assesses impacts on different population groups, records consultation with diversity and inclusion experts, and details measures for the risks it identifies.
+  remediation_fr: Compléter l'ACS Plus afin qu'elle évalue les incidences sur différents groupes de population, consigne la consultation des experts en diversité et inclusion et précise les mesures pour les risques relevés.
   applicability_expr: planned_production_use == true
   evidence_specs:
   - type: gba_plus_record
+    required: true
+- control_key: CA-DADM-6-3-9
+  clause_ref: 6.3.9; Appendix C row 5
+  title_en: Provide role-based employee training appropriate to the impact level.
+  title_fr: Fournir une formation des employés fondée sur les rôles et adaptée au niveau d'incidence.
+  remediation_en: Deliver and record the training topics Appendix C requires for the system's impact level.
+  remediation_fr: Dispenser et consigner les sujets de formation exigés par l'annexe C pour le niveau d'incidence du système.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: training_record
+    required: true
+- control_key: CA-DADM-6-3-10
+  clause_ref: 6.3.10
+  title_en: Conduct risk assessments and establish IM/IT security protections during development and maintenance.
+  title_fr: Effectuer des évaluations des risques et établir des protections de sécurité de la GI/TI pendant le développement et la maintenance.
+  remediation_en: Link the SA&A or ATO package and ITSG-33 control assessments into the governance record.
+  remediation_fr: Relier le dossier SA&A ou ATO et les évaluations ITSG-33 au dossier de gouvernance.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: security_risk_assessment
+    required: true
+- control_key: CA-DADM-6-3-11
+  clause_ref: 6.3.11
+  title_en: Secure the integrity of data and models against tampering and unauthorized modification.
+  title_fr: Protéger l'intégrité des données et des modèles contre l'altération et la modification non autorisée.
+  remediation_en: Sign model weights, prompts and datasets and verify hashes at runtime.
+  remediation_fr: Signer les poids de modèle, les invites et les jeux de données et vérifier les empreintes à l'exécution.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: integrity_controls_record
+    required: true
+- control_key: CA-DADM-6-3-12
+  clause_ref: 6.3.12
+  title_en: Consult legal services from the concept stage to ensure the use complies with applicable laws.
+  title_fr: Consulter les services juridiques dès la phase conceptuelle pour assurer la conformité aux lois applicables.
+  remediation_en: Record concept-stage legal consultation sign-off in the lifecycle workflow.
+  remediation_fr: Consignez l'approbation de la consultation juridique conceptuelle dans le flux de cycle de vie.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: legal_consultation_record
+    required: true
+- control_key: CA-DADM-6-3-13
+  clause_ref: 6.3.13; Appendix C row 6
+  title_en: Ensure human involvement in automated decision-making as required by Appendix C.
+  title_fr: Assurer la participation humaine à la prise de décisions automatisée selon l'annexe C.
+  remediation_en: Enforce human-in-the-loop final decision sign-off for Levels III and IV, and quality-assurance involvement for Levels I and II.
+  remediation_fr: Exiger une décision finale humaine pour les niveaux III et IV, et une participation à l'assurance de la qualité pour les niveaux I et II.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: human_involvement_record
+    required: true
+- control_key: CA-DADM-6-3-14
+  clause_ref: 6.3.14; Appendix C row 7
+  title_en: Obtain the Appendix C approval for the system to operate before production.
+  title_fr: Obtenir l'approbation de l'annexe C pour l'exploitation du système avant la production.
+  remediation_en: Obtain ADM (Levels I-II), deputy head (Level III) or Treasury Board / Head of Agent of Parliament (Level IV) approval.
+  remediation_fr: Obtenir l'approbation du SMA (niveaux I-II), de l'administrateur général (niveau III) ou du Conseil du Trésor / dirigeant d'agent du Parlement (niveau IV).
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: operational_approval_record
+    required: true
+- control_key: CA-DADM-6-4-1
+  clause_ref: 6.4.1; 6.4.1.1
+  title_en: Inform clients of timely, effective and easy-to-access recourse options.
+  title_fr: Informer les clients des options de recours opportunes, efficaces et faciles d'accès.
+  remediation_en: Publish recourse channels and link appeals to the original decision trace.
+  remediation_fr: Publier les canaux de recours et relier les appels à la trace de décision originale.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: recourse_notice_record
+    required: true
+- control_key: CA-DADM-6-5-1
+  clause_ref: 6.5.1
+  title_en: Publish information on the effectiveness and efficiency of the system on the Open Government Portal.
+  title_fr: Publier sur le portail du gouvernement ouvert de l'information sur l'efficacité et l'efficience du système.
+  remediation_en: Export and publish the effectiveness and efficiency summary for the Open Government Portal.
+  remediation_fr: Exporter et publier le résumé d'efficacité et d'efficience pour le portail du gouvernement ouvert.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: effectiveness_publication
+    required: true
+- control_key: CA-DADM-6-5-2
+  clause_ref: 6.5.2
+  title_en: Publish information on fairness, transparency and human rights on the Open Government Portal.
+  title_fr: Publier sur le portail du gouvernement ouvert de l'information sur l'équité, la transparence et les droits de la personne.
+  remediation_en: Export and publish the fairness and human-rights summary for the Open Government Portal.
+  remediation_fr: Exporter et publier le résumé d'équité et de droits de la personne pour le portail du gouvernement ouvert.
+  applicability_expr: planned_production_use == true
+  evidence_specs:
+  - type: fairness_publication
     required: true

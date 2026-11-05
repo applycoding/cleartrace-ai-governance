@@ -98,7 +98,7 @@ def test_t13_golden_file_has_250_cases_and_state_balance(record_property: pytest
     record_property(
         "t13_unrelated_evidence_cases", sum(1 for c in cases if c["variation"] == "unrelated_evidence_added")
     )
-    record_property("t13_expectation_source", "engine output checked against the selected state")
+    record_property("t13_expectation_source", "independent oracle from clause text")
 
 
 @pytest.mark.parametrize("entry", json.loads(REPLAY.read_text(encoding="utf-8")))

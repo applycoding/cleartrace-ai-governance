@@ -10,6 +10,8 @@ from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
+from cleartrace_core_api.strict import StrictModel
+
 router = APIRouter(prefix="/connectors", tags=["connectors"])
 
 _MANIFESTS = Path(__file__).resolve().parents[5] / "services" / "connectors" / "manifests"
@@ -22,12 +24,12 @@ class ConnectorSummary(BaseModel):
     version: str
 
 
-class ConnectorInstall(BaseModel):
+class ConnectorInstall(StrictModel):
     # A shipped manifest name such as ``mlflow`` or ``mlflow.yaml``; never a path.
     manifest_name: str = Field(pattern=r"^[a-z][a-z0-9_]{0,63}(\.yaml)?$")
 
 
-class ConnectorRunBody(BaseModel):
+class ConnectorRunBody(StrictModel):
     system_id: UUID
     fixture_name: str = Field(default="default", pattern=r"^[a-z0-9][a-z0-9_-]{0,63}$")
 
