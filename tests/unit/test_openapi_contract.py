@@ -41,7 +41,8 @@ def test_evidence_file_upload_allows_binary_nul() -> None:
     schema = _schema()
     body = schema["components"]["schemas"]["Body_upload_evidence_api_v1_evidence_post"]
     file_schema = body["properties"]["file"]
-    assert file_schema.get("format") == "binary"
+    assert file_schema.get("contentMediaType") == "application/octet-stream"
+    assert "format" not in file_schema
     assert "pattern" not in file_schema
     assert body["properties"]["title_en"].get("pattern") == NO_NUL_PATTERN
     assert "enum" in body["properties"]["artefact_class"]

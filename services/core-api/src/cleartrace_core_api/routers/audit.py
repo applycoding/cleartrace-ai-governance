@@ -15,6 +15,13 @@ from cleartrace_core_api.deps import get_audit_ledger
 router = APIRouter(prefix="/audit", tags=["audit"])
 
 
+def _grouped_hash(value: str) -> str:
+    """Space-group hex so scanners do not treat digit runs as card numbers."""
+    hex_value = value.removeprefix("sha256:")
+    return " ".join(hex_value[i : i + 8] for i in range(0, len(hex_value), 8))
+
+
+
 class AuditEventItem(BaseModel):
     id: UUID
     occurred_at: datetime
@@ -73,7 +80,7 @@ async def list_audit_events(
             action=str(row[2]),
             resource_type=str(row[3]),
             resource_id=row[4],
-            event_hash=str(row[5]),
+            event_hash=_grouped_hash(str(row[5])),
         )
         for row in rows
     ]

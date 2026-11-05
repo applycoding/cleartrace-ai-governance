@@ -314,3 +314,20 @@ def test_unknown_but_well_formed_cursor_is_empty_page(client: TestClient) -> Non
     body = resp.json()
     assert body["items"] == []
     assert body["next_cursor"] is None
+
+
+def test_webhook_url_rejects_ports_above_65535() -> None:
+    from cleartrace_notifier.router import WebhookCreate
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError):
+        WebhookCreate(url="https://hooks.example.com:79495/path", secret="s" * 16)
+    ok = WebhookCreate(url="https://hooks.example.com:8443/path", secret="s" * 16)
+    assert ok.url.endswith(":8443/path")
+
+
+def test_audit_event_hash_is_grouped_for_list_responses() -> None:
+    from cleartrace_core_api.routers.audit import _grouped_hash
+
+    assert _grouped_hash("0" * 64) == " ".join(["0" * 8] * 8)
+    assert "587215541035809" not in _grouped_hash("5872155410358090" + "ab" * 24)

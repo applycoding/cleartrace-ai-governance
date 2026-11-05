@@ -208,7 +208,7 @@ def annotate_evidence_multipart(schema: dict[str, Any]) -> None:
     for target in targets:
         props = target.setdefault("properties", {})
         # Binary file bodies may contain NUL; never attach the no-NUL pattern.
-        props["file"] = {"type": "string", "format": "binary"}
+        props["file"] = {"type": "string", "contentMediaType": "application/octet-stream"}
         props["artefact_class"] = {
             "type": "string",
             "enum": sorted(ARTEFACT_CLASSES),
@@ -318,7 +318,7 @@ def annotate_assignment_exactly_one(schema: dict[str, Any]) -> None:
 
 WEBHOOK_URL_PATTERN = (
     r"^https://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+"
-    r"[A-Za-z]{2,63}(:[0-9]{1,5})?(?:/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$"
+    r"[A-Za-z]{2,63}(:(?:6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3}))?(?:/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$"
 )
 
 
