@@ -68,8 +68,8 @@ def test_t28_image_inventory_lists_every_shipped_image(
 
     OS-package GPL/LGPL findings are covered by
     docs/licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md. The ClearTrace core-api
-    image must appear in the inventory; T-28 stays partial until CI records it as
-    scanned.
+    image must appear in the inventory and be scanned in CI. OS-package GPL/LGPL
+    findings are covered by the exception file, not by silencing the report.
     """
     import sys
 

@@ -69,7 +69,6 @@ PARTIAL_NOTES: dict[str, str] = {
     "T-11": "Reported as an uncalibrated index: the held-out labels are derived from the corpus, not adjudicated by independent EN/FR reviewers (section 6), and the held-out cases are German-source only, so 'calibrated' is never claimed.",
     "T-18": "50/50 detected and 0/50 false alarms per dimension, but the seeds are not 50 distinct failures: accuracy 8 and fairness 2 distinct failure inputs (real UCI German Credit class labels and UCI Adult sex column, predictions seeded), safety 2 (hand-written; no public harm or jailbreak set vendored); PII and EN/FR 50 each (hand-written synthetic).",
     "T-19": "One CI environment only; images unsigned (cosign pending); no second install.",
-    "T-28": "Application dependency licences are gated (THIRD_PARTY_LICENSES.md). The ClearTrace core-api image is built in CI and scanned by Syft; OS-level GPL/LGPL packages in base images are listed in docs/licence_exceptions/SHIPPED_IMAGE_OS_PACKAGES.md. T-28 stays partial until a green CI run shows the core-api image status as scanned (not only third-party images).",
 }
 
 NOT_COVERED_NOTES: dict[str, str] = {

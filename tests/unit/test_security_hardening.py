@@ -81,6 +81,21 @@ def test_nul_in_json_body_or_query_is_rejected(client: TestClient) -> None:
     assert query.status_code == 422
 
 
+def test_nul_in_evidence_form_fields_is_422_not_500(client: TestClient) -> None:
+    """Multipart titles with NUL must not reach Postgres (ST101 on POST /evidence)."""
+    resp = client.post(
+        "/api/v1/evidence",
+        headers=_h(),
+        data={
+            "artefact_class": "approval",
+            "title_en": "Evidence artefact",
+            "title_fr": "bad\x00title",
+        },
+        files={"file": ("file.png", b"PNGDATA", "image/png")},
+    )
+    assert resp.status_code == 422, resp.text
+    assert resp.headers["content-type"].startswith("application/problem+json")
+
 def test_security_headers_on_api_responses(client: TestClient) -> None:
     resp = client.get("/api/v1/health")
     assert resp.headers["X-Content-Type-Options"] == "nosniff"

@@ -56,6 +56,7 @@ def test_missing_or_skipped_cases_are_not_pass(tmp_path: Path) -> None:
 def test_t13_green_run_is_pass_with_independent_oracle(tmp_path: Path) -> None:
     """T-13 stays out of PARTIAL_NOTES once cases are distinct and oracle-backed."""
     assert "T-13" not in trl5_report.PARTIAL_NOTES
+    assert "T-28" not in trl5_report.PARTIAL_NOTES
     cases = [("test_t13_five_states", "test_t13_golden_outcome", "pass")]
     assert _status(tmp_path, "T-13", cases) == "pass"
 

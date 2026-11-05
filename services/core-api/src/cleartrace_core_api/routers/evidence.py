@@ -6,6 +6,7 @@ from uuid import UUID
 from cleartrace_db.session import tenant_transaction
 from cleartrace_evidence.constants import ARTEFACT_CLASSES
 from fastapi import APIRouter, File, Form, Request, UploadFile
+from psycopg import DataError
 from pydantic import BaseModel, Field
 from uuid6 import uuid7
 
@@ -59,6 +60,17 @@ async def upload_evidence(
             title="Not found",
             detail=f"Unknown artefact class: {artefact_class}",
         )
+    for field_name, value in (
+        ("artefact_class", artefact_class),
+        ("title_en", title_en),
+        ("title_fr", title_fr),
+    ):
+        if "\x00" in value:
+            return problem_response(
+                status=422,
+                title="Validation failed",
+                detail=f"{field_name} must not contain NUL (U+0000) characters",
+            )
     # actor_id never raises on a malformed principal claim, so a bad header is not a 500.
     principal_id = auth.actor_id if auth.raw_claims.get("principal_id") else uuid7()
     metadata = {
@@ -110,6 +122,13 @@ async def upload_evidence(
                 row = cur.fetchone()
     except ValueError as exc:
         return problem_response(status=400, title="Invalid evidence", detail=str(exc))
+    except DataError:
+        # Defence in depth: form fields with NUL should already be rejected above.
+        return problem_response(
+            status=422,
+            title="Validation failed",
+            detail="Evidence text fields must not contain NUL (U+0000) characters",
+        )
 
     if row is None:
         return problem_response(
