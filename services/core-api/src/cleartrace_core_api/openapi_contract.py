@@ -92,13 +92,21 @@ def apply_no_nul_string_pattern(schema: dict[str, Any]) -> None:
 
 
 def constrain_freeform_objects(schema: dict[str, Any]) -> None:
-    """Replace boolean additionalProperties:true with a no-NUL JSON value schema."""
+    """Constrain free-form object extras so NUL cannot appear in keys or values.
+
+    OpenAPI 3.0 treats a missing ``additionalProperties`` as ``true``. Patch both the
+    explicit and the implicit case so Schemathesis cannot generate schema-valid NUL keys
+    that the JSON input guard then rejects with 422 (ST202).
+    """
     _ensure_no_nul_json_value(schema)
 
     def _patch(obj: dict[str, Any]) -> None:
         if obj.get("type") != "object":
             return
-        additional = obj.get("additionalProperties")
+        if "additionalProperties" not in obj:
+            additional: Any = True
+        else:
+            additional = obj.get("additionalProperties")
         if additional is True:
             obj["propertyNames"] = {"type": "string", "pattern": NO_NUL_PATTERN}
             obj["additionalProperties"] = {"$ref": "#/components/schemas/NoNulJsonValue"}

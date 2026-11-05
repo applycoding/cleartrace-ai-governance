@@ -46,3 +46,9 @@ def test_evidence_file_upload_allows_binary_nul() -> None:
     assert "pattern" not in file_schema
     assert body["properties"]["title_en"].get("pattern") == NO_NUL_PATTERN
     assert "enum" in body["properties"]["artefact_class"]
+
+
+def test_import_csv_request_forbids_additional_properties() -> None:
+    body = _schema()["components"]["schemas"]["ImportCsvRequest"]
+    assert body.get("additionalProperties") is False
+    assert body["properties"]["csv_content"].get("pattern") == NO_NUL_PATTERN

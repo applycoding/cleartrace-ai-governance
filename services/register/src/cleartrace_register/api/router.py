@@ -11,7 +11,7 @@ from cleartrace_register.csv_import import (
 )
 from cleartrace_register.memory_store import MemoryRegisterStore
 from fastapi import APIRouter, HTTPException, Request
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from uuid6 import uuid7
 
 router = APIRouter(prefix="/register", tags=["register"])
@@ -41,6 +41,10 @@ class SystemRegisterView(BaseModel):
 
 
 class ImportCsvRequest(BaseModel):
+    """CSV body only; refuse undeclared keys (Schemathesis ST202 / closed shape)."""
+
+    model_config = ConfigDict(extra="forbid")
+
     csv_content: str
 
 
